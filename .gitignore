@@ -62,3 +62,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+game/Assembly-CSharp-vs.csproj
+game/game-csharp.sln
+game/game.sln
+*.csproj
+*.sln

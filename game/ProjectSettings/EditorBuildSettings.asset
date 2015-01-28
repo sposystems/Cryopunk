@@ -9,3 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/townTest1.unity
   - enabled: 1
     path: Assets/Scenes/unityRPGtutorial.unity
+  - enabled: 1
+    path: Assets/Scenes/WorldTerrain.unity
+  - enabled: 1
+    path: Assets/Scenes/room1.unity

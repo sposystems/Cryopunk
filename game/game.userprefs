@@ -1,0 +1,13 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scenes\SceneScripts\SceneChanger.cs">
+    <Files>
+      <File FileName="Assets\Scenes\SceneScripts\SceneChanger.cs" Line="7" Column="30" />
+      <File FileName="Assets\Scenes\SceneScripts\worldToTownTest1.js" Line="4" Column="43" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

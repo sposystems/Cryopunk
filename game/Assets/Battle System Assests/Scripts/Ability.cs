@@ -12,8 +12,8 @@ public class Ability : MonoBehaviour {
 	private BattleController controller;
 
 	public void Use(Character target) {
-		//Debug.Log("ability used");
 		usedBy.UseSP(spCost);
+		Debug.Log(transform.parent.name);
 		target.TakeDamage(damage);
 		controller.EndTurn();
 	}

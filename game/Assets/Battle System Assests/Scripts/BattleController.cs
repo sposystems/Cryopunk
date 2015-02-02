@@ -36,6 +36,7 @@ public class BattleController : MonoBehaviour {
 	//complete the turn and set up for next turn
 	public void EndTurn() {
 		gui.UpdateGui();
+		gui.DisableButtons();
 
 		//clear all targets
 		player1Character.SetTargeted(false);
@@ -58,6 +59,7 @@ public class BattleController : MonoBehaviour {
 		enemy4Character.SetTargetable(false);
 		enemy5Character.SetTargeted(false);
 		enemy5Character.SetTargetable(false);
+		
 
 		//check for loss
 		if (player1Character.GetHP() <= 0 && 

@@ -16,7 +16,6 @@ public class Character : MonoBehaviour {
 	private bool targeted;
 
 	public void TakeDamage(int amount) {
-		//Debug.Log("damage taken");
 		currentHP -= amount;
 		if (currentHP <= 0) {
 			currentHP=0;
@@ -24,7 +23,6 @@ public class Character : MonoBehaviour {
 	}
 
 	public void UseSP(int amount) {
-		//Debug.Log("sp used");
 		currentSP -= amount;
 		if(currentSP<0) {
 			currentSP=0;
@@ -55,12 +53,10 @@ public class Character : MonoBehaviour {
 		targeted = b;
 	}
 	
-	//called on every frame
-	private void Update() {
-		if (Input.GetMouseButtonDown(0)) {
-			if (currentHP > 0 && targetable) {
-				targeted = true;
-			}
+	//called when character is clicked
+	private void OnMouseDown() {
+		if (currentHP > 0 && targetable) {
+			targeted = true;
 		}
 	}
 

@@ -60,7 +60,7 @@ public class BattleGUI : MonoBehaviour {
 	private Character enemy4Character;
 	private GameObject enemy5;
 	private Character enemy5Character;
-	
+
 	public void UpdateGui() {
 		player1Name.text = player1Character.characterName;
 		player1HP.text = "HP: " + player1Character.GetHP() + "/" + player1Character.hp;
@@ -98,36 +98,49 @@ public class BattleGUI : MonoBehaviour {
 		enemy5HP.text = "HP: " + enemy5Character.GetHP() + "/" + enemy5Character.hp;
 	}
 
+	public void DisableButtons() {
+		player1Ability1.interactable = false;
+		player1Ability2.interactable = false;
+		player2Ability1.interactable = false;
+		player2Ability2.interactable = false;
+		player3Ability1.interactable = false;
+		player3Ability2.interactable = false;
+		player4Ability1.interactable = false;
+		player4Ability2.interactable = false;
+		player5Ability1.interactable = false;
+		player5Ability2.interactable = false;
+	}
+
 	//called on object creation, sets up references
 	private void Awake() {
-		player1 = GameObject.FindGameObjectWithTag("Player");
+		player1 = GameObject.Find("/Characters/Player 1");
 		player1Character = player1.GetComponent<Character>();
 		
-		player2 = GameObject.FindGameObjectWithTag("Player");
+		player2 = GameObject.Find("/Characters/Player 2");
 		player2Character = player2.GetComponent<Character>();
 		
-		player3 = GameObject.FindGameObjectWithTag("Player");
+		player3 = GameObject.Find("/Characters/Player 3");
 		player3Character = player3.GetComponent<Character>();
 		
-		player4 = GameObject.FindGameObjectWithTag("Player");
+		player4 = GameObject.Find("/Characters/Player 4");
 		player4Character = player4.GetComponent<Character>();
 		
-		player5 = GameObject.FindGameObjectWithTag("Player");
+		player5 = GameObject.Find("/Characters/Player 5");
 		player5Character = player5.GetComponent<Character>();
 
-		enemy1 = GameObject.FindGameObjectWithTag("Enemy");
+		enemy1 = GameObject.Find("/Characters/Enemy 1");
 		enemy1Character = enemy1.GetComponent<Character>();
 		
-		enemy2 = GameObject.FindGameObjectWithTag("Enemy");
+		enemy2 = GameObject.Find("/Characters/Enemy 2");
 		enemy2Character = enemy2.GetComponent<Character>();
 		
-		enemy3 = GameObject.FindGameObjectWithTag("Enemy");
+		enemy3 = GameObject.Find("/Characters/Enemy 3");
 		enemy3Character = enemy3.GetComponent<Character>();
 		
-		enemy4 = GameObject.FindGameObjectWithTag("Enemy");
+		enemy4 = GameObject.Find("/Characters/Enemy 4");
 		enemy4Character = enemy4.GetComponent<Character>();
 		
-		enemy5 = GameObject.FindGameObjectWithTag("Enemy");
+		enemy5 = GameObject.Find("/Characters/Enemy 5");
 		enemy5Character = enemy5.GetComponent<Character>();
 	}
 }

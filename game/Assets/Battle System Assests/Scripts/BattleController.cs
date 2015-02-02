@@ -187,25 +187,35 @@ public class BattleController : MonoBehaviour {
 		randAbility = Random.Range(0,2);
 		randTarget = Random.Range(0,5);
 		Character target = player1Character;
+		bool validTarget = false;
+		bool validAbility = false;
 		
-		if (randTarget == 0) {
-			target = player1Character;
-		} else if (randTarget == 1) {
-			target = player2Character;
-		} else if (randTarget == 2) {
-			target = player3Character;
-		} else if (randTarget == 3) {
-			target = player4Character;
-		} else if (randTarget == 4) {
-			target = player5Character;
-		} else {
-			Debug.Log("ERROR");
+		while(validTarget == false) {
+			validTarget = true;
+			if (randTarget == 0 && player1Character.GetHP() > 0) {
+				target = player1Character;
+			} else if (randTarget == 1 && player2Character.GetHP() > 0) {
+				target = player2Character;
+			} else if (randTarget == 2 && player3Character.GetHP() > 0) {
+				target = player3Character;
+			} else if (randTarget == 3 && player4Character.GetHP() > 0) {
+				target = player4Character;
+			} else if (randTarget == 4 && player5Character.GetHP() > 0) {
+				target = player5Character;
+			} else {
+				validTarget = false;
+			}
 		}
 		
-		if (randAbility == 0) {
-			enemy.ability1.Use(target);
-		} else if (randAbility == 1) {
-			enemy.ability2.Use(target);
+		while(validAbility == false) {
+			validAbility = true;
+			if (randAbility == 0 && enemy.ability1.spCost <= enemy.GetSP()) {
+				enemy.ability1.Use(target);
+			} else if (randAbility == 1 && enemy.ability2.spCost <= enemy.GetSP()) {
+				enemy.ability2.Use(target);
+			} else {
+				validAbility = false;
+			}
 		}
 	}
 }

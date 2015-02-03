@@ -183,14 +183,13 @@ public class BattleController : MonoBehaviour {
 	}
 	
 	//enemy chooses random attack
-	private void EnemyTurn(Character enemy) {
-		randAbility = Random.Range(0,2);
-		randTarget = Random.Range(0,5);
+	private void EnemyTurn(Character enemy) {		
 		Character target = player1Character;
 		bool validTarget = false;
 		bool validAbility = false;
 		
 		while(validTarget == false) {
+			randTarget = Random.Range(0,5);
 			validTarget = true;
 			if (randTarget == 0 && player1Character.GetHP() > 0) {
 				target = player1Character;
@@ -208,6 +207,7 @@ public class BattleController : MonoBehaviour {
 		}
 		
 		while(validAbility == false) {
+			randAbility = Random.Range(0,2);
 			validAbility = true;
 			if (randAbility == 0 && enemy.ability1.spCost <= enemy.GetSP()) {
 				enemy.ability1.Use(target);

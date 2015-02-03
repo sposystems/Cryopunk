@@ -13,7 +13,6 @@ public class Ability : MonoBehaviour {
 
 	public void Use(Character target) {
 		usedBy.UseSP(spCost);
-		Debug.Log(transform.parent.name);
 		target.TakeDamage(damage);
 		controller.EndTurn();
 	}

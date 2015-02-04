@@ -114,8 +114,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Special Attack
-  spCost: 10
-  damage: 25
+  spCost: 25
+  damage: 20
   isOffensive: 1
 --- !u!1 &12175345
 GameObject:
@@ -660,8 +660,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Special Attack
-  spCost: 10
-  damage: 25
+  spCost: 25
+  damage: 20
   isOffensive: 1
 --- !u!1 &164832142
 GameObject:
@@ -1604,8 +1604,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Special Attack
-  spCost: 10
-  damage: 25
+  spCost: 25
+  damage: 20
   isOffensive: 1
 --- !u!4 &517679168
 Transform:
@@ -2442,8 +2442,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Special Attack
-  spCost: 10
-  damage: 25
+  spCost: 25
+  damage: 20
   isOffensive: 1
 --- !u!1 &871609169
 GameObject:
@@ -3337,8 +3337,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Special Attack
-  spCost: 10
-  damage: 25
+  spCost: 25
+  damage: 20
   isOffensive: 1
 --- !u!1 &1129728149
 GameObject:
@@ -3458,8 +3458,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Special Attack
-  spCost: 10
-  damage: 25
+  spCost: 25
+  damage: 20
   isOffensive: 1
 --- !u!1 &1143045899
 GameObject:
@@ -5694,8 +5694,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Special Attack
-  spCost: 10
-  damage: 25
+  spCost: 25
+  damage: 20
   isOffensive: 1
 --- !u!1 &1999814777
 GameObject:
@@ -5737,8 +5737,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Special Attack
-  spCost: 10
-  damage: 25
+  spCost: 25
+  damage: 20
   isOffensive: 1
 --- !u!1 &2008472695
 GameObject:
@@ -5978,8 +5978,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Special Attack
-  spCost: 10
-  damage: 25
+  spCost: 25
+  damage: 20
   isOffensive: 1
 --- !u!4 &2044176855
 Transform:
@@ -6261,8 +6261,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Special Attack
-  spCost: 10
-  damage: 25
+  spCost: 25
+  damage: 20
   isOffensive: 1
 --- !u!1 &2121496463
 GameObject:

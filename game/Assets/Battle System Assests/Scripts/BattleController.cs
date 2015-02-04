@@ -102,8 +102,12 @@ public class BattleController : MonoBehaviour {
 		
 		case(BattleStates.Player1Turn):
 			if (player1Character.GetHP() > 0) {
-				gui.player1Ability1.interactable = true;
-				gui.player1Ability2.interactable = true;
+				if (player1Character.ability1.spCost <= player1Character.GetSP()) {
+					gui.player1Ability1.interactable = true;
+				}
+				if (player1Character.ability2.spCost <= player1Character.GetSP()) {
+					gui.player1Ability2.interactable = true;
+				}
 			} else {
 				currentState++;
 				ChangeState();
@@ -112,8 +116,12 @@ public class BattleController : MonoBehaviour {
 			
 		case(BattleStates.Player2Turn):
 			if (player2Character.GetHP() > 0) {
-				gui.player2Ability1.interactable = true;
-				gui.player2Ability2.interactable = true;
+				if (player2Character.ability1.spCost <= player2Character.GetSP()) {
+					gui.player2Ability1.interactable = true;
+				}
+				if (player2Character.ability2.spCost <= player2Character.GetSP()) {
+					gui.player2Ability2.interactable = true;
+				}
 			} else {
 				currentState++;
 				ChangeState();
@@ -122,8 +130,12 @@ public class BattleController : MonoBehaviour {
 			
 		case(BattleStates.Player3Turn):
 			if (player3Character.GetHP() > 0) {
-				gui.player3Ability1.interactable = true;
-				gui.player3Ability2.interactable = true;
+				if (player3Character.ability1.spCost <= player3Character.GetSP()) {
+					gui.player3Ability1.interactable = true;
+				}
+				if (player3Character.ability2.spCost <= player3Character.GetSP()) {
+					gui.player3Ability2.interactable = true;
+				}
 			} else {
 				currentState++;
 				ChangeState();
@@ -132,8 +144,12 @@ public class BattleController : MonoBehaviour {
 			
 		case(BattleStates.Player4Turn):
 			if (player4Character.GetHP() > 0) {
-				gui.player4Ability1.interactable = true;
-				gui.player4Ability2.interactable = true;
+				if (player4Character.ability1.spCost <= player4Character.GetSP()) {
+					gui.player4Ability1.interactable = true;
+				}
+				if (player4Character.ability2.spCost <= player4Character.GetSP()) {
+					gui.player4Ability2.interactable = true;
+				}
 			} else {
 				currentState++;
 				ChangeState();
@@ -142,8 +158,12 @@ public class BattleController : MonoBehaviour {
 			
 		case(BattleStates.Player5Turn):
 			if (player5Character.GetHP() > 0) {
-				gui.player5Ability1.interactable = true;
-				gui.player5Ability2.interactable = true;
+				if (player5Character.ability1.spCost <= player5Character.GetSP()) {
+					gui.player5Ability1.interactable = true;
+				}
+				if (player5Character.ability2.spCost <= player5Character.GetSP()) {
+					gui.player5Ability2.interactable = true;
+				}
 			} else {
 				currentState++;
 				ChangeState();

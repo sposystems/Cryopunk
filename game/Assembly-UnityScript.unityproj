@@ -47,8 +47,15 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scenes\SceneScripts\worldToTownTest1.js" />
+     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
+     <None Include="Assets\Battle System Assests\Fantasy Hero Pack\Swordman\Swordman_Animation.txt" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
+     <None Include="Assets\Battle System Assests\Fantasy Hero Pack\Magician\Magician_Animation.txt" />
+     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-BasicOutline.shader" />
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
+     <None Include="Assets\Battle System Assests\Fantasy Hero Pack\Monk\Monk_Animation.txt" />
+     <None Include="Assets\Battle System Assests\Fantasy Hero Pack\Thief\Thief_Animation.txt" />
+     <None Include="Assets\Battle System Assests\Fantasy Hero Pack\Archer\Archer Animation.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>

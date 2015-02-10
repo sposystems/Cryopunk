@@ -1,12 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Battle System Assests\Scripts\BattleController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js">
     <Files>
-      <File FileName="Assets\Battle System Assests\Scripts\Ability.cs" Line="1" Column="1" />
-      <File FileName="Assets\Battle System Assests\Scripts\Targeter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Battle System Assests\Scripts\BattleController.cs" Line="186" Column="43" />
-      <File FileName="Assets\Battle System Assests\Scripts\BattleGUI.cs" Line="1" Column="1" />
-      <File FileName="Assets\Battle System Assests\Scripts\Character.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\ModdedCharacterController\New3rdPersonScript.js" Line="4" Column="1" />
+      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js" Line="329" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

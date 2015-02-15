@@ -4,17 +4,27 @@ using System.Collections;
 public class BattleController : MonoBehaviour {
 
 	public BattleGUI gui;
-	public Character player1Character;
-	public Character player2Character;
-	public Character player3Character;
-	public Character player4Character;
-	public Character player5Character;
-	public Character enemy1Character;
-	public Character enemy2Character;
-	public Character enemy3Character;
-	public Character enemy4Character;
-	public Character enemy5Character;
-	
+
+	private GameObject player1;
+	private Character player1Character;
+	private GameObject player2;
+	private Character player2Character;
+	private GameObject player3;
+	private Character player3Character;
+	private GameObject player4;
+	private Character player4Character;
+	private GameObject player5;
+	private Character player5Character;
+	private GameObject enemy1;
+	private Character enemy1Character;
+	private GameObject enemy2;
+	private Character enemy2Character;
+	private GameObject enemy3;
+	private Character enemy3Character;
+	private GameObject enemy4;
+	private Character enemy4Character;
+	private GameObject enemy5;
+	private Character enemy5Character;
 	private enum BattleStates {
 		Player1Turn,
 		Player2Turn,
@@ -32,6 +42,23 @@ public class BattleController : MonoBehaviour {
 	private BattleStates currentState;
 	private int randAbility;
 	private int randTarget;
+
+	public Character getPlayer(int playerNum) {
+		if(playerNum == 1) {
+			return player1Character;
+		} else if (playerNum == 2) {
+			return player2Character;
+		} else if (playerNum == 3) {
+			return player3Character;
+		} else if (playerNum == 4) {
+			return player4Character;
+		} else if (playerNum == 5) {
+			return player5Character;
+		} else {
+			Debug.Log ("no such player");
+			return null;
+		}
+	}
 
 	//complete the turn and set up for next turn
 	public void EndTurn() {
@@ -59,7 +86,6 @@ public class BattleController : MonoBehaviour {
 		enemy4Character.SetTargetable(false);
 		enemy5Character.SetTargeted(false);
 		enemy5Character.SetTargetable(false);
-		
 
 		//check for loss
 		if (player1Character.GetHP() <= 0 && 
@@ -92,6 +118,61 @@ public class BattleController : MonoBehaviour {
 
 	//setup battle
 	private void Start() {
+		GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+		
+		//references are gotten based on character's z-coordinate. leftmost character is player 1
+
+		foreach (GameObject player in players) {
+			switch((int)player.transform.position.z) {
+			case -8:
+				player1 = player;
+				player1Character = player1.GetComponent<Character>();
+				break;
+			case -4:
+				player2 = player;
+				player2Character = player2.GetComponent<Character>();
+				break;
+			case 0:
+				player3 = player;
+				player3Character = player3.GetComponent<Character>();
+				break;
+			case 4:
+				player4 = player;
+				player4Character = player4.GetComponent<Character>();
+				break;
+			case 8:
+				player5 = player;
+				player5Character = player5.GetComponent<Character>();
+				break;
+			}
+		}
+		
+		foreach (GameObject enemy in enemies) {
+			switch((int)enemy.transform.position.z) {
+			case -8:
+				enemy1 = enemy;
+				enemy1Character = enemy1.GetComponent<Character>();
+				break;
+			case -4:
+				enemy2 = enemy;
+				enemy2Character = enemy2.GetComponent<Character>();
+				break;
+			case 0:
+				enemy3= enemy;
+				enemy3Character = enemy3.GetComponent<Character>();
+				break;
+			case 4:
+				enemy4 = enemy;
+				enemy4Character = enemy4.GetComponent<Character>();
+				break;
+			case 8:
+				enemy5 = enemy;
+				enemy5Character = enemy5.GetComponent<Character>();
+				break;
+			}
+		}
+
 		gui.UpdateGui();
 		currentState = BattleStates.Player1Turn;
 		ChangeState();
@@ -99,7 +180,7 @@ public class BattleController : MonoBehaviour {
 	
 	private void ChangeState() {
 		switch(currentState) {
-		
+
 		case(BattleStates.Player1Turn):
 			if (player1Character.GetHP() > 0) {
 				if (player1Character.ability1.spCost <= player1Character.GetSP()) {

@@ -1,8 +1,16 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\UI_Scripts\MainMenu_UI\mainMenuButtons.cs">
     <Files>
       <File FileName="Assets\scripts\UI_Scripts\MainMenu_UI\mainMenuButtons.cs" Line="14" Column="2" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js">
+    <Files>
+      <File FileName="Assets\scripts\ModdedCharacterController\New3rdPersonScript.js" Line="4" Column="1" />
+      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js" Line="329" Column="1" />
+>>>>>>> origin/master
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

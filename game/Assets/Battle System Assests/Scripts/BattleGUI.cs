@@ -40,6 +40,7 @@ public class BattleGUI : MonoBehaviour {
 	public Text enemy5Name;
 	public Text enemy5HP;
 
+	private BattleController controller;
 	private GameObject player1;
 	private Character player1Character;
 	private GameObject player2;
@@ -111,36 +112,99 @@ public class BattleGUI : MonoBehaviour {
 		player5Ability2.interactable = false;
 	}
 
+	//Called onClick(). Calls EnableTargets() for the appropriate ability
+	public void BindToTargeter(Button button) {
+		Character player = null;
+		switch(button.transform.parent.name) {
+		case "Player 1":
+			player = controller.getPlayer(1);
+			break;
+		case "Player 2":
+			player = controller.getPlayer(2);
+			break;
+		case "Player 3":
+			player = controller.getPlayer(3);
+			break;
+		case "Player 4":
+			player = controller.getPlayer(4);
+			break;
+		case "Player 5":
+			player = controller.getPlayer(5);
+			break;
+		}
+
+		switch(button.name) {
+		case "Ability 1 Button":
+			player.ability1.GetComponent<Targeter>().EnableTargets();
+			break;
+		case "Ability 2 Button":
+			player.ability2.GetComponent<Targeter>().EnableTargets();
+			break;
+		}
+
+	}
+
 	//called on object creation, sets up references
 	private void Awake() {
-		player1 = GameObject.Find("/Characters/Player 1");
-		player1Character = player1.GetComponent<Character>();
-		
-		player2 = GameObject.Find("/Characters/Player 2");
-		player2Character = player2.GetComponent<Character>();
-		
-		player3 = GameObject.Find("/Characters/Player 3");
-		player3Character = player3.GetComponent<Character>();
-		
-		player4 = GameObject.Find("/Characters/Player 4");
-		player4Character = player4.GetComponent<Character>();
-		
-		player5 = GameObject.Find("/Characters/Player 5");
-		player5Character = player5.GetComponent<Character>();
+		controller = gameObject.GetComponent<BattleController>();
 
-		enemy1 = GameObject.Find("/Characters/Enemy 1");
-		enemy1Character = enemy1.GetComponent<Character>();
+		GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+		//references are gotten based on character's z-coordinate. leftmost character is player 1
+
+		foreach (GameObject player in players) {
+			switch((int)player.transform.position.z) {
+			case -8:
+				player1 = player;
+				player1Character = player1.GetComponent<Character>();
+				break;
+			case -4:
+				player2 = player;
+				player2Character = player2.GetComponent<Character>();
+				break;
+			case 0:
+				player3 = player;
+				player3Character = player3.GetComponent<Character>();
+				break;
+			case 4:
+				player4 = player;
+				player4Character = player4.GetComponent<Character>();
+				break;
+			case 8:
+				player5 = player;
+				player5Character = player5.GetComponent<Character>();
+				break;
+			}
+		}
+
+		foreach (GameObject enemy in enemies) {
+			switch((int)enemy.transform.position.z) {
+			case -8:
+				enemy1 = enemy;
+				enemy1Character = enemy1.GetComponent<Character>();
+				break;
+			case -4:
+				enemy2 = enemy;
+				enemy2Character = enemy2.GetComponent<Character>();
+				break;
+			case 0:
+				enemy3 = enemy;
+				enemy3Character = enemy3.GetComponent<Character>();
+				break;
+			case 4:
+				enemy4 = enemy;
+				enemy4Character = enemy4.GetComponent<Character>();
+				break;
+			case 8:
+				enemy5 = enemy;
+				enemy5Character = enemy5.GetComponent<Character>();
+				break;
+			}
+		}
+
+		// set up on clicks
 		
-		enemy2 = GameObject.Find("/Characters/Enemy 2");
-		enemy2Character = enemy2.GetComponent<Character>();
-		
-		enemy3 = GameObject.Find("/Characters/Enemy 3");
-		enemy3Character = enemy3.GetComponent<Character>();
-		
-		enemy4 = GameObject.Find("/Characters/Enemy 4");
-		enemy4Character = enemy4.GetComponent<Character>();
-		
-		enemy5 = GameObject.Find("/Characters/Enemy 5");
-		enemy5Character = enemy5.GetComponent<Character>();
 	}
+
 }

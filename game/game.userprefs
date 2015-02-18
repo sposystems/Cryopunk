@@ -1,9 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Character Classes\BaseWarriorClass.cs">
     <Files>
-      <File FileName="Assets\scripts\ModdedCharacterController\New3rdPersonScript.js" Line="4" Column="1" />
-      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js" Line="329" Column="1" />
+      <File FileName="Assets\scripts\ModdedCharacterController\New3rdPersonScript.js" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js" Line="1" Column="1" />
+      <File FileName="Assets\Scenes\SceneScripts\SceneChanger.cs" Line="1" Column="1" />
+      <File FileName="Assets\Character Classes\BaseWarriorClass.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

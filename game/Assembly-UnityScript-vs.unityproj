@@ -58,7 +58,7 @@
      <None Include="Assets\Battle System Assests\Fantasy Hero Pack\Thief\Thief_Animation.txt" />
      <None Include="Assets\Battle System Assests\Fantasy Hero Pack\Archer\Archer Animation.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/Scott/Desktop/School/SeniorProject/Cryopunk/game/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/Michael/Desktop/Cryopunk/game/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>

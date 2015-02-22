@@ -120,7 +120,13 @@ public class BattleController : MonoBehaviour {
 	private void Start() {
 		GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 		GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-		
+		//Hello Pete. 
+
+		Debug.Log("Vars passed to the battle scene: Enemy Quantity = "+ BattleLauncher.enemyQuantity);
+		Debug.Log("Vars passed to the battle scene: Enemy Type = "+ BattleLauncher.enemyType);
+		Debug.Log("Vars passed to the battle scene: Location = "+ BattleLauncher.location);
+		Debug.Log("Vars passed to the battle scene: Fifth Member = "+ BattleLauncher.fifthMember);
+
 		//references are gotten based on character's z-coordinate. leftmost character is player 1
 
 		foreach (GameObject player in players) {

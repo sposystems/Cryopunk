@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scenes\SceneScripts\worldToTownTest1.js" />
+     <Compile Include="Assets\scripts\ModdedCharacterController\New3rdPersonCamera.js" />
      <Compile Include="Assets\scripts\ModdedCharacterController\New3rdPersonScript.js" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Battle System Assests\Fantasy Hero Pack\Swordman\Swordman_Animation.txt" />

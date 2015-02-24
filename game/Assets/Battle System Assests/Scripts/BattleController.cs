@@ -43,7 +43,8 @@ public class BattleController : MonoBehaviour {
 	private int randAbility;
 	private int randTarget;
 
-	public Character getPlayer(int playerNum) {
+	//return reference to a player
+	public Character GetPlayer(int playerNum) {
 		if(playerNum == 1) {
 			return player1Character;
 		} else if (playerNum == 2) {
@@ -56,6 +57,24 @@ public class BattleController : MonoBehaviour {
 			return player5Character;
 		} else {
 			Debug.Log ("no such player");
+			return null;
+		}
+	}
+	
+	//return reference to an enemy
+	public Character GetEnemy(int enemyNum) {
+		if(enemyNum == 1) {
+			return enemy1Character;
+		} else if (enemyNum == 2) {
+			return enemy2Character;
+		} else if (enemyNum == 3) {
+			return enemy3Character;
+		} else if (enemyNum == 4) {
+			return enemy4Character;
+		} else if (enemyNum == 5) {
+			return enemy5Character;
+		} else {
+			Debug.Log ("no such enemy");
 			return null;
 		}
 	}
@@ -115,20 +134,71 @@ public class BattleController : MonoBehaviour {
 
 		ChangeState();
 	}
+	
+	private void importPlayers(bool fifthAcquired) {
+	
+	}
+	
+	private void importEnemies(int type, int amount) {
+		//hardcoded values for now
+		type=1;
+		amount=5;
+		
+		string enemyType = "";
+		if (type == 1) {
+			enemyType = "Zombie";
+		} else {
+			Debug.Log("ERROR: Invalid enemy type");
+		}
+		
+		enemy1 = (GameObject)Instantiate(Resources.Load(enemyType));
+		enemy1Character = enemy1.GetComponent<Character>();
+		enemy1.transform.position = new Vector3(-1,0,-8);
+		
+		if (amount > 1) {
+			enemy2 = (GameObject)Instantiate(Resources.Load(enemyType));
+			enemy2Character = enemy2.GetComponent<Character>();
+			enemy2.transform.position = new Vector3(-1,0,-4);
+		}
+		
+		if (amount > 2) {
+			enemy3 = (GameObject)Instantiate(Resources.Load(enemyType));
+			enemy3Character = enemy3.GetComponent<Character>();
+			enemy3.transform.position = new Vector3(-1,0,0);
+		}
+		
+		if (amount > 3) {
+			enemy4 = (GameObject)Instantiate(Resources.Load(enemyType));
+			enemy4Character = enemy4.GetComponent<Character>();
+			enemy4.transform.position = new Vector3(-1,0,4);
+		}
+		
+		if (amount > 4) {
+			enemy5 = (GameObject)Instantiate(Resources.Load(enemyType));
+			enemy5Character = enemy5.GetComponent<Character>();
+			enemy5.transform.position = new Vector3(-1,0,8);
+		}
+		
+		if(amount > 5 || amount < 1) {
+			Debug.Log("ERROR: Invalid amount");
+		}
+		
+	}
+	
+	private void applyLocation(int location){
+	
+	}
 
 	//setup battle
 	private void Start() {
+		
+		applyLocation(BattleLauncher.location);
+		importPlayers(BattleLauncher.fifthMember);
+		importEnemies(BattleLauncher.enemyType, BattleLauncher.enemyQuantity);	
+		
 		GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-		GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-		//Hello Pete. 
-
-		Debug.Log("Vars passed to the battle scene: Enemy Quantity = "+ BattleLauncher.enemyQuantity);
-		Debug.Log("Vars passed to the battle scene: Enemy Type = "+ BattleLauncher.enemyType);
-		Debug.Log("Vars passed to the battle scene: Location = "+ BattleLauncher.location);
-		Debug.Log("Vars passed to the battle scene: Fifth Member = "+ BattleLauncher.fifthMember);
 
 		//references are gotten based on character's z-coordinate. leftmost character is player 1
-
 		foreach (GameObject player in players) {
 			switch((int)player.transform.position.z) {
 			case -8:
@@ -153,32 +223,8 @@ public class BattleController : MonoBehaviour {
 				break;
 			}
 		}
-		
-		foreach (GameObject enemy in enemies) {
-			switch((int)enemy.transform.position.z) {
-			case -8:
-				enemy1 = enemy;
-				enemy1Character = enemy1.GetComponent<Character>();
-				break;
-			case -4:
-				enemy2 = enemy;
-				enemy2Character = enemy2.GetComponent<Character>();
-				break;
-			case 0:
-				enemy3= enemy;
-				enemy3Character = enemy3.GetComponent<Character>();
-				break;
-			case 4:
-				enemy4 = enemy;
-				enemy4Character = enemy4.GetComponent<Character>();
-				break;
-			case 8:
-				enemy5 = enemy;
-				enemy5Character = enemy5.GetComponent<Character>();
-				break;
-			}
-		}
 
+		gui.InitializeGUI();
 		gui.UpdateGui();
 		currentState = BattleStates.Player1Turn;
 		ChangeState();

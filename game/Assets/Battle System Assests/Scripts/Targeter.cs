@@ -12,7 +12,10 @@ public class Targeter : MonoBehaviour {
 	private Ability ability;
 
 	public void EnableTargets() {
-
+		
+		enemies = GameObject.FindGameObjectsWithTag("Enemy");
+		players = GameObject.FindGameObjectsWithTag("Player");
+		
 		//set target group
 		if (ability.isOffensive) {
 			targetGroup = enemies;
@@ -43,8 +46,6 @@ public class Targeter : MonoBehaviour {
 
 	private void Awake() {
 		ability = transform.GetComponent<Ability>();
-		enemies = GameObject.FindGameObjectsWithTag("Enemy");
-		players = GameObject.FindGameObjectsWithTag("Player");
 		waitingForTarget = false;
 	}
 }

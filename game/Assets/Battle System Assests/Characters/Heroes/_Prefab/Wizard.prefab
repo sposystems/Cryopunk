@@ -270,6 +270,7 @@ GameObject:
   - 4: {fileID: 467844}
   - 111: {fileID: 11167906}
   - 114: {fileID: 11467906}
+  - 136: {fileID: 13632436}
   m_Layer: 0
   m_Name: Wizard
   m_TagString: Player
@@ -1474,6 +1475,19 @@ MonoBehaviour:
   ability1: {fileID: 11467902}
   ability2: {fileID: 11467898}
   isPlayer: 1
+--- !u!136 &13632436
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167844}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 3.70000005
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.60000002, z: 0}
 --- !u!137 &13767904
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

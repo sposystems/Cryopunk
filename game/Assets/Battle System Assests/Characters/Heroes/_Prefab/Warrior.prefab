@@ -241,6 +241,7 @@ GameObject:
   - 4: {fileID: 463570}
   - 111: {fileID: 11163604}
   - 114: {fileID: 11463604}
+  - 136: {fileID: 13681644}
   m_Layer: 0
   m_Name: Warrior
   m_TagString: Player
@@ -1026,6 +1027,19 @@ MonoBehaviour:
   ability1: {fileID: 11463596}
   ability2: {fileID: 11463600}
   isPlayer: 1
+--- !u!136 &13681644
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163570}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 3.70000005
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.60000002, z: 0}
 --- !u!137 &13763602
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

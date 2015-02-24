@@ -58,6 +58,7 @@ GameObject:
   - 4: {fileID: 436366}
   - 111: {fileID: 11136360}
   - 114: {fileID: 11436360}
+  - 136: {fileID: 13662856}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Enemy
@@ -861,7 +862,7 @@ Transform:
   m_GameObject: {fileID: 136366}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 9, y: 9, z: 9}
   m_Children:
   - {fileID: 436368}
   - {fileID: 436370}
@@ -1603,6 +1604,19 @@ MonoBehaviour:
   spCost: 0
   damage: 10
   isOffensive: 1
+--- !u!136 &13662856
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 136366}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: .119999997
+  m_Height: .550000012
+  m_Direction: 1
+  m_Center: {x: 0, y: .25, z: 0}
 --- !u!137 &13736360
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

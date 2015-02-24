@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 466494}
   - 111: {fileID: 11166558}
   - 114: {fileID: 11466550}
+  - 136: {fileID: 13690130}
   m_Layer: 0
   m_Name: Thief
   m_TagString: Player
@@ -1027,6 +1028,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityNumber: 2
+--- !u!136 &13690130
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 166494}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 3.70000005
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.60000002, z: 0}
 --- !u!137 &13766556
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

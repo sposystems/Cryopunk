@@ -141,13 +141,16 @@ public class BattleController : MonoBehaviour {
 	
 	private void importEnemies(int type, int amount) {
 		//hardcoded values for now
-		type=1;
+		type=2;
 		amount=5;
 		
 		string enemyType = "";
 		if (type == 1) {
 			enemyType = "Zombie";
-		} else {
+		} else if (type == 2) {
+			enemyType = "Spider";
+		} 
+		else {
 			Debug.Log("ERROR: Invalid enemy type");
 		}
 		

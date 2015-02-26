@@ -69,24 +69,36 @@ public class BattleGUI : MonoBehaviour {
 		player4HP.text = "HP: " + player4Character.GetHP() + "/" + player4Character.hp;
 		player4SP.text = "SP: " + player4Character.GetSP() + "/" + player4Character.sp;
 		
-		player5Name.text = player5Character.characterName;
-		player5HP.text = "HP: " + player5Character.GetHP() + "/" + player5Character.hp;
-		player5SP.text = "SP: " + player5Character.GetSP() + "/" + player5Character.sp;
+		if (player5Character != null) {
+			player5Name.text = player5Character.characterName;
+			player5HP.text = "HP: " + player5Character.GetHP() + "/" + player5Character.hp;
+			player5SP.text = "SP: " + player5Character.GetSP() + "/" + player5Character.sp;
+		}
 		
-		enemy1Name.text = enemy1Character.characterName;
-		enemy1HP.text = "HP: " + enemy1Character.GetHP() + "/" + enemy1Character.hp;
+		if (enemy1Character != null) {
+			enemy1Name.text = enemy1Character.characterName;
+			enemy1HP.text = "HP: " + enemy1Character.GetHP() + "/" + enemy1Character.hp;
+		}
 		
-		enemy2Name.text = enemy2Character.characterName;
-		enemy2HP.text = "HP: " + enemy2Character.GetHP() + "/" + enemy2Character.hp;
+		if (enemy2Character != null) {
+			enemy2Name.text = enemy2Character.characterName;
+			enemy2HP.text = "HP: " + enemy2Character.GetHP() + "/" + enemy2Character.hp;
+		}
 		
-		enemy3Name.text = enemy3Character.characterName;
-		enemy3HP.text = "HP: " + enemy3Character.GetHP() + "/" + enemy3Character.hp;
+		if (enemy3Character != null) {
+			enemy3Name.text = enemy3Character.characterName;
+			enemy3HP.text = "HP: " + enemy3Character.GetHP() + "/" + enemy3Character.hp;
+		}
 		
+		if (enemy4Character != null) {
 		enemy4Name.text = enemy4Character.characterName;
 		enemy4HP.text = "HP: " + enemy4Character.GetHP() + "/" + enemy4Character.hp;
+		}
 		
+		if (enemy5Character != null) {
 		enemy5Name.text = enemy5Character.characterName;
 		enemy5HP.text = "HP: " + enemy5Character.GetHP() + "/" + enemy5Character.hp;
+		}
 	}
 
 	public void DisableButtons() {

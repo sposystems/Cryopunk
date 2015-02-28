@@ -2144,6 +2144,7 @@ MonoBehaviour:
   spCost: 20
   damage: 20
   isOffensive: 1
+  animationNumber: 2
 --- !u!114 &11463262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2159,6 +2160,7 @@ MonoBehaviour:
   spCost: 30
   damage: 20
   isOffensive: 1
+  animationNumber: 3
 --- !u!114 &11463264
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2174,6 +2176,7 @@ MonoBehaviour:
   spCost: 0
   damage: 10
   isOffensive: 1
+  animationNumber: 1
 --- !u!137 &13763264
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

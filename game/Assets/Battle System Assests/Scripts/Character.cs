@@ -19,6 +19,10 @@ public class Character : MonoBehaviour {
 		currentHP -= amount;
 		if (currentHP <= 0) {
 			currentHP=0;
+			animation.PlayQueued("Death", QueueMode.PlayNow);
+		} else {
+			animation.PlayQueued("Hurt", QueueMode.PlayNow);
+			animation.PlayQueued("Idle", QueueMode.CompleteOthers);
 		}
 	}
 

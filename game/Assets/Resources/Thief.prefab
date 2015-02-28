@@ -989,6 +989,7 @@ MonoBehaviour:
   spCost: 0
   damage: 10
   isOffensive: 1
+  animationNumber: 1
 --- !u!114 &11466554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1000,7 +1001,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48ddfeac4bba0241860de154408fbd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityNumber: 1
 --- !u!114 &11466556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1016,6 +1016,7 @@ MonoBehaviour:
   spCost: 25
   damage: 20
   isOffensive: 1
+  animationNumber: 2
 --- !u!114 &11466558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1027,7 +1028,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48ddfeac4bba0241860de154408fbd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityNumber: 2
 --- !u!136 &13690130
 CapsuleCollider:
   m_ObjectHideFlags: 1

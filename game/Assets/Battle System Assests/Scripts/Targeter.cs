@@ -3,8 +3,6 @@ using System.Collections;
 
 public class Targeter : MonoBehaviour {
 
-	public int abilityNumber;
-
 	private GameObject[] enemies;
 	private GameObject[] players;
 	private bool waitingForTarget;

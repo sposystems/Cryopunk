@@ -113,7 +113,61 @@ public class BattleGUI : MonoBehaviour {
 		player5Ability1.interactable = false;
 		player5Ability2.interactable = false;
 	}
-
+	
+	public void DisablePlayerGUI(int playerNum) {
+		if (playerNum == 1) {
+			player1HP.gameObject.SetActive(false);
+			player1Name.gameObject.SetActive(false);
+			player1SP.gameObject.SetActive(false);
+			player1Ability1.gameObject.SetActive(false);
+			player1Ability2.gameObject.SetActive(false);
+		} else if (playerNum == 2) {
+			player2HP.gameObject.SetActive(false);
+			player2Name.gameObject.SetActive(false);
+			player2SP.gameObject.SetActive(false);
+			player2Ability1.gameObject.SetActive(false);
+			player2Ability2.gameObject.SetActive(false);
+		} else if (playerNum == 3) {
+			player3HP.gameObject.SetActive(false);
+			player3Name.gameObject.SetActive(false);
+			player3SP.gameObject.SetActive(false);
+			player3Ability1.gameObject.SetActive(false);
+			player3Ability2.gameObject.SetActive(false);
+		} else if (playerNum == 4) {
+			player4HP.gameObject.SetActive(false);
+			player4Name.gameObject.SetActive(false);
+			player4SP.gameObject.SetActive(false);
+			player4Ability1.gameObject.SetActive(false);
+			player4Ability2.gameObject.SetActive(false);
+		} else if (playerNum == 5) {
+			player5HP.gameObject.SetActive(false);
+			player5Name.gameObject.SetActive(false);
+			player5SP.gameObject.SetActive(false);
+			player5Ability1.gameObject.SetActive(false);
+			player5Ability2.gameObject.SetActive(false);
+		}
+	}
+	
+	public void DisableEnemyGUI(int enemyNum) {
+		if (enemyNum == 1) {
+			enemy1HP.gameObject.SetActive(false);
+			enemy1Name.gameObject.SetActive(false);
+		} else if (enemyNum == 2) {
+			enemy2HP.gameObject.SetActive(false);
+			enemy2Name.gameObject.SetActive(false);
+		} else if (enemyNum == 3) {
+			enemy3HP.gameObject.SetActive(false);
+			enemy3Name.gameObject.SetActive(false);
+		} else if (enemyNum == 4) {
+			enemy4HP.gameObject.SetActive(false);
+			enemy4Name.gameObject.SetActive(false);
+		} else if (enemyNum == 5) {
+			enemy5HP.gameObject.SetActive(false);
+			enemy5Name.gameObject.SetActive(false);
+		}
+	}
+	
+	
 	//Called onClick(). Calls EnableTargets() for the appropriate ability
 	public void BindToTargeter(Button button) {
 

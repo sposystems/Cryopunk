@@ -9,26 +9,31 @@ public class BattleGUI : MonoBehaviour {
 	public Text player1SP;
 	public Button player1Ability1;
 	public Button player1Ability2;
+	public Button player1Ability3;
 	public Text player2Name;
 	public Text player2HP;
 	public Text player2SP;
 	public Button player2Ability1;
 	public Button player2Ability2;
+	public Button player2Ability3;
 	public Text player3Name;
 	public Text player3HP;
 	public Text player3SP;
 	public Button player3Ability1;
 	public Button player3Ability2;
+	public Button player3Ability3;
 	public Text player4Name;
 	public Text player4HP;
 	public Text player4SP;
 	public Button player4Ability1;
 	public Button player4Ability2;
+	public Button player4Ability3;
 	public Text player5Name;
 	public Text player5HP;
 	public Text player5SP;
 	public Button player5Ability1;
 	public Button player5Ability2;
+	public Button player5Ability3;
 	public Text enemy1Name;
 	public Text enemy1HP;
 	public Text enemy2Name;
@@ -104,14 +109,19 @@ public class BattleGUI : MonoBehaviour {
 	public void DisableButtons() {
 		player1Ability1.interactable = false;
 		player1Ability2.interactable = false;
+		player1Ability3.interactable = false;
 		player2Ability1.interactable = false;
 		player2Ability2.interactable = false;
+		player2Ability3.interactable = false;
 		player3Ability1.interactable = false;
 		player3Ability2.interactable = false;
+		player3Ability3.interactable = false;
 		player4Ability1.interactable = false;
 		player4Ability2.interactable = false;
+		player4Ability3.interactable = false;
 		player5Ability1.interactable = false;
 		player5Ability2.interactable = false;
+		player5Ability3.interactable = false;
 	}
 	
 	public void DisablePlayerGUI(int playerNum) {
@@ -121,30 +131,35 @@ public class BattleGUI : MonoBehaviour {
 			player1SP.gameObject.SetActive(false);
 			player1Ability1.gameObject.SetActive(false);
 			player1Ability2.gameObject.SetActive(false);
+			player1Ability3.gameObject.SetActive(false);
 		} else if (playerNum == 2) {
 			player2HP.gameObject.SetActive(false);
 			player2Name.gameObject.SetActive(false);
 			player2SP.gameObject.SetActive(false);
 			player2Ability1.gameObject.SetActive(false);
 			player2Ability2.gameObject.SetActive(false);
+			player2Ability3.gameObject.SetActive(false);
 		} else if (playerNum == 3) {
 			player3HP.gameObject.SetActive(false);
 			player3Name.gameObject.SetActive(false);
 			player3SP.gameObject.SetActive(false);
 			player3Ability1.gameObject.SetActive(false);
 			player3Ability2.gameObject.SetActive(false);
+			player3Ability3.gameObject.SetActive(false);
 		} else if (playerNum == 4) {
 			player4HP.gameObject.SetActive(false);
 			player4Name.gameObject.SetActive(false);
 			player4SP.gameObject.SetActive(false);
 			player4Ability1.gameObject.SetActive(false);
 			player4Ability2.gameObject.SetActive(false);
+			player4Ability3.gameObject.SetActive(false);
 		} else if (playerNum == 5) {
 			player5HP.gameObject.SetActive(false);
 			player5Name.gameObject.SetActive(false);
 			player5SP.gameObject.SetActive(false);
 			player5Ability1.gameObject.SetActive(false);
 			player5Ability2.gameObject.SetActive(false);
+			player5Ability3.gameObject.SetActive(false);
 		}
 	}
 	
@@ -197,6 +212,9 @@ public class BattleGUI : MonoBehaviour {
 		case "Ability 2 Button":
 			player.ability2.GetComponent<Targeter>().EnableTargets();
 			break;
+		case "Ability 3 Button":
+			player.ability3.GetComponent<Targeter>().EnableTargets();
+			break;
 		}
 
 	}
@@ -205,10 +223,39 @@ public class BattleGUI : MonoBehaviour {
 		controller = gameObject.GetComponent<BattleController>();
 		
 		player1Character = controller.GetPlayer(1);
+		if(player1Character != null) {
+			player1Ability1.GetComponentInChildren<Text>().text = player1Character.ability1.abilityName;
+			player1Ability2.GetComponentInChildren<Text>().text = player1Character.ability2.abilityName;
+			player1Ability3.GetComponentInChildren<Text>().text = player1Character.ability3.abilityName;
+		}
+		
 		player2Character = controller.GetPlayer(2);
+		if(player2Character != null) {
+			player2Ability1.GetComponentInChildren<Text>().text = player2Character.ability1.abilityName;
+			player2Ability2.GetComponentInChildren<Text>().text = player2Character.ability2.abilityName;
+			player2Ability3.GetComponentInChildren<Text>().text = player2Character.ability3.abilityName;
+		}
+		
 		player3Character = controller.GetPlayer(3);
+		if(player3Character != null) {
+			player3Ability1.GetComponentInChildren<Text>().text = player3Character.ability1.abilityName;
+			player3Ability2.GetComponentInChildren<Text>().text = player3Character.ability2.abilityName;
+			player3Ability3.GetComponentInChildren<Text>().text = player3Character.ability3.abilityName;
+		}
+		
 		player4Character = controller.GetPlayer(4);
+		if(player4Character != null) {
+			player4Ability1.GetComponentInChildren<Text>().text = player4Character.ability1.abilityName;
+			player4Ability2.GetComponentInChildren<Text>().text = player4Character.ability2.abilityName;
+			player4Ability3.GetComponentInChildren<Text>().text = player4Character.ability3.abilityName;
+		}
+		
 		player5Character = controller.GetPlayer(5);
+		if(player5Character != null) {
+			player5Ability1.GetComponentInChildren<Text>().text = player5Character.ability1.abilityName;
+			player5Ability2.GetComponentInChildren<Text>().text = player5Character.ability2.abilityName;
+			player5Ability3.GetComponentInChildren<Text>().text = player5Character.ability3.abilityName;
+		}
 		
 		enemy1Character = controller.GetEnemy(1);
 		enemy2Character = controller.GetEnemy(2);

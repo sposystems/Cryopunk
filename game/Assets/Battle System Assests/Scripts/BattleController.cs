@@ -150,7 +150,7 @@ public class BattleController : MonoBehaviour {
 	
 	private void ImportPlayers(bool fifthAcquired) {
 		//hardcoded for testing
-		fifthAcquired = false;
+		//fifthAcquired = false;
 		
 		player1 = (GameObject)Instantiate(Resources.Load("Warrior"));
 		player1Character = player1.GetComponent<Character>();
@@ -179,8 +179,8 @@ public class BattleController : MonoBehaviour {
 	
 	private void ImportEnemies(int type, int amount) {
 		//hardcoded values for testing
-		type=1;
-		amount=3;
+		//type=1;
+		//amount=3;
 		
 		string enemyType = "";
 		if (type == 1) {
@@ -259,6 +259,9 @@ public class BattleController : MonoBehaviour {
 				if (player1Character.ability2.spCost <= player1Character.GetSP()) {
 					gui.player1Ability2.interactable = true;
 				}
+				if (player1Character.ability3.spCost <= player1Character.GetSP()) {
+					gui.player1Ability3.interactable = true;
+				}
 			} else {
 				currentState++;
 				ChangeState();
@@ -272,6 +275,9 @@ public class BattleController : MonoBehaviour {
 				}
 				if (player2Character.ability2.spCost <= player2Character.GetSP()) {
 					gui.player2Ability2.interactable = true;
+				}
+				if (player2Character.ability3.spCost <= player2Character.GetSP()) {
+					gui.player2Ability3.interactable = true;
 				}
 			} else {
 				currentState++;
@@ -287,6 +293,9 @@ public class BattleController : MonoBehaviour {
 				if (player3Character.ability2.spCost <= player3Character.GetSP()) {
 					gui.player3Ability2.interactable = true;
 				}
+				if (player3Character.ability3.spCost <= player3Character.GetSP()) {
+					gui.player3Ability3.interactable = true;
+				}
 			} else {
 				currentState++;
 				ChangeState();
@@ -301,6 +310,9 @@ public class BattleController : MonoBehaviour {
 				if (player4Character.ability2.spCost <= player4Character.GetSP()) {
 					gui.player4Ability2.interactable = true;
 				}
+				if (player4Character.ability3.spCost <= player3Character.GetSP()) {
+					gui.player4Ability3.interactable = true;
+				}
 			} else {
 				currentState++;
 				ChangeState();
@@ -314,6 +326,9 @@ public class BattleController : MonoBehaviour {
 				}
 				if (player5Character.ability2.spCost <= player5Character.GetSP()) {
 					gui.player5Ability2.interactable = true;
+				}
+				if (player5Character.ability3.spCost <= player5Character.GetSP()) {
+					gui.player5Ability3.interactable = true;
 				}
 			} else {
 				currentState++;
@@ -375,12 +390,14 @@ public class BattleController : MonoBehaviour {
 			
 			//choose ability at random
 			while(validAbility == false) {
-				randAbility = Random.Range(0,2);
+				randAbility = Random.Range(0,3);
 				validAbility = true;
 				if (randAbility == 0 && enemy.ability1.spCost <= enemy.GetSP()) {
 					enemy.ability1.Use(target);
 				} else if (randAbility == 1 && enemy.ability2.spCost <= enemy.GetSP()) {
 					enemy.ability2.Use(target);
+				} else if (randAbility == 2 && enemy.ability3.spCost <= enemy.GetSP()) {
+					enemy.ability3.Use(target);
 				} else {
 					validAbility = false;
 				}

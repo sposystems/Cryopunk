@@ -11,37 +11,63 @@ public class Ability : MonoBehaviour {
 
 	private Character abilityUser;
 	private BattleController controller;
-	private Character target;
 
-	public void Use(Character targ) {
-		
-		target = targ;
-		
-		if (animationNumber == 1) {
-			StartCoroutine(PlayAnim("Attack1"));
-		} else if (animationNumber == 2) {
-			StartCoroutine(PlayAnim("Special1"));
-		} else if (animationNumber == 3) {
-			StartCoroutine(PlayAnim("Special2"));
-		} else {
-			Debug.Log("invalid animation number");
-		}
+	public void Use(Character target) {
+		StartCoroutine(PlayAnimation());
+		StartCoroutine(UseOnOne(target));
 	}
-
+	
 	//called on object creation, sets up refrences
 	private void Awake() {
 		abilityUser = transform.parent.gameObject.GetComponent<Character>();
 		controller = GameObject.FindGameObjectWithTag("GameController").GetComponent<BattleController>();
 	}
 	
-	private IEnumerator PlayAnim(string animationName) {
+	private IEnumerator PlayAnimation() {
+		string animationName = "";
+		if (animationNumber == 1) {
+			animationName = "Attack1";
+		} else if (animationNumber == 2) {
+			animationName = "Special1";
+		} else if (animationNumber == 3) {
+			animationName = "Special2";
+		} else {
+			Debug.Log("Invalid animation number");
+		}
+		
 		abilityUser.animation.PlayQueued(animationName, QueueMode.PlayNow);
 		yield return new WaitForSeconds(abilityUser.animation[animationName].length - 0.5f);
 		abilityUser.animation.PlayQueued("Idle", QueueMode.CompleteOthers);
 		
+	}
+	
+	private IEnumerator UseOnOne(Character target) {
 		abilityUser.UseSP(spCost);
 		target.TakeDamage(damage);
 		yield return new WaitForSeconds(1);
 		controller.EndTurn();
 	}
+	
+	private IEnumerator UseOnAll() {
+		abilityUser.UseSP(spCost);
+		
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+		GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+		GameObject[] targets = null;
+		
+		if ((abilityUser.isPlayer && isOffensive) || (!abilityUser.isPlayer && !isOffensive)) {
+			targets = enemies;
+		} else if ((abilityUser.isPlayer && !isOffensive) || (!abilityUser.isPlayer && isOffensive)) {
+			targets = players;
+		} else {
+			Debug.Log("Could not determine target group");
+		}
+		
+		foreach (GameObject target in targets) {
+			target.GetComponent<Character>().TakeDamage(damage);
+		}
+		yield return new WaitForSeconds(1);
+		controller.EndTurn();
+	}
+	
 }

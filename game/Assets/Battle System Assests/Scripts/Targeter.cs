@@ -29,7 +29,8 @@ public class Targeter : MonoBehaviour {
 
 		waitingForTarget = true;
 	}
-
+	
+	//called on every frame
 	private void Update() {
 		if (waitingForTarget) {
 			foreach (GameObject targetObj in targetGroup) {
@@ -41,7 +42,8 @@ public class Targeter : MonoBehaviour {
 			}
 		}
 	}
-
+	
+	//called on object creation, set up references
 	private void Awake() {
 		ability = transform.GetComponent<Ability>();
 		waitingForTarget = false;

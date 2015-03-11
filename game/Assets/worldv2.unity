@@ -73,6 +73,7 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
+    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &50658582
 GameObject:
@@ -309,7 +310,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!1 &170920970
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,7 +897,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: 0082771448f686e4280f1acb20f6cde3,
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: d0eacd20f7d9bcd4b9f2f7e3e46f8e95, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: d9ecb881ee26b2043b9d7ce040af908e, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 86373b8de7fda4f4299ad3108c039297, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1088,7 +1089,7 @@ Transform:
   m_LocalScale: {x: 100, y: 1, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!1 &493688549
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,7 +1188,7 @@ Transform:
   - {fileID: 1145879758}
   - {fileID: 2064141835}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
 --- !u!1 &581372230
 GameObject:
   m_ObjectHideFlags: 0
@@ -3778,7 +3779,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
@@ -3787,9 +3788,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: .100000001
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 0082771448f686e4280f1acb20f6cde3,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: d0eacd20f7d9bcd4b9f2f7e3e46f8e95, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 86373b8de7fda4f4299ad3108c039297, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -4326,7 +4328,7 @@ Transform:
   m_LocalScale: {x: 5.33372259, y: 20.7864513, z: 35.9875221}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 13
 --- !u!1 &1563082847
 GameObject:
   m_ObjectHideFlags: 0
@@ -4478,7 +4480,7 @@ Transform:
   m_LocalScale: {x: 2.55930758, y: .082296133, z: 2.70894074}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!1 &1586341903
 GameObject:
   m_ObjectHideFlags: 0
@@ -4739,8 +4741,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1963172201}
-  m_Father: {fileID: 1759026779}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -4757,8 +4759,8 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ignoreReversedGraphics: 1
-  blockingObjects: 0
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -4791,7 +4793,7 @@ Canvas:
   m_GameObject: {fileID: 1677602161}
   m_Enabled: 1
   serializedVersion: 2
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1759026778}
   m_PlaneDistance: 1
   m_PixelPerfect: 0
@@ -5128,10 +5130,9 @@ Transform:
   m_LocalRotation: {x: .308765054, y: -.0314503871, z: .0102158161, w: .950563371}
   m_LocalPosition: {x: 461, y: 179, z: -79}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1677602162}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &1785193931
 GameObject:
   m_ObjectHideFlags: 0
@@ -5421,7 +5422,7 @@ Transform:
   m_LocalScale: {x: .5, y: 1, z: .5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1 &1898663803
 GameObject:
   m_ObjectHideFlags: 0
@@ -5606,7 +5607,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!1 &1937043894
 GameObject:
   m_ObjectHideFlags: 0

@@ -1018,7 +1018,11 @@ MonoBehaviour:
   abilityName: Attack
   spCost: 0
   damage: 10
-  isOffensive: 1
+  offensive: 1
+  targetType: 0
+  statusEffect: 0
+  statusLength: 0
+  statusAmount: 0
   animationNumber: 1
 --- !u!114 &11430424
 MonoBehaviour:
@@ -1044,8 +1048,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Whirlwind
   spCost: 25
-  damage: 20
-  isOffensive: 1
+  damage: 10
+  offensive: 1
+  targetType: 1
+  statusEffect: 0
+  statusLength: 0
+  statusAmount: 0
   animationNumber: 2
 --- !u!114 &11430428
 MonoBehaviour:
@@ -1082,8 +1090,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Battlecry
   spCost: 25
-  damage: 20
-  isOffensive: 1
+  damage: 0
+  offensive: 0
+  targetType: 1
+  statusEffect: 4
+  statusLength: 3
+  statusAmount: 5
   animationNumber: 3
 --- !u!136 &13630432
 CapsuleCollider:

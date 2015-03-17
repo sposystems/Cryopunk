@@ -10,24 +10,33 @@ public class Targeter : MonoBehaviour {
 	private Ability ability;
 
 	public void EnableTargets() {
+
+		//enable possible ability targets and wait for user to choose target
+		if (ability.targetType == Ability.targetTypeE.single) {
+			enemies = GameObject.FindGameObjectsWithTag("Enemy");
+			players = GameObject.FindGameObjectsWithTag("Player");
+
+			//set target group
+			if (ability.offensive) {
+				targetGroup = enemies;
+			} else {
+				targetGroup = players;
+			}
+			
+			//set each character in target group as targetable
+			foreach (GameObject targetObj in targetGroup) {
+				Character targetChar = targetObj.GetComponent<Character>();
+				targetChar.SetTargetable(true);
+			}
+			
+			waitingForTarget = true;
 		
-		enemies = GameObject.FindGameObjectsWithTag("Enemy");
-		players = GameObject.FindGameObjectsWithTag("Player");
-		
-		//set target group
-		if (ability.isOffensive) {
-			targetGroup = enemies;
+		//ability does not require a target
 		} else {
-			targetGroup = players;
+			ability.Use(null);
 		}
 
-		//set each character in target group as targetable
-		foreach (GameObject targetObj in targetGroup) {
-			Character targetChar = targetObj.GetComponent<Character>();
-			targetChar.SetTargetable(true);
-		}
 
-		waitingForTarget = true;
 	}
 	
 	//called on every frame

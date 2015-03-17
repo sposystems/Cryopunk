@@ -1466,7 +1466,11 @@ MonoBehaviour:
   abilityName: Attack
   spCost: 0
   damage: 10
-  isOffensive: 1
+  offensive: 1
+  targetType: 0
+  statusEffect: 0
+  statusLength: 0
+  statusAmount: 0
   animationNumber: 1
 --- !u!114 &11498628
 MonoBehaviour:
@@ -1493,7 +1497,11 @@ MonoBehaviour:
   abilityName: Freeze
   spCost: 25
   damage: 20
-  isOffensive: 1
+  offensive: 1
+  targetType: 0
+  statusEffect: 1
+  statusLength: 0
+  statusAmount: 0
   animationNumber: 2
 --- !u!114 &11498632
 MonoBehaviour:
@@ -1530,8 +1538,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Spellsteal
   spCost: 25
-  damage: 20
-  isOffensive: 1
+  damage: 0
+  offensive: 1
+  targetType: 0
+  statusEffect: 3
+  statusLength: 1
+  statusAmount: 0
   animationNumber: 3
 --- !u!136 &13698636
 CapsuleCollider:

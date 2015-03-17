@@ -47,10 +47,14 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Battle System Assests\Characters\Enemies\Spider\FS_rotateThis.js" />
+     <Compile Include="Assets\InteractiveDemo\Scripts\MPSceneSelect.js" />
+     <Compile Include="Assets\InteractiveDemo\Scripts\RotateParticles.js" />
+     <Compile Include="Assets\InteractiveDemo\Scripts\sceneController.js" />
      <Compile Include="Assets\Scenes\SceneScripts\worldToTownTest1.js" />
      <Compile Include="Assets\scripts\ModdedCharacterController\New3rdPersonCamera.js" />
      <Compile Include="Assets\scripts\ModdedCharacterController\New3rdPersonScript.js" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
+     <None Include="Assets\MagicProjectiles - ReadMe.txt" />
      <None Include="Assets\Battle System Assests\Characters\Heroes\Warrior\Swordman_Animation.txt" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\Battle System Assests\Characters\Heroes\Wizard\Magician_Animation.txt" />

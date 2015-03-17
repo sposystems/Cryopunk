@@ -1018,7 +1018,10 @@ MonoBehaviour:
   abilityName: Attack
   spCost: 0
   damage: 10
-  isOffensive: 1
+  offensive: 1
+  targetType: 0
+  statusEffect: 0
+  statusLength: 0
   animationNumber: 1
 --- !u!114 &11472042
 MonoBehaviour:
@@ -1045,7 +1048,10 @@ MonoBehaviour:
   abilityName: Doubleshot
   spCost: 25
   damage: 20
-  isOffensive: 1
+  offensive: 1
+  targetType: 0
+  statusEffect: 0
+  statusLength: 0
   animationNumber: 2
 --- !u!114 &11472046
 MonoBehaviour:
@@ -1083,7 +1089,10 @@ MonoBehaviour:
   abilityName: Raining Arrows
   spCost: 25
   damage: 20
-  isOffensive: 1
+  offensive: 1
+  targetType: 3
+  statusEffect: 0
+  statusLength: 0
   animationNumber: 3
 --- !u!136 &13672050
 CapsuleCollider:

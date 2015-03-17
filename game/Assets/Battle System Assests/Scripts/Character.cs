@@ -15,6 +15,16 @@ public class Character : MonoBehaviour {
 	private int currentHP;
 	private bool targetable;
 	private bool targeted;
+	private bool stunned;
+	private int stunDuration;
+	private bool buffed;
+	private int buffDuration;
+	private int buffAmount;
+	private bool hpDraining;
+	private int drainDuration;
+	private int drainAmount;
+	private bool silenced;
+	private int silenceDuration;
 
 	public void TakeDamage(int amount) {
 		currentHP -= amount;
@@ -27,10 +37,24 @@ public class Character : MonoBehaviour {
 		}
 	}
 
+	public void Heal(int amount) {
+		currentHP += amount;
+		if (currentHP > hp) {
+			currentHP = hp;
+		}
+	}
+
 	public void UseSP(int amount) {
 		currentSP -= amount;
-		if(currentSP<0) {
+		if(currentSP < 0) {
 			currentSP=0;
+		}
+	}
+
+	public void RecoverSP(int amount) {
+		currentSP += amount;
+		if (currentSP > sp) {
+			currentSP = sp;
 		}
 	}
 
@@ -57,6 +81,28 @@ public class Character : MonoBehaviour {
 	public void SetTargeted(bool b) {
 		targeted = b;
 	}
+
+	public void Stun(int duration) {
+		stunned = true;
+		stunDuration = duration;
+	}
+
+	public void HpDrain(int duration, int amount) {
+		hpDraining = true;
+		drainDuration = duration;
+		drainAmount = amount;
+	}
+
+	public void Buff(int duration, int amount) {
+		buffed = true;
+		buffDuration = duration;
+		buffAmount = amount;
+	}
+
+	public void Silence(int duration) {
+		silenced = true;
+		silenceDuration = duration;
+	}
 	
 	//called when character is clicked
 	private void OnMouseDown() {
@@ -71,5 +117,8 @@ public class Character : MonoBehaviour {
 		currentSP = sp;
 		targetable = false;
 		targeted = false;
+		stunned = false;
+		buffed = false;
+		hpDraining = false;
 	}
 }

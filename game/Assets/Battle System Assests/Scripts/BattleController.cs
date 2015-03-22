@@ -149,7 +149,7 @@ public class BattleController : MonoBehaviour {
 	
 	private void ImportPlayers(bool fifthAcquired) {
 		//hardcoded for testing
-		fifthAcquired = false;
+		//fifthAcquired = false;
 		
 		player1 = (GameObject)Instantiate(Resources.Load("Warrior"));
 		player1Character = player1.GetComponent<Character>();
@@ -178,8 +178,8 @@ public class BattleController : MonoBehaviour {
 	
 	private void ImportEnemies(int type, int amount) {
 		//hardcoded values for testing
-		type=1;
-		amount=3;
+		//type=1;
+		//amount=3;
 		
 		string enemyType = "";
 		if (type == 1) {
@@ -307,6 +307,7 @@ public class BattleController : MonoBehaviour {
 		if (player != null && player.Alive()) {
 			player.UpdateStatusEffects();
 
+			//check if alive again incase status effect killed player
 			if (player.Alive() && player.IsStunned() == false) {
 				if (player.HasSP(player.ability1.spCost)) {
 					ability1.interactable = true;
@@ -330,36 +331,43 @@ public class BattleController : MonoBehaviour {
 	//enemy chooses random attack
 	private void EnemyTurn(Character enemy) {		
 		if (enemy != null && enemy.Alive()) {
-			
-			Character target = null;
-			bool validTarget = false;
-			bool validAbility = false;
-			
-			GameObject[] targets = GameObject.FindGameObjectsWithTag("Player");
-			
-			//choose target at random
-			while(validTarget == false) {
-				randTarget = Random.Range(0,targets.Length);
+			enemy.UpdateStatusEffects();
+
+			//check if alive again incase status effect killed enemy
+			if (enemy.Alive() && enemy.IsStunned() == false) {
+
+				Character target = null;
+				bool validTarget = false;
+				bool validAbility = false;
 				
-				if (targets[randTarget].GetComponent<Character>().Alive()) {
-					target = targets[randTarget].GetComponent<Character>();
-					validTarget = true;
+				GameObject[] targets = GameObject.FindGameObjectsWithTag("Player");
+				
+				//choose target at random
+				while(validTarget == false) {
+					randTarget = Random.Range(0,targets.Length);
+					
+					if (targets[randTarget].GetComponent<Character>().Alive()) {
+						target = targets[randTarget].GetComponent<Character>();
+						validTarget = true;
+					}
 				}
-			}
-			
-			//choose ability at random
-			while(validAbility == false) {
-				randAbility = Random.Range(0,3);
-				validAbility = true;
-				if (randAbility == 0 && enemy.HasSP(enemy.ability1.spCost)) {
-					enemy.ability1.Use(target);
-				} else if (randAbility == 1 && enemy.HasSP(enemy.ability2.spCost)) {
-					enemy.ability2.Use(target);
-				} else if (randAbility == 2 && enemy.HasSP(enemy.ability3.spCost)) {
-					enemy.ability3.Use(target);
-				} else {
-					validAbility = false;
+				
+				//choose ability at random
+				while(validAbility == false) {
+					randAbility = Random.Range(0,3);
+					validAbility = true;
+					if (randAbility == 0 && enemy.HasSP(enemy.ability1.spCost)) {
+						enemy.ability1.Use(target);
+					} else if (randAbility == 1 && enemy.HasSP(enemy.ability2.spCost) && !enemy.IsSilenced()) {
+						enemy.ability2.Use(target);
+					} else if (randAbility == 2 && enemy.HasSP(enemy.ability3.spCost) && !enemy.IsSilenced()) {
+						enemy.ability3.Use(target);
+					} else {
+						validAbility = false;
+					}
 				}
+			} else {
+				EndTurn();
 			}
 		} else {
 			EndTurn();

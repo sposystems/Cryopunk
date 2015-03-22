@@ -1452,10 +1452,6 @@ MonoBehaviour:
   ability2: {fileID: 11498630}
   ability3: {fileID: 11498636}
   isPlayer: 1
-  currentSP: 0
-  currentHP: 0
-  stunned: 0
-  silenced: 0
 --- !u!114 &11498626
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1504,7 +1500,7 @@ MonoBehaviour:
   offensive: 1
   targetType: 0
   statusEffect: 1
-  statusLength: 0
+  statusLength: 1
   statusAmount: 0
   animationNumber: 2
 --- !u!114 &11498632

@@ -1554,12 +1554,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Zombie
-  hp: 100
-  sp: 100
+  maxHp: 100
+  maxSp: 100
   ability1: {fileID: 11456464}
   ability2: {fileID: 11456466}
   ability3: {fileID: 11456468}
   isPlayer: 0
+  currentSP: 0
+  currentHP: 0
+  stunned: 0
+  silenced: 0
 --- !u!114 &11456464
 MonoBehaviour:
   m_ObjectHideFlags: 1

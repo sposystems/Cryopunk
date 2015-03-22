@@ -35,8 +35,6 @@ public class Targeter : MonoBehaviour {
 		} else {
 			ability.Use(null);
 		}
-
-
 	}
 	
 	//called on every frame

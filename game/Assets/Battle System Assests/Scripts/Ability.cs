@@ -78,7 +78,7 @@ public class Ability : MonoBehaviour {
 
 		//use on all in target group
 		foreach (GameObject target in targets) {
-			if (target.GetComponent<Character>().GetHP() > 0){
+			if (target.GetComponent<Character>().Alive()){
 				ApplyAbilityToTarget(target);
 			}
 		}
@@ -98,7 +98,7 @@ public class Ability : MonoBehaviour {
 		int random;
 		while (amount > 0) {
 			random = Random.Range(0, targetList.Count);
-			if (targetList[random].GetComponent<Character>().GetHP() > 0){
+			if (targetList[random].GetComponent<Character>().Alive()){
 				ApplyAbilityToTarget(targetList[random]);
 			}
 			targetList.RemoveAt(random);
@@ -113,7 +113,7 @@ public class Ability : MonoBehaviour {
 	private void ApplyAbilityToTarget(GameObject targetObj){
 		Character target = targetObj.GetComponent<Character>();
 
-		if (target.GetHP() > 0) {
+		if (target.Alive()) {
 			if (statusEffect == statusEffectE.hpDrain) {
 				target.HpDrain(statusLength, statusAmount);
 			} else if (statusEffect == statusEffectE.stun) {
@@ -125,14 +125,13 @@ public class Ability : MonoBehaviour {
 			}
 			
 			if(offensive) {
-				target.TakeDamage(damage);
+				target.TakeDamage(damage + abilityUser.GetBuffAmount());
 			} else {
 				target.Heal(damage);
 			}
 		} else {
 			Debug.Log("error, target is dead");
 		}
-
 	}
 
 	//returns array of all possible targets the ability can be used on

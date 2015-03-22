@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class BattleController : MonoBehaviour {
@@ -137,7 +138,7 @@ public class BattleController : MonoBehaviour {
 		}
 		
 		foreach (GameObject player in players) {
-			if (player.GetComponent<Character>().GetHP() > 0) {
+			if (player.GetComponent<Character>().Alive()) {
 				loss = false;
 				break;
 			}
@@ -250,88 +251,23 @@ public class BattleController : MonoBehaviour {
 		switch(currentState) {
 
 		case(BattleStates.Player1Turn):
-			if (player1Character != null && player1Character.GetHP() > 0) {
-				if (player1Character.ability1.spCost <= player1Character.GetSP()) {
-					gui.player1Ability1.interactable = true;
-				}
-				if (player1Character.ability2.spCost <= player1Character.GetSP()) {
-					gui.player1Ability2.interactable = true;
-				}
-				if (player1Character.ability3.spCost <= player1Character.GetSP()) {
-					gui.player1Ability3.interactable = true;
-				}
-			} else {
-				currentState++;
-				ChangeState();
-			}
+			PlayerTurn(player1Character, gui.player1Ability1, gui.player1Ability2, gui.player1Ability3);
 			break;
 			
 		case(BattleStates.Player2Turn):
-			if (player2Character != null && player2Character.GetHP() > 0) {
-				if (player2Character.ability1.spCost <= player2Character.GetSP()) {
-					gui.player2Ability1.interactable = true;
-				}
-				if (player2Character.ability2.spCost <= player2Character.GetSP()) {
-					gui.player2Ability2.interactable = true;
-				}
-				if (player2Character.ability3.spCost <= player2Character.GetSP()) {
-					gui.player2Ability3.interactable = true;
-				}
-			} else {
-				currentState++;
-				ChangeState();
-			}
+			PlayerTurn(player2Character, gui.player2Ability1, gui.player2Ability2, gui.player2Ability3);
 			break;
 			
 		case(BattleStates.Player3Turn):
-			if (player3Character != null && player3Character.GetHP() > 0) {
-				if (player3Character.ability1.spCost <= player3Character.GetSP()) {
-					gui.player3Ability1.interactable = true;
-				}
-				if (player3Character.ability2.spCost <= player3Character.GetSP()) {
-					gui.player3Ability2.interactable = true;
-				}
-				if (player3Character.ability3.spCost <= player3Character.GetSP()) {
-					gui.player3Ability3.interactable = true;
-				}
-			} else {
-				currentState++;
-				ChangeState();
-			}
+			PlayerTurn(player3Character, gui.player3Ability1, gui.player3Ability2, gui.player3Ability3);
 			break;
 			
 		case(BattleStates.Player4Turn):
-			if (player4Character != null && player4Character.GetHP() > 0) {
-				if (player4Character.ability1.spCost <= player4Character.GetSP()) {
-					gui.player4Ability1.interactable = true;
-				}
-				if (player4Character.ability2.spCost <= player4Character.GetSP()) {
-					gui.player4Ability2.interactable = true;
-				}
-				if (player4Character.ability3.spCost <= player3Character.GetSP()) {
-					gui.player4Ability3.interactable = true;
-				}
-			} else {
-				currentState++;
-				ChangeState();
-			}
+			PlayerTurn(player4Character, gui.player4Ability1, gui.player4Ability2, gui.player4Ability3);
 			break;
 			
 		case(BattleStates.Player5Turn):
-			if (player5Character != null && player5Character.GetHP() > 0) {
-				if (player5Character.ability1.spCost <= player5Character.GetSP()) {
-					gui.player5Ability1.interactable = true;
-				}
-				if (player5Character.ability2.spCost <= player5Character.GetSP()) {
-					gui.player5Ability2.interactable = true;
-				}
-				if (player5Character.ability3.spCost <= player5Character.GetSP()) {
-					gui.player5Ability3.interactable = true;
-				}
-			} else {
-				currentState++;
-				ChangeState();
-			}
+			PlayerTurn(player5Character, gui.player5Ability1, gui.player5Ability2, gui.player5Ability3);
 			break;
 
 		case(BattleStates.Enemy1Turn):
@@ -365,10 +301,35 @@ public class BattleController : MonoBehaviour {
 			break;
 		}
 	}
+
+	private void PlayerTurn(Character player, Button ability1, Button ability2, Button ability3) {
+
+		if (player != null && player.Alive()) {
+			player.UpdateStatusEffects();
+
+			if (player.Alive() && player.IsStunned() == false) {
+				if (player.HasSP(player.ability1.spCost)) {
+					ability1.interactable = true;
+				}
+				if (player.HasSP(player.ability2.spCost) && player.IsSilenced() == false) {
+					ability2.interactable = true;
+				}
+				if (player.HasSP(player.ability3.spCost) && player.IsSilenced() == false) {
+					ability3.interactable = true;
+				}
+			} else {
+				currentState++;
+				ChangeState();
+			}
+		} else {
+		currentState++;
+		ChangeState();
+		}
+	}
 	
 	//enemy chooses random attack
 	private void EnemyTurn(Character enemy) {		
-		if (enemy != null && enemy.GetHP() > 0) {
+		if (enemy != null && enemy.Alive()) {
 			
 			Character target = null;
 			bool validTarget = false;
@@ -380,7 +341,7 @@ public class BattleController : MonoBehaviour {
 			while(validTarget == false) {
 				randTarget = Random.Range(0,targets.Length);
 				
-				if (targets[randTarget].GetComponent<Character>().GetHP() > 0) {
+				if (targets[randTarget].GetComponent<Character>().Alive()) {
 					target = targets[randTarget].GetComponent<Character>();
 					validTarget = true;
 				}
@@ -390,11 +351,11 @@ public class BattleController : MonoBehaviour {
 			while(validAbility == false) {
 				randAbility = Random.Range(0,3);
 				validAbility = true;
-				if (randAbility == 0 && enemy.ability1.spCost <= enemy.GetSP()) {
+				if (randAbility == 0 && enemy.HasSP(enemy.ability1.spCost)) {
 					enemy.ability1.Use(target);
-				} else if (randAbility == 1 && enemy.ability2.spCost <= enemy.GetSP()) {
+				} else if (randAbility == 1 && enemy.HasSP(enemy.ability2.spCost)) {
 					enemy.ability2.Use(target);
-				} else if (randAbility == 2 && enemy.ability3.spCost <= enemy.GetSP()) {
+				} else if (randAbility == 2 && enemy.HasSP(enemy.ability3.spCost)) {
 					enemy.ability3.Use(target);
 				} else {
 					validAbility = false;

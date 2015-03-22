@@ -4,8 +4,8 @@ using System.Collections;
 public class Character : MonoBehaviour {
 
 	public string characterName;
-	public int hp;
-	public int sp;
+	public int maxHp;
+	public int maxSp;
 	public Ability ability1;
 	public Ability ability2;
 	public Ability ability3;
@@ -39,8 +39,8 @@ public class Character : MonoBehaviour {
 
 	public void Heal(int amount) {
 		currentHP += amount;
-		if (currentHP > hp) {
-			currentHP = hp;
+		if (currentHP > maxHp) {
+			currentHP = maxHp;
 		}
 	}
 
@@ -53,8 +53,24 @@ public class Character : MonoBehaviour {
 
 	public void RecoverSP(int amount) {
 		currentSP += amount;
-		if (currentSP > sp) {
-			currentSP = sp;
+		if (currentSP > maxSp) {
+			currentSP = maxSp;
+		}
+	}
+
+	public bool Alive() {
+		if (currentHP > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public bool HasSP(int amount) {
+		if (currentSP >= amount) {
+			return true;
+		} else {
+			return false;
 		}
 	}
 
@@ -64,6 +80,10 @@ public class Character : MonoBehaviour {
 
 	public int GetSP() {
 		return currentSP;
+	}
+
+	public int GetBuffAmount() {
+		return buffAmount;
 	}
 
 	public bool IsTargetable() {
@@ -87,6 +107,10 @@ public class Character : MonoBehaviour {
 		stunDuration = duration;
 	}
 
+	public bool IsStunned() {
+		return stunned;
+	}
+
 	public void HpDrain(int duration, int amount) {
 		hpDraining = true;
 		drainDuration = duration;
@@ -103,6 +127,48 @@ public class Character : MonoBehaviour {
 		silenced = true;
 		silenceDuration = duration;
 	}
+
+	public bool IsSilenced() {
+		return silenced;
+	}
+
+	//update all status durations and states. apply draining damage
+	public void UpdateStatusEffects() {
+		if (buffed) {
+			if (buffDuration <= 0) {
+				buffed = false;
+				buffAmount = 0;
+			} else {
+				buffDuration--;
+			}
+		}
+
+		if (stunned) {
+			if (stunDuration <= 0) {
+				stunned = false;
+			} else {
+				stunDuration--;
+			}
+		}
+
+		if (silenced) {
+			if (silenceDuration <= 0) {
+				silenced = false;
+			} else {
+				silenceDuration--;
+			}
+		}
+
+		if (hpDraining) {
+			if (drainDuration <= 0) {
+				hpDraining = false;
+				drainAmount = 0;
+			} else {
+				drainDuration--;
+				TakeDamage(drainAmount);
+			}
+		}
+	}
 	
 	//called when character is clicked
 	private void OnMouseDown() {
@@ -113,8 +179,8 @@ public class Character : MonoBehaviour {
 
 	//called on object creation
 	private void Awake() {
-		currentHP = hp;
-		currentSP = sp;
+		currentHP = maxHp;
+		currentSP = maxSp;
 		targetable = false;
 		targeted = false;
 		stunned = false;

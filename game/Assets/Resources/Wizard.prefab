@@ -1446,12 +1446,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Wizard
-  hp: 100
-  sp: 100
+  maxHp: 100
+  maxSp: 100
   ability1: {fileID: 11498626}
   ability2: {fileID: 11498630}
   ability3: {fileID: 11498636}
   isPlayer: 1
+  currentSP: 0
+  currentHP: 0
+  stunned: 0
+  silenced: 0
 --- !u!114 &11498626
 MonoBehaviour:
   m_ObjectHideFlags: 1

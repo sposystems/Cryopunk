@@ -1554,16 +1554,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Zombie
-  maxHp: 100
-  maxSp: 100
+  hp: 100
+  sp: 100
   ability1: {fileID: 11456464}
   ability2: {fileID: 11456466}
   ability3: {fileID: 11456468}
   isPlayer: 0
-  currentSP: 0
-  currentHP: 0
-  stunned: 0
-  silenced: 0
 --- !u!114 &11456464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1578,11 +1574,7 @@ MonoBehaviour:
   abilityName: Attack
   spCost: 0
   damage: 10
-  offensive: 1
-  targetType: 0
-  statusEffect: 0
-  statusLength: 0
-  statusAmount: 0
+  isOffensive: 1
   animationNumber: 1
 --- !u!114 &11456466
 MonoBehaviour:
@@ -1598,11 +1590,7 @@ MonoBehaviour:
   abilityName: Bite
   spCost: 20
   damage: 20
-  offensive: 1
-  targetType: 0
-  statusEffect: 0
-  statusLength: 0
-  statusAmount: 0
+  isOffensive: 1
   animationNumber: 2
 --- !u!114 &11456468
 MonoBehaviour:
@@ -1618,11 +1606,7 @@ MonoBehaviour:
   abilityName: Frighten
   spCost: 50
   damage: 30
-  offensive: 1
-  targetType: 0
-  statusEffect: 1
-  statusLength: 1
-  statusAmount: 0
+  isOffensive: 1
   animationNumber: 3
 --- !u!136 &13656468
 CapsuleCollider:

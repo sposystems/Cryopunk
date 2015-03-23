@@ -998,16 +998,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Archer
-  maxHp: 100
-  maxSp: 100
+  hp: 100
+  sp: 100
   ability1: {fileID: 11472040}
   ability2: {fileID: 11472044}
   ability3: {fileID: 11472050}
   isPlayer: 1
-  currentSP: 0
-  currentHP: 0
-  stunned: 0
-  silenced: 0
 --- !u!114 &11472040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1022,11 +1018,7 @@ MonoBehaviour:
   abilityName: Attack
   spCost: 0
   damage: 10
-  offensive: 1
-  targetType: 0
-  statusEffect: 0
-  statusLength: 0
-  statusAmount: 0
+  isOffensive: 1
   animationNumber: 1
 --- !u!114 &11472042
 MonoBehaviour:
@@ -1053,11 +1045,7 @@ MonoBehaviour:
   abilityName: Doubleshot
   spCost: 25
   damage: 20
-  offensive: 1
-  targetType: 0
-  statusEffect: 0
-  statusLength: 0
-  statusAmount: 0
+  isOffensive: 1
   animationNumber: 2
 --- !u!114 &11472046
 MonoBehaviour:
@@ -1095,11 +1083,7 @@ MonoBehaviour:
   abilityName: Raining Arrows
   spCost: 25
   damage: 20
-  offensive: 1
-  targetType: 3
-  statusEffect: 0
-  statusLength: 0
-  statusAmount: 0
+  isOffensive: 1
   animationNumber: 3
 --- !u!136 &13672050
 CapsuleCollider:

@@ -59,50 +59,50 @@ public class BattleGUI : MonoBehaviour {
 
 	public void UpdateGui() {
 		player1Name.text = player1Character.characterName;
-		player1HP.text = "HP: " + player1Character.GetHP() + "/" + player1Character.maxHp;
-		player1SP.text = "SP: " + player1Character.GetSP() + "/" + player1Character.maxSp;
+		player1HP.text = "HP: " + player1Character.GetHP() + "/" + player1Character.hp;
+		player1SP.text = "SP: " + player1Character.GetSP() + "/" + player1Character.sp;
 		
 		player2Name.text = player2Character.characterName;
-		player2HP.text = "HP: " + player2Character.GetHP() + "/" + player2Character.maxHp;
-		player2SP.text = "SP: " + player2Character.GetSP() + "/" + player2Character.maxSp;
+		player2HP.text = "HP: " + player2Character.GetHP() + "/" + player2Character.hp;
+		player2SP.text = "SP: " + player2Character.GetSP() + "/" + player2Character.sp;
 		
 		player3Name.text = player3Character.characterName;
-		player3HP.text = "HP: " + player3Character.GetHP() + "/" + player3Character.maxHp;
-		player3SP.text = "SP: " + player3Character.GetSP() + "/" + player3Character.maxSp;
+		player3HP.text = "HP: " + player3Character.GetHP() + "/" + player3Character.hp;
+		player3SP.text = "SP: " + player3Character.GetSP() + "/" + player3Character.sp;
 		
 		player4Name.text = player4Character.characterName;
-		player4HP.text = "HP: " + player4Character.GetHP() + "/" + player4Character.maxHp;
-		player4SP.text = "SP: " + player4Character.GetSP() + "/" + player4Character.maxSp;
+		player4HP.text = "HP: " + player4Character.GetHP() + "/" + player4Character.hp;
+		player4SP.text = "SP: " + player4Character.GetSP() + "/" + player4Character.sp;
 		
 		if (player5Character != null) {
 			player5Name.text = player5Character.characterName;
-			player5HP.text = "HP: " + player5Character.GetHP() + "/" + player5Character.maxHp;
-			player5SP.text = "SP: " + player5Character.GetSP() + "/" + player5Character.maxSp;
+			player5HP.text = "HP: " + player5Character.GetHP() + "/" + player5Character.hp;
+			player5SP.text = "SP: " + player5Character.GetSP() + "/" + player5Character.sp;
 		}
 		
 		if (enemy1Character != null) {
 			enemy1Name.text = enemy1Character.characterName;
-			enemy1HP.text = "HP: " + enemy1Character.GetHP() + "/" + enemy1Character.maxHp;
+			enemy1HP.text = "HP: " + enemy1Character.GetHP() + "/" + enemy1Character.hp;
 		}
 		
 		if (enemy2Character != null) {
 			enemy2Name.text = enemy2Character.characterName;
-			enemy2HP.text = "HP: " + enemy2Character.GetHP() + "/" + enemy2Character.maxHp;
+			enemy2HP.text = "HP: " + enemy2Character.GetHP() + "/" + enemy2Character.hp;
 		}
 		
 		if (enemy3Character != null) {
 			enemy3Name.text = enemy3Character.characterName;
-			enemy3HP.text = "HP: " + enemy3Character.GetHP() + "/" + enemy3Character.maxHp;
+			enemy3HP.text = "HP: " + enemy3Character.GetHP() + "/" + enemy3Character.hp;
 		}
 		
 		if (enemy4Character != null) {
 		enemy4Name.text = enemy4Character.characterName;
-			enemy4HP.text = "HP: " + enemy4Character.GetHP() + "/" + enemy4Character.maxHp;
+		enemy4HP.text = "HP: " + enemy4Character.GetHP() + "/" + enemy4Character.hp;
 		}
 		
 		if (enemy5Character != null) {
 		enemy5Name.text = enemy5Character.characterName;
-			enemy5HP.text = "HP: " + enemy5Character.GetHP() + "/" + enemy5Character.maxHp;
+		enemy5HP.text = "HP: " + enemy5Character.GetHP() + "/" + enemy5Character.hp;
 		}
 	}
 

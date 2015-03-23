@@ -1446,8 +1446,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Wizard
-  maxHp: 100
-  maxSp: 100
+  hp: 100
+  sp: 100
   ability1: {fileID: 11498626}
   ability2: {fileID: 11498630}
   ability3: {fileID: 11498636}
@@ -1466,11 +1466,7 @@ MonoBehaviour:
   abilityName: Attack
   spCost: 0
   damage: 10
-  offensive: 1
-  targetType: 0
-  statusEffect: 0
-  statusLength: 0
-  statusAmount: 0
+  isOffensive: 1
   animationNumber: 1
 --- !u!114 &11498628
 MonoBehaviour:
@@ -1497,11 +1493,7 @@ MonoBehaviour:
   abilityName: Freeze
   spCost: 25
   damage: 20
-  offensive: 1
-  targetType: 0
-  statusEffect: 1
-  statusLength: 1
-  statusAmount: 0
+  isOffensive: 1
   animationNumber: 2
 --- !u!114 &11498632
 MonoBehaviour:
@@ -1538,12 +1530,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Spellsteal
   spCost: 25
-  damage: 0
-  offensive: 1
-  targetType: 0
-  statusEffect: 3
-  statusLength: 1
-  statusAmount: 0
+  damage: 20
+  isOffensive: 1
   animationNumber: 3
 --- !u!136 &13698636
 CapsuleCollider:

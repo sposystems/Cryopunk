@@ -998,16 +998,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Warrior
-  maxHp: 100
-  maxSp: 100
+  hp: 100
+  sp: 100
   ability1: {fileID: 11430422}
   ability2: {fileID: 11430426}
   ability3: {fileID: 11430432}
   isPlayer: 1
-  currentSP: 0
-  currentHP: 0
-  stunned: 0
-  silenced: 0
 --- !u!114 &11430422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1022,11 +1018,7 @@ MonoBehaviour:
   abilityName: Attack
   spCost: 0
   damage: 10
-  offensive: 1
-  targetType: 0
-  statusEffect: 0
-  statusLength: 0
-  statusAmount: 0
+  isOffensive: 1
   animationNumber: 1
 --- !u!114 &11430424
 MonoBehaviour:
@@ -1052,12 +1044,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Whirlwind
   spCost: 25
-  damage: 10
-  offensive: 1
-  targetType: 1
-  statusEffect: 0
-  statusLength: 0
-  statusAmount: 0
+  damage: 20
+  isOffensive: 1
   animationNumber: 2
 --- !u!114 &11430428
 MonoBehaviour:
@@ -1094,12 +1082,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Battlecry
   spCost: 25
-  damage: 0
-  offensive: 0
-  targetType: 1
-  statusEffect: 4
-  statusLength: 3
-  statusAmount: 5
+  damage: 20
+  isOffensive: 1
   animationNumber: 3
 --- !u!136 &13630432
 CapsuleCollider:

@@ -7,7 +7,7 @@ AnimationClip:
   m_PrefabInternal: {fileID: 0}
   m_Name: pause_menu_anim1_exit
   serializedVersion: 4
-  m_AnimationType: 1
+  m_AnimationType: 2
   m_Compressed: 0
   m_UseHighQualityCurve: 1
   m_RotationCurves: []
@@ -18,12 +18,12 @@ AnimationClip:
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - time: .166666672
         value: 1
         inSlope: -6
         outSlope: -6
         tangentMode: 10
-      - time: .166666672
+      - time: .333333343
         value: 0
         inSlope: -6
         outSlope: -6
@@ -42,7 +42,7 @@ AnimationClip:
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
-      - time: .166666672
+      - time: .333333343
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -57,19 +57,24 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
+        value: -100
+        inSlope: 8400
+        outSlope: 8400
         tangentMode: 10
       - time: .166666672
-        value: 0
+        value: 1300
+        inSlope: 4200
+        outSlope: 4200
+        tangentMode: 10
+      - time: .333333343
+        value: 1300
         inSlope: 0
         outSlope: 0
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_AnchoredPosition.x
-    path: Black Background/Header
+    path: Panel_Background/Characters
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -88,7 +93,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_AnchoredPosition.y
-    path: Black Background/Header
+    path: Panel_Background/Header
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -101,70 +106,18 @@ AnimationClip:
         tangentMode: 10
       - time: .166666672
         value: -600
-        inSlope: -4200
-        outSlope: -4200
+        inSlope: -2100
+        outSlope: -2100
+        tangentMode: 10
+      - time: .333333343
+        value: -600
+        inSlope: 0
+        outSlope: 0
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_AnchoredPosition.x
-    path: Black Background/Menu Buttons
-    classID: 224
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: -1.30549306e-05
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: .166666672
-        value: -1.30549306e-05
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_AnchoredPosition.y
-    path: Black Background/Menu Buttons
-    classID: 224
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: -100
-        inSlope: 9000
-        outSlope: 9000
-        tangentMode: 10
-      - time: .166666672
-        value: 1400
-        inSlope: 9000
-        outSlope: 9000
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_AnchoredPosition.x
-    path: Black Background/Characters
-    classID: 224
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: .166666672
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_AnchoredPosition.y
-    path: Black Background/Characters
+    path: Panel_Background/Menu Buttons
     classID: 224
     script: {fileID: 0}
   m_PPtrCurves: []
@@ -174,12 +127,42 @@ AnimationClip:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings: []
+    genericBindings:
+    - path: 0
+      attribute: 1574349066
+      script: {fileID: 0}
+      classID: 225
+      customType: 0
+      isPPtrCurve: 0
+    - path: 0
+      attribute: 4287062452
+      script: {fileID: 0}
+      classID: 225
+      customType: 0
+      isPPtrCurve: 0
+    - path: 691824283
+      attribute: 1460864421
+      script: {fileID: 0}
+      classID: 224
+      customType: 0
+      isPPtrCurve: 0
+    - path: 3107718222
+      attribute: 538195251
+      script: {fileID: 0}
+      classID: 224
+      customType: 0
+      isPPtrCurve: 0
+    - path: 3631676041
+      attribute: 1460864421
+      script: {fileID: 0}
+      classID: 224
+      customType: 0
+      isPPtrCurve: 0
     pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
-    m_StopTime: .166666672
+    m_StopTime: .333333343
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -197,12 +180,12 @@ AnimationClip:
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - time: .166666672
         value: 1
         inSlope: -6
         outSlope: -6
         tangentMode: 10
-      - time: .166666672
+      - time: .333333343
         value: 0
         inSlope: -6
         outSlope: -6
@@ -221,7 +204,7 @@ AnimationClip:
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
-      - time: .166666672
+      - time: .333333343
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -236,19 +219,24 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
+        value: -100
+        inSlope: 8400
+        outSlope: 8400
         tangentMode: 10
       - time: .166666672
-        value: 0
+        value: 1300
+        inSlope: 4200
+        outSlope: 4200
+        tangentMode: 10
+      - time: .333333343
+        value: 1300
         inSlope: 0
         outSlope: 0
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_AnchoredPosition.x
-    path: Black Background/Header
+    path: Panel_Background/Characters
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -267,7 +255,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_AnchoredPosition.y
-    path: Black Background/Header
+    path: Panel_Background/Header
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -280,70 +268,18 @@ AnimationClip:
         tangentMode: 10
       - time: .166666672
         value: -600
-        inSlope: -4200
-        outSlope: -4200
+        inSlope: -2100
+        outSlope: -2100
+        tangentMode: 10
+      - time: .333333343
+        value: -600
+        inSlope: 0
+        outSlope: 0
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_AnchoredPosition.x
-    path: Black Background/Menu Buttons
-    classID: 224
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: -1.30549306e-05
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: .166666672
-        value: -1.30549306e-05
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_AnchoredPosition.y
-    path: Black Background/Menu Buttons
-    classID: 224
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: -100
-        inSlope: 9000
-        outSlope: 9000
-        tangentMode: 10
-      - time: .166666672
-        value: 1400
-        inSlope: 9000
-        outSlope: 9000
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_AnchoredPosition.x
-    path: Black Background/Characters
-    classID: 224
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: .166666672
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_AnchoredPosition.y
-    path: Black Background/Characters
+    path: Panel_Background/Menu Buttons
     classID: 224
     script: {fileID: 0}
   m_EulerEditorCurves: []

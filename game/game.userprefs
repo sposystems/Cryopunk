@@ -1,12 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Battle System Assests\Scripts\BattleController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\RABi.cs">
     <Files>
-      <File FileName="Assets\Battle System Assests\Scripts\Character.cs" Line="148" Column="20" />
-      <File FileName="Assets\Battle System Assests\Scripts\BattleController.cs" Line="327" Column="39" />
-      <File FileName="Assets\Battle System Assests\Scripts\Ability.cs" Line="81" Column="50" />
-      <File FileName="Assets\Battle System Assests\Scripts\Targeter.cs" Line="34" Column="38" />
-      <File FileName="Assets\Battle System Assests\Scripts\BattleGUI.cs" Line="63" Column="84" />
+      <File FileName="Assets\RABi.cs" Line="18" Column="30" />
+      <File FileName="Assets\Battle System Assests\Scripts\Character.cs" Line="1" Column="1" />
+      <File FileName="Assets\Battle System Assests\Scripts\BattleController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Battle System Assests\Scripts\Ability.cs" Line="1" Column="1" />
+      <File FileName="Assets\Battle System Assests\Scripts\Targeter.cs" Line="1" Column="1" />
+      <File FileName="Assets\Battle System Assests\Scripts\BattleGUI.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\BattleLauncher.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

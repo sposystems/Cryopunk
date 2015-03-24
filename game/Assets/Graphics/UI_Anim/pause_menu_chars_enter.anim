@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pause_menu_items_enter
+  m_Name: pause_menu_chars_enter
   serializedVersion: 4
   m_AnimationType: 2
   m_Compressed: 0
@@ -19,57 +19,57 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: -350
-        inSlope: 3750
-        outSlope: 3750
-        tangentMode: 10
-      - time: .166666672
-        value: 275
-        inSlope: 3750
-        outSlope: 3750
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_AnchoredPosition.x
-    path: Panel_Background/Items Text With Underline
-    classID: 224
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 250
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: .166666672
-        value: 250
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_AnchoredPosition.y
-    path: Panel_Background/Items Text With Underline
-    classID: 224
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
         value: -700
-        inSlope: 5100
-        outSlope: 5100
+        inSlope: 4320
+        outSlope: 4320
         tangentMode: 10
       - time: .166666672
-        value: 150
-        inSlope: 5100
-        outSlope: 5100
+        value: 20
+        inSlope: 4320
+        outSlope: 4320
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_AnchoredPosition.x
-    path: Panel_Background/Items Panel
+    path: Panel_Background/Char Name Panel
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -175
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .166666672
+        value: -175
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_AnchoredPosition.y
+    path: Panel_Background/Char Name Panel
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -625
+        inSlope: 4050
+        outSlope: 4050
+        tangentMode: 10
+      - time: .166666672
+        value: 50
+        inSlope: 4050
+        outSlope: 4050
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_AnchoredPosition.x
+    path: Panel_Background/Char Stats Panel
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -88,7 +88,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_AnchoredPosition.y
-    path: Panel_Background/Items Panel
+    path: Panel_Background/Char Stats Panel
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -114,38 +114,210 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
+        value: -150
+        inSlope: 1200
+        outSlope: 1200
+        tangentMode: 10
+      - time: .166666672
+        value: 50
+        inSlope: 1200
+        outSlope: 1200
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_AnchoredPosition.y
+    path: Panel_Background/Back Panel (Items Screen)
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -50
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .166666672
+        value: -50
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_AnchoredPosition.x
+    path: Panel_Background/Char Book
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -450
+        inSlope: 3750
+        outSlope: 3750
+        tangentMode: 10
+      - time: .166666672
+        value: 175
+        inSlope: 3750
+        outSlope: 3750
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_AnchoredPosition.y
+    path: Panel_Background/Char Book
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 1300
+        inSlope: -8400
+        outSlope: -8400
+        tangentMode: 10
+      - time: .166666672
         value: -100
-        inSlope: 840
-        outSlope: 840
+        inSlope: -8400
+        outSlope: -8400
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_AnchoredPosition.x
+    path: Panel_Background/Char Select Panel
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -150
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .166666672
+        value: -150
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_AnchoredPosition.y
+    path: Panel_Background/Char Select Panel
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 800
+        inSlope: -4560
+        outSlope: -4560
         tangentMode: 10
       - time: .166666672
         value: 40
-        inSlope: 840
-        outSlope: 840
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_AnchoredPosition.y
-    path: Panel_Background/Back Panel (Items Screen)
-    classID: 224
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 1000
-        inSlope: -6600
-        outSlope: -6600
-        tangentMode: 10
-      - time: .166666672
-        value: -100
-        inSlope: -6600
-        outSlope: -6600
+        inSlope: -4560
+        outSlope: -4560
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_AnchoredPosition.x
-    path: Panel_Background/Items Image and Description
+    path: Panel_Background/Char Image
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -1100
+        inSlope: 5460
+        outSlope: 5460
+        tangentMode: 10
+      - time: .166666672
+        value: -190
+        inSlope: 5460
+        outSlope: 5460
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_AnchoredPosition.y
+    path: Panel_Background/Char Image
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 800
+        inSlope: -4560
+        outSlope: -4560
+        tangentMode: 10
+      - time: .166666672
+        value: 40
+        inSlope: -2280
+        outSlope: -2280
+        tangentMode: 10
+      - time: .183333337
+        value: 40
+        inSlope: 362.500031
+        outSlope: 362.500031
+        tangentMode: 10
+      - time: .383333325
+        value: 185
+        inSlope: 725.000061
+        outSlope: 725.000061
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_AnchoredPosition.x
+    path: Panel_Background/Char Image Shadow
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -1100
+        inSlope: 5460
+        outSlope: 5460
+        tangentMode: 10
+      - time: .166666672
+        value: -190
+        inSlope: 2730
+        outSlope: 2730
+        tangentMode: 10
+      - time: .183333337
+        value: -190
+        inSlope: -212.500015
+        outSlope: -212.500015
+        tangentMode: 10
+      - time: .383333325
+        value: -275
+        inSlope: -425.000031
+        outSlope: -425.000031
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_AnchoredPosition.y
+    path: Panel_Background/Char Image Shadow
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .383333325
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_AnchoredPosition.x
+    path: Panel_Background/Header
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -156,7 +328,7 @@ AnimationClip:
         inSlope: 0
         outSlope: 0
         tangentMode: 10
-      - time: .166666672
+      - time: .383333325
         value: -50
         inSlope: 0
         outSlope: 0
@@ -164,7 +336,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_AnchoredPosition.y
-    path: Panel_Background/Items Image and Description
+    path: Panel_Background/Header
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -175,7 +347,7 @@ AnimationClip:
         inSlope: 0
         outSlope: 0
         tangentMode: 10
-      - time: .166666672
+      - time: .383333325
         value: 1
         inSlope: 0
         outSlope: 0
@@ -186,44 +358,6 @@ AnimationClip:
     path: 
     classID: 225
     script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: .166666672
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_AnchoredPosition.x
-    path: Panel_Background/Header
-    classID: 224
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: -50
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: .166666672
-        value: -50
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_AnchoredPosition.y
-    path: Panel_Background/Header
-    classID: 224
-    script: {fileID: 0}
   m_PPtrCurves: []
   m_SampleRate: 60
   m_WrapMode: 0
@@ -232,13 +366,13 @@ AnimationClip:
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
     genericBindings:
-    - path: 3604960935
+    - path: 41175831
       attribute: 1460864421
       script: {fileID: 0}
       classID: 224
       customType: 0
       isPPtrCurve: 0
-    - path: 498269000
+    - path: 3887929744
       attribute: 1460864421
       script: {fileID: 0}
       classID: 224
@@ -250,19 +384,49 @@ AnimationClip:
       classID: 224
       customType: 0
       isPPtrCurve: 0
-    - path: 3844534747
-      attribute: 1460864421
-      script: {fileID: 0}
-      classID: 224
-      customType: 0
-      isPPtrCurve: 0
-    - path: 3604960935
+    - path: 422561365
       attribute: 538195251
       script: {fileID: 0}
       classID: 224
       customType: 0
       isPPtrCurve: 0
-    - path: 498269000
+    - path: 4268035756
+      attribute: 1460864421
+      script: {fileID: 0}
+      classID: 224
+      customType: 0
+      isPPtrCurve: 0
+    - path: 2402315131
+      attribute: 1460864421
+      script: {fileID: 0}
+      classID: 224
+      customType: 0
+      isPPtrCurve: 0
+    - path: 2402315131
+      attribute: 538195251
+      script: {fileID: 0}
+      classID: 224
+      customType: 0
+      isPPtrCurve: 0
+    - path: 160343545
+      attribute: 1460864421
+      script: {fileID: 0}
+      classID: 224
+      customType: 0
+      isPPtrCurve: 0
+    - path: 160343545
+      attribute: 538195251
+      script: {fileID: 0}
+      classID: 224
+      customType: 0
+      isPPtrCurve: 0
+    - path: 41175831
+      attribute: 538195251
+      script: {fileID: 0}
+      classID: 224
+      customType: 0
+      isPPtrCurve: 0
+    - path: 3887929744
       attribute: 538195251
       script: {fileID: 0}
       classID: 224
@@ -274,7 +438,25 @@ AnimationClip:
       classID: 224
       customType: 0
       isPPtrCurve: 0
-    - path: 3844534747
+    - path: 422561365
+      attribute: 1460864421
+      script: {fileID: 0}
+      classID: 224
+      customType: 0
+      isPPtrCurve: 0
+    - path: 4268035756
+      attribute: 538195251
+      script: {fileID: 0}
+      classID: 224
+      customType: 0
+      isPPtrCurve: 0
+    - path: 3107718222
+      attribute: 1460864421
+      script: {fileID: 0}
+      classID: 224
+      customType: 0
+      isPPtrCurve: 0
+    - path: 3107718222
       attribute: 538195251
       script: {fileID: 0}
       classID: 224
@@ -286,23 +468,11 @@ AnimationClip:
       classID: 225
       customType: 0
       isPPtrCurve: 0
-    - path: 3107718222
-      attribute: 1460864421
-      script: {fileID: 0}
-      classID: 224
-      customType: 0
-      isPPtrCurve: 0
-    - path: 3107718222
-      attribute: 538195251
-      script: {fileID: 0}
-      classID: 224
-      customType: 0
-      isPPtrCurve: 0
     pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
-    m_StopTime: .166666672
+    m_StopTime: .383333325
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -321,57 +491,57 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: -350
-        inSlope: 3750
-        outSlope: 3750
-        tangentMode: 10
-      - time: .166666672
-        value: 275
-        inSlope: 3750
-        outSlope: 3750
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_AnchoredPosition.x
-    path: Panel_Background/Items Text With Underline
-    classID: 224
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 250
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: .166666672
-        value: 250
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_AnchoredPosition.y
-    path: Panel_Background/Items Text With Underline
-    classID: 224
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
         value: -700
-        inSlope: 5100
-        outSlope: 5100
+        inSlope: 4320
+        outSlope: 4320
         tangentMode: 10
       - time: .166666672
-        value: 150
-        inSlope: 5100
-        outSlope: 5100
+        value: 20
+        inSlope: 4320
+        outSlope: 4320
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_AnchoredPosition.x
-    path: Panel_Background/Items Panel
+    path: Panel_Background/Char Name Panel
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -175
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .166666672
+        value: -175
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_AnchoredPosition.y
+    path: Panel_Background/Char Name Panel
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -625
+        inSlope: 4050
+        outSlope: 4050
+        tangentMode: 10
+      - time: .166666672
+        value: 50
+        inSlope: 4050
+        outSlope: 4050
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_AnchoredPosition.x
+    path: Panel_Background/Char Stats Panel
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -390,7 +560,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_AnchoredPosition.y
-    path: Panel_Background/Items Panel
+    path: Panel_Background/Char Stats Panel
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -416,38 +586,210 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
+        value: -150
+        inSlope: 1200
+        outSlope: 1200
+        tangentMode: 10
+      - time: .166666672
+        value: 50
+        inSlope: 1200
+        outSlope: 1200
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_AnchoredPosition.y
+    path: Panel_Background/Back Panel (Items Screen)
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -50
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .166666672
+        value: -50
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_AnchoredPosition.x
+    path: Panel_Background/Char Book
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -450
+        inSlope: 3750
+        outSlope: 3750
+        tangentMode: 10
+      - time: .166666672
+        value: 175
+        inSlope: 3750
+        outSlope: 3750
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_AnchoredPosition.y
+    path: Panel_Background/Char Book
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 1300
+        inSlope: -8400
+        outSlope: -8400
+        tangentMode: 10
+      - time: .166666672
         value: -100
-        inSlope: 840
-        outSlope: 840
+        inSlope: -8400
+        outSlope: -8400
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_AnchoredPosition.x
+    path: Panel_Background/Char Select Panel
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -150
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .166666672
+        value: -150
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_AnchoredPosition.y
+    path: Panel_Background/Char Select Panel
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 800
+        inSlope: -4560
+        outSlope: -4560
         tangentMode: 10
       - time: .166666672
         value: 40
-        inSlope: 840
-        outSlope: 840
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_AnchoredPosition.y
-    path: Panel_Background/Back Panel (Items Screen)
-    classID: 224
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 1000
-        inSlope: -6600
-        outSlope: -6600
-        tangentMode: 10
-      - time: .166666672
-        value: -100
-        inSlope: -6600
-        outSlope: -6600
+        inSlope: -4560
+        outSlope: -4560
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_AnchoredPosition.x
-    path: Panel_Background/Items Image and Description
+    path: Panel_Background/Char Image
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -1100
+        inSlope: 5460
+        outSlope: 5460
+        tangentMode: 10
+      - time: .166666672
+        value: -190
+        inSlope: 5460
+        outSlope: 5460
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_AnchoredPosition.y
+    path: Panel_Background/Char Image
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 800
+        inSlope: -4560
+        outSlope: -4560
+        tangentMode: 10
+      - time: .166666672
+        value: 40
+        inSlope: -2280
+        outSlope: -2280
+        tangentMode: 10
+      - time: .183333337
+        value: 40
+        inSlope: 362.500031
+        outSlope: 362.500031
+        tangentMode: 10
+      - time: .383333325
+        value: 185
+        inSlope: 725.000061
+        outSlope: 725.000061
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_AnchoredPosition.x
+    path: Panel_Background/Char Image Shadow
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -1100
+        inSlope: 5460
+        outSlope: 5460
+        tangentMode: 10
+      - time: .166666672
+        value: -190
+        inSlope: 2730
+        outSlope: 2730
+        tangentMode: 10
+      - time: .183333337
+        value: -190
+        inSlope: -212.500015
+        outSlope: -212.500015
+        tangentMode: 10
+      - time: .383333325
+        value: -275
+        inSlope: -425.000031
+        outSlope: -425.000031
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_AnchoredPosition.y
+    path: Panel_Background/Char Image Shadow
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .383333325
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_AnchoredPosition.x
+    path: Panel_Background/Header
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -458,7 +800,7 @@ AnimationClip:
         inSlope: 0
         outSlope: 0
         tangentMode: 10
-      - time: .166666672
+      - time: .383333325
         value: -50
         inSlope: 0
         outSlope: 0
@@ -466,7 +808,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_AnchoredPosition.y
-    path: Panel_Background/Items Image and Description
+    path: Panel_Background/Header
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -477,7 +819,7 @@ AnimationClip:
         inSlope: 0
         outSlope: 0
         tangentMode: 10
-      - time: .166666672
+      - time: .383333325
         value: 1
         inSlope: 0
         outSlope: 0
@@ -487,44 +829,6 @@ AnimationClip:
     attribute: m_Alpha
     path: 
     classID: 225
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: .166666672
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_AnchoredPosition.x
-    path: Panel_Background/Header
-    classID: 224
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: -50
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: .166666672
-        value: -50
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_AnchoredPosition.y
-    path: Panel_Background/Header
-    classID: 224
     script: {fileID: 0}
   m_EulerEditorCurves: []
   m_Events: []

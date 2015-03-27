@@ -1093,9 +1093,9 @@ MonoBehaviour:
   spCost: 25
   damage: 20
   offensive: 0
-  targetType: 0
-  statusEffect: 0
-  statusLength: 0
+  targetType: 4
+  statusEffect: 6
+  statusLength: 1
   statusAmount: 0
   animationNumber: 3
 --- !u!136 &13680392

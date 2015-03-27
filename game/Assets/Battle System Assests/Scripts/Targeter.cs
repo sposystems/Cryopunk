@@ -26,7 +26,9 @@ public class Targeter : MonoBehaviour {
 			//set each character in target group as targetable
 			foreach (GameObject targetObj in targetGroup) {
 				Character targetChar = targetObj.GetComponent<Character>();
-				targetChar.SetTargetable(true);
+				if (targetChar.IsStealth() == false) {
+					targetChar.SetTargetable(true);
+				}
 			}
 			
 			waitingForTarget = true;

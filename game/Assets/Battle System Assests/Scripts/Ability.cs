@@ -8,9 +8,9 @@ public class Ability : MonoBehaviour {
 	public int spCost;
 	public int damage;
 	public bool offensive;
-	public enum targetTypeE {single, all, singleRandom, multiRandom};
+	public enum targetTypeE {single, all, singleRandom, multiRandom, self};
 	public targetTypeE targetType;
-	public enum statusEffectE {none, stun, hpDrain, silence, buff, curse};
+	public enum statusEffectE {none, stun, hpDrain, silence, buff, curse, stealth};
 	public statusEffectE statusEffect;
 	public int statusLength = 0;
 	public int statusAmount = 0;
@@ -43,7 +43,11 @@ public class Ability : MonoBehaviour {
 				StartCoroutine(UseOnRandom(1));
 			}
 			break;
+		case targetTypeE.self:
+			StartCoroutine(UseOnOne(abilityUser));
+			break;
 		}
+		
 	}
 
 	private IEnumerator PlayAnimation() {
@@ -123,11 +127,13 @@ public class Ability : MonoBehaviour {
 				target.Silence(statusLength);
 			} else if (statusEffect == statusEffectE.curse) {
 				target.Curse(statusLength, statusAmount);
+			} else if (statusEffect == statusEffectE.stealth) {
+				target.Stealth(statusLength);
 			}
 			
 			if(offensive) {
 				target.TakeDamage(damage + abilityUser.GetBuffAmount() - abilityUser.GetCurseAmount());
-			} else {
+			} else if (statusEffect != statusEffectE.stealth){
 				target.Heal(damage);
 			}
 		} else {

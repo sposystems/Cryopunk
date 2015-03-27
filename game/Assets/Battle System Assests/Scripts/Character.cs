@@ -28,6 +28,8 @@ public class Character : MonoBehaviour {
 	private bool cursed;
 	private int curseDuration;
 	private int curseAmount;
+	private bool stealthed;
+	private int stealthDuration;
 
 	public void TakeDamage(int amount) {
 		currentHP -= amount;
@@ -144,6 +146,15 @@ public class Character : MonoBehaviour {
 	public int GetCurseAmount() {
 		return curseAmount;
 	}
+	
+	public void Stealth(int duration) {
+		stealthed = true;
+		stealthDuration = duration;
+	}
+	
+	public bool IsStealth() {
+		return stealthed;
+	}
 
 	//update all status durations and states. apply draining damage
 	public void UpdateStatusEffects() {
@@ -188,6 +199,16 @@ public class Character : MonoBehaviour {
 				curseAmount = 0;
 			} else {
 				curseDuration--;
+			}
+		}
+		
+		if (stealthed) {
+			if (stealthDuration <= 0) {
+				stealthed = false;
+				animation.PlayQueued("Unstealth", QueueMode.PlayNow);
+				animation.PlayQueued("Idle", QueueMode.CompleteOthers);
+			} else {
+				stealthDuration--;
 			}
 		}
 	}

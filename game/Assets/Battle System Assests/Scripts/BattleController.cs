@@ -179,7 +179,7 @@ public class BattleController : MonoBehaviour {
 	private void ImportEnemies(int type, int amount) {
 		//hardcoded values for testing
 		//type=1;
-		//amount=1;
+		//amount=5;
 		
 		string enemyType = "";
 		if (type == 1) {
@@ -308,7 +308,7 @@ public class BattleController : MonoBehaviour {
 			player.UpdateStatusEffects();
 
 			//check if alive again incase status effect killed player
-			if (player.Alive() && player.IsStunned() == false) {
+			if (player.Alive() && player.IsStunned() == false && player.IsStealth() == false) {
 				if (player.HasSP(player.ability1.spCost)) {
 					ability1.interactable = true;
 				}
@@ -346,7 +346,7 @@ public class BattleController : MonoBehaviour {
 				while(validTarget == false) {
 					randTarget = Random.Range(0,targets.Length);
 					
-					if (targets[randTarget].GetComponent<Character>().Alive()) {
+					if (targets[randTarget].GetComponent<Character>().Alive() && targets[randTarget].GetComponent<Character>().IsStealth() == false) {
 						target = targets[randTarget].GetComponent<Character>();
 						validTarget = true;
 					}

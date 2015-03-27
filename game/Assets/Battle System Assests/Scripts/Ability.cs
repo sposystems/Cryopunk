@@ -10,7 +10,7 @@ public class Ability : MonoBehaviour {
 	public bool offensive;
 	public enum targetTypeE {single, all, singleRandom, multiRandom};
 	public targetTypeE targetType;
-	public enum statusEffectE {none, stun, hpDrain, silence, buff};
+	public enum statusEffectE {none, stun, hpDrain, silence, buff, curse};
 	public statusEffectE statusEffect;
 	public int statusLength = 0;
 	public int statusAmount = 0;
@@ -61,7 +61,6 @@ public class Ability : MonoBehaviour {
 		abilityUser.animation.PlayQueued(animationName, QueueMode.PlayNow);
 		yield return new WaitForSeconds(abilityUser.animation[animationName].length - 0.5f);
 		abilityUser.animation.PlayQueued("Idle", QueueMode.CompleteOthers);
-		
 	}
 
 	//ability is used on 1 character
@@ -122,10 +121,12 @@ public class Ability : MonoBehaviour {
 				target.Buff(statusLength, statusAmount);
 			} else if (statusEffect == statusEffectE.silence) {
 				target.Silence(statusLength);
+			} else if (statusEffect == statusEffectE.curse) {
+				target.Curse(statusLength, statusAmount);
 			}
 			
 			if(offensive) {
-				target.TakeDamage(damage + abilityUser.GetBuffAmount());
+				target.TakeDamage(damage + abilityUser.GetBuffAmount() - abilityUser.GetCurseAmount());
 			} else {
 				target.Heal(damage);
 			}

@@ -1019,7 +1019,7 @@ MonoBehaviour:
   abilityName: Attack
   spCost: 0
   damage: 10
-  offensive: 0
+  offensive: 1
   targetType: 0
   statusEffect: 0
   statusLength: 0

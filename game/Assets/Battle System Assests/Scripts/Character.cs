@@ -25,6 +25,9 @@ public class Character : MonoBehaviour {
 	private int drainAmount;
 	private bool silenced;
 	private int silenceDuration;
+	private bool cursed;
+	private int curseDuration;
+	private int curseAmount;
 
 	public void TakeDamage(int amount) {
 		currentHP -= amount;
@@ -131,6 +134,16 @@ public class Character : MonoBehaviour {
 	public bool IsSilenced() {
 		return silenced;
 	}
+	
+	public void Curse(int duration, int amount) {
+		cursed = true;
+		curseDuration = duration;
+		curseAmount = amount;
+	}
+	
+	public int GetCurseAmount() {
+		return curseAmount;
+	}
 
 	//update all status durations and states. apply draining damage
 	public void UpdateStatusEffects() {
@@ -168,6 +181,15 @@ public class Character : MonoBehaviour {
 				TakeDamage(drainAmount);
 			}
 		}
+		
+		if (cursed) {
+			if (curseDuration <= 0) {
+				cursed = false;
+				curseAmount = 0;
+			} else {
+				curseDuration--;
+			}
+		}
 	}
 	
 	//called when character is clicked
@@ -186,5 +208,6 @@ public class Character : MonoBehaviour {
 		stunned = false;
 		buffed = false;
 		hpDraining = false;
+		cursed = false;
 	}
 }

@@ -178,27 +178,29 @@ public class BattleController : MonoBehaviour {
 	
 	private void ImportEnemies(int type, int amount) {
 		//hardcoded values for testing
-		//type=1;
-		//amount=5;
+		//type=3;
+		//amount=1;
 		
 		string enemyType = "";
 		if (type == 1) {
 			enemyType = "Zombie";
 		} else if (type == 2) {
 			enemyType = "Spider";
-		} 
+		} else if (type == 3) {
+			enemyType = "Boss";
+		}
 		else {
 			Debug.Log("ERROR: Invalid enemy type");
 		}
 		
 		enemy1 = (GameObject)Instantiate(Resources.Load(enemyType));
 		enemy1Character = enemy1.GetComponent<Character>();
-		enemy1.transform.position = new Vector3(-1,0,-8);
+		enemy1.transform.position = new Vector3(0,0,-8);
 		
 		if (amount > 1) {
 			enemy2 = (GameObject)Instantiate(Resources.Load(enemyType));
 			enemy2Character = enemy2.GetComponent<Character>();
-			enemy2.transform.position = new Vector3(-1,0,-4);
+			enemy2.transform.position = new Vector3(0,0,-4);
 		} else {
 			gui.DisableEnemyGUI(2);
 		}
@@ -206,7 +208,7 @@ public class BattleController : MonoBehaviour {
 		if (amount > 2) {
 			enemy3 = (GameObject)Instantiate(Resources.Load(enemyType));
 			enemy3Character = enemy3.GetComponent<Character>();
-			enemy3.transform.position = new Vector3(-1,0,0);
+			enemy3.transform.position = new Vector3(0,0,0);
 		} else {
 			gui.DisableEnemyGUI(3);
 		}
@@ -214,7 +216,7 @@ public class BattleController : MonoBehaviour {
 		if (amount > 3) {
 			enemy4 = (GameObject)Instantiate(Resources.Load(enemyType));
 			enemy4Character = enemy4.GetComponent<Character>();
-			enemy4.transform.position = new Vector3(-1,0,4);
+			enemy4.transform.position = new Vector3(0,0,4);
 		} else {
 			gui.DisableEnemyGUI(4);
 		}
@@ -222,7 +224,7 @@ public class BattleController : MonoBehaviour {
 		if (amount > 4) {
 			enemy5 = (GameObject)Instantiate(Resources.Load(enemyType));
 			enemy5Character = enemy5.GetComponent<Character>();
-			enemy5.transform.position = new Vector3(-1,0,8);
+			enemy5.transform.position = new Vector3(0,0,8);
 		} else {
 			gui.DisableEnemyGUI(5);
 		}

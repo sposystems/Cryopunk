@@ -149,7 +149,7 @@ public class BattleController : MonoBehaviour {
 	
 	private void ImportPlayers(bool fifthAcquired) {
 		//hardcoded for testing
-		fifthAcquired = false;
+		//fifthAcquired = false;
 		
 		player1 = (GameObject)Instantiate(Resources.Load("Warrior"));
 		player1Character = player1.GetComponent<Character>();
@@ -178,8 +178,8 @@ public class BattleController : MonoBehaviour {
 	
 	private void ImportEnemies(int type, int amount) {
 		//hardcoded values for testing
-		type=2;
-		amount=4;
+		//type=2;
+		//amount=4;
 		
 		string enemyType = "";
 		if (type == 1) {

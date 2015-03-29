@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Targeter : MonoBehaviour {
@@ -8,9 +9,13 @@ public class Targeter : MonoBehaviour {
 	private bool waitingForTarget;
 	private GameObject[] targetGroup;
 	private Ability ability;
+	private BattleController controller;
+	private Button abilityButton;
 
-	public void EnableTargets() {
-
+	public void EnableTargets(Button button) {
+	
+		abilityButton = button;
+		
 		//enable possible ability targets and wait for user to choose target
 		if (ability.targetType == Ability.targetTypeE.single) {
 			enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -31,6 +36,9 @@ public class Targeter : MonoBehaviour {
 				}
 			}
 			
+			controller.gui.DisableButtons();
+			abilityButton.image.fillCenter = false;
+			
 			waitingForTarget = true;
 		
 		//ability does not require a target
@@ -46,6 +54,7 @@ public class Targeter : MonoBehaviour {
 				Character targetChar = targetObj.GetComponent<Character>();
 				if (targetChar.IsTargeted()) {
 					waitingForTarget = false;
+					abilityButton.image.fillCenter = true;
 					ability.Use(targetChar);
 				}
 			}
@@ -54,6 +63,7 @@ public class Targeter : MonoBehaviour {
 	
 	//called on object creation, set up references
 	private void Awake() {
+		controller = GameObject.FindGameObjectWithTag("GameController").GetComponent<BattleController>();
 		ability = transform.GetComponent<Ability>();
 		waitingForTarget = false;
 	}

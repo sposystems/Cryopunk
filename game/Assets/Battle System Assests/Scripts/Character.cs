@@ -121,11 +121,18 @@ public class Character : MonoBehaviour {
 		drainDuration = duration;
 		drainAmount = amount;
 	}
+	public bool IsDraining() {
+		return hpDraining;
+	}
 
 	public void Buff(int duration, int amount) {
 		buffed = true;
 		buffDuration = duration;
 		buffAmount = amount;
+	}
+	
+	public bool IsBuffed() {
+		return buffed;
 	}
 
 	public void Silence(int duration) {
@@ -145,6 +152,10 @@ public class Character : MonoBehaviour {
 	
 	public int GetCurseAmount() {
 		return curseAmount;
+	}
+	
+	public bool IsCursed() {
+		return cursed;
 	}
 	
 	public void Stealth(int duration) {

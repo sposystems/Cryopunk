@@ -21,6 +21,8 @@ public class Ability : MonoBehaviour {
 
 	//use ability on appropriate targets
 	public void Use(Character target) {
+		Debug.Log (abilityUser.characterName + " uses " + abilityName + " on " + target.name);
+		
 		abilityUser.UseSP(spCost);
 		StartCoroutine(PlayAnimation());
 

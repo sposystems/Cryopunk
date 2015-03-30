@@ -92,7 +92,17 @@ function Apply (dummyTarget : Transform, dummyCenter : Vector3)
 
 	// Adjust real target angle when camera is locked
 	var targetAngle = originalTargetAngle; 
-	
+	if (Input.GetKeyDown("q")){
+		
+			distance++;
+				
+	}
+	if (Input.GetKeyDown("e")){
+		if(distance > 1.0){
+			distance--;
+		}
+				
+	}
 	// When pressing Fire2 (alt) the camera will snap to the target direction real quick.
 	// It will stop snapping when it reaches the target
 	if (Input.GetButton("Fire2"))

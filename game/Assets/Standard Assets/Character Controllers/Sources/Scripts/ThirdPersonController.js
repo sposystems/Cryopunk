@@ -92,6 +92,7 @@ private var isControllable = true;
 
 function Awake ()
 {
+	
 	moveDirection = transform.TransformDirection(Vector3.forward);
 	
 	_animation = GetComponent(Animation);
@@ -316,19 +317,22 @@ function Update() {
 	// Move the controller
 	var controller : CharacterController = GetComponent(CharacterController);
 	collisionFlags = controller.Move(movement);
+	if(_characterState == CharacterState.Running || _characterState == CharacterState.Trotting){
+		Debug.Log("");
+	}
 	
 	// ANIMATION sector
 	if(_animation) {
 		if(_characterState == CharacterState.Jumping) 
 		{
 			if(!jumpingReachedApex) {
-				_animation[jumpPoseAnimation.name].speed = jumpAnimationSpeed;
-				_animation[jumpPoseAnimation.name].wrapMode = WrapMode.ClampForever;
-				_animation.CrossFade(jumpPoseAnimation.name);
+				//_animation[jumpPoseAnimation.name].speed = jumpAnimationSpeed;
+				//_animation[jumpPoseAnimation.name].wrapMode = WrapMode.ClampForever;
+				//_animation.CrossFade(jumpPoseAnimation.name);
 			} else {
-				_animation[jumpPoseAnimation.name].speed = -landAnimationSpeed;
-				_animation[jumpPoseAnimation.name].wrapMode = WrapMode.ClampForever;
-				_animation.CrossFade(jumpPoseAnimation.name);				
+				//_animation[jumpPoseAnimation.name].speed = -landAnimationSpeed;
+				//_animation[jumpPoseAnimation.name].wrapMode = WrapMode.ClampForever;
+				//_animation.CrossFade(jumpPoseAnimation.name);				
 			}
 		} 
 		else 

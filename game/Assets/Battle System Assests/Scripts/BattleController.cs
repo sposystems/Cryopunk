@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class BattleController : MonoBehaviour {
@@ -137,7 +138,7 @@ public class BattleController : MonoBehaviour {
 		}
 		
 		foreach (GameObject player in players) {
-			if (player.GetComponent<Character>().GetHP() > 0) {
+			if (player.GetComponent<Character>().Alive()) {
 				loss = false;
 				break;
 			}
@@ -177,27 +178,29 @@ public class BattleController : MonoBehaviour {
 	
 	private void ImportEnemies(int type, int amount) {
 		//hardcoded values for testing
-		//type=1;
-		//amount=3;
+		//type=2;
+		//amount=4;
 		
 		string enemyType = "";
 		if (type == 1) {
 			enemyType = "Zombie";
 		} else if (type == 2) {
 			enemyType = "Spider";
-		} 
+		} else if (type == 3) {
+			enemyType = "Boss";
+		}
 		else {
 			Debug.Log("ERROR: Invalid enemy type");
 		}
 		
 		enemy1 = (GameObject)Instantiate(Resources.Load(enemyType));
 		enemy1Character = enemy1.GetComponent<Character>();
-		enemy1.transform.position = new Vector3(-1,0,-8);
+		enemy1.transform.position = new Vector3(-2,0,-8);
 		
 		if (amount > 1) {
 			enemy2 = (GameObject)Instantiate(Resources.Load(enemyType));
 			enemy2Character = enemy2.GetComponent<Character>();
-			enemy2.transform.position = new Vector3(-1,0,-4);
+			enemy2.transform.position = new Vector3(-2,0,-4);
 		} else {
 			gui.DisableEnemyGUI(2);
 		}
@@ -205,7 +208,7 @@ public class BattleController : MonoBehaviour {
 		if (amount > 2) {
 			enemy3 = (GameObject)Instantiate(Resources.Load(enemyType));
 			enemy3Character = enemy3.GetComponent<Character>();
-			enemy3.transform.position = new Vector3(-1,0,0);
+			enemy3.transform.position = new Vector3(-2,0,0);
 		} else {
 			gui.DisableEnemyGUI(3);
 		}
@@ -213,7 +216,7 @@ public class BattleController : MonoBehaviour {
 		if (amount > 3) {
 			enemy4 = (GameObject)Instantiate(Resources.Load(enemyType));
 			enemy4Character = enemy4.GetComponent<Character>();
-			enemy4.transform.position = new Vector3(-1,0,4);
+			enemy4.transform.position = new Vector3(-2,0,4);
 		} else {
 			gui.DisableEnemyGUI(4);
 		}
@@ -221,7 +224,7 @@ public class BattleController : MonoBehaviour {
 		if (amount > 4) {
 			enemy5 = (GameObject)Instantiate(Resources.Load(enemyType));
 			enemy5Character = enemy5.GetComponent<Character>();
-			enemy5.transform.position = new Vector3(-1,0,8);
+			enemy5.transform.position = new Vector3(-2,0,8);
 		} else {
 			gui.DisableEnemyGUI(5);
 		}
@@ -250,88 +253,23 @@ public class BattleController : MonoBehaviour {
 		switch(currentState) {
 
 		case(BattleStates.Player1Turn):
-			if (player1Character != null && player1Character.GetHP() > 0) {
-				if (player1Character.ability1.spCost <= player1Character.GetSP()) {
-					gui.player1Ability1.interactable = true;
-				}
-				if (player1Character.ability2.spCost <= player1Character.GetSP()) {
-					gui.player1Ability2.interactable = true;
-				}
-				if (player1Character.ability3.spCost <= player1Character.GetSP()) {
-					gui.player1Ability3.interactable = true;
-				}
-			} else {
-				currentState++;
-				ChangeState();
-			}
+			PlayerTurn(player1Character, gui.player1Ability1, gui.player1Ability2, gui.player1Ability3);
 			break;
 			
 		case(BattleStates.Player2Turn):
-			if (player2Character != null && player2Character.GetHP() > 0) {
-				if (player2Character.ability1.spCost <= player2Character.GetSP()) {
-					gui.player2Ability1.interactable = true;
-				}
-				if (player2Character.ability2.spCost <= player2Character.GetSP()) {
-					gui.player2Ability2.interactable = true;
-				}
-				if (player2Character.ability3.spCost <= player2Character.GetSP()) {
-					gui.player2Ability3.interactable = true;
-				}
-			} else {
-				currentState++;
-				ChangeState();
-			}
+			PlayerTurn(player2Character, gui.player2Ability1, gui.player2Ability2, gui.player2Ability3);
 			break;
 			
 		case(BattleStates.Player3Turn):
-			if (player3Character != null && player3Character.GetHP() > 0) {
-				if (player3Character.ability1.spCost <= player3Character.GetSP()) {
-					gui.player3Ability1.interactable = true;
-				}
-				if (player3Character.ability2.spCost <= player3Character.GetSP()) {
-					gui.player3Ability2.interactable = true;
-				}
-				if (player3Character.ability3.spCost <= player3Character.GetSP()) {
-					gui.player3Ability3.interactable = true;
-				}
-			} else {
-				currentState++;
-				ChangeState();
-			}
+			PlayerTurn(player3Character, gui.player3Ability1, gui.player3Ability2, gui.player3Ability3);
 			break;
 			
 		case(BattleStates.Player4Turn):
-			if (player4Character != null && player4Character.GetHP() > 0) {
-				if (player4Character.ability1.spCost <= player4Character.GetSP()) {
-					gui.player4Ability1.interactable = true;
-				}
-				if (player4Character.ability2.spCost <= player4Character.GetSP()) {
-					gui.player4Ability2.interactable = true;
-				}
-				if (player4Character.ability3.spCost <= player3Character.GetSP()) {
-					gui.player4Ability3.interactable = true;
-				}
-			} else {
-				currentState++;
-				ChangeState();
-			}
+			PlayerTurn(player4Character, gui.player4Ability1, gui.player4Ability2, gui.player4Ability3);
 			break;
 			
 		case(BattleStates.Player5Turn):
-			if (player5Character != null && player5Character.GetHP() > 0) {
-				if (player5Character.ability1.spCost <= player5Character.GetSP()) {
-					gui.player5Ability1.interactable = true;
-				}
-				if (player5Character.ability2.spCost <= player5Character.GetSP()) {
-					gui.player5Ability2.interactable = true;
-				}
-				if (player5Character.ability3.spCost <= player5Character.GetSP()) {
-					gui.player5Ability3.interactable = true;
-				}
-			} else {
-				currentState++;
-				ChangeState();
-			}
+			PlayerTurn(player5Character, gui.player5Ability1, gui.player5Ability2, gui.player5Ability3);
 			break;
 
 		case(BattleStates.Enemy1Turn):
@@ -365,40 +303,73 @@ public class BattleController : MonoBehaviour {
 			break;
 		}
 	}
+
+	private void PlayerTurn(Character player, Button ability1, Button ability2, Button ability3) {
+
+		if (player != null && player.Alive()) {
+			player.UpdateStatusEffects();
+
+			//check if alive again incase status effect killed player
+			if (player.Alive() && player.IsStunned() == false && player.IsStealth() == false) {
+				if (player.HasSP(player.ability1.spCost)) {
+					ability1.interactable = true;
+				}
+				if (player.HasSP(player.ability2.spCost) && player.IsSilenced() == false) {
+					ability2.interactable = true;
+				}
+				if (player.HasSP(player.ability3.spCost) && player.IsSilenced() == false) {
+					ability3.interactable = true;
+				}
+			} else {
+				currentState++;
+				ChangeState();
+			}
+		} else {
+		currentState++;
+		ChangeState();
+		}
+	}
 	
 	//enemy chooses random attack
 	private void EnemyTurn(Character enemy) {		
-		if (enemy != null && enemy.GetHP() > 0) {
-			
-			Character target = null;
-			bool validTarget = false;
-			bool validAbility = false;
-			
-			GameObject[] targets = GameObject.FindGameObjectsWithTag("Player");
-			
-			//choose target at random
-			while(validTarget == false) {
-				randTarget = Random.Range(0,targets.Length);
+		if (enemy != null && enemy.Alive()) {
+			enemy.UpdateStatusEffects();
+
+			//check if alive again incase status effect killed enemy
+			if (enemy.Alive() && enemy.IsStunned() == false) {
+
+				Character target = null;
+				bool validTarget = false;
+				bool validAbility = false;
 				
-				if (targets[randTarget].GetComponent<Character>().GetHP() > 0) {
-					target = targets[randTarget].GetComponent<Character>();
-					validTarget = true;
+				GameObject[] targets = GameObject.FindGameObjectsWithTag("Player");
+				
+				//choose target at random
+				while(validTarget == false) {
+					randTarget = Random.Range(0,targets.Length);
+					
+					if (targets[randTarget].GetComponent<Character>().Alive() && targets[randTarget].GetComponent<Character>().IsStealth() == false) {
+						target = targets[randTarget].GetComponent<Character>();
+						validTarget = true;
+					}
 				}
-			}
-			
-			//choose ability at random
-			while(validAbility == false) {
-				randAbility = Random.Range(0,3);
-				validAbility = true;
-				if (randAbility == 0 && enemy.ability1.spCost <= enemy.GetSP()) {
-					enemy.ability1.Use(target);
-				} else if (randAbility == 1 && enemy.ability2.spCost <= enemy.GetSP()) {
-					enemy.ability2.Use(target);
-				} else if (randAbility == 2 && enemy.ability3.spCost <= enemy.GetSP()) {
-					enemy.ability3.Use(target);
-				} else {
-					validAbility = false;
+				
+				//choose ability at random
+				while(validAbility == false) {
+					randAbility = Random.Range(0,3);
+					validAbility = true;
+					if (randAbility == 0 && enemy.HasSP(enemy.ability1.spCost)) {
+						enemy.ability1.Use(target);
+					} else if (randAbility == 1 && enemy.HasSP(enemy.ability2.spCost) && !enemy.IsSilenced()) {
+						enemy.ability2.Use(target);
+					} else if (randAbility == 2 && enemy.HasSP(enemy.ability3.spCost) && !enemy.IsSilenced()) {
+						enemy.ability3.Use(target);
+					} else {
+						validAbility = false;
+					}
 				}
+			} else {
+				EndTurn();
 			}
 		} else {
 			EndTurn();

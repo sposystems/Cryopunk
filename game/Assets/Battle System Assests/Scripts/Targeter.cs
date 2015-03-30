@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Targeter : MonoBehaviour {
@@ -8,26 +9,42 @@ public class Targeter : MonoBehaviour {
 	private bool waitingForTarget;
 	private GameObject[] targetGroup;
 	private Ability ability;
+	private BattleController controller;
+	private Button abilityButton;
 
-	public void EnableTargets() {
+	public void EnableTargets(Button button) {
+	
+		abilityButton = button;
 		
-		enemies = GameObject.FindGameObjectsWithTag("Enemy");
-		players = GameObject.FindGameObjectsWithTag("Player");
+		//enable possible ability targets and wait for user to choose target
+		if (ability.targetType == Ability.targetTypeE.single) {
+			enemies = GameObject.FindGameObjectsWithTag("Enemy");
+			players = GameObject.FindGameObjectsWithTag("Player");
+
+			//set target group
+			if (ability.offensive) {
+				targetGroup = enemies;
+			} else {
+				targetGroup = players;
+			}
+			
+			//set each character in target group as targetable
+			foreach (GameObject targetObj in targetGroup) {
+				Character targetChar = targetObj.GetComponent<Character>();
+				if (targetChar.IsStealth() == false) {
+					targetChar.SetTargetable(true);
+				}
+			}
+			
+			controller.gui.DisableButtons();
+			abilityButton.image.fillCenter = false;
+			
+			waitingForTarget = true;
 		
-		//set target group
-		if (ability.isOffensive) {
-			targetGroup = enemies;
+		//ability does not require a target
 		} else {
-			targetGroup = players;
+			ability.Use(null);
 		}
-
-		//set each character in target group as targetable
-		foreach (GameObject targetObj in targetGroup) {
-			Character targetChar = targetObj.GetComponent<Character>();
-			targetChar.SetTargetable(true);
-		}
-
-		waitingForTarget = true;
 	}
 	
 	//called on every frame
@@ -37,6 +54,7 @@ public class Targeter : MonoBehaviour {
 				Character targetChar = targetObj.GetComponent<Character>();
 				if (targetChar.IsTargeted()) {
 					waitingForTarget = false;
+					abilityButton.image.fillCenter = true;
 					ability.Use(targetChar);
 				}
 			}
@@ -45,6 +63,7 @@ public class Targeter : MonoBehaviour {
 	
 	//called on object creation, set up references
 	private void Awake() {
+		controller = GameObject.FindGameObjectWithTag("GameController").GetComponent<BattleController>();
 		ability = transform.GetComponent<Ability>();
 		waitingForTarget = false;
 	}

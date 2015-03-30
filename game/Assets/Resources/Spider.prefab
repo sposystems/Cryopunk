@@ -2123,10 +2123,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5568a990c883f5a4fb05d9eee2261e41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityName: Spit
+  abilityName: Poison Spit
   spCost: 30
   damage: 20
-  isOffensive: 1
+  offensive: 1
+  targetType: 0
+  statusEffect: 2
+  statusLength: 3
+  statusAmount: 5
   animationNumber: 3
 --- !u!114 &11469462
 MonoBehaviour:
@@ -2142,7 +2146,11 @@ MonoBehaviour:
   abilityName: Bite
   spCost: 20
   damage: 20
-  isOffensive: 1
+  offensive: 1
+  targetType: 0
+  statusEffect: 0
+  statusLength: 0
+  statusAmount: 0
   animationNumber: 2
 --- !u!114 &11469464
 MonoBehaviour:
@@ -2158,7 +2166,11 @@ MonoBehaviour:
   abilityName: Attack
   spCost: 0
   damage: 10
-  isOffensive: 1
+  offensive: 0
+  targetType: 0
+  statusEffect: 0
+  statusLength: 0
+  statusAmount: 0
   animationNumber: 1
 --- !u!114 &11469466
 MonoBehaviour:
@@ -2172,8 +2184,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Spider
-  hp: 100
-  sp: 100
+  maxHp: 100
+  maxSp: 100
   ability1: {fileID: 11469464}
   ability2: {fileID: 11469462}
   ability3: {fileID: 11469460}

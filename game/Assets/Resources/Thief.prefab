@@ -999,8 +999,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Rogue
-  hp: 100
-  sp: 100
+  maxHp: 100
+  maxSp: 100
   ability1: {fileID: 11480382}
   ability2: {fileID: 11480386}
   ability3: {fileID: 11480392}
@@ -1019,7 +1019,11 @@ MonoBehaviour:
   abilityName: Attack
   spCost: 0
   damage: 10
-  isOffensive: 1
+  offensive: 1
+  targetType: 0
+  statusEffect: 0
+  statusLength: 0
+  statusAmount: 0
   animationNumber: 1
 --- !u!114 &11480384
 MonoBehaviour:
@@ -1046,7 +1050,11 @@ MonoBehaviour:
   abilityName: Poison Dart
   spCost: 25
   damage: 20
-  isOffensive: 1
+  offensive: 1
+  targetType: 0
+  statusEffect: 2
+  statusLength: 3
+  statusAmount: 5
   animationNumber: 2
 --- !u!114 &11480388
 MonoBehaviour:
@@ -1084,7 +1092,11 @@ MonoBehaviour:
   abilityName: Stealth
   spCost: 25
   damage: 20
-  isOffensive: 1
+  offensive: 0
+  targetType: 4
+  statusEffect: 6
+  statusLength: 1
+  statusAmount: 0
   animationNumber: 3
 --- !u!136 &13680392
 CapsuleCollider:

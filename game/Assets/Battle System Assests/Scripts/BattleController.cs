@@ -80,11 +80,9 @@ public class BattleController : MonoBehaviour {
 		}
 	}
 	
-
-
 	//complete the turn and set up for next turn
 	public void EndTurn() {
-		gui.UpdateGui();
+		gui.SetEnemyTurnText("");
 		gui.DisableButtons();
 
 		//clear all targets
@@ -149,7 +147,7 @@ public class BattleController : MonoBehaviour {
 	
 	private void ImportPlayers(bool fifthAcquired) {
 		//hardcoded for testing
-		//fifthAcquired = false;
+		fifthAcquired = false;
 		
 		player1 = (GameObject)Instantiate(Resources.Load("Warrior"));
 		player1Character = player1.GetComponent<Character>();
@@ -178,8 +176,8 @@ public class BattleController : MonoBehaviour {
 	
 	private void ImportEnemies(int type, int amount) {
 		//hardcoded values for testing
-		//type=2;
-		//amount=4;
+		type=2;
+		amount=4;
 		
 		string enemyType = "";
 		if (type == 1) {
@@ -354,20 +352,31 @@ public class BattleController : MonoBehaviour {
 					}
 				}
 				
+				Ability enemyAbility = null;
+				
 				//choose ability at random
 				while(validAbility == false) {
 					randAbility = Random.Range(0,3);
 					validAbility = true;
 					if (randAbility == 0 && enemy.HasSP(enemy.ability1.spCost)) {
-						enemy.ability1.Use(target);
+						enemyAbility = enemy.ability1;
 					} else if (randAbility == 1 && enemy.HasSP(enemy.ability2.spCost) && !enemy.IsSilenced()) {
-						enemy.ability2.Use(target);
+						enemyAbility = enemy.ability2;
 					} else if (randAbility == 2 && enemy.HasSP(enemy.ability3.spCost) && !enemy.IsSilenced()) {
-						enemy.ability3.Use(target);
+						enemyAbility = enemy.ability3;
 					} else {
 						validAbility = false;
 					}
 				}
+				
+				string turnText = enemy.characterName + " uses " + enemyAbility.name;
+				if (enemyAbility.targetType == Ability.targetTypeE.single) {
+					turnText += " on " + target.characterName;
+				}
+				gui.SetEnemyTurnText(turnText);
+				
+				enemyAbility.Use(target);
+				
 			} else {
 				EndTurn();
 			}

@@ -54,6 +54,7 @@ public class BattleGUI : MonoBehaviour {
 	public Text enemy5Name;
 	public Text enemy5HP;
 	public Text enemy5Status;
+	public Text enemyTurnText;
 
 	private BattleController controller;
 	private Character player1Character;
@@ -124,6 +125,11 @@ public class BattleGUI : MonoBehaviour {
 			enemy5HP.text = "HP: " + enemy5Character.GetHP() + "/" + enemy5Character.maxHp;
 			enemy5Status.text = GetStatus(enemy5Character);
 		}
+	}
+	
+	public void SetEnemyTurnText(string text) {
+		enemyTurnText.text = text;
+		UpdateGui();
 	}
 
 	public void DisableButtons() {
@@ -306,6 +312,8 @@ public class BattleGUI : MonoBehaviour {
 		enemy3Character = controller.GetEnemy(3);
 		enemy4Character = controller.GetEnemy(4);
 		enemy5Character = controller.GetEnemy(5);
+		
+		enemyTurnText.text = "";
 	}
 	
 	private string GetStatus(Character character) {

@@ -1092,7 +1092,7 @@ MonoBehaviour:
   spCost: 25
   damage: 20
   offensive: 0
-  targetType: 0
+  targetType: 1
   statusEffect: 4
   statusLength: 3
   statusAmount: 5

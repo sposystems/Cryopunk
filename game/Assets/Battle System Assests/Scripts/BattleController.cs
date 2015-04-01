@@ -238,6 +238,11 @@ public class BattleController : MonoBehaviour {
 
 	//setup battle
 	private void Start() {
+		GameObject camera = GameObject.Find("Main Camera");
+		GameObject playerContainer = GameObject.Find("PlayerContainer");
+		camera.SetActive(false);
+		playerContainer.SetActive(false);
+		
 		ApplyLocation(BattleLauncher.location);
 		ImportPlayers(BattleLauncher.fifthMember);
 		ImportEnemies(BattleLauncher.enemyType, BattleLauncher.enemyQuantity);	

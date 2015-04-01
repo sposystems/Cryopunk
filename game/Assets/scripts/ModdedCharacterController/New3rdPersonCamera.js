@@ -94,12 +94,12 @@ function Apply (dummyTarget : Transform, dummyCenter : Vector3)
 	var targetAngle = originalTargetAngle; 
 	if (Input.GetKeyDown("q")){
 		
-			distance++;
+			distance += 3;
 				
 	}
 	if (Input.GetKeyDown("e")){
-		if(distance > 1.0){
-			distance--;
+		if(distance > 3.0){
+			distance -= 3;
 		}
 				
 	}

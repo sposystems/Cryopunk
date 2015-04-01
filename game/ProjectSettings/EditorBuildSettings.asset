@@ -16,8 +16,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Battle System Assests/_Scenes/Battle.unity
   - enabled: 1
-    path: Assets/worldv2.unity
+    path: Assets/Scenes/worldv2.unity
   - enabled: 1
-    path: Assets/TheMatrix.unity
+    path: Assets/Scenes/TheMatrix.unity
   - enabled: 1
-    path: Assets/City.unity
+    path: Assets/Scenes/City.unity

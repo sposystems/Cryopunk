@@ -317,9 +317,7 @@ function Update() {
 	// Move the controller
 	var controller : CharacterController = GetComponent(CharacterController);
 	collisionFlags = controller.Move(movement);
-	if(_characterState == CharacterState.Running || _characterState == CharacterState.Trotting){
-		Debug.Log("");
-	}
+	
 	
 	// ANIMATION sector
 	if(_animation) {

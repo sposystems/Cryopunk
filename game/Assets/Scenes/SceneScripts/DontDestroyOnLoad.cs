@@ -3,6 +3,6 @@ using System.Collections;
 
 public class DontDestroyOnLoad : MonoBehaviour {
 	void Awake() {
-		DontDestroyOnLoad(this.gameObject);
+		DontDestroyOnLoad(transform.gameObject);
 	}
 }

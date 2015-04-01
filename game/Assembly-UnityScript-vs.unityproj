@@ -50,6 +50,8 @@
      <Compile Include="Assets\InteractiveDemo\Scripts\MPSceneSelect.js" />
      <Compile Include="Assets\InteractiveDemo\Scripts\RotateParticles.js" />
      <Compile Include="Assets\InteractiveDemo\Scripts\sceneController.js" />
+     <Compile Include="Assets\Scenes\SceneScripts\chooseDialog.js" />
+     <Compile Include="Assets\Scenes\SceneScripts\playDialog.js" />
      <Compile Include="Assets\Scenes\SceneScripts\worldToTownTest1.js" />
      <Compile Include="Assets\scripts\CameraControl\MouseLookPlus.js" />
      <Compile Include="Assets\scripts\ModdedCharacterController\New3rdPersonCamera.js" />

@@ -1472,6 +1472,7 @@ MonoBehaviour:
   statusLength: 0
   statusAmount: 0
   animationNumber: 1
+  description: Does a small amount of damage
 --- !u!114 &11498628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1503,6 +1504,7 @@ MonoBehaviour:
   statusLength: 3
   statusAmount: 0
   animationNumber: 2
+  description: Enemy cannot use an ability next turn
 --- !u!114 &11498632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1545,6 +1547,7 @@ MonoBehaviour:
   statusLength: 3
   statusAmount: 0
   animationNumber: 3
+  description: Enemy cannot use SP abilities
 --- !u!136 &13698636
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -1025,6 +1025,7 @@ MonoBehaviour:
   statusLength: 0
   statusAmount: 0
   animationNumber: 1
+  description: Does a small amount of damage
 --- !u!114 &11480384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1056,6 +1057,7 @@ MonoBehaviour:
   statusLength: 3
   statusAmount: 5
   animationNumber: 2
+  description: Enemy takes poison damage at the start of each turn
 --- !u!114 &11480388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1098,6 +1100,7 @@ MonoBehaviour:
   statusLength: 1
   statusAmount: 0
   animationNumber: 3
+  description: Cannot be hit next turn
 --- !u!136 &13680392
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -316,7 +316,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Special Attack
+  m_Text: Battlecry
 --- !u!222 &26885952
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1145,7 +1145,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Special Attack
+  m_Text: Curse
 --- !u!222 &386156270
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1575,7 +1575,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Special Attack
+  m_Text: Freeze
 --- !u!222 &498513445
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1850,7 +1850,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Special Attack
+  m_Text: Double Shot
 --- !u!222 &545029303
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3134,7 +3134,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Special Attack
+  m_Text: Stealth
 --- !u!222 &989753069
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3683,7 +3683,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Special Attack
+  m_Text: Silence
 --- !u!222 &1192146836
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3931,7 +3931,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Special Attack
+  m_Text: Heal
 --- !u!222 &1381746878
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4886,7 +4886,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Special Attack
+  m_Text: Raining Arrows
 --- !u!222 &1825969574
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5018,7 +5018,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Special Attack
+  m_Text: Poison Dart
 --- !u!222 &1844733064
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5453,7 +5453,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Special Attack
+  m_Text: Whirlwind
 --- !u!222 &1984987669
 CanvasRenderer:
   m_ObjectHideFlags: 0

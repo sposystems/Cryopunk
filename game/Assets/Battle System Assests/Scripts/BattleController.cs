@@ -146,8 +146,7 @@ public class BattleController : MonoBehaviour {
 	}
 	
 	private void ImportPlayers(bool fifthAcquired) {
-		//hardcoded for testing
-		fifthAcquired = false;
+		fifthAcquired = true;
 		
 		player1 = (GameObject)Instantiate(Resources.Load("Warrior"));
 		player1Character = player1.GetComponent<Character>();
@@ -175,9 +174,14 @@ public class BattleController : MonoBehaviour {
 	}
 	
 	private void ImportEnemies(int type, int amount) {
-		//hardcoded values for testing
-		type=2;
-		amount=4;
+		if (type == 0) {
+			Debug.Log("HARDCODED ENEMY TYPE");
+			type=2;
+		}
+		if (amount == 0) {
+			Debug.Log("HARDCODED ENEMY AMOUNT");
+			amount=5;
+		}
 		
 		string enemyType = "";
 		if (type == 1) {
@@ -233,19 +237,40 @@ public class BattleController : MonoBehaviour {
 	}
 	
 	private void ApplyLocation(int location){
-	
+		if (location == 0) {
+			Debug.Log("HARDCODED LOCATION");
+			location = 2;
+		}
+		
+		if (location == 1) {
+			//load field textures
+		} else if (location == 2) {
+			//load cave textures
+		} else {
+			Debug.Log ("invalid location");
+		}
 	}
 
 	//setup battle
 	private void Start() {
-		GameObject camera = GameObject.Find("Main Camera");
-		GameObject playerContainer = GameObject.Find("PlayerContainer");
-		camera.SetActive(false);
-		playerContainer.SetActive(false);
+		//disable persisting game objects from previous scenes
+		GameObject camera;
+		if (GameObject.Find("Main Camera") != null) {
+			camera = GameObject.Find("Main Camera");
+			camera.SetActive(false);
+		}
 		
+		GameObject playerContainer;
+		if (GameObject.Find("PlayerContainer")) {
+			playerContainer = GameObject.Find("PlayerContainer");
+			playerContainer.SetActive(false);
+		}
+		
+		//apply battle variables
 		ApplyLocation(BattleLauncher.location);
 		ImportPlayers(BattleLauncher.fifthMember);
 		ImportEnemies(BattleLauncher.enemyType, BattleLauncher.enemyQuantity);	
+		
 		gui.InitializeGUI();
 		gui.UpdateGui();
 		currentState = BattleStates.Player1Turn;

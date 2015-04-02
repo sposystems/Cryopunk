@@ -15,6 +15,7 @@ public class Ability : MonoBehaviour {
 	public int statusLength = 0;
 	public int statusAmount = 0;
 	public int animationNumber;
+	public string description;
 
 	private Character abilityUser;
 	private BattleController controller;

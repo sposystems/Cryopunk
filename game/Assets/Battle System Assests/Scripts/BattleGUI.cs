@@ -272,40 +272,40 @@ public class BattleGUI : MonoBehaviour {
 	public void InitializeGUI() {
 		controller = gameObject.GetComponent<BattleController>();
 		
-		player1Character = controller.GetPlayer(1);
-		if(player1Character != null) {
-			player1Ability1.GetComponentInChildren<Text>().text = player1Character.ability1.abilityName;
-			player1Ability2.GetComponentInChildren<Text>().text = player1Character.ability2.abilityName;
-			player1Ability3.GetComponentInChildren<Text>().text = player1Character.ability3.abilityName;
-		}
-		
-		player2Character = controller.GetPlayer(2);
-		if(player2Character != null) {
-			player2Ability1.GetComponentInChildren<Text>().text = player2Character.ability1.abilityName;
-			player2Ability2.GetComponentInChildren<Text>().text = player2Character.ability2.abilityName;
-			player2Ability3.GetComponentInChildren<Text>().text = player2Character.ability3.abilityName;
-		}
-		
-		player3Character = controller.GetPlayer(3);
-		if(player3Character != null) {
-			player3Ability1.GetComponentInChildren<Text>().text = player3Character.ability1.abilityName;
-			player3Ability2.GetComponentInChildren<Text>().text = player3Character.ability2.abilityName;
-			player3Ability3.GetComponentInChildren<Text>().text = player3Character.ability3.abilityName;
-		}
-		
-		player4Character = controller.GetPlayer(4);
-		if(player4Character != null) {
-			player4Ability1.GetComponentInChildren<Text>().text = player4Character.ability1.abilityName;
-			player4Ability2.GetComponentInChildren<Text>().text = player4Character.ability2.abilityName;
-			player4Ability3.GetComponentInChildren<Text>().text = player4Character.ability3.abilityName;
-		}
-		
-		player5Character = controller.GetPlayer(5);
-		if(player5Character != null) {
-			player5Ability1.GetComponentInChildren<Text>().text = player5Character.ability1.abilityName;
-			player5Ability2.GetComponentInChildren<Text>().text = player5Character.ability2.abilityName;
-			player5Ability3.GetComponentInChildren<Text>().text = player5Character.ability3.abilityName;
-		}
+ 		player1Character = controller.GetPlayer(1);
+//		if(player1Character != null) {
+//			player1Ability1.GetComponentInChildren<Text>().text = player1Character.ability1.abilityName;
+//			player1Ability2.GetComponentInChildren<Text>().text = player1Character.ability2.abilityName;
+//			player1Ability3.GetComponentInChildren<Text>().text = player1Character.ability3.abilityName;
+//		}
+//		
+ 		player2Character = controller.GetPlayer(2);
+//		if(player2Character != null) {
+//			player2Ability1.GetComponentInChildren<Text>().text = player2Character.ability1.abilityName;
+//			player2Ability2.GetComponentInChildren<Text>().text = player2Character.ability2.abilityName;
+//			player2Ability3.GetComponentInChildren<Text>().text = player2Character.ability3.abilityName;
+//		}
+//		
+ 		player3Character = controller.GetPlayer(3);
+//		if(player3Character != null) {
+//			player3Ability1.GetComponentInChildren<Text>().text = player3Character.ability1.abilityName;
+//			player3Ability2.GetComponentInChildren<Text>().text = player3Character.ability2.abilityName;
+//			player3Ability3.GetComponentInChildren<Text>().text = player3Character.ability3.abilityName;
+//		}
+//		
+ 		player4Character = controller.GetPlayer(4);
+//		if(player4Character != null) {
+//			player4Ability1.GetComponentInChildren<Text>().text = player4Character.ability1.abilityName;
+//			player4Ability2.GetComponentInChildren<Text>().text = player4Character.ability2.abilityName;
+//			player4Ability3.GetComponentInChildren<Text>().text = player4Character.ability3.abilityName;
+//		}
+//		
+ 		player5Character = controller.GetPlayer(5);
+//		if(player5Character != null) {
+//			player5Ability1.GetComponentInChildren<Text>().text = player5Character.ability1.abilityName;
+//			player5Ability2.GetComponentInChildren<Text>().text = player5Character.ability2.abilityName;
+//			player5Ability3.GetComponentInChildren<Text>().text = player5Character.ability3.abilityName;
+//		}
 		
 		enemy1Character = controller.GetEnemy(1);
 		enemy2Character = controller.GetEnemy(2);

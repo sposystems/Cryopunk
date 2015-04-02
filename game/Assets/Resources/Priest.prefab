@@ -1024,6 +1024,7 @@ MonoBehaviour:
   statusLength: 0
   statusAmount: 0
   animationNumber: 1
+  description: Does a small amount of damage
 --- !u!114 &11407830
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1055,6 +1056,7 @@ MonoBehaviour:
   statusLength: 0
   statusAmount: 0
   animationNumber: 2
+  description: Restores an ally's HP
 --- !u!114 &11407834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1097,6 +1099,7 @@ MonoBehaviour:
   statusLength: 3
   statusAmount: 5
   animationNumber: 3
+  description: Enemys' attacks do less damage
 --- !u!136 &13607838
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -41,9 +41,15 @@ public class PauseMenuAnim : MonoBehaviour {
 	//Items Screen Variables
 	private Text hpPotions;
 	private Text spPotions;
+	private Text lifePotions;
+	private Text molotovCocktails;
+	private Text mrFuns;
 
 	private Sprite hpPotionArt;
 	private Sprite spPotionArt;
+	private Sprite lifePotionArt;
+	private Sprite molotovCocktailArt;
+	private Sprite mrFunArt;
 
 	private Image itemImage;
 	private Text itemDesc;
@@ -79,11 +85,24 @@ public class PauseMenuAnim : MonoBehaviour {
 
 		hpPotions = GameObject.Find ("Health Potion Quantity").GetComponent<Text>();
 		spPotions = GameObject.Find ("Special Potion Quantity").GetComponent<Text>();
+		lifePotions = GameObject.Find ("Life Potion Quantity").GetComponent<Text>();
+		molotovCocktails = GameObject.Find ("Molotov Cocktail Quantity").GetComponent<Text>();
+		mrFuns = GameObject.Find ("Mr Fun Quantity").GetComponent<Text>();
+
+		hpPotions.text = "x" + "12"; //CHANGE TO ACTUAL NUMBER FROM DB
+		spPotions.text = "x" + "4";
+		lifePotions.text = "x" + "0";
+		molotovCocktails.text = "x" + "0";
+		mrFuns.text = "x" + "0";
+
 		itemDesc = GameObject.Find ("Item Description").GetComponent<Text>();
 		itemImage = GameObject.Find ("Item Image Big").GetComponent<Image>();
 
 		hpPotionArt = Resources.Load<Sprite> ("hp_potion");
 		spPotionArt = Resources.Load<Sprite> ("sp_potion");
+		lifePotionArt = Resources.Load<Sprite> ("life_potion");
+		molotovCocktailArt = Resources.Load<Sprite> ("molotov_cocktail");
+		mrFunArt = Resources.Load<Sprite> ("mr_fun_item");
 
 		strStat = GameObject.Find ("STR Stat").GetComponent<Text>();
 		defStat = GameObject.Find ("DEF Stat").GetComponent<Text>();
@@ -123,15 +142,34 @@ public class PauseMenuAnim : MonoBehaviour {
 		changeItemInfo ("spPotion");
 	}
 
+	public void lifePotionPress(){
+		changeItemInfo ("lifePotion");
+	}
+
+	public void molotovCocktailPress(){
+		changeItemInfo ("molotovCocktail");
+	}
+
+	public void mrFunPress(){
+		changeItemInfo ("mrFun");
+	}
+
 	private void changeItemInfo(string itemName){
 		if(itemName == "hpPotion"){
-			hpPotions.text = "x" + "12"; //CHANGE TO ACTUAL NUMBER FROM DB
 			itemDesc.text = "A restorative potion used for restoring a small amount of HP.";
 			itemImage.GetComponent<Image>().sprite = hpPotionArt;
 		}else if(itemName == "spPotion"){
-			spPotions.text = "x" + "4";
 			itemDesc.text = "A special potion used for restoring a small amount of SP.";
 			itemImage.GetComponent<Image>().sprite = spPotionArt;
+		}else if(itemName == "lifePotion"){
+			itemDesc.text = "A holy potion used for resurrecting people from death.";
+			itemImage.GetComponent<Image>().sprite = lifePotionArt;
+		}else if(itemName == "molotovCocktail"){
+			itemDesc.text = "An otherworldly weapon used for intense combat situations.";
+			itemImage.GetComponent<Image>().sprite = molotovCocktailArt;
+		}else if(itemName == "mrFun"){
+			itemDesc.text = "A remnant of fun found by an ancient locator service entitled Fun Finder™.";
+			itemImage.GetComponent<Image>().sprite = mrFunArt;
 		}
 	}
 

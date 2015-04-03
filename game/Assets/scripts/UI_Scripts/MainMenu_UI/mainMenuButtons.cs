@@ -3,8 +3,10 @@ using System.Collections;
 
 public class mainMenuButtons : MonoBehaviour {
 
+	public string startingScene;
+
 	public void LoadScene(){
-		Application.LoadLevel ("townTest1");
+		Application.LoadLevel (startingScene);
 	}
 
 	public void QuitGame(){

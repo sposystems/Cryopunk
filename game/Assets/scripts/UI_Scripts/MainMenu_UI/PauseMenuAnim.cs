@@ -79,6 +79,9 @@ public class PauseMenuAnim : MonoBehaviour {
 	private Sprite constance_art;
 	private Sprite solan_art;
 
+	//Exit Game Variables
+	//private Image overlappingBackPanel;
+
 	//Assign all variables to their respective components
 	public void Start(){
 		anim = startMenuCanvas.GetComponent<Animator> ();
@@ -302,6 +305,10 @@ public class PauseMenuAnim : MonoBehaviour {
 		anim.SetBool ("Characters Screen", false);
 		anim.SetBool ("Options Screen", false);
 		anim.SetBool ("Exit Screen", false);
+	}
+
+	public void QuitGame(){
+		Application.Quit();
 	}
 
 

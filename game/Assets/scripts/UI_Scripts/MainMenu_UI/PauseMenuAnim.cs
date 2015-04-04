@@ -6,12 +6,26 @@ public class PauseMenuAnim : MonoBehaviour {
 
 	//startMenuCanvas is in charge of all main commands in this script
 	public CanvasGroup startMenuCanvas;
+	public CanvasGroup fifthCanvas; //Solan's Canvas Group for visibility
 	//pauseGame keeps track of pause state for pausing/unpausing
 	private bool pauseGame = false;
 	//inCharScreen used for Character Screen loops
 	private bool inCharScreen = false;
 	//anim allows us to animate without needing to use the Animator for initial pausing
 	private Animator anim;
+
+	private GameObject player1;
+	private GameObject player2;
+	private GameObject player3;
+	private GameObject player4;
+	private GameObject player5;
+	private Character player1Character;
+	private Character player2Character;
+	private Character player3Character;
+	private Character player4Character;
+	private Character player5Character;
+
+	private bool fifthAcquired = false;
 
 	//HP Text, SP, LV, etc. for all 5 characters' boxes
 	private Text hpTextK;
@@ -37,6 +51,17 @@ public class PauseMenuAnim : MonoBehaviour {
 	private Text expTextR;
 	private Text expTextC;
 	private Text expTextS;
+
+	private Image scrollbarHPK;
+	private Image scrollbarSPK;
+	private Image scrollbarHPL;
+	private Image scrollbarSPL;
+	private Image scrollbarHPR;
+	private Image scrollbarSPR;
+	private Image scrollbarHPC;
+	private Image scrollbarSPC;
+	private Image scrollbarHPS;
+	private Image scrollbarSPS;
 
 	//Items Screen Variables
 	private Text hpPotions;
@@ -78,6 +103,8 @@ public class PauseMenuAnim : MonoBehaviour {
 	private Sprite robo_art;
 	private Sprite constance_art;
 	private Sprite solan_art;
+	private Image solan_menu_image;
+	private Image solan_select_image;
 
 	//Exit Game Variables
 	//private Image overlappingBackPanel;
@@ -121,12 +148,86 @@ public class PauseMenuAnim : MonoBehaviour {
 		characterImageShadow = GameObject.Find ("Char Image Shadow").GetComponent<Image>();
 		charBookDialog = GameObject.Find ("Char Book Dialog").GetComponent<Text> ();
 
+		//Solan specific parameters for acquirement
+		solan_menu_image = GameObject.Find ("CharDetails (Solan)").GetComponent<Image>();
+		solan_select_image = GameObject.Find ("Solan Select").GetComponent<Image>();
+
 		kira_art = Resources.Load<Sprite> ("kira_tp");
 		law_art = Resources.Load<Sprite> ("law_tp");
 		robo_art = Resources.Load<Sprite> ("robo_tp");
 		constance_art = Resources.Load<Sprite> ("constance_tp");
 		solan_art = Resources.Load<Sprite> ("solan_tp");
 
+		player1 = (GameObject)Instantiate(Resources.Load("Warrior"));
+		player1Character = player1.GetComponent<Character>();
+		//player1Character.currentHP = player1Character.maxHp;
+		player1Character.currentHP = 50;
+		player1Character.currentSP = player1Character.maxSp;
+		
+		player2 = (GameObject)Instantiate(Resources.Load("Wizard"));
+		player2Character = player2.GetComponent<Character>();
+		player2Character.currentHP = player2Character.maxHp;
+		player2Character.currentSP = player2Character.maxSp;
+		
+		player3 = (GameObject)Instantiate(Resources.Load("Thief"));
+		player3Character = player3.GetComponent<Character>();
+		player3Character.currentHP = player3Character.maxHp;
+		player3Character.currentSP = player3Character.maxSp;
+		
+		player4 = (GameObject)Instantiate(Resources.Load("Priest"));
+		player4Character = player4.GetComponent<Character>();
+		player4Character.currentHP = player4Character.maxHp;
+		player4Character.currentSP = player4Character.maxSp;
+		
+		if (fifthAcquired) {
+			player5 = (GameObject)Instantiate (Resources.Load ("Archer"));
+			player5Character = player5.GetComponent<Character> ();
+			player5Character.currentHP = player5Character.maxHp;
+			player5Character.currentSP = player5Character.maxSp;
+			fifthCanvas.alpha = 1; //Active Solan Canvas
+		} else {
+			solan_menu_image.enabled = false;
+			solan_select_image.enabled = false;
+			fifthCanvas.alpha = 0; //Inactive Solan Canvas
+		}
+
+		//All main menu box details below
+		hpTextK = GameObject.Find ("CharDetails (Kira)/hp_bar_outline/HP_Num").GetComponent<Text>();
+		scrollbarHPK = GameObject.Find ("CharDetails (Kira)/hp_bar_outline/hp_bar_percent").GetComponent<Image>();
+		spTextK = GameObject.Find ("CharDetails (Kira)/sp_bar_outline/SP_Num").GetComponent<Text>();
+		scrollbarSPK = GameObject.Find ("CharDetails (Kira)/sp_bar_outline/sp_bar_percent").GetComponent<Image>();
+		lvTextK = GameObject.Find ("CharDetails (Kira)/Level").GetComponent<Text>();
+		expTextK = GameObject.Find ("CharDetails (Kira)/ToNext").GetComponent<Text>();
+
+		hpTextL = GameObject.Find ("CharDetails (Law)/hp_bar_outline/HP_Num").GetComponent<Text>();
+		scrollbarHPL = GameObject.Find ("CharDetails (Law)/hp_bar_outline/hp_bar_percent").GetComponent<Image>();
+		spTextL = GameObject.Find ("CharDetails (Law)/sp_bar_outline/SP_Num").GetComponent<Text>();
+		scrollbarSPL = GameObject.Find ("CharDetails (Law)/sp_bar_outline/sp_bar_percent").GetComponent<Image>();
+		lvTextL = GameObject.Find ("CharDetails (Law)/Level").GetComponent<Text>();
+		expTextL = GameObject.Find ("CharDetails (Law)/ToNext").GetComponent<Text>();
+
+		hpTextR = GameObject.Find ("CharDetails (Robo)/hp_bar_outline/HP_Num").GetComponent<Text>();
+		scrollbarHPR = GameObject.Find ("CharDetails (Robo)/hp_bar_outline/hp_bar_percent").GetComponent<Image>();
+		spTextR = GameObject.Find ("CharDetails (Robo)/sp_bar_outline/SP_Num").GetComponent<Text>();
+		scrollbarSPR = GameObject.Find ("CharDetails (Robo)/sp_bar_outline/sp_bar_percent").GetComponent<Image>();
+		lvTextR = GameObject.Find ("CharDetails (Robo)/Level").GetComponent<Text>();
+		expTextR = GameObject.Find ("CharDetails (Robo)/ToNext").GetComponent<Text>();
+
+		hpTextC = GameObject.Find ("CharDetails (Constance)/hp_bar_outline/HP_Num").GetComponent<Text>();
+		scrollbarHPC = GameObject.Find ("CharDetails (Constance)/hp_bar_outline/hp_bar_percent").GetComponent<Image>();
+		spTextC = GameObject.Find ("CharDetails (Constance)/sp_bar_outline/SP_Num").GetComponent<Text>();
+		scrollbarSPC = GameObject.Find ("CharDetails (Constance)/sp_bar_outline/sp_bar_percent").GetComponent<Image>();
+		lvTextC = GameObject.Find ("CharDetails (Constance)/Level").GetComponent<Text>();
+		expTextC = GameObject.Find ("CharDetails (Constance)/ToNext").GetComponent<Text>();
+
+		if (fifthAcquired) {
+			hpTextS = GameObject.Find ("CharDetails (Solan)/hp_bar_outline/HP_Num").GetComponent<Text>();
+			scrollbarHPS = GameObject.Find ("CharDetails (Solan)/hp_bar_outline/hp_bar_percent").GetComponent<Image>();
+			spTextS = GameObject.Find ("CharDetails (Solan)/sp_bar_outline/SP_Num").GetComponent<Text>();
+			scrollbarSPS = GameObject.Find ("CharDetails (Solan)/sp_bar_outline/sp_bar_percent").GetComponent<Image>();
+			lvTextS = GameObject.Find ("CharDetails (Solan)/Level").GetComponent<Text>();
+			expTextS = GameObject.Find ("CharDetails (Solan)/ToNext").GetComponent<Text>();
+		}
 
 	}
 
@@ -136,6 +237,17 @@ public class PauseMenuAnim : MonoBehaviour {
 		yield return new WaitForSeconds(seconds);
 	}
 	*/
+
+	public void getSolan(){
+		player5 = (GameObject)Instantiate (Resources.Load ("Archer"));
+		player5Character = player5.GetComponent<Character> ();
+		player5Character.currentHP = player5Character.maxHp;
+		player5Character.currentSP = player5Character.maxSp;
+
+		solan_select_image = GameObject.Find ("Solan Select").GetComponent<Image>();
+		solan_select_image.enabled = true;
+		fifthCanvas.alpha = 1;
+	}
 
 	public void hpPotionPress(){
 		changeItemInfo ("hpPotion");
@@ -175,24 +287,18 @@ public class PauseMenuAnim : MonoBehaviour {
 			itemImage.GetComponent<Image>().sprite = mrFunArt;
 		}
 	}
-
-
-
-	private void getKiraInfo(){
-
-	}
-
+	
 	public void KiraPress(){
-		charName.text = "Kira";
-		strStat.text = "300"; //ASSIGN THESE VARIABLES ACCORDING TO DATABASE DATA
-		defStat.text = "-50"; //THEY MUST USE MATH VALUES IN FINAL VERSION
-		magStat.text = "100";
-		lvStat.text = "LV " + "55";
-		expStat.text = "423";
-		hpStatChars.text = "200/400";
-		spStatChars.text = "15/30";
-		hpBarChars.fillAmount = 0.5f;
-		spBarChars.fillAmount = 0.5f;
+		charName.text = "" + player1Character.characterName;
+		strStat.text = "" + player1Character.str;;
+		defStat.text = "" + player1Character.def;;
+		magStat.text = "" + player1Character.mag;
+		lvStat.text = "LV " + player1Character.lv;
+		expStat.text = "" + player1Character.exp;;
+		hpStatChars.text = player1Character.currentHP + "/" + player1Character.maxHp;
+		spStatChars.text = player1Character.currentSP + "/" + player1Character.maxSp;
+		hpBarChars.fillAmount = (float) player1Character.currentHP / (float) player1Character.maxHp;
+		spBarChars.fillAmount = (float) player1Character.currentSP / (float) player1Character.maxSp;
 		charBookDialog.text = "\"What kind of jokers are you all anyways?\"";
 
 		characterImage.GetComponent<Image>().sprite = kira_art;
@@ -202,16 +308,16 @@ public class PauseMenuAnim : MonoBehaviour {
 	}
 
 	public void LawPress(){
-		charName.text = "Law";
-		strStat.text = "1"; //ASSIGN THESE VARIABLES ACCORDING TO DATABASE DATA
-		defStat.text = "-9999999"; //THEY MUST USE MATH VALUES IN FINAL VERSION
-		magStat.text = "magic?";
-		lvStat.text = "LV " + "1";
-		expStat.text = ".76";
-		hpStatChars.text = "1/100";
-		spStatChars.text = "0/0";
-		hpBarChars.fillAmount = 0.01f;
-		spBarChars.fillAmount = 0.0f;
+		charName.text = "" + player2Character.characterName;
+		strStat.text = "" + player2Character.str;;
+		defStat.text = "" + player2Character.def;;
+		magStat.text = "" + player2Character.mag;
+		lvStat.text = "LV " + player2Character.lv;
+		expStat.text = "" + player2Character.exp;;
+		hpStatChars.text = player2Character.currentHP + "/" + player2Character.maxHp;
+		spStatChars.text = player2Character.currentSP + "/" + player2Character.maxSp;
+		hpBarChars.fillAmount = (float) player2Character.currentHP / (float) player2Character.maxHp;
+		spBarChars.fillAmount = (float) player2Character.currentSP / (float) player2Character.maxSp;
 		charBookDialog.text = "\"Wait, you don't expect a lawyer to fight, do you?  I object to such nonsense!\"";
 		
 		characterImage.GetComponent<Image>().sprite = law_art;
@@ -221,16 +327,16 @@ public class PauseMenuAnim : MonoBehaviour {
 	}
 
 	public void RoboPress(){
-		charName.text = "Robo";
-		strStat.text = "1000"; //ASSIGN THESE VARIABLES ACCORDING TO DATABASE DATA
-		defStat.text = "250"; //THEY MUST USE MATH VALUES IN FINAL VERSION
-		magStat.text = "50";
-		lvStat.text = "LV " + "76";
-		expStat.text = "7382";
-		hpStatChars.text = "1000/1000";
-		spStatChars.text = "25/25";
-		hpBarChars.fillAmount = 1.0f;
-		spBarChars.fillAmount = 1.0f;
+		charName.text = "" + player3Character.characterName;
+		strStat.text = "" + player3Character.str;;
+		defStat.text = "" + player3Character.def;;
+		magStat.text = "" + player3Character.mag;
+		lvStat.text = "LV " + player3Character.lv;
+		expStat.text = "" + player3Character.exp;;
+		hpStatChars.text = player3Character.currentHP + "/" + player3Character.maxHp;
+		spStatChars.text = player3Character.currentSP + "/" + player3Character.maxSp;
+		hpBarChars.fillAmount = (float) player3Character.currentHP / (float) player3Character.maxHp;
+		spBarChars.fillAmount = (float) player3Character.currentSP / (float) player3Character.maxSp;
 		charBookDialog.text = "\"BEEP BOOP BOOP BEEP zzt\"";
 		
 		characterImage.GetComponent<Image>().sprite = robo_art;
@@ -240,16 +346,16 @@ public class PauseMenuAnim : MonoBehaviour {
 	}
 
 	public void ConstancePress(){
-		charName.text = "Constance";
-		strStat.text = "$8.95"; //ASSIGN THESE VARIABLES ACCORDING TO DATABASE DATA
-		defStat.text = "5"; //THEY MUST USE MATH VALUES IN FINAL VERSION
-		magStat.text = "1337";
-		lvStat.text = "LV " + "12";
-		expStat.text = "423";
-		hpStatChars.text = "75/300";
-		spStatChars.text = "700/700";
-		hpBarChars.fillAmount = 0.25f;
-		spBarChars.fillAmount = 1.0f;
+		charName.text = "" + player4Character.characterName;
+		strStat.text = "" + player4Character.str;;
+		defStat.text = "" + player4Character.def;;
+		magStat.text = "" + player4Character.mag;
+		lvStat.text = "LV " + player4Character.lv;
+		expStat.text = "" + player4Character.exp;;
+		hpStatChars.text = player4Character.currentHP + "/" + player4Character.maxHp;
+		spStatChars.text = player4Character.currentSP + "/" + player4Character.maxSp;
+		hpBarChars.fillAmount = (float) player4Character.currentHP / (float) player4Character.maxHp;
+		spBarChars.fillAmount = (float) player4Character.currentSP / (float) player4Character.maxSp;
 		charBookDialog.text = "\"Just one more battle... I will prevail!\"";
 		
 		characterImage.GetComponent<Image>().sprite = constance_art;
@@ -259,16 +365,16 @@ public class PauseMenuAnim : MonoBehaviour {
 	}
 	
 	public void SolanPress(){
-		charName.text = "Solan";
-		strStat.text = "69"; //ASSIGN THESE VARIABLES ACCORDING TO DATABASE DATA
-		defStat.text = "42"; //THEY MUST USE MATH VALUES IN FINAL VERSION
-		magStat.text = "777";
-		lvStat.text = "LV " + "95";
-		expStat.text = "60023";
-		hpStatChars.text = "495/500";
-		spStatChars.text = "200/1000";
-		hpBarChars.fillAmount = 0.99f;
-		spBarChars.fillAmount = 0.2f;
+		charName.text = "" + player5Character.characterName;
+		strStat.text = "" + player5Character.str;;
+		defStat.text = "" + player5Character.def;;
+		magStat.text = "" + player5Character.mag;
+		lvStat.text = "LV " + player5Character.lv;
+		expStat.text = "" + player5Character.exp;;
+		hpStatChars.text = player5Character.currentHP + "/" + player5Character.maxHp;
+		spStatChars.text = player5Character.currentSP + "/" + player5Character.maxSp;
+		hpBarChars.fillAmount = (float) player5Character.currentHP / (float) player5Character.maxHp;
+		spBarChars.fillAmount = (float) player5Character.currentSP / (float) player5Character.maxSp;
 		charBookDialog.text = "\"Y'all are idiots.\"";
 		
 		characterImage.GetComponent<Image>().sprite = solan_art;
@@ -311,6 +417,45 @@ public class PauseMenuAnim : MonoBehaviour {
 		Application.Quit();
 	}
 
+	public void UpdateParametersOnMenuOpen(){
+		hpTextK.text = player1Character.currentHP + "/" + player1Character.maxHp;
+		spTextK.text = player1Character.currentSP + "/" + player1Character.maxSp;
+		lvTextK.text = "LV " + player1Character.lv;
+		expTextK.text = "" + player1Character.exp;
+		scrollbarHPK.fillAmount = (float) player1Character.currentHP / (float) player1Character.maxHp;
+		scrollbarSPK.fillAmount = (float) player1Character.currentSP / (float) player1Character.maxSp;
+	
+		hpTextL.text = player2Character.currentHP + "/" + player2Character.maxHp;
+		spTextL.text = player2Character.currentSP + "/" + player2Character.maxSp;
+		lvTextL.text = "LV " + player2Character.lv;
+		expTextL.text = "" + player2Character.exp;
+		scrollbarHPL.fillAmount = (float) player2Character.currentHP / (float) player2Character.maxHp;
+		scrollbarSPL.fillAmount = (float) player2Character.currentSP / (float) player2Character.maxSp;
+
+		hpTextR.text = player3Character.currentHP + "/" + player3Character.maxHp;
+		spTextR.text = player3Character.currentSP + "/" + player3Character.maxSp;
+		lvTextR.text = "LV " + player3Character.lv;
+		expTextR.text = "" + player3Character.exp;
+		scrollbarHPR.fillAmount = (float) player3Character.currentHP / (float) player3Character.maxHp;
+		scrollbarSPR.fillAmount = (float) player3Character.currentSP / (float) player3Character.maxSp;
+
+		hpTextC.text = player4Character.currentHP + "/" + player4Character.maxHp;
+		spTextC.text = player4Character.currentSP + "/" + player4Character.maxSp;
+		lvTextC.text = "LV " + player4Character.lv;
+		expTextC.text = "" + player4Character.exp;
+		scrollbarHPC.fillAmount = (float) player4Character.currentHP / (float) player4Character.maxHp;
+		scrollbarSPC.fillAmount = (float) player4Character.currentSP / (float) player4Character.maxSp;
+
+		if (fifthAcquired) {
+			hpTextS.text = player5Character.currentHP + "/" + player5Character.maxHp;
+			spTextS.text = player5Character.currentSP + "/" + player5Character.maxSp;
+			lvTextS.text = "LV " + player5Character.lv;
+			expTextS.text = "" + player5Character.exp;
+			scrollbarHPS.fillAmount = (float) player5Character.currentHP / (float) player5Character.maxHp;
+			scrollbarSPS.fillAmount = (float) player5Character.currentSP / (float) player5Character.maxSp;
+		}
+	}
+
 
 	public void Update(){
 		if ((Input.GetKeyDown (KeyCode.T) || Input.GetKeyDown (KeyCode.Tab)) && !pauseGame) {
@@ -319,6 +464,7 @@ public class PauseMenuAnim : MonoBehaviour {
 				Debug.Log ("Tab/T properly pressed to pause game.");
 				pauseGame = true;
 				Time.timeScale = 0;
+				UpdateParametersOnMenuOpen();
 				anim.SetBool ("Main Screen", true);
 			}
 		} else if ((Input.GetKeyDown (KeyCode.T) || Input.GetKeyDown (KeyCode.Tab)) && pauseGame) {

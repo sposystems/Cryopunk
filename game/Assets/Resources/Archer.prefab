@@ -997,13 +997,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e7c8edd503c164d979bf1a542f7688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Archer
+  characterName: Solan
   maxHp: 100
   maxSp: 100
   ability1: {fileID: 11472040}
   ability2: {fileID: 11472044}
   ability3: {fileID: 11472050}
   isPlayer: 1
+  currentSP: 0
+  currentHP: 0
+  str: 40
+  mag: 40
+  def: 25
+  lv: 13
+  exp: 8750
 --- !u!114 &11472040
 MonoBehaviour:
   m_ObjectHideFlags: 1

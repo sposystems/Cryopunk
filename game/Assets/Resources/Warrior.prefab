@@ -997,13 +997,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e7c8edd503c164d979bf1a542f7688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Warrior
+  characterName: Kira
   maxHp: 100
   maxSp: 100
   ability1: {fileID: 11430422}
   ability2: {fileID: 11430426}
   ability3: {fileID: 11430432}
   isPlayer: 1
+  currentSP: 0
+  currentHP: 0
+  str: 50
+  mag: 20
+  def: 50
+  lv: 10
+  exp: 5000
 --- !u!114 &11430422
 MonoBehaviour:
   m_ObjectHideFlags: 1

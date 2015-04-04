@@ -997,13 +997,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e7c8edd503c164d979bf1a542f7688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Priest
+  characterName: Constance
   maxHp: 100
   maxSp: 100
   ability1: {fileID: 11407828}
   ability2: {fileID: 11407832}
   ability3: {fileID: 11407838}
   isPlayer: 1
+  currentSP: 0
+  currentHP: 0
+  str: 10
+  mag: 70
+  def: 10
+  lv: 10
+  exp: 5000
 --- !u!114 &11407828
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -11,8 +11,16 @@ public class Character : MonoBehaviour {
 	public Ability ability3;
 	public bool isPlayer;
 
-	private int currentSP;
-	private int currentHP;
+	public int currentSP;
+	public int currentHP;
+
+	public int str;
+	public int mag;
+	public int def;
+
+	public int lv;
+	public int exp;
+
 	private bool targetable;
 	private bool targeted;
 	private bool stunned;

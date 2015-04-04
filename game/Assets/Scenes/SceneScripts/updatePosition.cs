@@ -8,6 +8,7 @@ public class updatePosition : MonoBehaviour {
 		//reference to player object . set position to SceneChanger.NewPosition
 		Debug.Log (SceneChanger.NewPosition);
 		GameObject.Find("Swordman 1").transform.position = SceneChanger.NewPosition;
+		PlayerPrefs.SetInt ("previouslevel", Application.loadedLevel);
 	}
 	
 	// Update is called once per frame

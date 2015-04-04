@@ -1,12 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Battle System Assests\Scripts\Character.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\BattleLauncher.cs">
     <Files>
-      <File FileName="Assets\scripts\UI_Scripts\MainMenu_UI\PauseMenuAnim.cs" Line="192" Column="4" />
-      <File FileName="Assets\Battle System Assests\Scripts\Targeter.cs" Line="66" Column="1" />
-      <File FileName="Assets\Battle System Assests\Scripts\BattleController.cs" Line="15" Column="29" />
-      <File FileName="Assets\Battle System Assests\Scripts\Character.cs" Line="243" Column="24" />
-      <File FileName="Assets\Battle System Assests\Scripts\Ability.cs" Line="164" Column="1" />
+      <File FileName="Assets\Battle System Assests\Scripts\BattleController.cs" Line="309" Column="25" />
+      <File FileName="Assets\Scenes\SceneScripts\updatePosition.cs" Line="11" Column="37" />
+      <File FileName="Assets\scripts\UI_Scripts\MainMenu_UI\PauseMenuAnim.cs" Line="1" Column="1" />
+      <File FileName="Assets\Battle System Assests\Scripts\Character.cs" Line="1" Column="1" />
+      <File FileName="Assets\Battle System Assests\Scripts\Ability.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\BattleLauncher.cs" Line="22" Column="40" />
+      <File FileName="Assets\Scenes\SceneScripts\SceneChanger.cs" Line="49" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

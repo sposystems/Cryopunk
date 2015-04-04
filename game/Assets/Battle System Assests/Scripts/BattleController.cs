@@ -43,6 +43,9 @@ public class BattleController : MonoBehaviour {
 	private BattleStates currentState;
 	private int randAbility;
 	private int randTarget;
+	public GameObject camera;
+	public GameObject playerContainer;
+	//private SceneChanger sceneChangerElement = new SceneChanger(); //do I want this object to persist throughout?
 
 	//return reference to a player
 	public Character GetPlayer(int playerNum) {
@@ -177,7 +180,7 @@ public class BattleController : MonoBehaviour {
 	private void ImportEnemies(int type, int amount) {
 		//hardcoded values for testing
 		type=2;
-		amount=4;
+		amount=1;
 		
 		string enemyType = "";
 		if (type == 1) {
@@ -238,8 +241,8 @@ public class BattleController : MonoBehaviour {
 
 	//setup battle
 	private void Start() {
-		GameObject camera = GameObject.Find("Main Camera");
-		GameObject playerContainer = GameObject.Find("PlayerContainer");
+		camera = GameObject.Find("Main Camera");
+		playerContainer = GameObject.Find("PlayerContainer");
 		camera.SetActive(false);
 		playerContainer.SetActive(false);
 		
@@ -298,6 +301,12 @@ public class BattleController : MonoBehaviour {
 		case(BattleStates.WinBattle):
 			//display win
 			Debug.Log("win state entered");
+			//GameObject battlecamera = GameObject.Find("Battle Camera");
+			//GameObject playerContainer = GameObject.Find("PlayerContainer");
+			//battlecamera.SetActive(false);
+			camera.SetActive(true); //need our player and camera back
+			playerContainer.SetActive(true);
+			SceneChanger.winChangeScene();//you have won the battle, transition back to previous scene
 			break;
 			
 		case(BattleStates.LoseBattle):

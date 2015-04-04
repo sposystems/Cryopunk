@@ -182,7 +182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &166642207
 Transform:
   m_ObjectHideFlags: 0
@@ -510,6 +510,7 @@ GameObject:
   - 23: {fileID: 256077010}
   - 95: {fileID: 256077009}
   - 64: {fileID: 256077008}
+  - 114: {fileID: 256077013}
   m_Layer: 0
   m_Name: Stalagmit_1dd
   m_TagString: Untagged
@@ -588,6 +589,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &256077013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 256077007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dbbbc63edd5613488146b949265f455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &306374893
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,7 +918,7 @@ Prefab:
       objectReference: {fileID: 7400018, guid: 449b48f7eb5d87a4baaa5fb73f875a59, type: 3}
     - target: {fileID: 100030, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
       propertyPath: distance
@@ -3625,7 +3637,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &2024286913
 AudioListener:
   m_ObjectHideFlags: 0

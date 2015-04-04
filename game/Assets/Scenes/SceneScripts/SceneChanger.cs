@@ -27,4 +27,24 @@ public class SceneChanger : MonoBehaviour {
 		NewPosition.z = sendToZ;
 		Application.LoadLevel(level); 
 	}
+	public static void setPositionThroughCode(float x, float y, float z){
+		NewPosition.x = x;
+		NewPosition.y = y;
+		NewPosition.z = z;
+	}
+	public static void setPositionThroughCode(Vector3 newPosition){
+		NewPosition = newPosition;
+	}
+	public static void winChangeScene(){
+		NewPosition = BattleLauncher.previousLocation; //battle launcher holds where the player launched from. (vector3)
+		adjust();
+		//could just end game
+		Application.LoadLevel(PlayerPrefs.GetInt("previouslevel")); //sends player to area before battle (numbered scene)
+
+		}
+	private static void adjust(){ // kick back to not launch battle again
+		NewPosition.x += 20;
+
+		NewPosition.z += 20;
+	}
 }

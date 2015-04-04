@@ -37,7 +37,7 @@ public class SceneChanger : MonoBehaviour {
 	}
 	public static void winChangeScene(){
 		NewPosition = BattleLauncher.previousLocation; //battle launcher holds where the player launched from. (vector3)
-		adjust();
+		//adjust();
 		//could just end game
 		Application.LoadLevel(PlayerPrefs.GetInt("previouslevel")); //sends player to area before battle (numbered scene)
 

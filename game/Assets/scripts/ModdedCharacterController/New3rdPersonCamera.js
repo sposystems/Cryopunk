@@ -103,6 +103,17 @@ function Apply (dummyTarget : Transform, dummyCenter : Vector3)
 		}
 				
 	}
+	if (Input.GetKeyDown("x")){
+		
+			height *= 1.5;
+				
+	}
+	if (Input.GetKeyDown("z")){
+		if(height > 1.0){
+			height /= 1.5;
+		}
+				
+	}
 	// When pressing Fire2 (alt) the camera will snap to the target direction real quick.
 	// It will stop snapping when it reaches the target
 	if (Input.GetButton("Fire2"))

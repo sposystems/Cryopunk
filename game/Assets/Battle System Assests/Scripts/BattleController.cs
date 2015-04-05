@@ -45,6 +45,7 @@ public class BattleController : MonoBehaviour {
 	private int randTarget;
 	public GameObject camera;
 	public GameObject playerContainer;
+	private Text hoverAbilityText;
 	//private SceneChanger sceneChangerElement = new SceneChanger(); //do I want this object to persist throughout?
 
 	//return reference to a player
@@ -243,6 +244,7 @@ public class BattleController : MonoBehaviour {
 	private void Start() {
 		camera = GameObject.Find("Main Camera");
 		playerContainer = GameObject.Find("PlayerContainer");
+		hoverAbilityText = GameObject.Find ("Description Text").GetComponent<Text>(); //for the mouse hovering over abilities
 		camera.SetActive(false);
 		playerContainer.SetActive(false);
 		
@@ -382,20 +384,68 @@ public class BattleController : MonoBehaviour {
 						validAbility = false;
 					}
 				}
-				
+
 				string turnText = enemy.characterName + " uses " + enemyAbility.name;
 				if (enemyAbility.targetType == Ability.targetTypeE.single) {
 					turnText += " on " + target.characterName;
 				}
+				hoverAbilityText.text = ""; //Reset the text for Ability Descriptions
 				gui.SetEnemyTurnText(turnText);
 				
 				enemyAbility.Use(target);
 				
 			} else {
 				EndTurn();
+				gui.SetEnemyTurnText(""); //Reset the text for Enemy Turn
 			}
 		} else {
 			EndTurn();
+			gui.SetEnemyTurnText(""); //Reset the text for Enemy Turn
 		}
 	}
+
+	public void DisplayHoverAttack(){
+		hoverAbilityText.text = "Attack - A low damage attack";
+	}
+
+	public void DisplayHoverWhirlwind(){
+		hoverAbilityText.text = "Whirlwind - A sweeping attack damaging all enemies - 25 SP";
+	}
+
+	public void DisplayHoverBattlecry(){
+		hoverAbilityText.text = "Battlecry - Increase party damage temporarily - 25 SP";
+	}
+
+	public void DisplayHoverFreeze(){
+		hoverAbilityText.text = "Freeze - Stun an enemy for one turn - 25 SP";
+	}
+
+	public void DisplayHoverSilence(){
+		hoverAbilityText.text = "Silence - Prevent an enemy from using special abilities - 25 SP";
+	}
+
+	public void DisplayHoverPoisonShot(){
+		hoverAbilityText.text = "Poison Shot - Damage and poison an enemy to take damage over time - 25 SP";
+	}
+
+	public void DisplayHoverStealth(){
+		hoverAbilityText.text = "Stealth - Render self invisible to enemies for a few turns - 25 SP";
+	}
+
+	public void DisplayHoverHeal(){
+		hoverAbilityText.text = "Heal - Heal an ally's health - 25 SP";
+	}
+
+	public void DisplayHoverCurse(){
+		hoverAbilityText.text = "Curse - Lower an enemy's defense - 25 SP";
+	}
+
+	public void DisplayHoverDoubleShot(){
+		hoverAbilityText.text = "Double Shot - Deal high damage to one enemy - 25 SP";
+	}
+
+	public void DisplayHoverArrowRain(){
+		hoverAbilityText.text = "Arrow Rain - Deal damage to 3 random enemies - 25 SP";
+	}
+
 }

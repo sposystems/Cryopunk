@@ -30,9 +30,12 @@ private var angleVelocity = 0.0;
 private var snap = false;
 private var controller : ThirdPersonController;
 private var targetHeight = 100000.0; 
+private var flashlight = true;
+private var flashlightObject;
 
 function Awake ()
 {
+	flashlightObject = GameObject.Find("flashlight");
 	if(!cameraTransform && Camera.main)
 		cameraTransform = Camera.main.transform;
 	if(!cameraTransform) {
@@ -107,6 +110,18 @@ function Apply (dummyTarget : Transform, dummyCenter : Vector3)
 		
 			height *= 1.5;
 				
+	}
+	if (Input.GetKeyDown("f")){
+		
+		if(flashlight){
+			
+			flashlightObject.SetActive(false);
+			
+			flashlight = false;
+		} else {
+			flashlightObject.SetActive(true);
+			flashlight = true;
+		}	
 	}
 	if (Input.GetKeyDown("z")){
 		if(height > 1.0){

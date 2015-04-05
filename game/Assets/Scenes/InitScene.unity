@@ -1206,6 +1206,7 @@ Transform:
   - {fileID: 1413380942}
   - {fileID: 70367766}
   - {fileID: 537867268}
+  - {fileID: 1525594213}
   m_Father: {fileID: 1644440444}
   m_RootOrder: 0
 --- !u!114 &1336586249
@@ -1253,7 +1254,7 @@ MonoBehaviour:
   landAnimationSpeed: 1
   walkSpeed: 4
   trotSpeed: 10
-  runSpeed: 60
+  runSpeed: 20
   inAirControlAcceleration: 10.1999998
   jumpHeight: 5
   gravity: 50
@@ -1389,6 +1390,10 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11484702, guid: 9c758ffff0acd5843ac564d60352963f, type: 2}
+      propertyPath: runSpeed
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9c758ffff0acd5843ac564d60352963f, type: 2}
   m_RootGameObject: {fileID: 1644440443}
@@ -1450,6 +1455,69 @@ Transform:
   - {fileID: 2003725775}
   m_Father: {fileID: 135723708}
   m_RootOrder: 0
+--- !u!1 &1525594212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1525594213}
+  - 108: {fileID: 1525594214}
+  m_Layer: 0
+  m_Name: flashlight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1525594213
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1525594212}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .109999999, y: 1.96000004, z: 1.48000014}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1336586248}
+  m_RootOrder: 3
+--- !u!108 &1525594214
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1525594212}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Type: 0
+  m_Color: {r: .993103445, g: 1, b: .875, a: 1}
+  m_Intensity: 1.61000001
+  m_Range: 79.5750046
+  m_SpotAngle: 55.7364082
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: .0500000007
+    m_Softness: 4
+    m_SoftnessFade: 1
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_ActuallyLightmapped: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 1
+  m_ShadowSamples: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_IndirectIntensity: 1
+  m_AreaSize: {x: 1, y: 1}
 --- !u!1 &1613609986
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,8 @@ public class PauseMenuAnim : MonoBehaviour {
 	//anim allows us to animate without needing to use the Animator for initial pausing
 	private Animator anim;
 
+	private Text locationArea;
+
 	private GameObject player1;
 	private GameObject player2;
 	private GameObject player3;
@@ -113,6 +115,8 @@ public class PauseMenuAnim : MonoBehaviour {
 	public void Start(){
 		anim = startMenuCanvas.GetComponent<Animator> ();
 
+		locationArea = GameObject.Find ("Location").GetComponent<Text>();
+
 		hpPotions = GameObject.Find ("Health Potion Quantity").GetComponent<Text>();
 		spPotions = GameObject.Find ("Special Potion Quantity").GetComponent<Text>();
 		lifePotions = GameObject.Find ("Life Potion Quantity").GetComponent<Text>();
@@ -193,38 +197,38 @@ public class PauseMenuAnim : MonoBehaviour {
 
 		//All main menu box details below
 		hpTextK = GameObject.Find ("CharDetails (Kira)/hp_bar_outline/HP_Num").GetComponent<Text>();
-		scrollbarHPK = GameObject.Find ("CharDetails (Kira)/hp_bar_outline/hp_bar_percent").GetComponent<Image>();
+		scrollbarHPK = GameObject.Find ("CharDetails (Kira)/hp_bar_percent").GetComponent<Image>();
 		spTextK = GameObject.Find ("CharDetails (Kira)/sp_bar_outline/SP_Num").GetComponent<Text>();
-		scrollbarSPK = GameObject.Find ("CharDetails (Kira)/sp_bar_outline/sp_bar_percent").GetComponent<Image>();
+		scrollbarSPK = GameObject.Find ("CharDetails (Kira)/sp_bar_percent").GetComponent<Image>();
 		lvTextK = GameObject.Find ("CharDetails (Kira)/Level").GetComponent<Text>();
 		expTextK = GameObject.Find ("CharDetails (Kira)/ToNext").GetComponent<Text>();
 
 		hpTextL = GameObject.Find ("CharDetails (Law)/hp_bar_outline/HP_Num").GetComponent<Text>();
-		scrollbarHPL = GameObject.Find ("CharDetails (Law)/hp_bar_outline/hp_bar_percent").GetComponent<Image>();
+		scrollbarHPL = GameObject.Find ("CharDetails (Law)/hp_bar_percent").GetComponent<Image>();
 		spTextL = GameObject.Find ("CharDetails (Law)/sp_bar_outline/SP_Num").GetComponent<Text>();
-		scrollbarSPL = GameObject.Find ("CharDetails (Law)/sp_bar_outline/sp_bar_percent").GetComponent<Image>();
+		scrollbarSPL = GameObject.Find ("CharDetails (Law)/sp_bar_percent").GetComponent<Image>();
 		lvTextL = GameObject.Find ("CharDetails (Law)/Level").GetComponent<Text>();
 		expTextL = GameObject.Find ("CharDetails (Law)/ToNext").GetComponent<Text>();
 
 		hpTextR = GameObject.Find ("CharDetails (Robo)/hp_bar_outline/HP_Num").GetComponent<Text>();
-		scrollbarHPR = GameObject.Find ("CharDetails (Robo)/hp_bar_outline/hp_bar_percent").GetComponent<Image>();
+		scrollbarHPR = GameObject.Find ("CharDetails (Robo)/hp_bar_percent").GetComponent<Image>();
 		spTextR = GameObject.Find ("CharDetails (Robo)/sp_bar_outline/SP_Num").GetComponent<Text>();
-		scrollbarSPR = GameObject.Find ("CharDetails (Robo)/sp_bar_outline/sp_bar_percent").GetComponent<Image>();
+		scrollbarSPR = GameObject.Find ("CharDetails (Robo)/sp_bar_percent").GetComponent<Image>();
 		lvTextR = GameObject.Find ("CharDetails (Robo)/Level").GetComponent<Text>();
 		expTextR = GameObject.Find ("CharDetails (Robo)/ToNext").GetComponent<Text>();
 
 		hpTextC = GameObject.Find ("CharDetails (Constance)/hp_bar_outline/HP_Num").GetComponent<Text>();
-		scrollbarHPC = GameObject.Find ("CharDetails (Constance)/hp_bar_outline/hp_bar_percent").GetComponent<Image>();
+		scrollbarHPC = GameObject.Find ("CharDetails (Constance)/hp_bar_percent").GetComponent<Image>();
 		spTextC = GameObject.Find ("CharDetails (Constance)/sp_bar_outline/SP_Num").GetComponent<Text>();
-		scrollbarSPC = GameObject.Find ("CharDetails (Constance)/sp_bar_outline/sp_bar_percent").GetComponent<Image>();
+		scrollbarSPC = GameObject.Find ("CharDetails (Constance)/sp_bar_percent").GetComponent<Image>();
 		lvTextC = GameObject.Find ("CharDetails (Constance)/Level").GetComponent<Text>();
 		expTextC = GameObject.Find ("CharDetails (Constance)/ToNext").GetComponent<Text>();
 
 		if (fifthAcquired) {
 			hpTextS = GameObject.Find ("CharDetails (Solan)/hp_bar_outline/HP_Num").GetComponent<Text>();
-			scrollbarHPS = GameObject.Find ("CharDetails (Solan)/hp_bar_outline/hp_bar_percent").GetComponent<Image>();
+			scrollbarHPS = GameObject.Find ("CharDetails (Solan)/hp_bar_percent").GetComponent<Image>();
 			spTextS = GameObject.Find ("CharDetails (Solan)/sp_bar_outline/SP_Num").GetComponent<Text>();
-			scrollbarSPS = GameObject.Find ("CharDetails (Solan)/sp_bar_outline/sp_bar_percent").GetComponent<Image>();
+			scrollbarSPS = GameObject.Find ("CharDetails (Solan)/sp_bar_percent").GetComponent<Image>();
 			lvTextS = GameObject.Find ("CharDetails (Solan)/Level").GetComponent<Text>();
 			expTextS = GameObject.Find ("CharDetails (Solan)/ToNext").GetComponent<Text>();
 		}
@@ -418,6 +422,8 @@ public class PauseMenuAnim : MonoBehaviour {
 	}
 
 	public void UpdateParametersOnMenuOpen(){
+		locationArea.text = Application.loadedLevelName; //set area to name of Scene
+
 		hpTextK.text = player1Character.currentHP + "/" + player1Character.maxHp;
 		spTextK.text = player1Character.currentSP + "/" + player1Character.maxSp;
 		lvTextK.text = "LV " + player1Character.lv;

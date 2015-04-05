@@ -1,18 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Battle System Assests\Scripts\BattleController.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\UI_Scripts\MainMenu_UI\PauseMenuAnim.cs">
     <Files>
-      <File FileName="game.sln" Line="1" Column="1" />
-      <File FileName="Assets\scripts\initialize.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scenes\SceneScripts\SceneChanger.cs" Line="1" Column="1" />
-      <File FileName="Assets\Battle System Assests\Scripts\BattleController.cs" Line="406" Column="3" />
-      <File FileName="Assets\Scenes\SceneScripts\updatePosition.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\UI_Scripts\MainMenu_UI\PauseMenuAnim.cs" Line="134" Column="44" />
-      <File FileName="Assets\Battle System Assests\Scripts\Character.cs" Line="1" Column="1" />
-      <File FileName="Assets\Battle System Assests\Scripts\Ability.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\BattleLauncher.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\ModdedCharacterController\New3rdPersonCamera.js" Line="126" Column="29" />
-      <File FileName="Assets\Battle System Assests\Scripts\BattleGUI.cs" Line="276" Column="33" />
+      <File FileName="Assets\scripts\UI_Scripts\MainMenu_UI\PauseMenuAnim.cs" Line="225" Column="40" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

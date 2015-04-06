@@ -1254,7 +1254,7 @@ MonoBehaviour:
   landAnimationSpeed: 1
   walkSpeed: 4
   trotSpeed: 10
-  runSpeed: 20
+  runSpeed: 30
   inAirControlAcceleration: 10.1999998
   jumpHeight: 5
   gravity: 50
@@ -1392,7 +1392,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11484702, guid: 9c758ffff0acd5843ac564d60352963f, type: 2}
       propertyPath: runSpeed
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9c758ffff0acd5843ac564d60352963f, type: 2}

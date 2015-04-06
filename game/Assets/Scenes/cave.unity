@@ -1182,7 +1182,8 @@ MonoBehaviour:
   eQuantity: 1
   eLocation: 2
   launcherInstance: 0
-  fMember: 0
+  isFinalBattle: 1
+  fMember: 1
   level: Battle
 --- !u!23 &315877541
 Renderer:

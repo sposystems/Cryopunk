@@ -26,6 +26,7 @@ public class BattleController : MonoBehaviour {
 	private Character enemy4Character;
 	private GameObject enemy5;
 	private Character enemy5Character;
+	private bool isFinalBattle = false;
 	private enum BattleStates {
 		Player1Turn,
 		Player2Turn,
@@ -190,6 +191,7 @@ public class BattleController : MonoBehaviour {
 			enemyType = "Spider";
 		} else if (type == 3) {
 			enemyType = "Boss";
+			isFinalBattle = true;
 		}
 		else {
 			Debug.Log("ERROR: Invalid enemy type");
@@ -310,9 +312,13 @@ public class BattleController : MonoBehaviour {
 			//GameObject battlecamera = GameObject.Find("Battle Camera");
 			//GameObject playerContainer = GameObject.Find("PlayerContainer");
 			//battlecamera.SetActive(false);
-			camera.SetActive(true); //need our player and camera back
-			playerContainer.SetActive(true);
-			SceneChanger.winChangeScene();//you have won the battle, transition back to previous scene
+			if(isFinalBattle){
+				Application.LoadLevel (8); 
+			} else{
+				camera.SetActive(true); //need our player and camera back
+				playerContainer.SetActive(true);
+				SceneChanger.winChangeScene();//you have won the battle, transition back to previous scene
+			}
 			break;
 			
 		case(BattleStates.LoseBattle):

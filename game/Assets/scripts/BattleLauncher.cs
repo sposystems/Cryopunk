@@ -18,11 +18,14 @@ public class BattleLauncher : MonoBehaviour {
 	//launcherInstance = 1, instance = 0,
 	//when the battle gets triggered, to disable the cube, set the static number to the launcher instance.
 	//if instance 1 == launcherInstance 1, the battle has already taken place.
+	public bool isFinalBattle = false;
 	public bool fMember;
 	public string level;
 
 
+	void start(){
 
+	}
 	void OnTriggerEnter(Collider other) { 
 		//check if the player has already defeated the enemy
 		if (instance != launcherInstance) { 
@@ -38,7 +41,12 @@ public class BattleLauncher : MonoBehaviour {
 			location = eLocation;
 			//battled = true;
 			instance = launcherInstance;
-			Application.LoadLevel (level); 
-		}
+
+		
+
+				Application.LoadLevel (level); 
+			
+		}	
+
 	}
 }

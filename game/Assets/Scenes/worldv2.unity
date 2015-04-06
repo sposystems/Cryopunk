@@ -7423,6 +7423,7 @@ MonoBehaviour:
   eQuantity: 1
   eLocation: 2
   launcherInstance: 1
+  isFinalBattle: 1
   fMember: 1
   level: Battle
 --- !u!23 &1585262943
@@ -8180,6 +8181,7 @@ MonoBehaviour:
   eQuantity: 1
   eLocation: 2
   launcherInstance: 2
+  isFinalBattle: 0
   fMember: 1
   level: Battle
 --- !u!23 &1681334782

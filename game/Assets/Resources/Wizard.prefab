@@ -1503,7 +1503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Freeze
   spCost: 25
-  damage: 10
+  damage: 5
   offensive: 1
   targetType: 0
   statusEffect: 1

@@ -154,27 +154,34 @@ public class BattleController : MonoBehaviour {
 		//hardcoded for testing
 		//fifthAcquired = true;
 		
-		player1 = (GameObject)Instantiate(Resources.Load("Warrior"));
+		//player1 = (GameObject)Instantiate(Resources.Load("Warrior"));
+		player1 = GameObject.Find ("Warrior");
 		player1Character = player1.GetComponent<Character>();
 		player1.transform.position = new Vector3(14,0,-8.5f);
 		
-		player2 = (GameObject)Instantiate(Resources.Load("Wizard"));
+		//player2 = (GameObject)Instantiate(Resources.Load("Wizard"));
+		player2 = GameObject.Find ("Wizard");
 		player2Character = player2.GetComponent<Character>();
 		player2.transform.position = new Vector3(14,0,-4);
 		
-		player3 = (GameObject)Instantiate(Resources.Load("Thief"));
+		//player3 = (GameObject)Instantiate(Resources.Load("Thief"));
+		player3 = GameObject.Find ("Thief");
 		player3Character = player3.GetComponent<Character>();
 		player3.transform.position = new Vector3(14,0,0);
 		
-		player4 = (GameObject)Instantiate(Resources.Load("Priest"));
+		//player4 = (GameObject)Instantiate(Resources.Load("Priest"));
+		player4 = GameObject.Find ("Priest");
 		player4Character = player4.GetComponent<Character>();
 		player4.transform.position = new Vector3(14,0,4);
 		
 		if (fifthAcquired) {
-			player5 = (GameObject)Instantiate(Resources.Load("Archer"));
+			//player5 = (GameObject)Instantiate(Resources.Load("Archer"));
+			player5 = GameObject.Find ("Archer");
 			player5Character = player5.GetComponent<Character>();
 			player5.transform.position = new Vector3(14,0,8.5f);
 		} else {
+			player5 = GameObject.Find ("Archer");
+			player5.transform.position = new Vector3(14, 0, 25f);
 			gui.DisablePlayerGUI(5);
 		}
 	}
@@ -252,10 +259,10 @@ public class BattleController : MonoBehaviour {
 		playerContainer = GameObject.Find("PlayerContainer");
 		hoverAbilityText = GameObject.Find ("Description Text").GetComponent<Text>(); //for the mouse hovering over abilities
 		camera.SetActive(false);
-		playerContainer.SetActive(false);
+		//playerContainer.SetActive(false);
 		
 		ApplyLocation(BattleLauncher.location);
-		ImportPlayers(BattleLauncher.fifthMember);
+		ImportPlayers(false); //(BattleLauncher.fifthMember)
 		ImportEnemies(BattleLauncher.enemyType, BattleLauncher.enemyQuantity);	
 		gui.InitializeGUI();
 		gui.UpdateGui();
@@ -316,7 +323,7 @@ public class BattleController : MonoBehaviour {
 				Application.LoadLevel (8); 
 			} else{
 				camera.SetActive(true); //need our player and camera back
-				playerContainer.SetActive(true);
+				//playerContainer.SetActive(true);
 				SceneChanger.winChangeScene();//you have won the battle, transition back to previous scene
 			}
 			break;

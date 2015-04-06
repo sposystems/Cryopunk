@@ -162,29 +162,34 @@ public class PauseMenuAnim : MonoBehaviour {
 		constance_art = Resources.Load<Sprite> ("constance_tp");
 		solan_art = Resources.Load<Sprite> ("solan_tp");
 
-		player1 = (GameObject)Instantiate(Resources.Load("Warrior"));
+		//player1 = (GameObject)Instantiate(Resources.Load("Warrior"));
+		player1 = GameObject.Find ("Warrior");
 		player1Character = player1.GetComponent<Character>();
 		//player1Character.currentHP = player1Character.maxHp;
 		player1Character.currentHP = 50;
 		player1Character.currentSP = player1Character.maxSp;
 		
-		player2 = (GameObject)Instantiate(Resources.Load("Wizard"));
+		//player2 = (GameObject)Instantiate(Resources.Load("Wizard"));
+		player2 = GameObject.Find ("Wizard");
 		player2Character = player2.GetComponent<Character>();
 		player2Character.currentHP = player2Character.maxHp;
 		player2Character.currentSP = player2Character.maxSp;
 		
-		player3 = (GameObject)Instantiate(Resources.Load("Thief"));
+		//player3 = (GameObject)Instantiate(Resources.Load("Thief"));
+		player3 = GameObject.Find ("Thief");
 		player3Character = player3.GetComponent<Character>();
 		player3Character.currentHP = player3Character.maxHp;
 		player3Character.currentSP = player3Character.maxSp;
 		
-		player4 = (GameObject)Instantiate(Resources.Load("Priest"));
+		//player4 = (GameObject)Instantiate(Resources.Load("Priest"));
+		player4 = GameObject.Find ("Priest");
 		player4Character = player4.GetComponent<Character>();
 		player4Character.currentHP = player4Character.maxHp;
 		player4Character.currentSP = player4Character.maxSp;
 		
 		if (fifthAcquired) {
-			player5 = (GameObject)Instantiate (Resources.Load ("Archer"));
+			//player5 = (GameObject)Instantiate (Resources.Load ("Archer"));
+			player5 = GameObject.Find ("Archer");
 			player5Character = player5.GetComponent<Character> ();
 			player5Character.currentHP = player5Character.maxHp;
 			player5Character.currentSP = player5Character.maxSp;
@@ -243,7 +248,8 @@ public class PauseMenuAnim : MonoBehaviour {
 	*/
 
 	public void getSolan(){
-		player5 = (GameObject)Instantiate (Resources.Load ("Archer"));
+		//player5 = (GameObject)Instantiate (Resources.Load ("Archer"));
+		player5 = GameObject.Find ("Archer");
 		player5Character = player5.GetComponent<Character> ();
 		player5Character.currentHP = player5Character.maxHp;
 		player5Character.currentSP = player5Character.maxSp;

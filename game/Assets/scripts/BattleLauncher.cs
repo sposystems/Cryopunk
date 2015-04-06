@@ -10,27 +10,35 @@ public class BattleLauncher : MonoBehaviour {
 	public static bool fifthMember = false;
 	public static int location = 0;
 	public static Vector3 previousLocation;
-	public int eType, eQuantity, eLocation;
+	public static int instance = 0; 
+	//public static bool battled = false;
+
+	public int eType, eQuantity, eLocation, launcherInstance; 
+	//launcher instance is a number assigned to an instance of a battle cube.
+	//launcherInstance = 1, instance = 0,
+	//when the battle gets triggered, to disable the cube, set the static number to the launcher instance.
+	//if instance 1 == launcherInstance 1, the battle has already taken place.
 	public bool fMember;
 	public string level;
-	public static bool battled = false;
+
 
 
 	void OnTriggerEnter(Collider other) { 
 		//check if the player has already defeated the enemy
-		if (!battled) {
-						GameObject player = GameObject.Find ("Swordman 1");
-						Transform playerTransform = player.transform;
-						previousLocation = playerTransform.position;
-						Debug.Log ("battle launcher");
-						Debug.Log (previousLocation);
-						Debug.Log ("Vector 3");
-						enemyType = eType;
-						enemyQuantity = eQuantity;
-						fifthMember = fMember;
-						location = eLocation;
-						battled = true;
-						Application.LoadLevel (level); 
-				}
+		if (instance != launcherInstance) { 
+			GameObject player = GameObject.Find ("Swordman 1");
+			Transform playerTransform = player.transform;
+			previousLocation = playerTransform.position;
+			Debug.Log ("battle launcher");
+			Debug.Log (previousLocation);
+			Debug.Log ("Vector 3");
+			enemyType = eType;
+			enemyQuantity = eQuantity;
+			fifthMember = fMember;
+			location = eLocation;
+			//battled = true;
+			instance = launcherInstance;
+			Application.LoadLevel (level); 
+		}
 	}
 }

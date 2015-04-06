@@ -94,7 +94,7 @@ function Awake ()
 {
 	
 	moveDirection = transform.TransformDirection(Vector3.forward);
-	//csScript = this.GetComponent("RABi");
+	
 	_animation = GetComponent(Animation);
 	if(!_animation)
 		Debug.Log("The character you would like to control doesn't have animations. Moving her might look weird.");
@@ -313,9 +313,7 @@ function Update() {
 	// Calculate actual motion
 	var movement = moveDirection * moveSpeed + Vector3 (0, verticalSpeed, 0) + inAirVelocity;
 	movement *= Time.deltaTime;
-	//if (RABi.probability != 0){//Battles are active
-	//	Debug.Log(Random.Range(0, 100));
-	//}
+	
 	// Move the controller
 	var controller : CharacterController = GetComponent(CharacterController);
 	collisionFlags = controller.Move(movement);

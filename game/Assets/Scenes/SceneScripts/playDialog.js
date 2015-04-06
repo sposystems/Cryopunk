@@ -26,6 +26,6 @@ function OnGUI()
 {
 	if(showText)
 	{
-		GUI.Label(Rect(500,300,200,20), text, style);
+		GUI.TextArea(Rect(300,300,500,80), text, style);
 	}
 }

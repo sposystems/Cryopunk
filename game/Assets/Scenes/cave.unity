@@ -76,6 +76,7 @@ NavMeshSettings:
   m_NavMesh: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &56480749
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,6 +223,8 @@ Transform:
 >>>>>>> origin/new_branch_test
 =======
 >>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
+=======
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
 --- !u!1 &92069053
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,6 +315,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1380904081}
   m_GameObject: {fileID: 92069053}
   m_Mesh: {fileID: 4300000, guid: 5238e865569bffa40908ea3a4a077f55, type: 3}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!1 &97662306
@@ -420,10 +424,31 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+=======
+--- !u!1 &166642206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100030, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 166642207}
+  - 111: {fileID: 166642211}
+  - 143: {fileID: 166642210}
+  - 114: {fileID: 166642209}
+  - 114: {fileID: 166642208}
+  m_Layer: 0
+  m_Name: 3rd Person Controller
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_IsActive: 0
 --- !u!4 &166642207
 Transform:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   m_PrefabParentObject: {fileID: 400050, guid: 9d693f089b09f2e4b9dd4789d5ec3f55, type: 3}
@@ -440,6 +465,8 @@ GameObject:
 =======
 =======
 >>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
+=======
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_PrefabParentObject: {fileID: 400012, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
   m_PrefabInternal: {fileID: 326014082}
   m_GameObject: {fileID: 166642206}
@@ -451,7 +478,11 @@ GameObject:
   - {fileID: 933160815}
   m_Father: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 8
+=======
+  m_RootOrder: 6
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
 --- !u!114 &166642208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,6 +507,7 @@ MonoBehaviour:
   lockCameraTimeout: .200000003
 --- !u!114 &166642209
 MonoBehaviour:
+<<<<<<< HEAD
 >>>>>>> origin/new_branch_test
 =======
   m_RootOrder: 6
@@ -617,6 +649,76 @@ Transform:
 --- !u!1 &189013807
 >>>>>>> origin/new_branch_test
 =======
+--- !u!1 &189013807
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
+=======
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 2314ce3a3eecf4816bad3c9eca4de2e1,
+    type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  m_GameObject: {fileID: 166642206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5ac211a643e447ca78c2d794a16381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleAnimation: {fileID: 7400012, guid: 449b48f7eb5d87a4baaa5fb73f875a59, type: 3}
+  walkAnimation: {fileID: 7400016, guid: 449b48f7eb5d87a4baaa5fb73f875a59, type: 3}
+  runAnimation: {fileID: 7400014, guid: 449b48f7eb5d87a4baaa5fb73f875a59, type: 3}
+  jumpPoseAnimation: {fileID: 7400018, guid: 449b48f7eb5d87a4baaa5fb73f875a59, type: 3}
+  walkMaxAnimationSpeed: .899999976
+  trotMaxAnimationSpeed: 1.29999995
+  runMaxAnimationSpeed: .899999976
+  jumpAnimationSpeed: 1.14999998
+  landAnimationSpeed: 1
+  walkSpeed: 3
+  trotSpeed: 4
+  runSpeed: 8
+  inAirControlAcceleration: 3
+  jumpHeight: 1
+  gravity: 20
+  speedSmoothing: 10
+  rotateSpeed: 500
+  trotAfterSeconds: 2
+  canJump: 1
+--- !u!143 &166642210
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 14300000, guid: 2314ce3a3eecf4816bad3c9eca4de2e1,
+    type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  m_GameObject: {fileID: 166642206}
+  serializedVersion: 2
+  m_Height: 1.83270526
+  m_Radius: .300000012
+  m_SlopeLimit: 45
+  m_StepOffset: .300000012
+  m_SkinWidth: .0799999982
+  m_MinMoveDistance: 0
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!111 &166642211
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11100000, guid: 2314ce3a3eecf4816bad3c9eca4de2e1,
+    type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  m_GameObject: {fileID: 166642206}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400014, guid: 449b48f7eb5d87a4baaa5fb73f875a59, type: 3}
+  m_Animations:
+  - {fileID: 7400002, guid: 449b48f7eb5d87a4baaa5fb73f875a59, type: 3}
+  - {fileID: 7400004, guid: 449b48f7eb5d87a4baaa5fb73f875a59, type: 3}
+  - {fileID: 7400008, guid: 449b48f7eb5d87a4baaa5fb73f875a59, type: 3}
+  - {fileID: 7400010, guid: 449b48f7eb5d87a4baaa5fb73f875a59, type: 3}
+  - {fileID: 7400012, guid: 449b48f7eb5d87a4baaa5fb73f875a59, type: 3}
+  - {fileID: 7400016, guid: 449b48f7eb5d87a4baaa5fb73f875a59, type: 3}
+  - {fileID: 7400018, guid: 449b48f7eb5d87a4baaa5fb73f875a59, type: 3}
+  - {fileID: 7400014, guid: 449b48f7eb5d87a4baaa5fb73f875a59, type: 3}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 1
 --- !u!1 &189013807
 >>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
 GameObject:
@@ -920,10 +1022,14 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 6
 =======
   m_RootOrder: 3
 >>>>>>> origin/new_branch_test
+=======
+  m_RootOrder: 1
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
 =======
   m_RootOrder: 1
 >>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
@@ -940,6 +1046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &271576322
 =======
 --- !u!1 &262490586
@@ -952,11 +1059,25 @@ GameObject:
   - 4: {fileID: 262490587}
   m_Layer: 0
   m_Name: Armature
+=======
+--- !u!1 &306374893
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100048, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 306374894}
+  - 137: {fileID: 306374895}
+  m_Layer: 0
+  m_Name: Bip001 Pelvis
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &262490587
 Transform:
   m_ObjectHideFlags: 0
@@ -1022,6 +1143,11 @@ GameObject:
 --- !u!4 &306374894
 Transform:
   m_ObjectHideFlags: 0
+=======
+--- !u!4 &306374894
+Transform:
+  m_ObjectHideFlags: 0
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_PrefabParentObject: {fileID: 400008, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
   m_PrefabInternal: {fileID: 326014082}
   m_GameObject: {fileID: 306374893}
@@ -1241,6 +1367,7 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 3
 --- !u!1 &315877539
 GameObject:
@@ -1329,6 +1456,11 @@ Renderer:
   m_SortingOrder: 0
 --- !u!65 &315877542
 BoxCollider:
+=======
+  m_RootOrder: 11
+--- !u!1001 &326014082
+Prefab:
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
 =======
   m_RootOrder: 11
 --- !u!1001 &326014082
@@ -1547,6 +1679,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!108 &370180842
 Light:
@@ -1791,6 +1924,8 @@ GameObject:
   m_IsActive: 1
 =======
 >>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
+=======
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
 --- !u!95 &435445815
 Animator:
   serializedVersion: 3
@@ -1849,10 +1984,14 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 13
 =======
   m_RootOrder: 10
 >>>>>>> origin/new_branch_test
+=======
+  m_RootOrder: 8
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
 =======
   m_RootOrder: 8
 >>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
@@ -1900,6 +2039,7 @@ Prefab:
   m_RootGameObject: {fileID: 1105354323}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!1 &450460395
@@ -1973,23 +2113,27 @@ Transform:
   m_RootOrder: 0
 --- !u!1 &488465565
 >>>>>>> origin/new_branch_test
+=======
+--- !u!1 &488465565
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100006, guid: 9d693f089b09f2e4b9dd4789d5ec3f55, type: 3}
-  m_PrefabInternal: {fileID: 208247054}
+  m_PrefabParentObject: {fileID: 100096, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 450460396}
+  - 4: {fileID: 488465566}
   m_Layer: 0
-  m_Name: cheek_R
+  m_Name: Bip001 R Finger31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &450460396
+--- !u!4 &488465566
 Transform:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
   m_PrefabParentObject: {fileID: 400006, guid: 9d693f089b09f2e4b9dd4789d5ec3f55, type: 3}
   m_PrefabInternal: {fileID: 208247054}
   m_GameObject: {fileID: 450460395}
@@ -2027,17 +2171,23 @@ Transform:
 --- !u!4 &488465566
 Transform:
   m_ObjectHideFlags: 0
+=======
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_PrefabParentObject: {fileID: 400076, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
   m_PrefabInternal: {fileID: 326014082}
   m_GameObject: {fileID: 488465565}
   m_LocalRotation: {x: 6.20442198e-10, y: -1.98792871e-09, z: -.160426527, w: .987047791}
   m_LocalPosition: {x: -.000362607825, y: -1.19209287e-09, z: 0}
   m_LocalScale: {x: .99999994, y: 1, z: 1}
+<<<<<<< HEAD
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
+=======
 >>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_Children:
   - {fileID: 2048947023}
   m_Father: {fileID: 1694716705}
   m_RootOrder: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!1 &518634794
@@ -2052,11 +2202,24 @@ GameObject:
   - 4: {fileID: 497245278}
   m_Layer: 0
   m_Name: hip
+=======
+--- !u!1 &512396675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100090, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 512396676}
+  m_Layer: 0
+  m_Name: hip_adjustment_bone_right
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &497245278
 Transform:
   m_ObjectHideFlags: 0
@@ -2122,6 +2285,11 @@ GameObject:
 --- !u!4 &512396676
 Transform:
   m_ObjectHideFlags: 0
+=======
+--- !u!4 &512396676
+Transform:
+  m_ObjectHideFlags: 0
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_PrefabParentObject: {fileID: 400104, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
   m_PrefabInternal: {fileID: 326014082}
   m_GameObject: {fileID: 512396675}
@@ -2132,6 +2300,7 @@ Transform:
   m_Father: {fileID: 920137435}
   m_RootOrder: 1
 --- !u!1 &514541224
+<<<<<<< HEAD
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100064, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
@@ -2197,11 +2366,23 @@ GameObject:
   - 4: {fileID: 540782548}
   m_Layer: 0
   m_Name: Bip001 R Finger0
+=======
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100064, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 514541225}
+  m_Layer: 0
+  m_Name: Bip001 R Foot
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &540782548
 Transform:
   m_ObjectHideFlags: 0
@@ -2351,11 +2532,37 @@ GameObject:
   - 4: {fileID: 744942323}
   m_Layer: 0
   m_Name: Bip001 R Finger12
+=======
+--- !u!4 &514541225
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400100, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  m_GameObject: {fileID: 514541224}
+  m_LocalRotation: {x: .041593723, y: -.0329392292, z: -.0386241637, w: .997844279}
+  m_LocalPosition: {x: -.0031936185, y: 5.58793532e-11, z: -7.45058043e-11}
+  m_LocalScale: {x: 1.00000012, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1185090555}
+  m_Father: {fileID: 1970255012}
+  m_RootOrder: 0
+--- !u!1 &536251401
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100056, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 536251402}
+  m_Layer: 0
+  m_Name: Bip001 L Forearm
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &744942323
 Transform:
   m_ObjectHideFlags: 0
@@ -2411,11 +2618,37 @@ GameObject:
   - 4: {fileID: 603379145}
   m_Layer: 0
   m_Name: cloth_back_1
+=======
+--- !u!4 &536251402
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400018, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  m_GameObject: {fileID: 536251401}
+  m_LocalRotation: {x: -1.86227211e-09, y: 1.49012074e-08, z: -2.50386074e-05, w: 1}
+  m_LocalPosition: {x: -.00273254188, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: .99999994, z: 1}
+  m_Children:
+  - {fileID: 1129951166}
+  m_Father: {fileID: 2128033217}
+  m_RootOrder: 0
+--- !u!1 &540782547
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100072, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 540782548}
+  m_Layer: 0
+  m_Name: Bip001 R Finger0
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &603379145
 Transform:
   m_ObjectHideFlags: 0
@@ -2728,11 +2961,37 @@ GameObject:
   - 4: {fileID: 744942323}
   m_Layer: 0
   m_Name: Bip001 R Finger12
+=======
+--- !u!4 &540782548
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400056, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  m_GameObject: {fileID: 540782547}
+  m_LocalRotation: {x: -.397784591, y: .457301617, z: -.174690798, w: .775967658}
+  m_LocalPosition: {x: -.000353150361, y: .000104373692, z: .000361629296}
+  m_LocalScale: {x: .999999881, y: .999999881, z: .99999994}
+  m_Children:
+  - {fileID: 772677573}
+  m_Father: {fileID: 1662199706}
+  m_RootOrder: 0
+--- !u!1 &544571550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100082, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 544571551}
+  m_Layer: 0
+  m_Name: Bip001 L Finger4
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &744942323
 Transform:
   m_ObjectHideFlags: 0
@@ -2755,11 +3014,65 @@ GameObject:
   - 4: {fileID: 760964092}
   m_Layer: 0
   m_Name: hip_motion
+=======
+--- !u!4 &544571551
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400046, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  m_GameObject: {fileID: 544571550}
+  m_LocalRotation: {x: -.126186341, y: .0629711971, z: -.132093593, w: .981153905}
+  m_LocalPosition: {x: -.000727928244, y: .000163425793, z: .000358671939}
+  m_LocalScale: {x: .999999881, y: .999999821, z: .999999881}
+  m_Children:
+  - {fileID: 952822706}
+  m_Father: {fileID: 1129951166}
+  m_RootOrder: 4
+--- !u!1 &551860357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100042, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 551860358}
+  m_Layer: 0
+  m_Name: Bip001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &551860358
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400010, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  m_GameObject: {fileID: 551860357}
+  m_LocalRotation: {x: -.5, y: .5, z: .5, w: .5}
+  m_LocalPosition: {x: .00171948841, y: -.00546107208, z: .0280433092}
+  m_LocalScale: {x: 99.9999924, y: 99.9999924, z: 100}
+  m_Children:
+  - {fileID: 306374894}
+  m_Father: {fileID: 166642207}
+  m_RootOrder: 0
+--- !u!1 &733233613
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100110, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 733233614}
+  m_Layer: 0
+  m_Name: Bip001 L Finger1
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &760964092
 Transform:
   m_ObjectHideFlags: 0
@@ -2774,6 +3087,47 @@ Transform:
   - {fileID: 1391255289}
   - {fileID: 497245278}
   m_Father: {fileID: 678386667}
+=======
+--- !u!4 &733233614
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400028, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  m_GameObject: {fileID: 733233613}
+  m_LocalRotation: {x: -.000723021629, y: -.01224925, z: -.0771516934, w: .996943891}
+  m_LocalPosition: {x: -.000856468687, y: -2.56079438e-05, z: -.000309830619}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .999999881}
+  m_Children:
+  - {fileID: 1197406503}
+  m_Father: {fileID: 1129951166}
+  m_RootOrder: 1
+--- !u!1 &744942322
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100102, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 744942323}
+  m_Layer: 0
+  m_Name: Bip001 R Finger12
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &744942323
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400066, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  m_GameObject: {fileID: 744942322}
+  m_LocalRotation: {x: 2.68020317e-09, y: -3.80796017e-09, z: -.0301964767, w: .999544024}
+  m_LocalPosition: {x: -.000298546685, y: 0, z: -1.86264511e-11}
+  m_LocalScale: {x: 1, y: 1, z: .999999881}
+  m_Children: []
+  m_Father: {fileID: 1425748138}
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_RootOrder: 0
 --- !u!1001 &769752963
 Prefab:
@@ -2812,13 +3166,41 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5d5d4932f597fea4a9776aa797610589, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d5d4932f597fea4a9776aa797610589, type: 2}
   m_RootGameObject: {fileID: 435445814}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &772677572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100052, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 772677573}
+  m_Layer: 0
+  m_Name: Bip001 R Finger01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &772677573
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400058, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  m_GameObject: {fileID: 772677572}
+  m_LocalRotation: {x: -6.10994544e-09, y: 5.87341242e-09, z: -.116402209, w: .993202209}
+  m_LocalPosition: {x: -.00018735393, y: 0, z: -5.96046434e-10}
+  m_LocalScale: {x: .99999994, y: 1, z: 1}
+  m_Children:
+  - {fileID: 890634952}
+  m_Father: {fileID: 540782548}
+  m_RootOrder: 0
 --- !u!1 &775656588
 GameObject:
   m_ObjectHideFlags: 0
@@ -2937,6 +3319,7 @@ Transform:
   - {fileID: 1233152378}
   m_Father: {fileID: 497245278}
   m_RootOrder: 0
+<<<<<<< HEAD
 --- !u!1 &808103423
 GameObject:
   m_ObjectHideFlags: 0
@@ -2947,11 +3330,24 @@ GameObject:
   - 4: {fileID: 808103424}
   m_Layer: 0
   m_Name: head
+=======
+--- !u!1 &887190118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 887190119}
+  m_Layer: 0
+  m_Name: Bip001 R Clavicle
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &808103424
 Transform:
   m_ObjectHideFlags: 0
@@ -3011,11 +3407,37 @@ GameObject:
   - 4: {fileID: 870307377}
   m_Layer: 0
   m_Name: middle_1_R
+=======
+--- !u!4 &887190119
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  m_GameObject: {fileID: 887190118}
+  m_LocalRotation: {x: -.638646543, y: -.085681282, z: -.760076344, w: .0841028094}
+  m_LocalPosition: {x: .000872889126, y: .000163495468, z: -.000717522867}
+  m_LocalScale: {x: 1, y: 1, z: 1.00000012}
+  m_Children:
+  - {fileID: 2113714522}
+  m_Father: {fileID: 189013808}
+  m_RootOrder: 2
+--- !u!1 &890634951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100086, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 890634952}
+  m_Layer: 0
+  m_Name: Bip001 R Finger02
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &870307377
 Transform:
   m_ObjectHideFlags: 0
@@ -3079,6 +3501,11 @@ GameObject:
 --- !u!4 &890634952
 Transform:
   m_ObjectHideFlags: 0
+=======
+--- !u!4 &890634952
+Transform:
+  m_ObjectHideFlags: 0
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_PrefabParentObject: {fileID: 400060, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
   m_PrefabInternal: {fileID: 326014082}
   m_GameObject: {fileID: 890634951}
@@ -3112,6 +3539,7 @@ Transform:
   m_LocalRotation: {x: 3.97585698e-09, y: 1.24088428e-09, z: -.160426542, w: .987047791}
   m_LocalPosition: {x: -.000362607825, y: -5.96046434e-10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: .99999994}
+<<<<<<< HEAD
   m_Children:
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3154,10 +3582,16 @@ Transform:
 --- !u!1 &909461041
 >>>>>>> origin/new_branch_test
 =======
+=======
+  m_Children:
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   - {fileID: 1127758374}
   m_Father: {fileID: 1814565389}
   m_RootOrder: 0
 --- !u!1 &909461041
+<<<<<<< HEAD
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
+=======
 >>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
 GameObject:
   m_ObjectHideFlags: 0
@@ -3466,6 +3900,7 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &992047974
+<<<<<<< HEAD
 Transform:
   m_ObjectHideFlags: 0
 <<<<<<< HEAD
@@ -3615,6 +4050,20 @@ Transform:
 >>>>>>> origin/new_branch_test
 =======
 >>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
+=======
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400034, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  m_GameObject: {fileID: 992047973}
+  m_LocalRotation: {x: -.0255056527, y: .00563300494, z: -.0714264438, w: .99710381}
+  m_LocalPosition: {x: -.000849068747, y: 1.86157231e-05, z: -6.09705203e-05}
+  m_LocalScale: {x: .999999881, y: .999999881, z: .999999881}
+  m_Children:
+  - {fileID: 2128298175}
+  m_Father: {fileID: 1129951166}
+  m_RootOrder: 2
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
 --- !u!1001 &995084879
 Prefab:
   m_ObjectHideFlags: 0
@@ -3659,6 +4108,7 @@ Prefab:
   m_RootGameObject: {fileID: 1801664029}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!1 &999713584
@@ -4079,6 +4529,90 @@ GameObject:
   - 4: {fileID: 1127758374}
   m_Layer: 0
   m_Name: Bip001 L Finger32
+=======
+--- !u!1 &1097716912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100062, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1097716913}
+  m_Layer: 0
+  m_Name: Bip001 Head
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+<<<<<<< HEAD
+--- !u!4 &1127758374
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400044, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  m_GameObject: {fileID: 1127758373}
+  m_LocalRotation: {x: -2.77497514e-09, y: 3.25224042e-10, z: -.116402209, w: .993202209}
+  m_LocalPosition: {x: -.00030665606, y: 5.96046434e-10, z: -3.72529022e-11}
+  m_LocalScale: {x: 1, y: .99999994, z: 1}
+  m_Children: []
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
+  m_Father: {fileID: 899432825}
+=======
+--- !u!4 &1097716913
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400112, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  m_GameObject: {fileID: 1097716912}
+  m_LocalRotation: {x: 2.92667295e-08, y: -3.1547853e-07, z: .0790469572, w: .996870935}
+  m_LocalPosition: {x: -.000540349458, y: -1.49011609e-10, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1238502555}
+  m_Father: {fileID: 189013808}
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
+  m_RootOrder: 0
+--- !u!1 &1129951165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100018, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1129951166}
+  m_Layer: 0
+  m_Name: Bip001 L Hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1129951166
+Transform:
+  m_ObjectHideFlags: 0
+<<<<<<< HEAD
+=======
+  m_PrefabParentObject: {fileID: 400000, guid: 6da2c4fc620d69043924628d7213853d, type: 2}
+  m_PrefabInternal: {fileID: 448136121}
+  m_GameObject: {fileID: 1105354323}
+  m_LocalRotation: {x: -.0580215342, y: .0580215417, z: .704722345, w: .704722345}
+  m_LocalPosition: {x: 279.097412, y: -19.6672764, z: 107.588341}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+--- !u!1 &1127758373
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100050, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1127758374}
+  m_Layer: 0
+  m_Name: Bip001 L Finger32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4094,7 +4628,6 @@ Transform:
   m_LocalPosition: {x: -.00030665606, y: 5.96046434e-10, z: -3.72529022e-11}
   m_LocalScale: {x: 1, y: .99999994, z: 1}
   m_Children: []
->>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_Father: {fileID: 899432825}
   m_RootOrder: 0
 --- !u!1 &1129951165
@@ -4115,6 +4648,7 @@ GameObject:
 --- !u!4 &1129951166
 Transform:
   m_ObjectHideFlags: 0
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_PrefabParentObject: {fileID: 400020, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
   m_PrefabInternal: {fileID: 326014082}
   m_GameObject: {fileID: 1129951165}
@@ -4130,7 +4664,10 @@ Transform:
   m_Father: {fileID: 536251402}
   m_RootOrder: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/new_branch_test
+=======
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
 =======
 >>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
 --- !u!1 &1137834202
@@ -4165,6 +4702,7 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 11
 --- !u!1 &1146352332
 GameObject:
@@ -4197,6 +4735,9 @@ Transform:
 =======
   m_RootOrder: 5
 >>>>>>> origin/new_branch_test
+=======
+  m_RootOrder: 3
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
 =======
   m_RootOrder: 3
 >>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
@@ -4302,6 +4843,7 @@ Transform:
   m_RootOrder: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1194011799
 =======
 --- !u!1 &1186245184
@@ -4314,11 +4856,24 @@ GameObject:
   - 4: {fileID: 1186245185}
   m_Layer: 0
   m_Name: foot_L
+=======
+--- !u!1 &1197406502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100036, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1197406503}
+  m_Layer: 0
+  m_Name: Bip001 L Finger11
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &1186245185
 Transform:
   m_ObjectHideFlags: 0
@@ -4565,11 +5120,37 @@ GameObject:
   - 4: {fileID: 1238502555}
   m_Layer: 0
   m_Name: helmet_bone
+=======
+--- !u!4 &1197406503
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400030, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  m_GameObject: {fileID: 1197406502}
+  m_LocalRotation: {x: 1.83980164e-09, y: -2.90821867e-10, z: -.156133786, w: .987735927}
+  m_LocalPosition: {x: -.000449225889, y: -5.96046434e-10, z: 5.58793532e-11}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
+  m_Children:
+  - {fileID: 1902972064}
+  m_Father: {fileID: 733233614}
+  m_RootOrder: 0
+--- !u!1 &1236544020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100114, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1236544021}
+  m_Layer: 0
+  m_Name: Bip001 Spine1
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &1238502555
 Transform:
   m_ObjectHideFlags: 0
@@ -4596,11 +5177,37 @@ GameObject:
   - 4: {fileID: 1244245160}
   m_Layer: 0
   m_Name: ring_2_R
+=======
+--- !u!4 &1236544021
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400004, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  m_GameObject: {fileID: 1236544020}
+  m_LocalRotation: {x: -9.23032206e-10, y: -1.85808872e-07, z: .0444308855, w: .99901247}
+  m_LocalPosition: {x: -.00183250627, y: -2.42654232e-06, z: -6.98491915e-12}
+  m_LocalScale: {x: 1.00000012, y: 1.00000012, z: 1}
+  m_Children:
+  - {fileID: 189013808}
+  m_Father: {fileID: 1392222379}
+  m_RootOrder: 2
+--- !u!1 &1238502554
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100010, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1238502555}
+  m_Layer: 0
+  m_Name: helmet_bone
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &1244245160
 Transform:
   m_ObjectHideFlags: 0
@@ -4617,6 +5224,21 @@ Transform:
 --- !u!1 &1314736336
 >>>>>>> origin/new_branch_test
 =======
+--- !u!1 &1314736336
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
+=======
+--- !u!4 &1238502555
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400088, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  m_GameObject: {fileID: 1238502554}
+  m_LocalRotation: {x: -.702630103, y: .0206358228, z: -.0183460936, w: .711019337}
+  m_LocalPosition: {x: -.00146558043, y: .000187991129, z: 3.59850219e-06}
+  m_LocalScale: {x: .999999583, y: .999999762, z: 1.00000012}
+  m_Children: []
+  m_Father: {fileID: 1097716913}
+  m_RootOrder: 0
 --- !u!1 &1314736336
 >>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
 GameObject:
@@ -4643,6 +5265,7 @@ Transform:
   m_LocalPosition: {x: -.00481884554, y: -1.86264511e-11, z: 0}
   m_LocalScale: {x: 1.00000012, y: 1, z: 1.00000012}
   m_Children:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   - {fileID: 510159733}
@@ -4822,11 +5445,16 @@ Transform:
 Prefab:
 >>>>>>> origin/new_branch_test
 =======
+=======
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   - {fileID: 1602320903}
   m_Father: {fileID: 1152346468}
   m_RootOrder: 0
 --- !u!1001 &1380904081
 Prefab:
+<<<<<<< HEAD
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
+=======
 >>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -4922,6 +5550,7 @@ Renderer:
   m_SortingOrder: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
@@ -4990,6 +5619,8 @@ Renderer:
 =======
 =======
 >>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
+=======
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
 --- !u!33 &1382633931
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4998,6 +5629,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 326014082}
   m_GameObject: {fileID: 1382633928}
   m_Mesh: {fileID: 4300002, guid: 449b48f7eb5d87a4baaa5fb73f875a59, type: 3}
+<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!1 &1389557422
 GameObject:
@@ -5157,11 +5789,24 @@ GameObject:
   - 4: {fileID: 1425748138}
   m_Layer: 0
   m_Name: Bip001 R Finger11
+=======
+--- !u!1 &1392222378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100078, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1392222379}
+  m_Layer: 0
+  m_Name: Bip001 Spine
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &1425748138
 Transform:
   m_ObjectHideFlags: 0
@@ -5189,11 +5834,39 @@ GameObject:
   - 4: {fileID: 1444781029}
   m_Layer: 0
   m_Name: middle_2_L
+=======
+--- !u!4 &1392222379
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400006, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  m_GameObject: {fileID: 1392222378}
+  m_LocalRotation: {x: -2.08584925e-06, y: 7.01539363e-07, z: -.00415344862, w: .999991417}
+  m_LocalPosition: {x: -.00120483362, y: .000168676212, z: 1.20373445e-09}
+  m_LocalScale: {x: 1, y: 1, z: .99999994}
+  m_Children:
+  - {fileID: 1152346468}
+  - {fileID: 920137435}
+  - {fileID: 1236544021}
+  m_Father: {fileID: 306374894}
+  m_RootOrder: 0
+--- !u!1 &1425748137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100076, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1425748138}
+  m_Layer: 0
+  m_Name: Bip001 R Finger11
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &1444781029
 Transform:
   m_ObjectHideFlags: 0
@@ -5210,6 +5883,22 @@ Transform:
 --- !u!1 &1454587656
 >>>>>>> origin/new_branch_test
 =======
+--- !u!1 &1454587656
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
+=======
+--- !u!4 &1425748138
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400064, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  m_GameObject: {fileID: 1425748137}
+  m_LocalRotation: {x: 1.21072274e-09, y: 1.69439085e-09, z: -.156133801, w: .987735927}
+  m_LocalPosition: {x: -.000449225889, y: 0, z: -3.72529022e-11}
+  m_LocalScale: {x: .999999881, y: .99999994, z: 1}
+  m_Children:
+  - {fileID: 744942323}
+  m_Father: {fileID: 1524940535}
+  m_RootOrder: 0
 --- !u!1 &1454587656
 >>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
 GameObject:
@@ -5429,6 +6118,7 @@ MeshFilter:
   m_Mesh: {fileID: 4300000, guid: 9feb2e67f2a451c49ac535fa66b659aa, type: 3}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!1 &1499398238
 GameObject:
@@ -5484,6 +6174,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1244245160}
   m_RootOrder: 0
+=======
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
 =======
 >>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
 --- !u!1 &1513737466
@@ -5542,7 +6234,10 @@ Transform:
   m_Father: {fileID: 1662199706}
   m_RootOrder: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/new_branch_test
+=======
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
 =======
 >>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
 --- !u!1 &1526153649
@@ -5612,10 +6307,14 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 14
 =======
   m_RootOrder: 11
 >>>>>>> origin/new_branch_test
+=======
+  m_RootOrder: 9
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
 =======
   m_RootOrder: 9
 >>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
@@ -5711,6 +6410,7 @@ Transform:
   m_RootOrder: 1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1577188416
 =======
 --- !u!1 &1548657776
@@ -5723,11 +6423,24 @@ GameObject:
   - 4: {fileID: 1548657777}
   m_Layer: 0
   m_Name: index_1_L
+=======
+--- !u!1 &1598100747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100088, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1598100748}
+  m_Layer: 0
+  m_Name: Bip001 L Finger0
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &1548657777
 Transform:
   m_ObjectHideFlags: 0
@@ -5751,11 +6464,37 @@ GameObject:
   - 4: {fileID: 1558729312}
   m_Layer: 0
   m_Name: shoulder_R
+=======
+--- !u!4 &1598100748
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400022, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  m_GameObject: {fileID: 1598100747}
+  m_LocalRotation: {x: .397784591, y: -.457301617, z: -.174690813, w: .775967658}
+  m_LocalPosition: {x: -.000353150361, y: .000104373692, z: -.000361629354}
+  m_LocalScale: {x: .999999821, y: .999999821, z: .999999881}
+  m_Children:
+  - {fileID: 1454587657}
+  m_Father: {fileID: 1129951166}
+  m_RootOrder: 0
+--- !u!1 &1602320902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100044, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1602320903}
+  m_Layer: 0
+  m_Name: Bip001 L Foot
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &1558729312
 Transform:
   m_ObjectHideFlags: 0
@@ -5846,6 +6585,11 @@ GameObject:
 --- !u!4 &1602320903
 Transform:
   m_ObjectHideFlags: 0
+=======
+--- !u!4 &1602320903
+Transform:
+  m_ObjectHideFlags: 0
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_PrefabParentObject: {fileID: 400092, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
   m_PrefabInternal: {fileID: 326014082}
   m_GameObject: {fileID: 1602320902}
@@ -6084,6 +6828,7 @@ MeshFilter:
   m_GameObject: {fileID: 1661764145}
   m_Mesh: {fileID: 4300000, guid: 77ddb92ed2ebb554b87522fac79913a7, type: 3}
 --- !u!1 &1662199705
+<<<<<<< HEAD
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100106, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
@@ -6162,11 +6907,23 @@ GameObject:
   - 4: {fileID: 1694716705}
   m_Layer: 0
   m_Name: Bip001 R Finger3
+=======
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100106, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1662199706}
+  m_Layer: 0
+  m_Name: Bip001 R Hand
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &1694716705
 Transform:
   m_ObjectHideFlags: 0
@@ -6194,11 +6951,42 @@ GameObject:
   - 4: {fileID: 1726930983}
   m_Layer: 0
   m_Name: index_3_L
+=======
+--- !u!4 &1662199706
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400054, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  m_GameObject: {fileID: 1662199705}
+  m_LocalRotation: {x: .706690669, y: .0138001563, z: -.0137891714, w: .707253635}
+  m_LocalPosition: {x: -.00215726974, y: -3.72529022e-11, z: 5.96046434e-10}
+  m_LocalScale: {x: 1, y: 1.00000012, z: 1.00000012}
+  m_Children:
+  - {fileID: 540782548}
+  - {fileID: 1524940535}
+  - {fileID: 1620096618}
+  - {fileID: 1694716705}
+  - {fileID: 1863030490}
+  - {fileID: 1382633929}
+  m_Father: {fileID: 1649280363}
+  m_RootOrder: 0
+--- !u!1 &1694716704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100020, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1694716705}
+  m_Layer: 0
+  m_Name: Bip001 R Finger3
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &1726930983
 Transform:
   m_ObjectHideFlags: 0
@@ -6288,6 +7076,11 @@ Transform:
   m_RootOrder: 0
 --- !u!1 &1797722925
 =======
+=======
+--- !u!4 &1694716705
+Transform:
+  m_ObjectHideFlags: 0
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_PrefabParentObject: {fileID: 400074, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
   m_PrefabInternal: {fileID: 326014082}
   m_GameObject: {fileID: 1694716704}
@@ -6299,6 +7092,9 @@ Transform:
   m_Father: {fileID: 1662199706}
   m_RootOrder: 3
 --- !u!1 &1748795227
+<<<<<<< HEAD
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
+=======
 >>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
 GameObject:
   m_ObjectHideFlags: 0
@@ -6308,6 +7104,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1748795228}
   m_Layer: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_Name: forearm_L
 =======
@@ -6338,6 +7135,9 @@ GameObject:
 =======
   m_Name: Bip001 L Clavicle
 >>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
+=======
+  m_Name: Bip001 L Clavicle
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6345,7 +7145,11 @@ GameObject:
   m_IsActive: 1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!4 &1797722926
+=======
+--- !u!4 &1748795228
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
 =======
 --- !u!4 &1748795228
 >>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
@@ -6358,6 +7162,7 @@ Transform:
   m_LocalPosition: {x: .000872889126, y: .000163491364, z: .00071752345}
   m_LocalScale: {x: 1, y: .99999994, z: 1}
   m_Children:
+<<<<<<< HEAD
 <<<<<<< HEAD
   - {fileID: 2136636515}
   m_Father: {fileID: 1807330479}
@@ -6375,6 +7180,11 @@ Transform:
   m_Father: {fileID: 2106909805}
 >>>>>>> origin/new_branch_test
   m_RootOrder: 0
+=======
+  - {fileID: 2128033217}
+  m_Father: {fileID: 189013808}
+  m_RootOrder: 1
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
 =======
   - {fileID: 2128033217}
   m_Father: {fileID: 189013808}
@@ -6471,6 +7281,7 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 9
 --- !u!1 &1807330478
 =======
@@ -6485,11 +7296,25 @@ GameObject:
   - 4: {fileID: 1806449206}
   m_Layer: 0
   m_Name: forearm_L
+=======
+  m_RootOrder: 4
+--- !u!1 &1814565388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100012, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1814565389}
+  m_Layer: 0
+  m_Name: Bip001 L Finger3
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &1806449206
 Transform:
   m_ObjectHideFlags: 0
@@ -6518,11 +7343,37 @@ GameObject:
   - 4: {fileID: 1814565389}
   m_Layer: 0
   m_Name: Bip001 L Finger3
+=======
+--- !u!4 &1814565389
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400040, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  m_GameObject: {fileID: 1814565388}
+  m_LocalRotation: {x: -.0748830959, y: .0266660172, z: -.100106873, w: .991796374}
+  m_LocalPosition: {x: -.000833489583, y: 7.28732339e-05, z: .000171652689}
+  m_LocalScale: {x: .99999994, y: .999999881, z: .999999821}
+  m_Children:
+  - {fileID: 899432825}
+  m_Father: {fileID: 1129951166}
+  m_RootOrder: 3
+--- !u!1 &1832470529
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100046, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1832470530}
+  m_Layer: 0
+  m_Name: Bip001 R Finger21
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &1814565389
 Transform:
   m_ObjectHideFlags: 0
@@ -6554,6 +7405,11 @@ GameObject:
 --- !u!4 &1832470530
 Transform:
   m_ObjectHideFlags: 0
+=======
+--- !u!4 &1832470530
+Transform:
+  m_ObjectHideFlags: 0
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_PrefabParentObject: {fileID: 400070, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
   m_PrefabInternal: {fileID: 326014082}
   m_GameObject: {fileID: 1832470529}
@@ -6561,6 +7417,7 @@ Transform:
   m_LocalPosition: {x: -.00050301489, y: -5.96046434e-10, z: -4.65661277e-12}
   m_LocalScale: {x: 1.00000012, y: 1, z: 1}
   m_Children:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   - {fileID: 284957376}
@@ -6638,6 +7495,12 @@ Prefab:
   m_RootOrder: 0
 --- !u!1 &1863030489
 >>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
+=======
+  - {fileID: 1467694889}
+  m_Father: {fileID: 1620096618}
+  m_RootOrder: 0
+--- !u!1 &1863030489
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100058, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
@@ -6685,6 +7548,7 @@ Transform:
   m_ObjectHideFlags: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_PrefabParentObject: {fileID: 400072, guid: 9d693f089b09f2e4b9dd4789d5ec3f55, type: 3}
   m_PrefabInternal: {fileID: 208247054}
   m_GameObject: {fileID: 1977524198}
@@ -6699,6 +7563,8 @@ Transform:
 =======
 =======
 >>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
+=======
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_PrefabParentObject: {fileID: 400032, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
   m_PrefabInternal: {fileID: 326014082}
   m_GameObject: {fileID: 1902972063}
@@ -6708,6 +7574,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1197406503}
   m_RootOrder: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!1 &1943267293
 GameObject:
@@ -6750,6 +7617,17 @@ GameObject:
   m_Component:
   - 4: {fileID: 1970255012}
   m_Layer: 0
+=======
+--- !u!1 &1970255011
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100074, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1970255012}
+  m_Layer: 0
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_Name: Bip001 R Calf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6759,6 +7637,7 @@ GameObject:
 --- !u!4 &1970255012
 Transform:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   m_PrefabParentObject: {fileID: 400114, guid: 9d693f089b09f2e4b9dd4789d5ec3f55, type: 3}
@@ -6774,6 +7653,8 @@ Transform:
 =======
 =======
 >>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
+=======
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_PrefabParentObject: {fileID: 400098, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
   m_PrefabInternal: {fileID: 326014082}
   m_GameObject: {fileID: 1970255011}
@@ -6785,6 +7666,7 @@ Transform:
   m_Father: {fileID: 920137435}
   m_RootOrder: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1987994476
 GameObject:
   m_ObjectHideFlags: 0
@@ -6795,11 +7677,24 @@ GameObject:
   - 4: {fileID: 1987994477}
   m_Layer: 0
   m_Name: neck
+=======
+--- !u!1 &2023537887
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100112, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2023537888}
+  m_Layer: 0
+  m_Name: hip_adjustment_bone_left
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &1987994477
 Transform:
   m_ObjectHideFlags: 0
@@ -6863,6 +7758,11 @@ GameObject:
 --- !u!4 &2023537888
 Transform:
   m_ObjectHideFlags: 0
+=======
+--- !u!4 &2023537888
+Transform:
+  m_ObjectHideFlags: 0
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_PrefabParentObject: {fileID: 400096, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
   m_PrefabInternal: {fileID: 326014082}
   m_GameObject: {fileID: 2023537887}
@@ -6957,12 +7857,17 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 12
 --- !u!1 &2064396371
 =======
   m_RootOrder: 9
 --- !u!1 &2048947022
 >>>>>>> origin/new_branch_test
+=======
+  m_RootOrder: 7
+--- !u!1 &2048947022
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
 =======
   m_RootOrder: 7
 --- !u!1 &2048947022
@@ -7069,6 +7974,7 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 7
 --- !u!1001 &2123723147
 Prefab:
@@ -7084,11 +7990,25 @@ GameObject:
   - 4: {fileID: 2105924993}
   m_Layer: 0
   m_Name: hand_R
+=======
+  m_RootOrder: 2
+--- !u!1 &2113714521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100008, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2113714522}
+  m_Layer: 0
+  m_Name: Bip001 R UpperArm
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &2105924993
 Transform:
   m_ObjectHideFlags: 0
@@ -7115,11 +8035,65 @@ GameObject:
   - 4: {fileID: 2106909805}
   m_Layer: 0
   m_Name: ring_2_L
+=======
+--- !u!4 &2113714522
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400114, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  m_GameObject: {fileID: 2113714521}
+  m_LocalRotation: {x: -.0788895339, y: .14359653, z: .0264191758, w: .986133099}
+  m_LocalPosition: {x: -.00127041398, y: 3.72529022e-11, z: -5.96046434e-10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1649280363}
+  m_Father: {fileID: 887190119}
+  m_RootOrder: 0
+--- !u!1 &2128033216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100070, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2128033217}
+  m_Layer: 0
+  m_Name: Bip001 L UpperArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &2128033217
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400016, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  m_GameObject: {fileID: 2128033216}
+  m_LocalRotation: {x: .078889519, y: -.143596664, z: .0264191683, w: .986133099}
+  m_LocalPosition: {x: -.0012704141, y: 0, z: -1.19209287e-09}
+  m_LocalScale: {x: 1.00000012, y: 1.00000012, z: 1}
+  m_Children:
+  - {fileID: 536251402}
+  m_Father: {fileID: 1748795228}
+  m_RootOrder: 0
+--- !u!1 &2128298174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100016, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2128298175}
+  m_Layer: 0
+  m_Name: Bip001 L Finger21
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &2106909805
 Transform:
   m_ObjectHideFlags: 0
@@ -7293,4 +8267,18 @@ Transform:
   m_Children:
   - {fileID: 1186245185}
   m_Father: {fileID: 274468206}
+=======
+--- !u!4 &2128298175
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400036, guid: 2314ce3a3eecf4816bad3c9eca4de2e1, type: 2}
+  m_PrefabInternal: {fileID: 326014082}
+  m_GameObject: {fileID: 2128298174}
+  m_LocalRotation: {x: 4.56978982e-10, y: -8.95022806e-11, z: -.192204684, w: .981354892}
+  m_LocalPosition: {x: -.00050301489, y: 0, z: 4.19095141e-11}
+  m_LocalScale: {x: 1.00000012, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1513737467}
+  m_Father: {fileID: 992047974}
+>>>>>>> parent of 270ca6e... Cave updates, transitions, boss trigger, music
   m_RootOrder: 0

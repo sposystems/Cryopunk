@@ -1,11 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\BattleLauncher.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scenes\SceneScripts\playDialog.js">
     <Files>
-      <File FileName="Assets\scripts\UI_Scripts\MainMenu_UI\PauseMenuAnim.cs" Line="225" Column="40" />
-      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js" Line="309" Column="1" />
-      <File FileName="Assets\Plugins\RABi.cs" Line="23" Column="24" />
-      <File FileName="Assets\scripts\BattleLauncher.cs" Line="30" Column="36" />
+      <File FileName="Assets\scripts\BattleLauncher.cs" Line="45" Column="1" />
+      <File FileName="Assets\Battle System Assests\Scripts\BattleController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scenes\SceneScripts\SceneChanger.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scenes\SceneScripts\playDialog.js" Line="31" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

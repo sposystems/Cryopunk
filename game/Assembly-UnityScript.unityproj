@@ -47,9 +47,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Battle System Assests\Characters\Enemies\Spider\FS_rotateThis.js" />
+     <Compile Include="Assets\Classic Dungeon Levers\Scripts\LoopAnimation.js" />
      <Compile Include="Assets\InteractiveDemo\Scripts\MPSceneSelect.js" />
      <Compile Include="Assets\InteractiveDemo\Scripts\RotateParticles.js" />
      <Compile Include="Assets\InteractiveDemo\Scripts\sceneController.js" />
+     <Compile Include="Assets\Scenes\SceneScripts\FlipSwitch.js" />
      <Compile Include="Assets\Scenes\SceneScripts\chooseDialog.js" />
      <Compile Include="Assets\Scenes\SceneScripts\playDialog.js" />
      <Compile Include="Assets\Scenes\SceneScripts\worldToTownTest1.js" />

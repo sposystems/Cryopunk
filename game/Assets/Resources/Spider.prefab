@@ -2061,7 +2061,7 @@ Transform:
   m_GameObject: {fileID: 169606}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.29999995, y: 2.29999995, z: 2.29999995}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 469604}
   - {fileID: 469602}
@@ -2166,7 +2166,7 @@ MonoBehaviour:
   abilityName: Attack
   spCost: 0
   damage: 10
-  offensive: 0
+  offensive: 1
   targetType: 0
   statusEffect: 0
   statusLength: 0
@@ -2190,6 +2190,13 @@ MonoBehaviour:
   ability2: {fileID: 11469462}
   ability3: {fileID: 11469460}
   isPlayer: 0
+  currentSP: 0
+  currentHP: 0
+  str: 0
+  mag: 0
+  def: 0
+  lv: 0
+  exp: 0
 --- !u!137 &13769460
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

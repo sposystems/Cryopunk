@@ -151,11 +151,11 @@ public class BattleController : MonoBehaviour {
 	
 	private void ImportPlayers(bool fifthAcquired) {
 		//hardcoded for testing
-		fifthAcquired = false;
+		//fifthAcquired = true;
 		
 		player1 = (GameObject)Instantiate(Resources.Load("Warrior"));
 		player1Character = player1.GetComponent<Character>();
-		player1.transform.position = new Vector3(14,0,-8);
+		player1.transform.position = new Vector3(14,0,-8.5f);
 		
 		player2 = (GameObject)Instantiate(Resources.Load("Wizard"));
 		player2Character = player2.GetComponent<Character>();
@@ -172,7 +172,7 @@ public class BattleController : MonoBehaviour {
 		if (fifthAcquired) {
 			player5 = (GameObject)Instantiate(Resources.Load("Archer"));
 			player5Character = player5.GetComponent<Character>();
-			player5.transform.position = new Vector3(14,0,8);
+			player5.transform.position = new Vector3(14,0,8.5f);
 		} else {
 			gui.DisablePlayerGUI(5);
 		}
@@ -180,8 +180,8 @@ public class BattleController : MonoBehaviour {
 	
 	private void ImportEnemies(int type, int amount) {
 		//hardcoded values for testing
-		type=2;
-		amount=1;
+		//type=2;
+		//amount=5;
 		
 		string enemyType = "";
 		if (type == 1) {
@@ -197,12 +197,14 @@ public class BattleController : MonoBehaviour {
 		
 		enemy1 = (GameObject)Instantiate(Resources.Load(enemyType));
 		enemy1Character = enemy1.GetComponent<Character>();
-		enemy1.transform.position = new Vector3(-2,0,-8);
+		enemy1.transform.position = new Vector3(2,0,-13.5f);
+		enemy1.transform.Rotate(0,-20,0);
 		
 		if (amount > 1) {
 			enemy2 = (GameObject)Instantiate(Resources.Load(enemyType));
 			enemy2Character = enemy2.GetComponent<Character>();
-			enemy2.transform.position = new Vector3(-2,0,-4);
+			enemy2.transform.position = new Vector3(2,0,-7);
+			enemy2.transform.Rotate(0,-10,0);
 		} else {
 			gui.DisableEnemyGUI(2);
 		}
@@ -210,7 +212,7 @@ public class BattleController : MonoBehaviour {
 		if (amount > 2) {
 			enemy3 = (GameObject)Instantiate(Resources.Load(enemyType));
 			enemy3Character = enemy3.GetComponent<Character>();
-			enemy3.transform.position = new Vector3(-2,0,0);
+			enemy3.transform.position = new Vector3(2,0,-.5f);
 		} else {
 			gui.DisableEnemyGUI(3);
 		}
@@ -218,7 +220,8 @@ public class BattleController : MonoBehaviour {
 		if (amount > 3) {
 			enemy4 = (GameObject)Instantiate(Resources.Load(enemyType));
 			enemy4Character = enemy4.GetComponent<Character>();
-			enemy4.transform.position = new Vector3(-2,0,4);
+			enemy4.transform.position = new Vector3(2,0,6);
+			enemy4.transform.Rotate(0,10,0);
 		} else {
 			gui.DisableEnemyGUI(4);
 		}
@@ -226,7 +229,8 @@ public class BattleController : MonoBehaviour {
 		if (amount > 4) {
 			enemy5 = (GameObject)Instantiate(Resources.Load(enemyType));
 			enemy5Character = enemy5.GetComponent<Character>();
-			enemy5.transform.position = new Vector3(-2,0,8);
+			enemy5.transform.position = new Vector3(2,0,12.5f);
+			enemy5.transform.Rotate(0,20,0);
 		} else {
 			gui.DisableEnemyGUI(5);
 		}

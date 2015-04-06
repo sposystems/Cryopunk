@@ -1056,7 +1056,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Poison Dart
   spCost: 25
-  damage: 20
+  damage: 5
   offensive: 1
   targetType: 0
   statusEffect: 2
@@ -1098,7 +1098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Stealth
   spCost: 25
-  damage: 20
+  damage: 0
   offensive: 0
   targetType: 4
   statusEffect: 6

@@ -1560,6 +1560,13 @@ MonoBehaviour:
   ability2: {fileID: 11456466}
   ability3: {fileID: 11456468}
   isPlayer: 0
+  currentSP: 0
+  currentHP: 0
+  str: 0
+  mag: 0
+  def: 0
+  lv: 0
+  exp: 0
 --- !u!114 &11456464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1593,7 +1600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Bite
   spCost: 20
-  damage: 20
+  damage: 25
   offensive: 1
   targetType: 0
   statusEffect: 0
@@ -1613,7 +1620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Frighten
   spCost: 50
-  damage: 30
+  damage: 0
   offensive: 1
   targetType: 0
   statusEffect: 1

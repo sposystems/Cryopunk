@@ -961,7 +961,7 @@ Transform:
   m_GameObject: {fileID: 136168}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.79999995, y: 1.79999995, z: 1.79999995}
+  m_LocalScale: {x: 2.20000005, y: 2.20000005, z: 2.20000005}
   m_Children:
   - {fileID: 436170}
   - {fileID: 436172}
@@ -1811,6 +1811,13 @@ MonoBehaviour:
   ability2: {fileID: 11436290}
   ability3: {fileID: 11436292}
   isPlayer: 0
+  currentSP: 0
+  currentHP: 0
+  str: 0
+  mag: 0
+  def: 0
+  lv: 0
+  exp: 0
 --- !u!114 &11436288
 MonoBehaviour:
   m_ObjectHideFlags: 1

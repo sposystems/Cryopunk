@@ -1097,7 +1097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Raining Arrows
   spCost: 25
-  damage: 20
+  damage: 10
   offensive: 1
   targetType: 3
   statusEffect: 0

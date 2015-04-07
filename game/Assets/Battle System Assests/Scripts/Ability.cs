@@ -158,8 +158,8 @@ public class Ability : MonoBehaviour {
 		return targets;
 	}
 
-	//called on object creation, sets up refrences
-	private void Awake() {
+	//sets up refrences
+	public void Init() {
 		abilityUser = transform.parent.gameObject.GetComponent<Character>();
 		controller = GameObject.FindGameObjectWithTag("GameController").GetComponent<BattleController>();
 	}

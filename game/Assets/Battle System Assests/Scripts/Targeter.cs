@@ -16,6 +16,9 @@ public class Targeter : MonoBehaviour {
 	
 		abilityButton = button;
 		
+		Debug.Log (button);
+		Debug.Log (ability);
+		
 		//enable possible ability targets and wait for user to choose target
 		if (ability.targetType == Ability.targetTypeE.single) {
 			enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -61,9 +64,10 @@ public class Targeter : MonoBehaviour {
 		}
 	}
 	
-	//called on object creation, set up references
-	private void Awake() {
+	//set up references
+	public void Init() {
 		controller = GameObject.FindGameObjectWithTag("GameController").GetComponent<BattleController>();
+		Debug.Log(transform.GetComponent<Ability>());
 		ability = transform.GetComponent<Ability>();
 		waitingForTarget = false;
 	}

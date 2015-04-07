@@ -255,15 +255,38 @@ public class BattleController : MonoBehaviour {
 
 	//setup battle
 	private void Start() {
+		
 		camera = GameObject.Find("Main Camera");
-		playerContainer = GameObject.Find("PlayerContainer");
+		playerContainer = GameObject.Find("Swordman 1");
 		hoverAbilityText = GameObject.Find ("Description Text").GetComponent<Text>(); //for the mouse hovering over abilities
 		camera.SetActive(false);
-		//playerContainer.SetActive(false);
+		playerContainer.SetActive(false);
 		
 		ApplyLocation(BattleLauncher.location);
 		ImportPlayers(false); //(BattleLauncher.fifthMember)
-		ImportEnemies(BattleLauncher.enemyType, BattleLauncher.enemyQuantity);	
+		ImportEnemies(BattleLauncher.enemyType, BattleLauncher.enemyQuantity);
+		
+		//initialize all abilites
+		GameObject[] players;
+		GameObject[] enemies;
+		players = GameObject.FindGameObjectsWithTag("Player");
+		enemies = GameObject.FindGameObjectsWithTag("Enemy");
+		foreach (GameObject player in players) {
+			Character character = player.GetComponent<Character>();
+			character.ability1.Init();
+			character.ability1.transform.GetComponent<Targeter>().Init();
+			character.ability2.Init();
+			character.ability2.transform.GetComponent<Targeter>().Init();
+			character.ability3.Init();
+			character.ability3.transform.GetComponent<Targeter>().Init();
+		}
+		foreach (GameObject enemy in enemies) {
+			Character character = enemy.GetComponent<Character>();
+			character.ability1.Init();
+			character.ability2.Init();
+			character.ability3.Init();
+		}
+		
 		gui.InitializeGUI();
 		gui.UpdateGui();
 		currentState = BattleStates.Player1Turn;

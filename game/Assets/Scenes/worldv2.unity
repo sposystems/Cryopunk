@@ -6286,8 +6286,9 @@ GameObject:
   - 33: {fileID: 631219492}
   - 135: {fileID: 631219491}
   - 23: {fileID: 631219490}
+  - 54: {fileID: 631219494}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: BasketBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6305,7 +6306,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9a2738dd1cb73874cbe39bcbc20c8bff, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -6339,11 +6340,26 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 631219489}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 736.340027, y: 74.4199982, z: 629.950012}
+  m_LocalPosition: {x: 736.340027, y: 74.9199982, z: 629.950012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 21
+--- !u!54 &631219494
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 631219489}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &631615286
 GameObject:
   m_ObjectHideFlags: 0
@@ -16938,6 +16954,7 @@ MonoBehaviour:
   eType: 2
   eQuantity: 1
   eLocation: 2
+  eAreaNumber: 0
   launcherInstance: 1
   isFinalBattle: 1
   fMember: 0
@@ -18001,6 +18018,7 @@ MonoBehaviour:
   eType: 2
   eQuantity: 1
   eLocation: 2
+  eAreaNumber: 0
   launcherInstance: 2
   isFinalBattle: 0
   fMember: 0

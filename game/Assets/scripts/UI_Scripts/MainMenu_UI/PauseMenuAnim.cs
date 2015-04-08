@@ -262,9 +262,20 @@ public class PauseMenuAnim : MonoBehaviour {
 		player5Character.currentHP = player5Character.maxHp;
 		player5Character.currentSP = player5Character.maxSp;
 
+		hpTextS = GameObject.Find ("CharDetails (Solan)/hp_bar_outline/HP_Num").GetComponent<Text>();
+		scrollbarHPS = GameObject.Find ("CharDetails (Solan)/hp_bar_percent").GetComponent<Image>();
+		spTextS = GameObject.Find ("CharDetails (Solan)/sp_bar_outline/SP_Num").GetComponent<Text>();
+		scrollbarSPS = GameObject.Find ("CharDetails (Solan)/sp_bar_percent").GetComponent<Image>();
+		lvTextS = GameObject.Find ("CharDetails (Solan)/Level").GetComponent<Text>();
+		expTextS = GameObject.Find ("CharDetails (Solan)/ToNext").GetComponent<Text>();
+
 		solan_select_image = GameObject.Find ("Solan Select").GetComponent<Image>();
 		solan_select_image.enabled = true;
+		solan_menu_image.enabled = true;
 		fifthCanvas.alpha = 1;
+
+		BattleLauncher.fifthMember = true;
+		fifthAcquired = true;
 	}
 
 	public void hpPotionPress(){

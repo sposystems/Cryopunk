@@ -1,9 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scenes\SceneScripts\chooseDialog.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scenes\SceneScripts\playDialog.js">
     <Files>
+      <File FileName="Assets\scripts\UI_Scripts\MainMenu_UI\PauseMenuAnim.cs" Line="267" Column="35" />
       <File FileName="Assets\Scenes\SceneScripts\chooseDialog.js" Line="13" Column="20" />
       <File FileName="Assets\Scenes\SceneScripts\playDialog.js" Line="16" Column="3" />
+      <File FileName="Assets\scripts\BattleLauncher.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

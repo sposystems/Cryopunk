@@ -13,11 +13,8 @@ public class UnlockSolan : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(){
+		BattleLauncher.fifthMember = true;
 		pma.getSolan ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }

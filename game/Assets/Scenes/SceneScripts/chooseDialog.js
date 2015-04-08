@@ -36,6 +36,6 @@ function OnGUI()
 {
 	if(showTalk)
 	{
-		GUI.Label(Rect(300,300,500,80), text, style);
+		GUI.Label(Rect(Screen.currentResolution.width/2 - 300, Screen.currentResolution.height/2 + 100,600,80), text, style);
 	}
 }

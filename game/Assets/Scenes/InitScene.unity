@@ -5994,7 +5994,7 @@ CharacterController:
   m_StepOffset: .300000012
   m_SkinWidth: .0799999982
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 1.01999998, z: 0}
+  m_Center: {x: 0, y: 1.20000005, z: 0}
 --- !u!111 &1336586252
 Animation:
   m_ObjectHideFlags: 0
@@ -6259,6 +6259,10 @@ Prefab:
       value: 
       objectReference: {fileID: 13400000, guid: 99e86ee0ad11f8d6d00011d98d76c639,
         type: 2}
+    - target: {fileID: 14384704, guid: 9c758ffff0acd5843ac564d60352963f, type: 2}
+      propertyPath: m_Center.y
+      value: 1.20000005
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 9c758ffff0acd5843ac564d60352963f, type: 2}

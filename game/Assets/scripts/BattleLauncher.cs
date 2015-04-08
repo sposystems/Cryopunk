@@ -10,10 +10,11 @@ public class BattleLauncher : MonoBehaviour {
 	public static bool fifthMember = false;
 	public static int location = 0;
 	public static Vector3 previousLocation;
+	public static int areaNumber = 0;
 	public static int instance = 0; 
 	//public static bool battled = false;
 
-	public int eType, eQuantity, eLocation, launcherInstance; 
+	public int eType, eQuantity, eLocation, eAreaNumber, launcherInstance; 
 	//launcher instance is a number assigned to an instance of a battle cube.
 	//launcherInstance = 1, instance = 0,
 	//when the battle gets triggered, to disable the cube, set the static number to the launcher instance.
@@ -37,6 +38,7 @@ public class BattleLauncher : MonoBehaviour {
 			Debug.Log ("Vector 3");
 			enemyType = eType;
 			enemyQuantity = eQuantity;
+			areaNumber = eAreaNumber;
 			fifthMember = fMember;
 			location = eLocation;
 			//battled = true;

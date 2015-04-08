@@ -123,8 +123,8 @@ public class PauseMenuAnim : MonoBehaviour {
 		molotovCocktails = GameObject.Find ("Molotov Cocktail Quantity").GetComponent<Text>();
 		mrFuns = GameObject.Find ("Mr Fun Quantity").GetComponent<Text>();
 
-		hpPotions.text = "x" + "12"; //CHANGE TO ACTUAL NUMBER FROM DB
-		spPotions.text = "x" + "4";
+		hpPotions.text = "x" + "3"; //CHANGE TO ACTUAL NUMBER FROM DB
+		spPotions.text = "x" + "2";
 		lifePotions.text = "x" + "0";
 		molotovCocktails.text = "x" + "0";
 		mrFuns.text = "x" + "0";
@@ -432,7 +432,9 @@ public class PauseMenuAnim : MonoBehaviour {
 	}
 
 	public void QuitGame(){
-		Application.LoadLevel ("MainMenu");
+		//Destroy(GameObject.Find ("PlayerContainer"));
+		//Application.LoadLevel ("MainMenu");
+		Application.Quit ();
 	}
 
 	public void UpdateParametersOnMenuOpen(){

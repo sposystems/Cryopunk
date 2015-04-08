@@ -7648,7 +7648,7 @@ GameObject:
   - 23: {fileID: 1460489865}
   - 82: {fileID: 1460489869}
   m_Layer: 0
-  m_Name: Ground
+  m_Name: Battle Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7666,7 +7666,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 7f9d3599e6b54e44d98de637a98b519e, type: 2}
+  - {fileID: 2100000, guid: 1b42da34a93de474389f1ff61fb5f3e2, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0

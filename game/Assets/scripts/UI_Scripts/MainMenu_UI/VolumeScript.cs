@@ -12,6 +12,8 @@ public class VolumeScript : MonoBehaviour {
 	void Start (){
 		volumeNumber = GameObject.Find ("Volume Number Text").GetComponent<Text>();
 		volumeScrollbar = GameObject.Find ("Volume Scrollbar").GetComponent<Scrollbar>();
+		AudioListener.volume = volumeScrollbar.value;
+		volumeNumber.text = "" + (volumeScrollbar.value * 100);
 		//volumeScrollbar.value = from DB;
 	}
 

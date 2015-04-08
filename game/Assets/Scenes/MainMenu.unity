@@ -1413,7 +1413,7 @@ GameObject:
   - 95: {fileID: 283912510}
   - 82: {fileID: 283912511}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Main Camera MainMenu
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3885,7 +3885,7 @@ GameObject:
   - 64: {fileID: 1982509164}
   - 23: {fileID: 1982509163}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Controls Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

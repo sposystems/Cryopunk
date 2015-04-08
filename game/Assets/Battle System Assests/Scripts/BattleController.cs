@@ -46,6 +46,7 @@ public class BattleController : MonoBehaviour {
 	private int randTarget;
 	public GameObject camera;
 	public GameObject playerContainer;
+	private GameObject ground;
 	private Text hoverAbilityText;
 	//private SceneChanger sceneChangerElement = new SceneChanger(); //do I want this object to persist throughout?
 
@@ -250,6 +251,18 @@ public class BattleController : MonoBehaviour {
 			Debug.Log("ERROR: Invalid amount");
 		}
 	}
+
+	private void ImportGround(int areaNum){
+		ground = GameObject.Find ("Battle Ground");
+		if (areaNum == 0) {
+			ground.renderer.material.mainTexture = (Texture) Resources.Load ("Forest Floor");
+		} else if (areaNum == 1) {
+			ground.renderer.material.mainTexture = (Texture) Resources.Load ("Rock (Moss)");
+		} else {
+			//default Forest Floor
+		}
+
+	}
 	
 	private void ApplyLocation(int location){
 	
@@ -267,6 +280,7 @@ public class BattleController : MonoBehaviour {
 		ApplyLocation(BattleLauncher.location);
 		ImportPlayers(BattleLauncher.fifthMember);
 		ImportEnemies(BattleLauncher.enemyType, BattleLauncher.enemyQuantity);
+		ImportGround (BattleLauncher.areaNumber); //Changes ground texture based on area
 		
 		//initialize all abilites
 		GameObject[] players;

@@ -264,6 +264,7 @@ public class PauseMenuAnim : MonoBehaviour {
 
 		solan_select_image = GameObject.Find ("Solan Select").GetComponent<Image>();
 		solan_select_image.enabled = true;
+		solan_menu_image.enabled = true;
 		fifthCanvas.alpha = 1;
 	}
 

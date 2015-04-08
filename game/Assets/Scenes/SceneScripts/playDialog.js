@@ -1,15 +1,18 @@
 ﻿var showText : boolean;
 var style: GUIStyle;
 public var text : String;
-var textNotShown : boolean;
+var textNotShown : boolean = true;
 
 function Update()
 {
 	if(Input.GetKeyDown (KeyCode.Return))
 	{
-		Time.timeScale = 1;
-		showText = false;
-		textNotShown = false;
+		if(showText)
+		{
+			Time.timeScale = 1;
+			showText = false;
+			textNotShown = false;
+		}
 	}
 }
 
@@ -26,6 +29,6 @@ function OnGUI()
 {
 	if(showText)
 	{
-		GUI.TextArea(Rect(300,300,500,80), text, style);
+		GUI.TextArea(Rect(300,300,600,80), text, style);
 	}
 }

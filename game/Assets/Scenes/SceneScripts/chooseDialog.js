@@ -1,4 +1,4 @@
-﻿var showText : boolean;
+﻿var showTalk : boolean;
 var style: GUIStyle;
 public var text : String;
 var inBox : boolean;
@@ -7,16 +7,16 @@ function Update()
 {
 	if(Input.GetKeyDown (KeyCode.Return))
 	{
-		if(inBox)
+		if(inBox && Time.timeScale == 1)
 		{
 			Time.timeScale = 0;
-			showText = true;
+			showTalk = true;
 			inBox = false;
 		}
 		else
 		{
 			Time.timeScale = 1;
-			showText = false;
+			showTalk = false;
 		}
 
 	}
@@ -34,8 +34,8 @@ function OnTriggerExit()
 
 function OnGUI()
 {
-	if(showText)
+	if(showTalk)
 	{
-		GUI.Label(Rect(500,300,200,20), text, style);
+		GUI.Label(Rect(300,300,500,80), text, style);
 	}
 }

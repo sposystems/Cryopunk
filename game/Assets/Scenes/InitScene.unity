@@ -73,7 +73,6 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
-    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &3512136
 GameObject:
@@ -5903,6 +5902,7 @@ GameObject:
   - 143: {fileID: 1336586251}
   - 114: {fileID: 1336586250}
   - 114: {fileID: 1336586249}
+  - 54: {fileID: 1336586253}
   m_Layer: 0
   m_Name: Swordman 1
   m_TagString: Player
@@ -6021,6 +6021,22 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
+--- !u!54 &1336586253
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5457318, guid: 9c758ffff0acd5843ac564d60352963f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1392640691}
+  m_GameObject: {fileID: 1336586247}
+  serializedVersion: 2
+  m_Mass: 5
+  m_Drag: .200000003
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1345801781
 GameObject:
   m_ObjectHideFlags: 0
@@ -6225,7 +6241,25 @@ Prefab:
       propertyPath: runSpeed
       value: 30
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 0}
+      propertyPath: m_Height
+      value: 2.1400001
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Center.y
+      value: .899999976
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Radius
+      value: .769999981
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 99e86ee0ad11f8d6d00011d98d76c639,
+        type: 2}
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 9c758ffff0acd5843ac564d60352963f, type: 2}
   m_RootGameObject: {fileID: 1644440443}
   m_IsPrefabParent: 0

@@ -450,6 +450,7 @@ GameObject:
   - 143: {fileID: 14384704}
   - 114: {fileID: 11484702}
   - 114: {fileID: 11484704}
+  - 54: {fileID: 5457318}
   m_Layer: 0
   m_Name: Swordman 1
   m_TagString: Player
@@ -902,6 +903,21 @@ Transform:
   - {fileID: 484662}
   m_Father: {fileID: 484698}
   m_RootOrder: 0
+--- !u!54 &5457318
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184700}
+  serializedVersion: 2
+  m_Mass: 5
+  m_Drag: .200000003
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!111 &11184704
 Animation:
   m_ObjectHideFlags: 1

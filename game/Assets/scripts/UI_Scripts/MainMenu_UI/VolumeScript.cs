@@ -6,14 +6,21 @@ public class VolumeScript : MonoBehaviour {
 
 	private Text volumeNumber;
 	private Scrollbar volumeScrollbar;
+	private Toggle muteToggle;
 	private bool M_Mute = false;
 
 	// Use this for initialization
 	void Start (){
 		volumeNumber = GameObject.Find ("Volume Number Text").GetComponent<Text>();
 		volumeScrollbar = GameObject.Find ("Volume Scrollbar").GetComponent<Scrollbar>();
-		AudioListener.volume = volumeScrollbar.value;
+		muteToggle = GameObject.Find ("Mute Toggle").GetComponent<Toggle>();
+		volumeScrollbar.value = AudioListener.volume;
 		volumeNumber.text = "" + (volumeScrollbar.value * 100);
+		if (AudioListener.pause == true) {
+			muteToggle.isOn = true;
+		}else{
+			muteToggle.isOn = false;
+		}
 		//volumeScrollbar.value = from DB;
 	}
 

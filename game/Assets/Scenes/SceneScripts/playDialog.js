@@ -29,6 +29,6 @@ function OnGUI()
 {
 	if(showText)
 	{
-		GUI.TextArea(Rect(300,300,600,80), text, style);
+		GUI.TextArea(Rect(Screen.currentResolution.width/2 - 300, Screen.currentResolution.height/2 + 100,600,80), text, style);
 	}
 }

@@ -10620,7 +10620,7 @@ MonoBehaviour:
     m_FixedWidth: 0
     m_FixedHeight: 0
     m_StretchWidth: 1
-    m_StretchHeight: 0
+    m_StretchHeight: 1
   text: Solan's tracked a demon to its lair. Meet up with him in the cave outside
     town to slay it!
   textNotShown: 1

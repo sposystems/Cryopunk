@@ -1,13 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\UnlockSolan.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scenes\SceneScripts\FlipSwitch.js">
     <Files>
-      <File FileName="Assets\scripts\UI_Scripts\MainMenu_UI\VolumeScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\UI_Scripts\MainMenu_UI\PauseMenuAnim.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scenes\SceneScripts\chooseDialog.js" Line="1" Column="1" />
-      <File FileName="Assets\Scenes\SceneScripts\playDialog.js" Line="1" Column="1" />
-      <File FileName="Assets\scripts\BattleLauncher.cs" Line="1" Column="1" />
-      <File FileName="Assets\UnlockSolan.cs" Line="9" Column="32" />
+      <File FileName="Assets\Scenes\SceneScripts\FlipSwitch.js" Line="55" Column="58" />
+      <File FileName="Assets\Scenes\SceneScripts\playDialog.js" Line="32" Column="58" />
+      <File FileName="Assets\Scenes\SceneScripts\chooseDialog.js" Line="39" Column="55" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

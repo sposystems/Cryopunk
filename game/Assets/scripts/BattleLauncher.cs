@@ -37,7 +37,7 @@ public class BattleLauncher : MonoBehaviour {
 			Debug.Log ("Vector 3");
 			enemyType = eType;
 			enemyQuantity = eQuantity;
-			//fifthMember = fMember;
+			fifthMember = fMember;
 			location = eLocation;
 			//battled = true;
 			instance = launcherInstance;

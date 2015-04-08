@@ -1805,8 +1805,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Boss
-  maxHp: 100
-  maxSp: 100
+  maxHp: 250
+  maxSp: 200
   ability1: {fileID: 11436288}
   ability2: {fileID: 11436290}
   ability3: {fileID: 11436292}

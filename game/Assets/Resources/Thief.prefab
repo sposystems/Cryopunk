@@ -999,8 +999,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Robo
-  maxHp: 100
-  maxSp: 100
+  maxHp: 105
+  maxSp: 90
   ability1: {fileID: 11480382}
   ability2: {fileID: 11480386}
   ability3: {fileID: 11480392}

@@ -177,11 +177,13 @@ public class BattleController : MonoBehaviour {
 		if (fifthAcquired) {
 			//player5 = (GameObject)Instantiate(Resources.Load("Archer"));
 			player5 = GameObject.Find ("Archer");
+			player5.SetActive(true);
 			player5Character = player5.GetComponent<Character>();
 			player5.transform.position = new Vector3(14,0,8.5f);
 		} else {
 			player5 = GameObject.Find ("Archer");
 			player5.transform.position = new Vector3(14, 0, 25f);
+			player5.SetActive(false);
 			gui.DisablePlayerGUI(5);
 		}
 	}
@@ -263,7 +265,7 @@ public class BattleController : MonoBehaviour {
 		playerContainer.SetActive(false);
 		
 		ApplyLocation(BattleLauncher.location);
-		ImportPlayers(false); //(BattleLauncher.fifthMember)
+		ImportPlayers(BattleLauncher.fifthMember);
 		ImportEnemies(BattleLauncher.enemyType, BattleLauncher.enemyQuantity);
 		
 		//initialize all abilites
@@ -343,10 +345,17 @@ public class BattleController : MonoBehaviour {
 			//GameObject playerContainer = GameObject.Find("PlayerContainer");
 			//battlecamera.SetActive(false);
 			if(isFinalBattle){
+				player1.SetActive(false);
+				player2.SetActive(false);
+				player3.SetActive(false);
+				player4.SetActive(false);
+				player5.SetActive(false);
 				Application.LoadLevel (8); 
 			} else{
+				playerContainer.SetActive(true);
 				camera.SetActive(true); //need our player and camera back
 				//playerContainer.SetActive(true);
+				player5.SetActive(true); //Needed to keep Solan from not glitching
 				SceneChanger.winChangeScene();//you have won the battle, transition back to previous scene
 			}
 			break;
@@ -436,55 +445,66 @@ public class BattleController : MonoBehaviour {
 				
 			} else {
 				EndTurn();
-				gui.SetEnemyTurnText(""); //Reset the text for Enemy Turn
+				//gui.SetEnemyTurnText(""); //Reset the text for Enemy Turn
 			}
 		} else {
 			EndTurn();
-			gui.SetEnemyTurnText(""); //Reset the text for Enemy Turn
+			//gui.SetEnemyTurnText(""); //Reset the text for Enemy Turn
 		}
 	}
 
 	public void DisplayHoverAttack(){
+		gui.SetEnemyTurnText("");
 		hoverAbilityText.text = "Attack - A low damage attack";
 	}
 
 	public void DisplayHoverWhirlwind(){
+		gui.SetEnemyTurnText("");
 		hoverAbilityText.text = "Whirlwind - A sweeping attack damaging all enemies - 25 SP";
 	}
 
 	public void DisplayHoverBattlecry(){
+		gui.SetEnemyTurnText("");
 		hoverAbilityText.text = "Battlecry - Increase party damage temporarily - 25 SP";
 	}
 
 	public void DisplayHoverFreeze(){
+		gui.SetEnemyTurnText("");
 		hoverAbilityText.text = "Freeze - Stun an enemy for one turn - 25 SP";
 	}
 
 	public void DisplayHoverSilence(){
+		gui.SetEnemyTurnText("");
 		hoverAbilityText.text = "Silence - Prevent an enemy from using special abilities - 25 SP";
 	}
 
 	public void DisplayHoverPoisonShot(){
+		gui.SetEnemyTurnText("");
 		hoverAbilityText.text = "Poison Shot - Damage and poison an enemy to take damage over time - 25 SP";
 	}
 
 	public void DisplayHoverStealth(){
+		gui.SetEnemyTurnText("");
 		hoverAbilityText.text = "Stealth - Render self invisible to enemies for a few turns - 25 SP";
 	}
 
 	public void DisplayHoverHeal(){
+		gui.SetEnemyTurnText("");
 		hoverAbilityText.text = "Heal - Heal an ally's health - 25 SP";
 	}
 
 	public void DisplayHoverCurse(){
+		gui.SetEnemyTurnText("");
 		hoverAbilityText.text = "Curse - Lower an enemy's defense - 25 SP";
 	}
 
 	public void DisplayHoverDoubleShot(){
+		gui.SetEnemyTurnText("");
 		hoverAbilityText.text = "Double Shot - Deal high damage to one enemy - 25 SP";
 	}
 
 	public void DisplayHoverArrowRain(){
+		gui.SetEnemyTurnText("");
 		hoverAbilityText.text = "Arrow Rain - Deal damage to 3 random enemies - 25 SP";
 	}
 

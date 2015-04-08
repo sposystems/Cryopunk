@@ -998,8 +998,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Kira
-  maxHp: 100
-  maxSp: 100
+  maxHp: 110
+  maxSp: 80
   ability1: {fileID: 11430422}
   ability2: {fileID: 11430426}
   ability3: {fileID: 11430432}

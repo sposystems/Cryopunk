@@ -1554,7 +1554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Zombie
-  maxHp: 100
+  maxHp: 110
   maxSp: 100
   ability1: {fileID: 11456464}
   ability2: {fileID: 11456466}

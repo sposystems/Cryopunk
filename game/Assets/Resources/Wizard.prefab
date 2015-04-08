@@ -1446,8 +1446,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Law
-  maxHp: 100
-  maxSp: 100
+  maxHp: 70
+  maxSp: 110
   ability1: {fileID: 11498626}
   ability2: {fileID: 11498630}
   ability3: {fileID: 11498636}

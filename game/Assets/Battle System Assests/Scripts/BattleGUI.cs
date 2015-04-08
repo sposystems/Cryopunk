@@ -108,8 +108,8 @@ public class BattleGUI : MonoBehaviour {
 		player3HP.text = player3Character.GetHP() + "/" + player3Character.maxHp;
 		player3SP.text = player3Character.GetSP() + "/" + player3Character.maxSp;
 		player3Status.text = GetStatus(player3Character);
-		player3HPBar.fillAmount = (float)player1Character.GetHP () / (float)player3Character.maxHp;
-		player3SPBar.fillAmount = (float)player1Character.GetSP () / (float)player3Character.maxSp;
+		player3HPBar.fillAmount = (float)player3Character.GetHP () / (float)player3Character.maxHp;
+		player3SPBar.fillAmount = (float)player3Character.GetSP () / (float)player3Character.maxSp;
 		
 		player4Name.text = player4Character.characterName;
 		player4HP.text = player4Character.GetHP() + "/" + player4Character.maxHp;

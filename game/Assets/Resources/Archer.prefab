@@ -998,8 +998,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Solan
-  maxHp: 100
-  maxSp: 100
+  maxHp: 80
+  maxSp: 110
   ability1: {fileID: 11472040}
   ability2: {fileID: 11472044}
   ability3: {fileID: 11472050}

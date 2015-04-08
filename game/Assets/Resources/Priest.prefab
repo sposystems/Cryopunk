@@ -998,8 +998,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Constance
-  maxHp: 100
-  maxSp: 100
+  maxHp: 60
+  maxSp: 125
   ability1: {fileID: 11407828}
   ability2: {fileID: 11407832}
   ability3: {fileID: 11407838}

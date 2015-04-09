@@ -71,13 +71,27 @@ public class Ability : MonoBehaviour {
 
 	//ability is used on 1 character
 	private IEnumerator UseOnOne(Character target) {
+		int seconds;
+		if (abilityUser.isPlayer) {
+			seconds = 1;
+		} else {
+			seconds = 3;
+		}
+		
 		ApplyAbilityToTarget(target.gameObject);
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(seconds);
 		controller.EndTurn();
 	}
 
 	//ability is used on all enemies or all players
 	private IEnumerator UseOnAll() {
+		int seconds;
+		if (abilityUser.isPlayer) {
+			seconds = 1;
+		} else {
+			seconds = 3;
+		}
+		
 		//get target group
 		GameObject[] targets = GetTargetGroup();
 
@@ -87,12 +101,19 @@ public class Ability : MonoBehaviour {
 				ApplyAbilityToTarget(target);
 			}
 		}
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(seconds);
 		controller.EndTurn();
 	}
 
 	//ability is used on random amount of players or enemies
 	private IEnumerator UseOnRandom(int amount) {
+		int seconds;
+		if (abilityUser.isPlayer) {
+			seconds = 1;
+		} else {
+			seconds = 3;
+		}
+		
 		GameObject[] targetGroup = GetTargetGroup();
 
 		//have to convert array to list so we can remove targets that have already been attacked
@@ -109,8 +130,7 @@ public class Ability : MonoBehaviour {
 			targetList.RemoveAt(random);
 			amount--;
 		}
-
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(seconds);
 		controller.EndTurn();
 	}
 

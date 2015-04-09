@@ -68,7 +68,7 @@ public class PopUpTextEnterExit : MonoBehaviour {
 	{
 		//must be in box of specific object to peform right
 		if (inBox) {
-			if(Input.GetKeyDown (KeyCode.Return) && (pma.pauseGame == false))
+			if(/*Input.GetKeyDown (KeyCode.Return)*/Input.GetButtonDown("Submit") && (pma.pauseGame == false))
 			{
 				//Debug.Log ("inBox = " + inBox);
 				//Debug.Log ("timeScale = " + Time.timeScale);

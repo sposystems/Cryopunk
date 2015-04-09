@@ -95,23 +95,18 @@ function Apply (dummyTarget : Transform, dummyCenter : Vector3)
 
 	// Adjust real target angle when camera is locked
 	var targetAngle = originalTargetAngle; 
-	if (Input.GetKeyDown("q")){
-		
+	if (Input.GetButtonDown("ZoomIn")){
+	
 			distance += 3;
-				
+			
 	}
-	if (Input.GetKeyDown("e")){
+	if (Input.GetButtonDown("ZoomOut")){
 		if(distance > 3.0){
 			distance -= 3;
 		}
 				
 	}
-	if (Input.GetKeyDown("x")){
-		
-			height *= 1.5;
-				
-	}
-	if (Input.GetKeyDown("f")){
+	if (Input.GetButtonDown("Flashlight")){
 		
 		if(flashlight){
 			
@@ -122,6 +117,11 @@ function Apply (dummyTarget : Transform, dummyCenter : Vector3)
 			flashlightObject.SetActive(true);
 			flashlight = true;
 		}	
+	}
+	if (Input.GetKeyDown("x")){
+		
+			height *= 1.5;
+				
 	}
 	if (Input.GetKeyDown("z")){
 		if(height > 1.0){

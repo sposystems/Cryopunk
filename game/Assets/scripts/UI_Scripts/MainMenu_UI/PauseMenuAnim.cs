@@ -527,18 +527,18 @@ public class PauseMenuAnim : MonoBehaviour {
 
 
 	public void Update(){
-		if ((Input.GetKeyDown (KeyCode.T) || Input.GetKeyDown (KeyCode.Tab)) && !pauseGame) {
+		if (/*(Input.GetKeyDown (KeyCode.T) || Input.GetKeyDown (KeyCode.Tab))*/Input.GetButtonDown ("Pause") && !pauseGame) {
 			//If not currently paused & all pops ups are off, then stop time and show the GUI
 			if (!pauseGame && allPopUpsOff()) {
-				Debug.Log ("Tab/T properly pressed to pause game.");
+				Debug.Log ("Properly paused game.");
 				pauseGame = true;
 				Time.timeScale = 0;
 				UpdateParametersOnMenuOpen();
 				anim.SetBool ("Main Screen", true);
 			}
-		} else if ((Input.GetKeyDown (KeyCode.T) || Input.GetKeyDown (KeyCode.Tab) || Input.GetKeyDown (KeyCode.Escape)) && pauseGame) {
+		} else if (/*(Input.GetKeyDown (KeyCode.T) || Input.GetKeyDown (KeyCode.Tab) || Input.GetKeyDown (KeyCode.Escape))*/Input.GetButtonDown ("Pause") && pauseGame) {
 			if (pauseGame) {
-				Debug.Log ("Tab/T properly pressed to UNpause game.");
+				Debug.Log ("Properly UNpaused game.");
 				Time.timeScale = 1;
 				pauseGame = false;
 

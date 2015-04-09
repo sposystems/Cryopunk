@@ -80,7 +80,7 @@ public class PopUpTextInteractable : MonoBehaviour {
 	{
 		//must be in box of specific object to peform right
 		if (inBox) {
-			if(Input.GetKeyDown (KeyCode.Return) && (pma.pauseGame == false))
+			if(/*Input.GetKeyDown (KeyCode.Return)*/Input.GetButtonDown("Submit") && (pma.pauseGame == false))
 			{
 				//if in the collider, not at 0 time, and CAN talk, then show
 				if(inBox && Time.timeScale == 1 && (cannotTalk == false)){

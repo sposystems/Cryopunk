@@ -53,7 +53,7 @@ public class PopUpTextTriggering : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown (KeyCode.Return) && (pma.pauseGame == false))
+		if(/*Input.GetKeyDown (KeyCode.Return)*/Input.GetButtonDown("Submit") && (pma.pauseGame == false))
 		{
 			//Debug.Log ("Update after Input.GetKeyDown()");
 			//Debug.Log ("textNotShown = " + textNotShown);

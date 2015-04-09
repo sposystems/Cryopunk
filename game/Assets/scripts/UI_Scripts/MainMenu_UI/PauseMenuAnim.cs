@@ -8,11 +8,19 @@ public class PauseMenuAnim : MonoBehaviour {
 	public CanvasGroup startMenuCanvas;
 	public CanvasGroup fifthCanvas; //Solan's Canvas Group for visibility
 	//pauseGame keeps track of pause state for pausing/unpausing
-	private bool pauseGame = false;
+	public bool pauseGame = false;
 	//inCharScreen used for Character Screen loops
 	private bool inCharScreen = false;
 	//anim allows us to animate without needing to use the Animator for initial pausing
 	private Animator anim;
+
+	//Variables for ensuring no pausing while in menus
+	private GameObject[] popUps1;
+	private GameObject[] popUps2;
+	private GameObject[] popUps3;
+	private PopUpTextTriggering[] pu1;
+	private PopUpTextEnterExit[] pu2;
+	private PopUpTextInteractable[] pu3;
 
 	private Text locationArea;
 
@@ -115,6 +123,27 @@ public class PauseMenuAnim : MonoBehaviour {
 	public void Start(){
 		anim = startMenuCanvas.GetComponent<Animator> ();
 
+		//Initializing arrays of objects with select tags
+		popUps1 = GameObject.FindGameObjectsWithTag ("Trigger1");
+		popUps2 = GameObject.FindGameObjectsWithTag ("Trigger2");
+		popUps3 = GameObject.FindGameObjectsWithTag ("Trigger3");
+		pu1 = new PopUpTextTriggering[popUps1.Length];
+		pu2 = new PopUpTextEnterExit[popUps2.Length];
+		pu3 = new PopUpTextInteractable[popUps3.Length];
+		for (int i = 0; i < popUps1.Length; i++) {
+			pu1[i] = popUps1[i].GetComponent<PopUpTextTriggering>();
+			Debug.Log (pu1[i].name);
+		}
+		for (int i = 0; i < popUps2.Length; i++) {
+			pu2[i] = popUps2[i].GetComponent<PopUpTextEnterExit>();
+			Debug.Log (pu2[i].name);
+		}
+		for (int i = 0; i < popUps3.Length; i++) {
+			pu3[i] = popUps3[i].GetComponent<PopUpTextInteractable>();
+			Debug.Log (pu3[i].name);
+		}
+
+
 		locationArea = GameObject.Find ("Location").GetComponent<Text>();
 
 		hpPotions = GameObject.Find ("Health Potion Quantity").GetComponent<Text>();
@@ -162,42 +191,27 @@ public class PauseMenuAnim : MonoBehaviour {
 		constance_art = Resources.Load<Sprite> ("constance_tp");
 		solan_art = Resources.Load<Sprite> ("solan_tp");
 
-		//player1 = (GameObject)Instantiate(Resources.Load("Warrior"));
+		//Character Finding/Loading
 		player1 = GameObject.Find ("Warrior");
 		player1Character = player1.GetComponent<Character>();
 		player1.transform.position = new Vector3(14,-1000,-8.5f);
-		//player1Character.currentHP = player1Character.maxHp;
-		//player1Character.currentHP = 50;
-		//player1Character.currentSP = player1Character.maxSp;
-		
-		//player2 = (GameObject)Instantiate(Resources.Load("Wizard"));
+
 		player2 = GameObject.Find ("Wizard");
 		player2Character = player2.GetComponent<Character>();
 		player2.transform.position = new Vector3(14,-1000,-8.5f);
-		//player2Character.currentHP = player2Character.maxHp;
-		//player2Character.currentSP = player2Character.maxSp;
-		
-		//player3 = (GameObject)Instantiate(Resources.Load("Thief"));
+
 		player3 = GameObject.Find ("Thief");
 		player3Character = player3.GetComponent<Character>();
 		player3.transform.position = new Vector3(14,-1000,-8.5f);
-		//player3Character.currentHP = player3Character.maxHp;
-		//player3Character.currentSP = player3Character.maxSp;
-		
-		//player4 = (GameObject)Instantiate(Resources.Load("Priest"));
+
 		player4 = GameObject.Find ("Priest");
 		player4Character = player4.GetComponent<Character>();
 		player4.transform.position = new Vector3(14,-1000,-8.5f);
-		//player4Character.currentHP = player4Character.maxHp;
-		//player4Character.currentSP = player4Character.maxSp;
 		
 		if (fifthAcquired) {
-			//player5 = (GameObject)Instantiate (Resources.Load ("Archer"));
 			player5 = GameObject.Find ("Archer");
 			player5Character = player5.GetComponent<Character> ();
 			player5.transform.position = new Vector3(14,-1000,-8.5f);
-			//player5Character.currentHP = player5Character.maxHp;
-			//player5Character.currentSP = player5Character.maxSp;
 			fifthCanvas.alpha = 1; //Active Solan Canvas
 		} else {
 			player5 = GameObject.Find ("Archer");
@@ -489,11 +503,33 @@ public class PauseMenuAnim : MonoBehaviour {
 		}
 	}
 
+	//Checks to ensure that every single pop up text is turned off
+	public bool allPopUpsOff(){
+		foreach (PopUpTextTriggering pop1 in pu1) {
+			if(pop1.showText == true){
+				return false;
+			}
+		}
+		foreach (PopUpTextEnterExit pop2 in pu2) {
+			if(pop2.showText == true){
+				return false;
+			}
+		}
+		foreach (PopUpTextInteractable pop3 in pu3) {
+			if(pop3.showText == true){
+				return false;
+			}
+		}
+
+		//return true in all cases where everything succeeds
+		return true;
+	}
+
 
 	public void Update(){
 		if ((Input.GetKeyDown (KeyCode.T) || Input.GetKeyDown (KeyCode.Tab)) && !pauseGame) {
-			//If not currently paused, then stop time and show the GUI
-			if (!pauseGame) {
+			//If not currently paused & all pops ups are off, then stop time and show the GUI
+			if (!pauseGame && allPopUpsOff()) {
 				Debug.Log ("Tab/T properly pressed to pause game.");
 				pauseGame = true;
 				Time.timeScale = 0;

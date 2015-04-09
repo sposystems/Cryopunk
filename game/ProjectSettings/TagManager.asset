@@ -7,6 +7,10 @@ TagManager:
   - PlayerSpawned
   - DontPause
   - PauseText
+  - Trigger1
+  - Trigger2
+  - Trigger3
+  - Trigger4
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

@@ -2,12 +2,12 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class PopUpTextEnterExit : MonoBehaviour {
+public class PopUpTextInteractable : MonoBehaviour {
 
 	private GameObject playerCharacter;
 	private GameObject menuHandler;
 	private PauseMenuAnim pma;
-
+	
 	public string readableText;
 	public string readableText2;
 	public string readableText3;
@@ -36,12 +36,18 @@ public class PopUpTextEnterExit : MonoBehaviour {
 	private CanvasGroup chatPanelCG;
 	private CanvasGroup chatCharTransparencyCG;
 	private CanvasGroup talkerPanelCG;
-
+	
 	private int count = 0;
+
+	//Special Case 1
+	private GameObject boulder;
+	private GameObject boulderTrig;
+	public string animType;
+	private bool flipped;
 	
 	void Start(){
 		playerCharacter = GameObject.Find ("Swordman 1");
-
+		
 		bottomBorder = GameObject.Find ("Bottom Border").GetComponent<Image>();
 		chatPanel = GameObject.Find ("Chat Panel").GetComponent<Image>();
 		chatCharacter = GameObject.Find ("Chat Character").GetComponent<Image>();
@@ -53,27 +59,29 @@ public class PopUpTextEnterExit : MonoBehaviour {
 		chatPanelCG = GameObject.Find ("Chat Panel").GetComponent<CanvasGroup> ();
 		chatCharTransparencyCG = GameObject.Find ("Chat Character").GetComponent<CanvasGroup> ();
 		talkerPanelCG = GameObject.Find ("Talker Name Panel").GetComponent<CanvasGroup> ();
-
+		
 		menuHandler = GameObject.Find ("MENU_HANDLER");
 		pma = menuHandler.GetComponent<PauseMenuAnim>();
-
+		
 		enterText.text = "Talk";
 		chatText.text = "";
 		talkerText.text = "Talker";
-
+		
 		bottomBorderCG.alpha = 0;
-	}
 
+		//Special Case 1
+		if (specialCase == 1) {
+			boulder = GameObject.Find("BlockingBoulder");
+			boulderTrig = GameObject.Find("BoulderTrigger");
+		}
+	}
+	
 	void Update()
 	{
 		//must be in box of specific object to peform right
 		if (inBox) {
 			if(Input.GetKeyDown (KeyCode.Return) && (pma.pauseGame == false))
 			{
-				//Debug.Log ("inBox = " + inBox);
-				//Debug.Log ("timeScale = " + Time.timeScale);
-				//Debug.Log ("cannotTalk = " + cannotTalk);
-
 				//if in the collider, not at 0 time, and CAN talk, then show
 				if(inBox && Time.timeScale == 1 && (cannotTalk == false)){
 					BoxShow(); //positive actions
@@ -85,9 +93,9 @@ public class PopUpTextEnterExit : MonoBehaviour {
 				
 			}
 		}
-
+		
 	}
-
+	
 	//Everything that brings up the dialogue box
 	void BoxShow(){
 		bottomBorderCG.alpha = 0;
@@ -133,7 +141,8 @@ public class PopUpTextEnterExit : MonoBehaviour {
 		}
 		
 		if (specialCase == 1) {
-			//insert special commands here
+			//move the boulder in the cave
+			MoveBoulder ();
 		}
 		
 		//stops from talking again if isRepeatable is set to false
@@ -141,7 +150,7 @@ public class PopUpTextEnterExit : MonoBehaviour {
 			cannotTalk = true;
 		}
 	}
-
+	
 	//Everything that takes away the dialogue box
 	void BoxAway(){
 		//must still be in the box for the border to show up
@@ -176,5 +185,12 @@ public class PopUpTextEnterExit : MonoBehaviour {
 		bottomBorderCG.alpha = 0;
 		enterText.text = "";
 	}
-
+	
+	//Special Case 1. Move the boulder in the cave
+	void MoveBoulder(){
+		animation.Play(animType);
+		flipped = true;
+		boulder.transform.position = new Vector3(200,0,150);
+		boulderTrig.transform.position = new Vector3(200,0,150);
+	}
 }

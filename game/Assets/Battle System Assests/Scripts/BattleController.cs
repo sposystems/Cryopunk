@@ -170,6 +170,12 @@ public class BattleController : MonoBehaviour {
 		player3Character = player3.GetComponent<Character>();
 		player3.transform.position = new Vector3(14,0,0);
 		
+		//for if he was stealthed at the end of last battle
+		if (player3Character.IsStealth()) {
+			player3Character.Unstealth();
+			player3Character.animation.PlayQueued("Idle", QueueMode.PlayNow);
+		}
+		
 		//player4 = (GameObject)Instantiate(Resources.Load("Priest"));
 		player4 = GameObject.Find ("Priest");
 		player4Character = player4.GetComponent<Character>();
@@ -468,58 +474,97 @@ public class BattleController : MonoBehaviour {
 	}
 
 	public void DisplayHoverAttack(){
-		gui.SetEnemyTurnText("");
-		hoverAbilityText.text = "Attack - A low damage attack";
+		if (IsPlayerTurn()) {
+			gui.SetEnemyTurnText("");
+			hoverAbilityText.text = "Attack - A low damage attack";
+		}
 	}
 
 	public void DisplayHoverWhirlwind(){
-		gui.SetEnemyTurnText("");
-		hoverAbilityText.text = "Whirlwind - A sweeping attack damaging all enemies - 25 SP";
+		if (IsPlayerTurn()) {
+			gui.SetEnemyTurnText("");
+			hoverAbilityText.text = "Whirlwind - A sweeping attack damaging all enemies - 25 SP";
+		}
 	}
 
 	public void DisplayHoverBattlecry(){
-		gui.SetEnemyTurnText("");
-		hoverAbilityText.text = "Battlecry - Increase party damage temporarily - 25 SP";
+		if (IsPlayerTurn()) {
+			gui.SetEnemyTurnText("");
+			hoverAbilityText.text = "Battlecry - Increase party damage temporarily - 25 SP";
+		}
 	}
 
 	public void DisplayHoverFreeze(){
-		gui.SetEnemyTurnText("");
-		hoverAbilityText.text = "Freeze - Stun an enemy for one turn - 25 SP";
+		if (IsPlayerTurn()) {
+			gui.SetEnemyTurnText("");
+			hoverAbilityText.text = "Freeze - Stun an enemy for one turn - 25 SP";
+		}
 	}
 
 	public void DisplayHoverSilence(){
-		gui.SetEnemyTurnText("");
-		hoverAbilityText.text = "Silence - Prevent an enemy from using special abilities - 25 SP";
+		if (IsPlayerTurn()) {
+			gui.SetEnemyTurnText("");
+			hoverAbilityText.text = "Silence - Prevent an enemy from using special abilities - 25 SP";
+		}
 	}
 
 	public void DisplayHoverPoisonShot(){
-		gui.SetEnemyTurnText("");
-		hoverAbilityText.text = "Poison Shot - Damage and poison an enemy to take damage over time - 25 SP";
+		if (IsPlayerTurn()) {
+			gui.SetEnemyTurnText("");
+			hoverAbilityText.text = "Poison Shot - Damage and poison an enemy to take damage over time - 25 SP";
+		}
 	}
 
 	public void DisplayHoverStealth(){
-		gui.SetEnemyTurnText("");
-		hoverAbilityText.text = "Stealth - Render self invisible to enemies for a few turns - 25 SP";
+		if (IsPlayerTurn()) {
+			gui.SetEnemyTurnText("");
+			hoverAbilityText.text = "Stealth - Render self invisible to enemies for a few turns - 25 SP";
+		}
 	}
 
 	public void DisplayHoverHeal(){
-		gui.SetEnemyTurnText("");
-		hoverAbilityText.text = "Heal - Heal an ally's health - 25 SP";
+		if (IsPlayerTurn()) {
+			gui.SetEnemyTurnText("");
+			hoverAbilityText.text = "Heal - Heal an ally's health - 25 SP";
+		}
 	}
 
 	public void DisplayHoverCurse(){
-		gui.SetEnemyTurnText("");
-		hoverAbilityText.text = "Curse - Lower an enemy's defense - 25 SP";
+		if (IsPlayerTurn()) {
+			gui.SetEnemyTurnText("");
+			hoverAbilityText.text = "Curse - Lower an enemy's defense - 25 SP";
+		}
 	}
 
 	public void DisplayHoverDoubleShot(){
-		gui.SetEnemyTurnText("");
-		hoverAbilityText.text = "Double Shot - Deal high damage to one enemy - 25 SP";
+		if (IsPlayerTurn()) {
+			gui.SetEnemyTurnText("");
+			hoverAbilityText.text = "Double Shot - Deal high damage to one enemy - 25 SP";
+		}
 	}
 
 	public void DisplayHoverArrowRain(){
-		gui.SetEnemyTurnText("");
-		hoverAbilityText.text = "Arrow Rain - Deal damage to 3 random enemies - 25 SP";
+		if (IsPlayerTurn()) {
+			gui.SetEnemyTurnText("");
+			hoverAbilityText.text = "Arrow Rain - Deal damage to 3 random enemies - 25 SP";
+		}
+	}
+	
+	public void ClearHover() {
+		hoverAbilityText.text = "";
+	}
+	
+	private bool IsPlayerTurn() {
+	if (currentState == BattleStates.Player1Turn || 
+		currentState == BattleStates.Player2Turn ||
+		currentState == BattleStates.Player3Turn ||
+		currentState == BattleStates.Player4Turn ||
+		currentState == BattleStates.Player5Turn) {
+		    return true;
+		 } else {
+		 	return false;
+		 }
+		
 	}
 
 }

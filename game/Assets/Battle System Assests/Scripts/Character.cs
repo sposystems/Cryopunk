@@ -171,6 +171,11 @@ public class Character : MonoBehaviour {
 		stealthDuration = duration;
 	}
 	
+	public void Unstealth() {
+		stealthed = false;
+		stealthDuration = 0;
+	}
+	
 	public bool IsStealth() {
 		return stealthed;
 	}

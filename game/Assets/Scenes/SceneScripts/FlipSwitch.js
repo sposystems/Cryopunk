@@ -3,12 +3,14 @@ var anim : String;
 var inBox : boolean = false;
 var flipped : boolean = false;
 var boulder : GameObject;
+var boulderTrig : GameObject;
 var showText : boolean;
 var style: GUIStyle;
 public var text : String;
 
 function Start () {
 	boulder = GameObject.Find("BlockingBoulder");
+	boulderTrig = GameObject.Find("BoulderTrigger");
 }
 
 function Update () {
@@ -23,6 +25,7 @@ function Update () {
 					animation.Play(anim);
 					flipped = true;
 					boulder.transform.position = Vector3(200,0,150);
+					boulderTrig.transform.position = Vector3(200,0,150);
 					Time.timeScale = 0;
 					showText = true;
 				}

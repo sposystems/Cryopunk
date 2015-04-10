@@ -5994,7 +5994,7 @@ CharacterController:
   m_StepOffset: .300000012
   m_SkinWidth: .0799999982
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 1.20000005, z: 0}
+  m_Center: {x: 0, y: 1.01999998, z: 0}
 --- !u!111 &1336586252
 Animation:
   m_ObjectHideFlags: 0
@@ -6030,7 +6030,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 1392640691}
   m_GameObject: {fileID: 1336586247}
   serializedVersion: 2
-  m_Mass: 5
+  m_Mass: 10
   m_Drag: .200000003
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -6259,9 +6259,13 @@ Prefab:
       value: 
       objectReference: {fileID: 13400000, guid: 99e86ee0ad11f8d6d00011d98d76c639,
         type: 2}
-    - target: {fileID: 14384704, guid: 9c758ffff0acd5843ac564d60352963f, type: 2}
-      propertyPath: m_Center.y
-      value: 1.20000005
+    - target: {fileID: 5457318, guid: 9c758ffff0acd5843ac564d60352963f, type: 2}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5457318, guid: 9c758ffff0acd5843ac564d60352963f, type: 2}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}

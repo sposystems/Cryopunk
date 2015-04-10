@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class PauseMenuAnim : MonoBehaviour {
 
@@ -9,6 +10,8 @@ public class PauseMenuAnim : MonoBehaviour {
 	public CanvasGroup fifthCanvas; //Solan's Canvas Group for visibility
 	//pauseGame keeps track of pause state for pausing/unpausing
 	public bool pauseGame = false;
+	//controllerIcons tracks what type of icons are being used
+	private bool controllerIcons;
 	//inCharScreen used for Character Screen loops
 	private bool inCharScreen = false;
 	//anim allows us to animate without needing to use the Animator for initial pausing
@@ -35,7 +38,7 @@ public class PauseMenuAnim : MonoBehaviour {
 	private Character player4Character;
 	private Character player5Character;
 
-	private bool fifthAcquired = false;
+	private bool fifthAcquired;
 
 	//HP Text, SP, LV, etc. for all 5 characters' boxes
 	private Text hpTextK;
@@ -107,17 +110,31 @@ public class PauseMenuAnim : MonoBehaviour {
 	private Image characterImage;
 	private Image characterImageShadow;
 	private Text charBookDialog;
+	private Text charClass;
+	private Image charClassImage;
 
 	private Sprite kira_art;
 	private Sprite law_art;
 	private Sprite robo_art;
 	private Sprite constance_art;
 	private Sprite solan_art;
+
+	private Sprite warrior;
+	private Sprite wizard;
+	private Sprite thief;
+	private Sprite priest;
+	private Sprite archer;
+
 	private Image solan_menu_image;
 	private Image solan_select_image;
 
 	//Exit Game Variables
 	//private Image overlappingBackPanel;
+
+	//Options Screen Variables + PopUpCanvas elements
+	private Toggle iconTypeToggle;
+	private CanvasGroup enterKeyCG;
+	private CanvasGroup aButtonCG;
 
 	//Assign all variables to their respective components
 	public void Start(){
@@ -146,6 +163,7 @@ public class PauseMenuAnim : MonoBehaviour {
 
 		locationArea = GameObject.Find ("Location").GetComponent<Text>();
 
+		//ITEMS SCREEN
 		hpPotions = GameObject.Find ("Health Potion Quantity").GetComponent<Text>();
 		spPotions = GameObject.Find ("Special Potion Quantity").GetComponent<Text>();
 		lifePotions = GameObject.Find ("Life Potion Quantity").GetComponent<Text>();
@@ -167,6 +185,19 @@ public class PauseMenuAnim : MonoBehaviour {
 		molotovCocktailArt = Resources.Load<Sprite> ("molotov_cocktail");
 		mrFunArt = Resources.Load<Sprite> ("mr_fun_item");
 
+
+		//OPTIONS SCREEN (Volume is in VolumeScript.cs)
+		iconTypeToggle = GameObject.Find ("Icon Type Toggle").GetComponent<Toggle>();
+		enterKeyCG = GameObject.Find ("Enter Key").GetComponent<CanvasGroup>();
+		aButtonCG = GameObject.Find ("A Button").GetComponent<CanvasGroup>();
+
+		//NEED A PLAYER CONTAINER OBJECT TO PASS THROUGH, LIKE IN ITEMS TO CHECK CONSISTENCY
+		if(true){
+			//PUT TOGGLE ON + CHANGE PARAMS AT START HERE
+		}
+
+
+		//CHARACTERS SCREEN
 		strStat = GameObject.Find ("STR Stat").GetComponent<Text>();
 		defStat = GameObject.Find ("DEF Stat").GetComponent<Text>();
 		magStat = GameObject.Find ("MAG Stat").GetComponent<Text>();
@@ -180,6 +211,8 @@ public class PauseMenuAnim : MonoBehaviour {
 		characterImage = GameObject.Find ("Char Image").GetComponent<Image>();
 		characterImageShadow = GameObject.Find ("Char Image Shadow").GetComponent<Image>();
 		charBookDialog = GameObject.Find ("Char Book Dialog").GetComponent<Text> ();
+		charClass = GameObject.Find ("Char Class Name").GetComponent<Text> ();
+		charClassImage = GameObject.Find ("Char Class Image").GetComponent<Image> ();
 
 		//Solan specific parameters for acquirement
 		solan_menu_image = GameObject.Find ("CharDetails (Solan)").GetComponent<Image>();
@@ -190,6 +223,12 @@ public class PauseMenuAnim : MonoBehaviour {
 		robo_art = Resources.Load<Sprite> ("robo_tp");
 		constance_art = Resources.Load<Sprite> ("constance_tp");
 		solan_art = Resources.Load<Sprite> ("solan_tp");
+
+		warrior = Resources.Load<Sprite> ("Warrior_Sprite");
+		wizard = Resources.Load<Sprite> ("Wizard_Sprite");
+		thief = Resources.Load<Sprite> ("Thief_Sprite");
+		priest = Resources.Load<Sprite> ("Priest_Sprite");
+		archer = Resources.Load<Sprite> ("Archer_Sprite");
 
 		//Character Finding/Loading
 		player1 = GameObject.Find ("Warrior");
@@ -343,11 +382,13 @@ public class PauseMenuAnim : MonoBehaviour {
 		hpBarChars.fillAmount = (float) player1Character.currentHP / (float) player1Character.maxHp;
 		spBarChars.fillAmount = (float) player1Character.currentSP / (float) player1Character.maxSp;
 		charBookDialog.text = "\"What kind of jokers are you all anyways?\"";
+		charClass.text = "Warrior";
+		charClassImage.sprite = warrior;
 
 		characterImage.GetComponent<Image>().sprite = kira_art;
 		characterImageShadow.GetComponent<Image>().sprite = kira_art;
 
-		GoToCharacters ();
+		GoToCharacters ("Kira Select");
 	}
 
 	public void LawPress(){
@@ -362,11 +403,13 @@ public class PauseMenuAnim : MonoBehaviour {
 		hpBarChars.fillAmount = (float) player2Character.currentHP / (float) player2Character.maxHp;
 		spBarChars.fillAmount = (float) player2Character.currentSP / (float) player2Character.maxSp;
 		charBookDialog.text = "\"Wait, you don't expect a lawyer to fight, do you?  I object to such nonsense!\"";
-		
+		charClass.text = "Wizard";
+		charClassImage.sprite = wizard;
+
 		characterImage.GetComponent<Image>().sprite = law_art;
 		characterImageShadow.GetComponent<Image>().sprite = law_art;
 		
-		GoToCharacters ();
+		GoToCharacters ("Law Select");
 	}
 
 	public void RoboPress(){
@@ -381,11 +424,13 @@ public class PauseMenuAnim : MonoBehaviour {
 		hpBarChars.fillAmount = (float) player3Character.currentHP / (float) player3Character.maxHp;
 		spBarChars.fillAmount = (float) player3Character.currentSP / (float) player3Character.maxSp;
 		charBookDialog.text = "\"BEEP BOOP BOOP BEEP zzt\"";
-		
+		charClass.text = "Thief";
+		charClassImage.sprite = thief;
+
 		characterImage.GetComponent<Image>().sprite = robo_art;
 		characterImageShadow.GetComponent<Image>().sprite = robo_art;
 		
-		GoToCharacters ();
+		GoToCharacters ("Robo Select");
 	}
 
 	public void ConstancePress(){
@@ -400,11 +445,13 @@ public class PauseMenuAnim : MonoBehaviour {
 		hpBarChars.fillAmount = (float) player4Character.currentHP / (float) player4Character.maxHp;
 		spBarChars.fillAmount = (float) player4Character.currentSP / (float) player4Character.maxSp;
 		charBookDialog.text = "\"Just one more battle... I will prevail!\"";
-		
+		charClass.text = "Priest";
+		charClassImage.sprite = priest;
+
 		characterImage.GetComponent<Image>().sprite = constance_art;
 		characterImageShadow.GetComponent<Image>().sprite = constance_art;
 		
-		GoToCharacters ();
+		GoToCharacters ("Constance Select");
 	}
 	
 	public void SolanPress(){
@@ -419,22 +466,26 @@ public class PauseMenuAnim : MonoBehaviour {
 		hpBarChars.fillAmount = (float) player5Character.currentHP / (float) player5Character.maxHp;
 		spBarChars.fillAmount = (float) player5Character.currentSP / (float) player5Character.maxSp;
 		charBookDialog.text = "\"Y'all are idiots.\"";
-		
+		charClass.text = "Archer";
+		charClassImage.sprite = archer;
+
 		characterImage.GetComponent<Image>().sprite = solan_art;
 		characterImageShadow.GetComponent<Image>().sprite = solan_art;
 		
-		GoToCharacters ();
+		GoToCharacters ("Solan Select");
 	}
 
 
 	public void GoToItems(){
 		anim.SetBool ("Items Screen", true);
+		EventSystem.current.SetSelectedGameObject(GameObject.Find ("Health Potion"));
 	}
 
-	public void GoToCharacters(){
+	public void GoToCharacters(string characterSelect){
 		if (!inCharScreen) {
 			inCharScreen = true;
 			anim.SetBool ("Characters Screen", true);
+			EventSystem.current.SetSelectedGameObject(GameObject.Find (characterSelect));
 		} else {
 			anim.SetTrigger ("Reenter");
 		}
@@ -442,10 +493,17 @@ public class PauseMenuAnim : MonoBehaviour {
 	
 	public void GoToOptions(){
 		anim.SetBool ("Options Screen", true);
+		EventSystem.current.SetSelectedGameObject(GameObject.Find ("Back Panel (Options Screen)"));
 	}
 
 	public void GoToExit(){
 		anim.SetBool ("Exit Screen", true);
+		EventSystem.current.SetSelectedGameObject(GameObject.Find ("Exit Button No"));
+	}
+
+	public void GoToControls(){
+		anim.SetBool ("Controls Screen", true);
+		EventSystem.current.SetSelectedGameObject(GameObject.Find ("Back (Items Screen)"));
 	}
 
 	public void GoToMain(){
@@ -454,6 +512,23 @@ public class PauseMenuAnim : MonoBehaviour {
 		anim.SetBool ("Characters Screen", false);
 		anim.SetBool ("Options Screen", false);
 		anim.SetBool ("Exit Screen", false);
+		anim.SetBool ("Controls Screen", false);
+		EventSystem.current.SetSelectedGameObject(GameObject.Find ("Items"));
+	}
+
+	public bool CheckIfAtMain(){
+		if (anim.GetBool ("Items Screen") == true) {
+			if (anim.GetBool ("Characters Screen") == true){
+				if (anim.GetBool ("Options Screen") == true){
+					if (anim.GetBool ("Exit Screen") == true){
+						if (anim.GetBool ("Controls Screen") == true){
+							return true;
+						}
+					}
+				}
+			}
+		}
+		return false;
 	}
 
 	public void QuitGame(){
@@ -525,6 +600,21 @@ public class PauseMenuAnim : MonoBehaviour {
 		return true;
 	}
 
+	//changes type of icons used in the UI
+	public void ChangeIconType(){
+		if (controllerIcons == true) {
+			controllerIcons = false;
+			enterKeyCG.alpha = 1;
+			aButtonCG.alpha = 0;
+			//PASS PARAM
+		} else {
+			controllerIcons = true;
+			enterKeyCG.alpha = 0;
+			aButtonCG.alpha = 1;
+			//PASS PARAM
+		}
+	}
+
 
 	public void Update(){
 		if (/*(Input.GetKeyDown (KeyCode.T) || Input.GetKeyDown (KeyCode.Tab))*/Input.GetButtonDown ("Pause") && !pauseGame) {
@@ -548,6 +638,27 @@ public class PauseMenuAnim : MonoBehaviour {
 				anim.SetBool ("Characters Screen", false);
 				anim.SetBool ("Options Screen", false);
 				anim.SetBool ("Exit Screen", false);
+			}
+		}
+
+		if (Input.GetButtonDown ("Cancel") && pauseGame) {
+			//if at the main screen, exit out of menu
+			if(CheckIfAtMain() == true){
+				if(pauseGame){
+					Debug.Log ("Properly UNpaused game via B/Backspace Menu Press.");
+					Time.timeScale = 1;
+					pauseGame = false;
+					
+					inCharScreen = false;
+					anim.SetBool ("Main Screen", false);
+					anim.SetBool ("Items Screen", false);
+					anim.SetBool ("Characters Screen", false);
+					anim.SetBool ("Options Screen", false);
+					anim.SetBool ("Exit Screen", false);
+				}
+			}else{
+				//Go back to main screen when hitting backspace/B normally
+				GoToMain();
 			}
 		}
 	}

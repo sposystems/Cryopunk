@@ -493,7 +493,7 @@ public class PauseMenuAnim : MonoBehaviour {
 	
 	public void GoToOptions(){
 		anim.SetBool ("Options Screen", true);
-		EventSystem.current.SetSelectedGameObject(GameObject.Find ("Back Panel (Options Screen)"));
+		EventSystem.current.SetSelectedGameObject(GameObject.Find ("Volume Scrollbar"));
 	}
 
 	public void GoToExit(){
@@ -517,11 +517,11 @@ public class PauseMenuAnim : MonoBehaviour {
 	}
 
 	public bool CheckIfAtMain(){
-		if (anim.GetBool ("Items Screen") == true) {
-			if (anim.GetBool ("Characters Screen") == true){
-				if (anim.GetBool ("Options Screen") == true){
-					if (anim.GetBool ("Exit Screen") == true){
-						if (anim.GetBool ("Controls Screen") == true){
+		if (anim.GetBool ("Items Screen") == false) {
+			if (anim.GetBool ("Characters Screen") == false){
+				if (anim.GetBool ("Options Screen") == false){
+					if (anim.GetBool ("Exit Screen") == false){
+						if (anim.GetBool ("Controls Screen") == false){
 							return true;
 						}
 					}
@@ -625,6 +625,7 @@ public class PauseMenuAnim : MonoBehaviour {
 				Time.timeScale = 0;
 				UpdateParametersOnMenuOpen();
 				anim.SetBool ("Main Screen", true);
+				EventSystem.current.SetSelectedGameObject(GameObject.Find ("Items"));
 			}
 		} else if (/*(Input.GetKeyDown (KeyCode.T) || Input.GetKeyDown (KeyCode.Tab) || Input.GetKeyDown (KeyCode.Escape))*/Input.GetButtonDown ("Pause") && pauseGame) {
 			if (pauseGame) {

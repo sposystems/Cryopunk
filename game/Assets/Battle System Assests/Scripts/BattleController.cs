@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using System.Collections;
 
 public class BattleController : MonoBehaviour {
@@ -392,6 +393,12 @@ public class BattleController : MonoBehaviour {
 		if (player != null && player.Alive()) {
 			player.UpdateStatusEffects();
 
+			//MAKE THIS CODE THE ATTACK 1 BUTTON FOR SPECIFIC CHARACTER'S TURN
+			//But maybe this should be in Battle GUI?
+			//Also, you can use public GameObjects and assign them on GameController in the Unity Interface if preferred of course.
+			//example below:
+			//EventSystem.current.SetSelectedGameObject(GameObject.Find ("Player 2/Ability 1 Button"));
+
 			//check if alive again incase status effect killed player
 			if (player.Alive() && player.IsStunned() == false && player.IsStealth() == false) {
 				if (player.HasSP(player.ability1.spCost)) {
@@ -483,7 +490,7 @@ public class BattleController : MonoBehaviour {
 	public void DisplayHoverWhirlwind(){
 		if (IsPlayerTurn()) {
 			gui.SetEnemyTurnText("");
-			hoverAbilityText.text = "Whirlwind - A sweeping attack damaging all enemies - 25 SP";
+			hoverAbilityText.text = "Whirlwind - A sweeping attack damaging all enemies - 30 SP";
 		}
 	}
 

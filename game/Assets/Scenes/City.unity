@@ -19,7 +19,7 @@ RenderSettings:
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientLight: {r: .200000003, g: .200000003, b: .200000003, a: 1}
-  m_SkyboxMaterial: {fileID: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 53412155bc1016547b1a77b2333c0380, type: 2}
   m_HaloStrength: .5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -73,7 +73,6 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
-    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &860427
 GameObject:
@@ -4127,15 +4126,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06dcaa6f1c6544847b214cbc038b1454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  readableText: jaklsdjkx zhppoiehsq  sdkaljoizu eoaioijdlijclkea
-  readableText2: lkjoiciz ekjjiz ewijisdayxjclj
-  readableText3: 
-  readableText4: 
+  readableText: MMmmmmm!? mmmmMMMM
+  readableText2: Urraaaghhhhh
+  readableText3: Do you have a few moments to take a quiz?
+  readableText4: 539-855-498
   readableText5: 
   enterTriggerName: Talk
   talker: Zombie
   talkingImage: {fileID: 0}
-  numLinesDialogue: 2
+  numLinesDialogue: 4
   changeDialogue: 1
   isRepeatable: 1
   specialCase: 0
@@ -12590,8 +12589,8 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
+  ignoreReversedGraphics: 1
+  blockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -17114,8 +17113,8 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
+  ignoreReversedGraphics: 1
+  blockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -22330,7 +22329,7 @@ Transform:
   m_Children:
   - {fileID: 984113614}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &1885612834
 GameObject:
   m_ObjectHideFlags: 0
@@ -23696,7 +23695,7 @@ Transform:
   - {fileID: 2058727971}
   - {fileID: 1086979599}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!65 &1951772223
 BoxCollider:
   m_ObjectHideFlags: 0

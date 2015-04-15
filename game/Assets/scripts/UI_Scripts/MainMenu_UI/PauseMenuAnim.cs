@@ -218,11 +218,11 @@ public class PauseMenuAnim : MonoBehaviour {
 		solan_menu_image = GameObject.Find ("CharDetails (Solan)").GetComponent<Image>();
 		solan_select_image = GameObject.Find ("Solan Select").GetComponent<Image>();
 
-		kira_art = Resources.Load<Sprite> ("kira_tp");
-		law_art = Resources.Load<Sprite> ("law_tp");
-		robo_art = Resources.Load<Sprite> ("robo_tp");
-		constance_art = Resources.Load<Sprite> ("constance_tp");
-		solan_art = Resources.Load<Sprite> ("solan_tp");
+		kira_art = Resources.Load<Sprite> ("kira_tp_warrior");
+		law_art = Resources.Load<Sprite> ("law_tp_wizard");
+		robo_art = Resources.Load<Sprite> ("robo_tp_thief");
+		constance_art = Resources.Load<Sprite> ("constance_tp_priest");
+		solan_art = Resources.Load<Sprite> ("solan_tp_archer");
 
 		warrior = Resources.Load<Sprite> ("Warrior_Sprite");
 		wizard = Resources.Load<Sprite> ("Wizard_Sprite");
@@ -353,7 +353,7 @@ public class PauseMenuAnim : MonoBehaviour {
 
 	private void changeItemInfo(string itemName){
 		if(itemName == "hpPotion"){
-			itemDesc.text = "A restorative potion used for restoring a small amount of HP.";
+			itemDesc.text = "A healthy potion used for restoring a small amount of HP.";
 			itemImage.GetComponent<Image>().sprite = hpPotionArt;
 		}else if(itemName == "spPotion"){
 			itemDesc.text = "A special potion used for restoring a small amount of SP.";
@@ -423,7 +423,7 @@ public class PauseMenuAnim : MonoBehaviour {
 		spStatChars.text = player3Character.currentSP + "/" + player3Character.maxSp;
 		hpBarChars.fillAmount = (float) player3Character.currentHP / (float) player3Character.maxHp;
 		spBarChars.fillAmount = (float) player3Character.currentSP / (float) player3Character.maxSp;
-		charBookDialog.text = "\"BEEP BOOP BOOP BEEP zzt\"";
+		charBookDialog.text = "\"BEEP BOOP BOOP BEEP zzt \nHUMAN FORM ERROR\"";
 		charClass.text = "Thief";
 		charClassImage.sprite = thief;
 

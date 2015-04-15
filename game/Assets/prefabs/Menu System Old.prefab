@@ -2422,7 +2422,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 463494}
   m_Layer: 0
-  m_Name: Menu System
+  m_Name: Menu System Old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

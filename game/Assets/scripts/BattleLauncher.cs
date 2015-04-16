@@ -23,6 +23,7 @@ public class BattleLauncher : MonoBehaviour {
 	public bool fMember;
 	public string level;
 
+	private CanvasGroup loadingScreen;
 
 	void start(){
 
@@ -44,11 +45,26 @@ public class BattleLauncher : MonoBehaviour {
 			//battled = true;
 			instance = launcherInstance;
 
-		
 
-				Application.LoadLevel (level); 
+			loadingScreen = GameObject.Find ("Scene Change Panel").GetComponent<CanvasGroup>();
+			loadingScreen.animation.Play ("loading_fade_in");
+			loadingScreen.alpha = 1;
+			
+			StartCoroutine (Wait (1.5f));
+
+			//Application.LoadLevel (level); 
 			
 		}	
 
+	}
+
+
+
+	IEnumerator Wait(float seconds){
+		Debug.Log ("Waited for " + seconds + " seconds.");
+		yield return new WaitForSeconds(seconds);
+		Application.LoadLevel(level); 
+		loadingScreen = GameObject.Find ("Scene Change Panel").GetComponent<CanvasGroup>();
+		loadingScreen.animation.Play ("loading_fade_out");
 	}
 }

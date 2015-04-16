@@ -10,7 +10,7 @@ public class FancyAnimations : MonoBehaviour {
 	
 	IEnumerator Start()
 	{
-		yield return StartCoroutine (Wait (29));
+		yield return StartCoroutine (Wait (39));
 		//var pointA = transform.position;
 		//while (true) {
 			//yield return StartCoroutine(MoveObject(transform, pointA, pointB, timeFloat));

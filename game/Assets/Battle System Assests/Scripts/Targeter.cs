@@ -130,7 +130,9 @@ public class Targeter : MonoBehaviour {
 					//Now disable the UI buttons
 					foreach (GameObject targetObjUI in targetGroupUI) {
 						Button targetCharName = targetObjUI.GetComponentInChildren<Button>();
-							targetCharName.interactable = false;
+						targetCharName.interactable = false;
+						alliesButton.interactable = false;
+						enemiesButton.interactable = false;
 					}
 
 

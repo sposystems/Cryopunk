@@ -13,6 +13,7 @@ TagManager:
   - Trigger4
   - PlayerUI
   - EnemyUI
+  - LoadScreen
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -25,7 +26,7 @@ TagManager:
   User Layer 8: PlayerCharacter
   User Layer 9: Terrain
   User Layer 10: WorldObject
-  User Layer 11: 
+  User Layer 11: LoadingLayer
   User Layer 12: 
   User Layer 13: 
   User Layer 14: 
@@ -50,4 +51,16 @@ TagManager:
   - name: Default
     userID: 0
     uniqueID: 0
+    locked: 0
+  - name: LoadingOverlap
+    userID: 1
+    uniqueID: 3010169947
+    locked: 0
+  - name: MenuScreen
+    userID: 2
+    uniqueID: 1715871629
+    locked: 0
+  - name: PopUps
+    userID: 3
+    uniqueID: 2276123293
     locked: 0

@@ -14,6 +14,10 @@ public class SceneChanger : MonoBehaviour {
 	public float sendToY;
 	public float sendToZ;
 	public static Vector3 NewPosition = new Vector3 (PositionX, PositionY, PositionZ);
+
+	private CanvasGroup loadingScreen;
+	private GameObject[] loaders;
+
 	void Awake() {
 		//NewPosition = new Vector3 (sendToX, sendToY, sendToZ);
 		//NewPosition.x = sendToX;
@@ -25,7 +29,25 @@ public class SceneChanger : MonoBehaviour {
 		NewPosition.x = sendToX;
 		NewPosition.y = sendToY;
 		NewPosition.z = sendToZ;
-		Application.LoadLevel(level); 
+
+		loaders = GameObject.FindGameObjectsWithTag ("LoadScreen");
+
+		if (loaders.Length > 0) {
+			Debug.Log ("Number of loaders (>0): " + loaders.Length);
+			loadingScreen = GameObject.Find ("Scene Change Panel").GetComponent<CanvasGroup>();
+			loadingScreen.animation.Play ("loading_fade_in");
+			loadingScreen.alpha = 1;
+			
+			StartCoroutine (Wait (1.5f));
+		} else {
+			Debug.Log ("Number of loaders (OUT): " + loaders.Length);
+			//loadingScreen = GameObject.Find ("Scene Change Panel").GetComponent<CanvasGroup>();
+			//loadingScreen.animation.Play ("loading_fade_out");
+			//loadingScreen.alpha = 0;
+			Application.LoadLevel(level);
+		}
+
+
 	}
 	public static void setPositionThroughCode(float x, float y, float z){
 		NewPosition.x = x;
@@ -46,5 +68,13 @@ public class SceneChanger : MonoBehaviour {
 		//NewPosition.x += 20;
 		NewPosition.y += 2;
 		//NewPosition.z += 20;
+	}
+
+	IEnumerator Wait(float seconds){
+		Debug.Log ("Waited for " + seconds + " seconds.");
+		yield return new WaitForSeconds(seconds);
+		Application.LoadLevel(level); 
+		loadingScreen = GameObject.Find ("Scene Change Panel").GetComponent<CanvasGroup>();
+		loadingScreen.animation.Play ("loading_fade_out");
 	}
 }

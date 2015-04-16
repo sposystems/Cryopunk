@@ -50,6 +50,11 @@ public class BattleController : MonoBehaviour {
 	private GameObject ground;
 	private Text hoverAbilityText;
 	private Text enemyTurnText;
+
+	private Canvas popUpCanvas;
+	private CanvasGroup loadingScreen;
+	private CanvasGroup winImage;
+	private CanvasGroup loseImage;
 	//private SceneChanger sceneChangerElement = new SceneChanger(); //do I want this object to persist throughout?
 
 	//return reference to a player
@@ -284,8 +289,14 @@ public class BattleController : MonoBehaviour {
 		playerContainer = GameObject.Find("Swordman 1");
 		hoverAbilityText = GameObject.Find ("Description Text").GetComponent<Text>(); //for the mouse hovering over abilities
 		enemyTurnText = GameObject.Find ("Enemy Turn Text").GetComponent<Text>();
+		popUpCanvas = GameObject.Find ("PopUpCanvas").GetComponent<Canvas>();
+		loadingScreen = GameObject.Find ("Scene Change Panel").GetComponent<CanvasGroup>();
+		winImage = GameObject.Find ("Win Image").GetComponent<CanvasGroup>();
+		loseImage = GameObject.Find ("Lose Image").GetComponent<CanvasGroup>();
 		camera.SetActive(false);
 		playerContainer.SetActive(false);
+
+
 		
 		ApplyLocation(BattleLauncher.location);
 		ImportPlayers(BattleLauncher.fifthMember);
@@ -317,6 +328,8 @@ public class BattleController : MonoBehaviour {
 		gui.UpdateGui();
 		currentState = BattleStates.Player1Turn;
 		ChangeState();
+
+		StartCoroutine (WaitStart (1.5f));
 	}
 	
 	private void ChangeState() {
@@ -384,27 +397,87 @@ public class BattleController : MonoBehaviour {
 			//GameObject battlecamera = GameObject.Find("Battle Camera");
 			//GameObject playerContainer = GameObject.Find("PlayerContainer");
 			//battlecamera.SetActive(false);
-			if(isFinalBattle){
-				player1.SetActive(false);
-				player2.SetActive(false);
-				player3.SetActive(false);
-				player4.SetActive(false);
-				player5.SetActive(false);
-				Application.LoadLevel (8); 
-			} else{
-				playerContainer.SetActive(true);
-				camera.SetActive(true); //need our player and camera back
-				//playerContainer.SetActive(true);
-				player5.SetActive(true); //Needed to keep Solan from not glitching
-				SceneChanger.winChangeScene();//you have won the battle, transition back to previous scene
-			}
+
+			popUpCanvas.enabled = true;
+			StartCoroutine(Wait2 (3));
+
 			break;
+
 			
 		case(BattleStates.LoseBattle):
 			//display game over
 			Debug.Log("lose state entered");
 			break;
 		}
+	}
+
+	//Waiting clauses; also, this is where the battle end stuff happens.
+	IEnumerator Wait(float seconds){
+		Debug.Log ("Waited for " + seconds + " seconds.");
+		yield return new WaitForSeconds(seconds);
+		//Reset all characters back to Idle states
+		if (player1Character.Alive ()) {
+			player1Character.animation.Play ("Idle");
+		}
+		if (player2Character.Alive ()) {
+			player2Character.animation.Play ("Idle");
+		}
+		if (player3Character.Alive ()) {
+			player3Character.animation.Play ("Idle");
+		}
+		if (player4Character.Alive ()) {
+			player4Character.animation.Play ("Idle");
+		}
+		//if (player5Character.Alive ()) {
+		//player5Character.animation.Play ("Idle");
+		//}
+		if(isFinalBattle){
+			player1.SetActive(false);
+			player2.SetActive(false);
+			player3.SetActive(false);
+			player4.SetActive(false);
+			player5.SetActive(false);
+			Application.LoadLevel (8); 
+		} else{
+			playerContainer.SetActive(true);
+			camera.SetActive(true); //need our player and camera back
+			//playerContainer.SetActive(true);
+			player5.SetActive(true); //Needed to keep Solan from not glitching
+			SceneChanger.winChangeScene();//you have won the battle, transition back to previous scene
+		}
+	}
+
+	IEnumerator Wait2(float seconds){
+		winImage.alpha = 1;
+
+		if (player1Character.Alive ()) {
+			player1Character.animation.Play ("Special2");
+		}
+		if (player2Character.Alive ()) {
+			player2Character.animation.Play ("Special2");
+		}
+		if (player3Character.Alive ()) {
+			player3Character.animation.Play ("Special1");
+		}
+		if (player4Character.Alive ()) {
+			player4Character.animation.Play ("Special1");
+		}
+		//if (player5Character.Alive ()) {
+			//player5Character.animation.Play ("Special2");
+		//}
+
+		yield return new WaitForSeconds (seconds);
+
+
+		loadingScreen.animation.Play ("loading_fade_in");
+		loadingScreen.alpha = 1;
+		StartCoroutine (Wait (1.5f));
+	}
+
+	//Finish loading at start of battle
+	IEnumerator WaitStart(float seconds){
+		yield return new WaitForSeconds (seconds);
+		popUpCanvas.enabled = false;
 	}
 
 	public void TargetEnemyViaUI(int targetNumber){

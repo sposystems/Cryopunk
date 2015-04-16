@@ -49,6 +49,7 @@ public class BattleController : MonoBehaviour {
 	public GameObject playerContainer;
 	private GameObject ground;
 	private Text hoverAbilityText;
+	private Text enemyTurnText;
 	//private SceneChanger sceneChangerElement = new SceneChanger(); //do I want this object to persist throughout?
 
 	//return reference to a player
@@ -90,6 +91,7 @@ public class BattleController : MonoBehaviour {
 	//complete the turn and set up for next turn
 	public void EndTurn() {
 		gui.SetEnemyTurnText("");
+		//enemyTurnText.text = "";
 		gui.DisableButtons();
 
 		//clear all targets
@@ -281,6 +283,7 @@ public class BattleController : MonoBehaviour {
 		camera = GameObject.Find("Main Camera");
 		playerContainer = GameObject.Find("Swordman 1");
 		hoverAbilityText = GameObject.Find ("Description Text").GetComponent<Text>(); //for the mouse hovering over abilities
+		enemyTurnText = GameObject.Find ("Enemy Turn Text").GetComponent<Text>();
 		camera.SetActive(false);
 		playerContainer.SetActive(false);
 		
@@ -321,42 +324,58 @@ public class BattleController : MonoBehaviour {
 
 		case(BattleStates.Player1Turn):
 			PlayerTurn(player1Character, gui.player1Ability1, gui.player1Ability2, gui.player1Ability3);
+			EventSystem.current.SetSelectedGameObject(GameObject.Find ("Player 1/Ability 1 Button"));
 			break;
 			
 		case(BattleStates.Player2Turn):
 			PlayerTurn(player2Character, gui.player2Ability1, gui.player2Ability2, gui.player2Ability3);
+			EventSystem.current.SetSelectedGameObject(GameObject.Find ("Player 2/Ability 1 Button"));
 			break;
 			
 		case(BattleStates.Player3Turn):
 			PlayerTurn(player3Character, gui.player3Ability1, gui.player3Ability2, gui.player3Ability3);
+			EventSystem.current.SetSelectedGameObject(GameObject.Find ("Player 3/Ability 1 Button"));
 			break;
 			
 		case(BattleStates.Player4Turn):
 			PlayerTurn(player4Character, gui.player4Ability1, gui.player4Ability2, gui.player4Ability3);
+			EventSystem.current.SetSelectedGameObject(GameObject.Find ("Player 4/Ability 1 Button"));
 			break;
 			
 		case(BattleStates.Player5Turn):
 			PlayerTurn(player5Character, gui.player5Ability1, gui.player5Ability2, gui.player5Ability3);
+			//SET TO SOLAN'S SPOT IF HE IS IN PARTY. ELSE, SKIP AND GO BACK TO ALLIES SPOT.
+			if(true){
+
+			}else{
+
+			}
+			//EventSystem.current.SetSelectedGameObject(GameObject.Find ("Player 5/Ability 1 Button"));
 			break;
 
 		case(BattleStates.Enemy1Turn):
 			EnemyTurn(enemy1Character);
+			EventSystem.current.SetSelectedGameObject(GameObject.Find ("Allies Button"));
 			break;
 			
 		case(BattleStates.Enemy2Turn):
 			EnemyTurn(enemy2Character);
+			EventSystem.current.SetSelectedGameObject(GameObject.Find ("Allies Button"));
 			break;
 			
 		case(BattleStates.Enemy3Turn):
 			EnemyTurn(enemy3Character);
+			EventSystem.current.SetSelectedGameObject(GameObject.Find ("Allies Button"));
 			break;
 			
 		case(BattleStates.Enemy4Turn):
 			EnemyTurn(enemy4Character);
+			EventSystem.current.SetSelectedGameObject(GameObject.Find ("Allies Button"));
 			break;
 			
 		case(BattleStates.Enemy5Turn):
 			EnemyTurn(enemy5Character);
+			EventSystem.current.SetSelectedGameObject(GameObject.Find ("Allies Button"));
 			break;
 			
 		case(BattleStates.WinBattle):
@@ -388,6 +407,34 @@ public class BattleController : MonoBehaviour {
 		}
 	}
 
+	public void TargetEnemyViaUI(int targetNumber){
+		if (targetNumber == 1) {
+			enemy1Character.SetTargeted (true);
+		}else if (targetNumber == 2) {
+			enemy2Character.SetTargeted (true);
+		}else if (targetNumber == 3) {
+			enemy3Character.SetTargeted (true);
+		}else if (targetNumber == 4) {
+			enemy4Character.SetTargeted (true);
+		}else if (targetNumber == 5) {
+			enemy5Character.SetTargeted (true);
+		}
+	}
+
+	public void TargetPlayerViaUI(int targetNumber){
+		if (targetNumber == 1) {
+			player1Character.SetTargeted (true);
+		}else if (targetNumber == 2) {
+			player2Character.SetTargeted (true);
+		}else if (targetNumber == 3) {
+			player3Character.SetTargeted (true);
+		}else if (targetNumber == 4) {
+			player4Character.SetTargeted (true);
+		}else if (targetNumber == 5) {
+			player5Character.SetTargeted (true);
+		}
+	}
+
 	private void PlayerTurn(Character player, Button ability1, Button ability2, Button ability3) {
 
 		if (player != null && player.Alive()) {
@@ -397,7 +444,9 @@ public class BattleController : MonoBehaviour {
 			//But maybe this should be in Battle GUI?
 			//Also, you can use public GameObjects and assign them on GameController in the Unity Interface if preferred of course.
 			//example below:
-			//EventSystem.current.SetSelectedGameObject(GameObject.Find ("Player 2/Ability 1 Button"));
+			GameObject.Find ("Allies Button").GetComponent<Button>().interactable = true;
+			GameObject.Find ("Enemies Button").GetComponent<Button>().interactable = false;
+			EventSystem.current.SetSelectedGameObject(GameObject.Find ("Allies Button"));
 
 			//check if alive again incase status effect killed player
 			if (player.Alive() && player.IsStunned() == false && player.IsStealth() == false) {
@@ -422,6 +471,11 @@ public class BattleController : MonoBehaviour {
 	
 	//enemy chooses random attack
 	private void EnemyTurn(Character enemy) {		
+
+		GameObject.Find ("Allies Button").GetComponent<Button>().interactable = false;
+		GameObject.Find ("Enemies Button").GetComponent<Button>().interactable = false;
+		EventSystem.current.SetSelectedGameObject(GameObject.Find ("Allies Button"));
+
 		if (enemy != null && enemy.Alive()) {
 			enemy.UpdateStatusEffects();
 
@@ -466,6 +520,7 @@ public class BattleController : MonoBehaviour {
 					turnText += " on " + target.characterName;
 				}
 				hoverAbilityText.text = ""; //Reset the text for Ability Descriptions
+				//enemyTurnText.text = "";
 				gui.SetEnemyTurnText(turnText);
 				
 				enemyAbility.Use(target);
@@ -482,83 +537,91 @@ public class BattleController : MonoBehaviour {
 
 	public void DisplayHoverAttack(){
 		if (IsPlayerTurn()) {
-			gui.SetEnemyTurnText("");
+			enemyTurnText.text = "";
 			hoverAbilityText.text = "Attack - A low damage attack";
 		}
 	}
 
 	public void DisplayHoverWhirlwind(){
 		if (IsPlayerTurn()) {
-			gui.SetEnemyTurnText("");
+			enemyTurnText.text = "";
 			hoverAbilityText.text = "Whirlwind - A sweeping attack damaging all enemies - 30 SP";
 		}
 	}
 
 	public void DisplayHoverBattlecry(){
 		if (IsPlayerTurn()) {
-			gui.SetEnemyTurnText("");
+			enemyTurnText.text = "";
 			hoverAbilityText.text = "Battlecry - Increase party damage temporarily - 25 SP";
 		}
 	}
 
 	public void DisplayHoverFreeze(){
 		if (IsPlayerTurn()) {
-			gui.SetEnemyTurnText("");
+			enemyTurnText.text = "";
 			hoverAbilityText.text = "Freeze - Stun an enemy for one turn - 25 SP";
 		}
 	}
 
 	public void DisplayHoverSilence(){
 		if (IsPlayerTurn()) {
-			gui.SetEnemyTurnText("");
+			enemyTurnText.text = "";
 			hoverAbilityText.text = "Silence - Prevent an enemy from using special abilities - 25 SP";
 		}
 	}
 
 	public void DisplayHoverPoisonShot(){
 		if (IsPlayerTurn()) {
-			gui.SetEnemyTurnText("");
+			enemyTurnText.text = "";
 			hoverAbilityText.text = "Poison Shot - Damage and poison an enemy to take damage over time - 25 SP";
 		}
 	}
 
 	public void DisplayHoverStealth(){
 		if (IsPlayerTurn()) {
-			gui.SetEnemyTurnText("");
+			enemyTurnText.text = "";
 			hoverAbilityText.text = "Stealth - Render self invisible to enemies for a few turns - 25 SP";
 		}
 	}
 
 	public void DisplayHoverHeal(){
 		if (IsPlayerTurn()) {
-			gui.SetEnemyTurnText("");
+			enemyTurnText.text = "";
 			hoverAbilityText.text = "Heal - Heal an ally's health - 25 SP";
 		}
 	}
 
 	public void DisplayHoverCurse(){
 		if (IsPlayerTurn()) {
-			gui.SetEnemyTurnText("");
+			enemyTurnText.text = "";
 			hoverAbilityText.text = "Curse - Lower an enemy's defense - 25 SP";
 		}
 	}
 
 	public void DisplayHoverDoubleShot(){
 		if (IsPlayerTurn()) {
-			gui.SetEnemyTurnText("");
+			enemyTurnText.text = "";
 			hoverAbilityText.text = "Double Shot - Deal high damage to one enemy - 25 SP";
 		}
 	}
 
 	public void DisplayHoverArrowRain(){
 		if (IsPlayerTurn()) {
-			gui.SetEnemyTurnText("");
+			enemyTurnText.text = "";
 			hoverAbilityText.text = "Arrow Rain - Deal damage to 3 random enemies - 25 SP";
+		}
+	}
+
+	public void DisplayCancelText(){
+		if (IsPlayerTurn()) {
+			enemyTurnText.text = "";
+			hoverAbilityText.text = "Cancel current action";
 		}
 	}
 	
 	public void ClearHover() {
 		hoverAbilityText.text = "";
+		//enemyTurnText.text = "";
 	}
 	
 	private bool IsPlayerTurn() {

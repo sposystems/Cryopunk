@@ -1,9 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scenes\SceneScripts\SceneChanger.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Battle System Assests\Scripts\Targeter.cs">
     <Files>
-      <File FileName="Assets\Scenes\SceneScripts\SceneChanger.cs" Line="16" Column="84" />
-      <File FileName="Assets\scripts\UI_Scripts\MainMenu_UI\PauseMenuAnim.cs" Line="14" Column="31" />
+      <File FileName="Assets\Battle System Assests\Scripts\BattleController.cs" Line="449" Column="81" />
+      <File FileName="Assets\Battle System Assests\Scripts\Targeter.cs" Line="139" Column="50" />
+      <File FileName="Assets\Battle System Assests\Scripts\BattleGUI.cs" Line="13" Column="28" />
+      <File FileName="Assets\Battle System Assests\Scripts\Character.cs" Line="25" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

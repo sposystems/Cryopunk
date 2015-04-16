@@ -11,6 +11,8 @@ TagManager:
   - Trigger2
   - Trigger3
   - Trigger4
+  - PlayerUI
+  - EnemyUI
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

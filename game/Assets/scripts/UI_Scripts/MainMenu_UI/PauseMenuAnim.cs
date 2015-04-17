@@ -5,13 +5,16 @@ using UnityEngine.EventSystems;
 
 public class PauseMenuAnim : MonoBehaviour {
 
+	//DataContainer used for all storage variables
+	private DataContainer dc;
+	private int toggleCountBypass;
 	//startMenuCanvas is in charge of all main commands in this script
 	public CanvasGroup startMenuCanvas;
 	public CanvasGroup fifthCanvas; //Solan's Canvas Group for visibility
 	//pauseGame keeps track of pause state for pausing/unpausing
 	public bool pauseGame = false;
 	//controllerIcons tracks what type of icons are being used
-	private bool controllerIcons;
+	//private bool controllerIcons;
 	//inCharScreen used for Character Screen loops
 	private bool inCharScreen = false;
 	//anim allows us to animate without needing to use the Animator for initial pausing
@@ -125,8 +128,9 @@ public class PauseMenuAnim : MonoBehaviour {
 	private Sprite priest;
 	private Sprite archer;
 
-	private Image solan_menu_image;
-	private Image solan_select_image;
+	private Button solan_menu_image;
+	private Button solan_select_image;
+	public CanvasGroup solan_select_image_CG;
 
 	//Exit Game Variables
 	//private Image overlappingBackPanel;
@@ -139,6 +143,9 @@ public class PauseMenuAnim : MonoBehaviour {
 	//Assign all variables to their respective components
 	public void Start(){
 		anim = startMenuCanvas.GetComponent<Animator> ();
+
+		dc = GameObject.FindGameObjectWithTag ("DataContainer").GetComponent<DataContainer>();
+		toggleCountBypass = 0;
 
 		//Initializing arrays of objects with select tags
 		popUps1 = GameObject.FindGameObjectsWithTag ("Trigger1");
@@ -170,11 +177,11 @@ public class PauseMenuAnim : MonoBehaviour {
 		molotovCocktails = GameObject.Find ("Molotov Cocktail Quantity").GetComponent<Text>();
 		mrFuns = GameObject.Find ("Mr Fun Quantity").GetComponent<Text>();
 
-		hpPotions.text = "x" + "3"; //CHANGE TO ACTUAL NUMBER FROM DB
-		spPotions.text = "x" + "2";
-		lifePotions.text = "x" + "0";
-		molotovCocktails.text = "x" + "0";
-		mrFuns.text = "x" + "0";
+		hpPotions.text = "x" + dc.healthPotionNum; //CHANGE TO ACTUAL NUMBER FROM DB
+		spPotions.text = "x" + dc.specialPotionNum;
+		lifePotions.text = "x" + dc.lifePotionNum;
+		molotovCocktails.text = "x" + dc.molotovCocktailNum;
+		mrFuns.text = "x" + dc.mrFunNum;
 
 		itemDesc = GameObject.Find ("Item Description").GetComponent<Text>();
 		itemImage = GameObject.Find ("Item Image Big").GetComponent<Image>();
@@ -191,9 +198,12 @@ public class PauseMenuAnim : MonoBehaviour {
 		enterKeyCG = GameObject.Find ("Enter Key").GetComponent<CanvasGroup>();
 		aButtonCG = GameObject.Find ("A Button").GetComponent<CanvasGroup>();
 
-		//NEED A PLAYER CONTAINER OBJECT TO PASS THROUGH, LIKE IN ITEMS TO CHECK CONSISTENCY
-		if(true){
-			//PUT TOGGLE ON + CHANGE PARAMS AT START HERE
+		if(dc.controllerIconsOn == true){
+			//controllerIcons = true;
+			iconTypeToggle.isOn = true;
+
+			enterKeyCG.alpha = 0;
+			aButtonCG.alpha = 1;
 		}
 
 
@@ -215,8 +225,9 @@ public class PauseMenuAnim : MonoBehaviour {
 		charClassImage = GameObject.Find ("Char Class Image").GetComponent<Image> ();
 
 		//Solan specific parameters for acquirement
-		solan_menu_image = GameObject.Find ("CharDetails (Solan)").GetComponent<Image>();
-		solan_select_image = GameObject.Find ("Solan Select").GetComponent<Image>();
+		solan_menu_image = GameObject.Find ("CharDetails (Solan)").GetComponent<Button>();
+		solan_select_image = GameObject.Find ("Solan Select").GetComponent<Button>();
+		solan_select_image_CG = GameObject.Find ("Solan Select").GetComponent<CanvasGroup>();
 
 		kira_art = Resources.Load<Sprite> ("kira_tp_warrior");
 		law_art = Resources.Load<Sprite> ("law_tp_wizard");
@@ -247,17 +258,27 @@ public class PauseMenuAnim : MonoBehaviour {
 		player4Character = player4.GetComponent<Character>();
 		player4.transform.position = new Vector3(14,-1000,-8.5f);
 		
-		if (fifthAcquired) {
+		if (dc.haveSolan) {
 			player5 = GameObject.Find ("Archer");
 			player5Character = player5.GetComponent<Character> ();
 			player5.transform.position = new Vector3(14,-1000,-8.5f);
+			solan_menu_image.enabled = true;
+			solan_menu_image.interactable = true;
+			solan_select_image.enabled = true;
+			solan_select_image.interactable = true;
+			solan_select_image_CG.alpha = 1;
+			solan_select_image_CG.interactable = true;
 			fifthCanvas.alpha = 1; //Active Solan Canvas
 		} else {
 			player5 = GameObject.Find ("Archer");
 			player5Character = player5.GetComponent<Character> ();
 			player5.transform.position = new Vector3(14,-1000,-8.5f);
 			solan_menu_image.enabled = false;
+			solan_menu_image.interactable = false;
 			solan_select_image.enabled = false;
+			solan_select_image.interactable = false;
+			solan_select_image_CG.alpha = 0;
+			solan_select_image_CG.interactable = false;
 			fifthCanvas.alpha = 0; //Inactive Solan Canvas
 		}
 
@@ -290,7 +311,7 @@ public class PauseMenuAnim : MonoBehaviour {
 		lvTextC = GameObject.Find ("CharDetails (Constance)/Level").GetComponent<Text>();
 		expTextC = GameObject.Find ("CharDetails (Constance)/ToNext").GetComponent<Text>();
 
-		if (fifthAcquired) {
+		if (dc.haveSolan) {
 			hpTextS = GameObject.Find ("CharDetails (Solan)/hp_bar_outline/HP_Num").GetComponent<Text>();
 			scrollbarHPS = GameObject.Find ("CharDetails (Solan)/hp_bar_percent").GetComponent<Image>();
 			spTextS = GameObject.Find ("CharDetails (Solan)/sp_bar_outline/SP_Num").GetComponent<Text>();
@@ -322,13 +343,18 @@ public class PauseMenuAnim : MonoBehaviour {
 		lvTextS = GameObject.Find ("CharDetails (Solan)/Level").GetComponent<Text>();
 		expTextS = GameObject.Find ("CharDetails (Solan)/ToNext").GetComponent<Text>();
 
-		solan_select_image = GameObject.Find ("Solan Select").GetComponent<Image>();
-		solan_select_image.enabled = true;
+		//solan_select_image = GameObject.Find ("Solan Select").GetComponent<Button>();
 		solan_menu_image.enabled = true;
+		solan_menu_image.interactable = true;
+		solan_select_image.enabled = true;
+		solan_select_image.interactable = true;
+		solan_select_image_CG.alpha = 1;
+		solan_select_image_CG.interactable = true;
 		fifthCanvas.alpha = 1;
 
 		BattleLauncher.fifthMember = true;
 		fifthAcquired = true;
+		dc.haveSolan = true;
 	}
 
 	public void hpPotionPress(){
@@ -359,7 +385,7 @@ public class PauseMenuAnim : MonoBehaviour {
 			itemDesc.text = "A special potion used for restoring a small amount of SP.";
 			itemImage.GetComponent<Image>().sprite = spPotionArt;
 		}else if(itemName == "lifePotion"){
-			itemDesc.text = "A holy potion used for resurrecting people from death.";
+			itemDesc.text = "A holy potion used for restoring HP to the whole party.";
 			itemImage.GetComponent<Image>().sprite = lifePotionArt;
 		}else if(itemName == "molotovCocktail"){
 			itemDesc.text = "An otherworldly weapon used for intense combat situations.";
@@ -568,7 +594,7 @@ public class PauseMenuAnim : MonoBehaviour {
 		scrollbarHPC.fillAmount = (float) player4Character.currentHP / (float) player4Character.maxHp;
 		scrollbarSPC.fillAmount = (float) player4Character.currentSP / (float) player4Character.maxSp;
 
-		if (fifthAcquired) {
+		if (dc.haveSolan) {
 			hpTextS.text = player5Character.currentHP + "/" + player5Character.maxHp;
 			spTextS.text = player5Character.currentSP + "/" + player5Character.maxSp;
 			lvTextS.text = "LV " + player5Character.lv;
@@ -602,16 +628,21 @@ public class PauseMenuAnim : MonoBehaviour {
 
 	//changes type of icons used in the UI
 	public void ChangeIconType(){
-		if (controllerIcons == true) {
-			controllerIcons = false;
-			enterKeyCG.alpha = 1;
-			aButtonCG.alpha = 0;
-			//PASS PARAM
+		if (dc.controllerIconsOn == true) {
+			//Need this toggleCountBypass to avoid reloading scenes using isOn as an additive
+			if(toggleCountBypass == 0){
+				toggleCountBypass = 1;
+			}else{
+				enterKeyCG.alpha = 1;
+				aButtonCG.alpha = 0;
+				dc.controllerIconsOn = false;
+				toggleCountBypass = 1;
+			}
 		} else {
-			controllerIcons = true;
 			enterKeyCG.alpha = 0;
 			aButtonCG.alpha = 1;
-			//PASS PARAM
+			dc.controllerIconsOn = true;
+			toggleCountBypass = 1;
 		}
 	}
 
@@ -638,6 +669,7 @@ public class PauseMenuAnim : MonoBehaviour {
 				anim.SetBool ("Items Screen", false);
 				anim.SetBool ("Characters Screen", false);
 				anim.SetBool ("Options Screen", false);
+				anim.SetBool ("Controls Screen", false);
 				anim.SetBool ("Exit Screen", false);
 			}
 		}
@@ -655,6 +687,7 @@ public class PauseMenuAnim : MonoBehaviour {
 					anim.SetBool ("Items Screen", false);
 					anim.SetBool ("Characters Screen", false);
 					anim.SetBool ("Options Screen", false);
+					anim.SetBool ("Controls Screen", false);
 					anim.SetBool ("Exit Screen", false);
 				}
 			}else{

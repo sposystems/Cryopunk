@@ -998,7 +998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Constance
-  maxHp: 60
+  maxHp: 55
   maxSp: 125
   ability1: {fileID: 11407828}
   ability2: {fileID: 11407832}
@@ -1054,7 +1054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Heal
-  spCost: 25
+  spCost: 30
   damage: 20
   offensive: 0
   targetType: 0

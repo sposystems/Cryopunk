@@ -1446,7 +1446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Law
-  maxHp: 70
+  maxHp: 65
   maxSp: 110
   ability1: {fileID: 11498626}
   ability2: {fileID: 11498630}
@@ -1502,12 +1502,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Freeze
-  spCost: 25
+  spCost: 35
   damage: 5
   offensive: 1
   targetType: 0
   statusEffect: 1
-  statusLength: 3
+  statusLength: 2
   statusAmount: 0
   animationNumber: 2
 --- !u!114 &11498632

@@ -1624,7 +1624,7 @@ MonoBehaviour:
   offensive: 1
   targetType: 0
   statusEffect: 1
-  statusLength: 3
+  statusLength: 2
   statusAmount: 0
   animationNumber: 3
 --- !u!136 &13656468

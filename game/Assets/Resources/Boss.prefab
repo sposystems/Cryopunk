@@ -1805,7 +1805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Boss
-  maxHp: 250
+  maxHp: 325
   maxSp: 200
   ability1: {fileID: 11436288}
   ability2: {fileID: 11436290}
@@ -1831,7 +1831,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Attack
   spCost: 0
-  damage: 10
+  damage: 25
   offensive: 1
   targetType: 0
   statusEffect: 0
@@ -1851,7 +1851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Power Attack
   spCost: 20
-  damage: 20
+  damage: 40
   offensive: 1
   targetType: 0
   statusEffect: 0
@@ -1875,8 +1875,8 @@ MonoBehaviour:
   offensive: 0
   targetType: 4
   statusEffect: 4
-  statusLength: 2
-  statusAmount: 10
+  statusLength: 3
+  statusAmount: 15
   animationNumber: 3
 --- !u!136 &13636292
 CapsuleCollider:

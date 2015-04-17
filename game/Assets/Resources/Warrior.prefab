@@ -998,7 +998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Kira
-  maxHp: 110
+  maxHp: 105
   maxSp: 80
   ability1: {fileID: 11430422}
   ability2: {fileID: 11430426}
@@ -1054,7 +1054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Whirlwind
-  spCost: 30
+  spCost: 25
   damage: 10
   offensive: 1
   targetType: 1

@@ -5,6 +5,7 @@ public class BattleLauncher : MonoBehaviour {
 	//Intended for the deployment of a battle on collision
 	//IE Boss battles
 	//362,20,552
+	private DataContainer dc;
 	public static int enemyType = 0;
 	public static int enemyQuantity = 0;
 	public static bool fifthMember = false;
@@ -25,9 +26,10 @@ public class BattleLauncher : MonoBehaviour {
 
 	private CanvasGroup loadingScreen;
 
-	void start(){
-
+	void Start(){
+		dc = GameObject.FindGameObjectWithTag ("DataContainer").GetComponent<DataContainer>();
 	}
+
 	void OnTriggerEnter(Collider other) { 
 		//check if the player has already defeated the enemy
 		if (instance != launcherInstance) { 
@@ -40,7 +42,7 @@ public class BattleLauncher : MonoBehaviour {
 			enemyType = eType;
 			enemyQuantity = eQuantity;
 			areaNumber = eAreaNumber;
-			fifthMember = fMember;
+			fifthMember = dc.haveSolan;
 			location = eLocation;
 			//battled = true;
 			instance = launcherInstance;

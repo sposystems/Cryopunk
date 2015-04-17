@@ -5,6 +5,7 @@ using System.Collections;
 
 public class BattleGUI : MonoBehaviour {
 
+	private DataContainer dc;
 	public Text player1Name;
 	public Text player1HP;
 	public Text player1SP;

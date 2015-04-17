@@ -7,6 +7,7 @@ public class BattleController : MonoBehaviour {
 
 	public BattleGUI gui;
 
+	private DataContainer dc;
 	private GameObject player1;
 	private Character player1Character;
 	private GameObject player2;
@@ -158,7 +159,8 @@ public class BattleController : MonoBehaviour {
 		
 		return loss;
 	}
-	
+
+	//check for Solan by passing dc.haveSolan
 	private void ImportPlayers(bool fifthAcquired) {
 		//hardcoded for testing
 		//fifthAcquired = true;
@@ -189,7 +191,7 @@ public class BattleController : MonoBehaviour {
 		player4Character = player4.GetComponent<Character>();
 		player4.transform.position = new Vector3(14,0,4);
 		
-		if (fifthAcquired) {
+		if (fifthAcquired) { //prior: fifthAquired
 			//player5 = (GameObject)Instantiate(Resources.Load("Archer"));
 			player5 = GameObject.Find ("Archer");
 			player5.SetActive(true);
@@ -284,7 +286,8 @@ public class BattleController : MonoBehaviour {
 
 	//setup battle
 	private void Start() {
-		
+
+		dc = GameObject.FindGameObjectWithTag ("DataContainer").GetComponent<DataContainer>();
 		camera = GameObject.Find("Main Camera");
 		playerContainer = GameObject.Find("Swordman 1");
 		hoverAbilityText = GameObject.Find ("Description Text").GetComponent<Text>(); //for the mouse hovering over abilities
@@ -299,7 +302,8 @@ public class BattleController : MonoBehaviour {
 
 		
 		ApplyLocation(BattleLauncher.location);
-		ImportPlayers(BattleLauncher.fifthMember);
+		//ImportPlayers(BattleLauncher.fifthMember);
+		ImportPlayers(dc.haveSolan);
 		ImportEnemies(BattleLauncher.enemyType, BattleLauncher.enemyQuantity);
 		ImportGround (BattleLauncher.areaNumber); //Changes ground texture based on area
 		
@@ -323,6 +327,11 @@ public class BattleController : MonoBehaviour {
 			character.ability2.Init();
 			character.ability3.Init();
 		}
+		//Item Abilities
+		//dc.itemAbility1.Init();
+		//dc.itemAbility2.Init();
+		//dc.itemAbility3.Init();
+		//dc.itemAbility4.Init();
 		
 		gui.InitializeGUI();
 		gui.UpdateGui();
@@ -357,13 +366,12 @@ public class BattleController : MonoBehaviour {
 			
 		case(BattleStates.Player5Turn):
 			PlayerTurn(player5Character, gui.player5Ability1, gui.player5Ability2, gui.player5Ability3);
-			//SET TO SOLAN'S SPOT IF HE IS IN PARTY. ELSE, SKIP AND GO BACK TO ALLIES SPOT.
-			if(true){
-
+			//Only if Solan is in party
+			if(dc.haveSolan){
+				EventSystem.current.SetSelectedGameObject(GameObject.Find ("Player 5/Ability 1 Button"));
 			}else{
-
+				//nothing
 			}
-			//EventSystem.current.SetSelectedGameObject(GameObject.Find ("Player 5/Ability 1 Button"));
 			break;
 
 		case(BattleStates.Enemy1Turn):
@@ -398,15 +406,28 @@ public class BattleController : MonoBehaviour {
 			//GameObject playerContainer = GameObject.Find("PlayerContainer");
 			//battlecamera.SetActive(false);
 
+			//Apply experience gains, although minimal
+			GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+			foreach (GameObject enemy in enemies){
+				player1Character.exp = player1Character.exp - 50;
+				player2Character.exp = player2Character.exp - 50;
+				player3Character.exp = player3Character.exp - 50;
+				player4Character.exp = player4Character.exp - 50;
+				if(dc.haveSolan){
+					player5Character.exp = player5Character.exp - 50;
+				}
+			}
 			popUpCanvas.enabled = true;
 			StartCoroutine(Wait2 (3));
-
 			break;
 
 			
 		case(BattleStates.LoseBattle):
 			//display game over
 			Debug.Log("lose state entered");
+			popUpCanvas.enabled = true;
+			loseImage.alpha = 1;
+			StartCoroutine(WaitGameOver(2));
 			break;
 		}
 	}
@@ -428,9 +449,12 @@ public class BattleController : MonoBehaviour {
 		if (player4Character.Alive ()) {
 			player4Character.animation.Play ("Idle");
 		}
-		//if (player5Character.Alive ()) {
-		//player5Character.animation.Play ("Idle");
-		//}
+		if (dc.haveSolan) {
+			if (player5Character.Alive ()) {
+				player5Character.animation.Play ("Idle");
+			}
+		}
+
 		if(isFinalBattle){
 			player1.SetActive(false);
 			player2.SetActive(false);
@@ -462,9 +486,12 @@ public class BattleController : MonoBehaviour {
 		if (player4Character.Alive ()) {
 			player4Character.animation.Play ("Special1");
 		}
-		//if (player5Character.Alive ()) {
-			//player5Character.animation.Play ("Special2");
-		//}
+		if (dc.haveSolan) {
+			if (player5Character.Alive ()) {
+				player5Character.animation.Play ("Special2");
+			}
+		}
+
 
 		yield return new WaitForSeconds (seconds);
 
@@ -472,6 +499,17 @@ public class BattleController : MonoBehaviour {
 		loadingScreen.animation.Play ("loading_fade_in");
 		loadingScreen.alpha = 1;
 		StartCoroutine (Wait (1.5f));
+	}
+
+	IEnumerator WaitGameOver(float seconds){
+		loseImage.alpha = 1;
+		yield return new WaitForSeconds (seconds);
+		loadingScreen.alpha = 1;
+		yield return new WaitForSeconds (1);
+		foreach (GameObject o in Object.FindObjectsOfType<GameObject>()) {
+			Destroy (o);
+		}
+		Application.LoadLevel ("MainMenu");
 	}
 
 	//Finish loading at start of battle
@@ -618,21 +656,21 @@ public class BattleController : MonoBehaviour {
 	public void DisplayHoverWhirlwind(){
 		if (IsPlayerTurn()) {
 			enemyTurnText.text = "";
-			hoverAbilityText.text = "Whirlwind - A sweeping attack damaging all enemies - 30 SP";
+			hoverAbilityText.text = "Whirlwind - A sweeping attack damaging all enemies - 25 SP";
 		}
 	}
 
 	public void DisplayHoverBattlecry(){
 		if (IsPlayerTurn()) {
 			enemyTurnText.text = "";
-			hoverAbilityText.text = "Battlecry - Increase party damage temporarily - 25 SP";
+			hoverAbilityText.text = "Battlecry - Increase party damage temporarily - 30 SP";
 		}
 	}
 
 	public void DisplayHoverFreeze(){
 		if (IsPlayerTurn()) {
 			enemyTurnText.text = "";
-			hoverAbilityText.text = "Freeze - Stun an enemy for one turn - 25 SP";
+			hoverAbilityText.text = "Freeze - Stun an enemy for one turn - 35 SP";
 		}
 	}
 
@@ -660,7 +698,7 @@ public class BattleController : MonoBehaviour {
 	public void DisplayHoverHeal(){
 		if (IsPlayerTurn()) {
 			enemyTurnText.text = "";
-			hoverAbilityText.text = "Heal - Heal an ally's health - 25 SP";
+			hoverAbilityText.text = "Heal - Heal an ally's health - 30 SP";
 		}
 	}
 
@@ -682,6 +720,41 @@ public class BattleController : MonoBehaviour {
 		if (IsPlayerTurn()) {
 			enemyTurnText.text = "";
 			hoverAbilityText.text = "Arrow Rain - Deal damage to 3 random enemies - 25 SP";
+		}
+	}
+
+	public void DisplayHoverHealthPotion(){
+		if (IsPlayerTurn()) {
+			enemyTurnText.text = "";
+			hoverAbilityText.text = "Health Potion - Heal a small amount of health to one ally - x" + dc.healthPotionNum;
+		}
+	}
+
+	public void DisplayHoverSpecialPotion(){
+		if (IsPlayerTurn()) {
+			enemyTurnText.text = "";
+			hoverAbilityText.text = "Health Potion - Restore a small amount of SP to one ally - x" + dc.specialPotionNum;
+		}
+	}
+
+	public void DisplayHoverLifePotion(){
+		if (IsPlayerTurn()) {
+			enemyTurnText.text = "";
+			hoverAbilityText.text = "Life Potion - Heal health to all party members - x" + dc.lifePotionNum;
+		}
+	}
+
+	public void DisplayHoverMolotovCocktail(){
+		if (IsPlayerTurn()) {
+			enemyTurnText.text = "";
+			hoverAbilityText.text = "Molotov Cocktail - Deal damage to one enemy - x" + dc.molotovCocktailNum;
+		}
+	}
+
+	public void DisplayHoverMrFun(){
+		if (IsPlayerTurn()) {
+			enemyTurnText.text = "";
+			hoverAbilityText.text = "Mr Fun - Bring on the fun! - x" + dc.mrFunNum;
 		}
 	}
 

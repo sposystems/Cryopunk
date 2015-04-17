@@ -218,7 +218,7 @@ GameObject:
   - 222: {fileID: 66986559}
   - 114: {fileID: 66986558}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Item 5 Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1441,7 +1441,7 @@ GameObject:
   - 222: {fileID: 197261039}
   - 114: {fileID: 197261038}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Item 3 Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5817,7 +5817,7 @@ GameObject:
   - 222: {fileID: 863680864}
   - 114: {fileID: 863680863}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Item 4 Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8446,6 +8446,16 @@ MonoBehaviour:
   enemy5NameBox: {fileID: 1603186815}
   enemy5Canvas: {fileID: 857102979}
   enemyTurnText: {fileID: 856510838}
+  healthPotionButton: {fileID: 1158474606}
+  specialPotionButton: {fileID: 1660756080}
+  lifePotionButton: {fileID: 674214043}
+  molotovCocktailButton: {fileID: 1525065465}
+  mrFunButton: {fileID: 1581202559}
+  healthPotionQuantity: {fileID: 1521653298}
+  specialPotionQuantity: {fileID: 1324962963}
+  lifePotionQuantity: {fileID: 197261038}
+  molotovCocktailQuantity: {fileID: 863680863}
+  mrFunQuantity: {fileID: 66986558}
 --- !u!4 &1154339715
 Transform:
   m_ObjectHideFlags: 0
@@ -9539,7 +9549,7 @@ GameObject:
   - 222: {fileID: 1324962964}
   - 114: {fileID: 1324962963}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Item 2 Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11007,7 +11017,7 @@ GameObject:
   - 222: {fileID: 1521653299}
   - 114: {fileID: 1521653298}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Item 1 Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11599,7 +11609,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1581202557
 RectTransform:
   m_ObjectHideFlags: 0

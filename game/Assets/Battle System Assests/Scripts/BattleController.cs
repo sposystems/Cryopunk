@@ -52,6 +52,18 @@ public class BattleController : MonoBehaviour {
 	private Text hoverAbilityText;
 	private Text enemyTurnText;
 
+	private Button healthPotionButton;
+	private Button specialPotionButton;
+	private Button lifePotionButton;
+	private Button molotovCocktailButton;
+	private Button mrFunButton;
+
+	private Text healthPotionQuantity;
+	private Text specialPotionQuantity;
+	private Text lifePotionQuantity;
+	private Text molotovCocktailQuantity;
+	private Text mrFunQuantity;
+
 	private Canvas popUpCanvas;
 	private CanvasGroup loadingScreen;
 	private CanvasGroup winImage;
@@ -296,8 +308,27 @@ public class BattleController : MonoBehaviour {
 		loadingScreen = GameObject.Find ("Scene Change Panel").GetComponent<CanvasGroup>();
 		winImage = GameObject.Find ("Win Image").GetComponent<CanvasGroup>();
 		loseImage = GameObject.Find ("Lose Image").GetComponent<CanvasGroup>();
+
 		camera.SetActive(false);
 		playerContainer.SetActive(false);
+
+		//Item Declarations
+		healthPotionButton = GameObject.Find ("Item 1 Button").GetComponent<Button>();
+		healthPotionQuantity = GameObject.Find ("Item 1 Text").GetComponent<Text>();
+		specialPotionButton = GameObject.Find ("Item 2 Button").GetComponent<Button>();
+		specialPotionQuantity = GameObject.Find ("Item 2 Text").GetComponent<Text>();
+		lifePotionButton = GameObject.Find ("Item 3 Button").GetComponent<Button>();
+		lifePotionQuantity = GameObject.Find ("Item 3 Text").GetComponent<Text>();
+		molotovCocktailButton = GameObject.Find ("Item 4 Button").GetComponent<Button>();
+		molotovCocktailQuantity = GameObject.Find ("Item 4 Text").GetComponent<Text>();
+		mrFunButton = GameObject.Find ("Item 5 Button").GetComponent<Button>();
+		mrFunQuantity = GameObject.Find ("Item 5 Text").GetComponent<Text>();
+
+		healthPotionQuantity.text = "x" + dc.healthPotionNum;
+		specialPotionQuantity.text = "x" + dc.specialPotionNum;
+		lifePotionQuantity.text = "x" + dc.lifePotionNum;
+		molotovCocktailQuantity.text = "x" + dc.molotovCocktailNum;
+		mrFunQuantity.text = "x" + dc.mrFunNum;
 
 
 		
@@ -320,6 +351,17 @@ public class BattleController : MonoBehaviour {
 			character.ability2.transform.GetComponent<Targeter>().Init();
 			character.ability3.Init();
 			character.ability3.transform.GetComponent<Targeter>().Init();
+			character.itemAbility1.Init();
+			character.itemAbility1.transform.GetComponent<Targeter>().Init();
+			character.itemAbility2.Init();
+			character.itemAbility2.transform.GetComponent<Targeter>().Init();
+			character.itemAbility3.Init();
+			character.itemAbility3.transform.GetComponent<Targeter>().Init();
+			character.itemAbility4.Init();
+			character.itemAbility4.transform.GetComponent<Targeter>().Init();
+			character.itemAbility5.Init();
+			character.itemAbility5.transform.GetComponent<Targeter>().Init();
+
 		}
 		foreach (GameObject enemy in enemies) {
 			Character character = enemy.GetComponent<Character>();
@@ -332,6 +374,7 @@ public class BattleController : MonoBehaviour {
 		//dc.itemAbility2.Init();
 		//dc.itemAbility3.Init();
 		//dc.itemAbility4.Init();
+		//dc.itemAbility5.Init();
 		
 		gui.InitializeGUI();
 		gui.UpdateGui();
@@ -569,6 +612,21 @@ public class BattleController : MonoBehaviour {
 				}
 				if (player.HasSP(player.ability3.spCost) && player.IsSilenced() == false) {
 					ability3.interactable = true;
+				}
+				if (dc.healthPotionNum > 0){
+					healthPotionButton.interactable = true;
+				}
+				if (dc.specialPotionNum > 0){
+					specialPotionButton.interactable = true;
+				}
+				if (dc.lifePotionNum > 0){
+					lifePotionButton.interactable = true;
+				}
+				if (dc.molotovCocktailNum > 0){
+					molotovCocktailButton.interactable = true;
+				}
+				if (dc.mrFunNum > 0){
+					mrFunButton.interactable = true;
 				}
 			} else {
 				currentState++;

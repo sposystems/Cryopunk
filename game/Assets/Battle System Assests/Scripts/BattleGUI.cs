@@ -101,6 +101,18 @@ public class BattleGUI : MonoBehaviour {
 	private Character enemy4Character;
 	private Character enemy5Character;
 
+	public Button healthPotionButton;
+	public Button specialPotionButton;
+	public Button lifePotionButton;
+	public Button molotovCocktailButton;
+	public Button mrFunButton;
+
+	public Text healthPotionQuantity;
+	public Text specialPotionQuantity;
+	public Text lifePotionQuantity;
+	public Text molotovCocktailQuantity;
+	public Text mrFunQuantity;
+
 	public void UpdateGui() {
 		player1Name.text = player1Character.characterName;
 		player1HP.text = player1Character.GetHP() + "/" + player1Character.maxHp;
@@ -205,6 +217,12 @@ public class BattleGUI : MonoBehaviour {
 			enemy5NameBox.enabled = true;
 			enemy5NameBox.interactable = false;
 		}
+
+		//healthPotionQuantity.text = "x" + dc.healthPotionNum;
+		//specialPotionQuantity.text = "x" + dc.specialPotionNum;
+		//lifePotionQuantity.text = "x" + dc.lifePotionNum;
+		//molotovCocktailQuantity.text = "x" + dc.molotovCocktailNum;
+		//mrFunQuantity.text = "x" + dc.mrFunNum;
 	}
 	
 	public void SetEnemyTurnText(string text) {
@@ -243,6 +261,17 @@ public class BattleGUI : MonoBehaviour {
 		player5Ability2.image.fillCenter = true;
 		player5Ability3.interactable = false;
 		player5Ability3.image.fillCenter = true;
+
+		healthPotionButton.interactable = false;
+		healthPotionButton.image.fillCenter = true;
+		specialPotionButton.interactable = false;
+		specialPotionButton.image.fillCenter = true;
+		lifePotionButton.interactable = false;
+		lifePotionButton.image.fillCenter = true;
+		molotovCocktailButton.interactable = false;
+		molotovCocktailButton.image.fillCenter = true;
+		mrFunButton.interactable = false;
+		mrFunButton.image.fillCenter = true;
 	}
 	
 	public void DisablePlayerGUI(int playerNum) {
@@ -355,6 +384,22 @@ public class BattleGUI : MonoBehaviour {
 		case "Ability 3 Button":
 			player.ability3.GetComponent<Targeter>().EnableTargets(button);
 			break;
+		case "Item 1 Button":
+			player.itemAbility1.GetComponent<Targeter>().EnableTargets(button);
+			break;
+		case "Item 2 Button":
+			player.itemAbility2.GetComponent<Targeter>().EnableTargets(button);
+			break;
+		case "Item 3 Button":
+			player.itemAbility3.GetComponent<Targeter>().EnableTargets(button);
+			break;
+		case "Item 4 Button":
+			player.itemAbility4.GetComponent<Targeter>().EnableTargets(button);
+			break;
+		case "Item 5 Button":
+			player.itemAbility5.GetComponent<Targeter>().EnableTargets(button);
+			break;
+
 		}
 
 	}

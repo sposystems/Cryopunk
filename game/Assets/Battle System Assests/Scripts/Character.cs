@@ -9,6 +9,11 @@ public class Character : MonoBehaviour {
 	public Ability ability1;
 	public Ability ability2;
 	public Ability ability3;
+	public Ability itemAbility1;
+	public Ability itemAbility2;
+	public Ability itemAbility3;
+	public Ability itemAbility4;
+	public Ability itemAbility5;
 	public bool isPlayer;
 
 	public int currentSP;

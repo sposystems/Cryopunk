@@ -559,8 +559,11 @@ public class PauseMenuAnim : MonoBehaviour {
 
 	public void QuitGame(){
 		//Destroy(GameObject.Find ("PlayerContainer"));
-		//Application.LoadLevel ("MainMenu");
-		Application.Quit ();
+		foreach (Object o in Object.FindObjectsOfType<GameObject>()) {
+			Destroy(o);
+		}
+		Application.LoadLevel ("MainMenu");
+		//Application.Quit ();
 	}
 
 	public void UpdateParametersOnMenuOpen(){

@@ -17,6 +17,7 @@ public class DataContainer : MonoBehaviour {
 	public Ability itemAbility2;
 	public Ability itemAbility3;
 	public Ability itemAbility4;
+	public Ability itemAbility5;
 
 	public void IncreaseHealthPotions(int incAmount){
 		healthPotionNum = healthPotionNum + incAmount;

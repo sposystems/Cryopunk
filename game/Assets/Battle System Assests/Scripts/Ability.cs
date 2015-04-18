@@ -1,13 +1,17 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
 public class Ability : MonoBehaviour {
-	
+
+	private DataContainer dc;
 	public string abilityName;
 	public int spCost;
 	public int damage;
+	public int spDamage;
 	public bool offensive;
+	public bool isItem;
 	public enum targetTypeE {single, all, singleRandom, multiRandom, self};
 	public targetTypeE targetType;
 	public enum statusEffectE {none, stun, hpDrain, silence, buff, curse, stealth};
@@ -20,7 +24,7 @@ public class Ability : MonoBehaviour {
 	private BattleController controller;
 
 	//use ability on appropriate targets
-	public void Use(Character target) {
+	public void Use(Character target, Button buttonPressed) {
 		//Debug.Log (abilityUser.characterName + " uses " + abilityName + " on " + target.name);
 		
 		abilityUser.UseSP(spCost);
@@ -49,7 +53,29 @@ public class Ability : MonoBehaviour {
 			StartCoroutine(UseOnOne(abilityUser));
 			break;
 		}
-		
+
+		if (isItem) {
+			Debug.Log (buttonPressed.name + " is of type item.");
+			dc = GameObject.FindGameObjectWithTag("DataContainer").GetComponent<DataContainer>();
+			switch(buttonPressed.name) {
+			case "Item 1 Button":
+				dc.healthPotionNum--;
+				break;
+			case "Item 2 Button":
+				dc.specialPotionNum--;
+				break;
+			case "Item 3 Button":
+				dc.lifePotionNum--;
+				break;
+			case "Item 4 Button":
+				dc.molotovCocktailNum--;
+				break;
+			case "Item 5 Button":
+				dc.mrFunNum--;
+				break;
+				
+			}
+		}
 	}
 
 	private IEnumerator PlayAnimation() {
@@ -155,8 +181,10 @@ public class Ability : MonoBehaviour {
 			
 			if(offensive) {
 				target.TakeDamage(damage + abilityUser.GetBuffAmount() - abilityUser.GetCurseAmount());
+				target.TakeSpDamage(spDamage);
 			} else if (statusEffect != statusEffectE.stealth){
 				target.Heal(damage);
+				target.HealSp(spDamage);
 			}
 		} else {
 			Debug.Log("error, target is dead");

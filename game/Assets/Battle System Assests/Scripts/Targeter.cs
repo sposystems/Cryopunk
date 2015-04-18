@@ -113,7 +113,7 @@ public class Targeter : MonoBehaviour {
 		
 		//ability does not require a target
 		} else {
-			ability.Use(null);
+			ability.Use(null, abilityButton);
 		}
 	}
 	
@@ -136,7 +136,7 @@ public class Targeter : MonoBehaviour {
 					}
 
 
-					ability.Use(targetChar);
+					ability.Use(targetChar, abilityButton);
 					//Get the UI icon off of the last selected element
 					EventSystem.current.SetSelectedGameObject(GameObject.Find ("Allies Button"));
 				}

@@ -709,7 +709,7 @@ public class BattleController : MonoBehaviour {
 				//enemyTurnText.text = "";
 				gui.SetEnemyTurnText(turnText);
 				
-				enemyAbility.Use(target);
+				enemyAbility.Use(target, null);
 				
 			} else {
 				EndTurn();

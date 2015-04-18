@@ -218,11 +218,11 @@ public class BattleGUI : MonoBehaviour {
 			enemy5NameBox.interactable = false;
 		}
 
-		//healthPotionQuantity.text = "x" + dc.healthPotionNum;
-		//specialPotionQuantity.text = "x" + dc.specialPotionNum;
-		//lifePotionQuantity.text = "x" + dc.lifePotionNum;
-		//molotovCocktailQuantity.text = "x" + dc.molotovCocktailNum;
-		//mrFunQuantity.text = "x" + dc.mrFunNum;
+		healthPotionQuantity.text = "x" + dc.healthPotionNum;
+		specialPotionQuantity.text = "x" + dc.specialPotionNum;
+		lifePotionQuantity.text = "x" + dc.lifePotionNum;
+		molotovCocktailQuantity.text = "x" + dc.molotovCocktailNum;
+		mrFunQuantity.text = "x" + dc.mrFunNum;
 	}
 	
 	public void SetEnemyTurnText(string text) {
@@ -430,6 +430,7 @@ public class BattleGUI : MonoBehaviour {
 	
 	public void InitializeGUI() {
 		controller = gameObject.GetComponent<BattleController>();
+		dc = GameObject.FindGameObjectWithTag ("DataContainer").GetComponent<DataContainer>();
 		
 		player1Character = controller.GetPlayer(1);
 		/*

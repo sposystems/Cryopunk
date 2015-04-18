@@ -504,7 +504,7 @@ public class PauseMenuAnim : MonoBehaviour {
 
 	public void GoToItems(){
 		anim.SetBool ("Items Screen", true);
-		EventSystem.current.SetSelectedGameObject(GameObject.Find ("Health Potion"));
+		EventSystem.current.SetSelectedGameObject(GameObject.Find ("Items Panel/Health Potion"));
 	}
 
 	public void GoToCharacters(string characterSelect){
@@ -558,7 +558,7 @@ public class PauseMenuAnim : MonoBehaviour {
 	}
 
 	public void QuitGame(){
-		//Destroy(GameObject.Find ("PlayerContainer"));
+		Time.timeScale = 1;
 		foreach (Object o in Object.FindObjectsOfType<GameObject>()) {
 			Destroy(o);
 		}

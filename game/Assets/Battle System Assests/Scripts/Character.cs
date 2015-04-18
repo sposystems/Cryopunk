@@ -55,10 +55,21 @@ public class Character : MonoBehaviour {
 		}
 	}
 
+	public void TakeSpDamage(int amount) {
+		currentSP -= amount;
+	}
+
 	public void Heal(int amount) {
 		currentHP += amount;
 		if (currentHP > maxHp) {
 			currentHP = maxHp;
+		}
+	}
+
+	public void HealSp(int amount) {
+		currentSP += amount;
+		if (currentSP > maxSp) {
+			currentSP = maxSp;
 		}
 	}
 

@@ -29,7 +29,7 @@ public class BattleController : MonoBehaviour {
 	private GameObject enemy5;
 	private Character enemy5Character;
 	private bool isFinalBattle = false;
-	private enum BattleStates {
+	public enum BattleStates {
 		Player1Turn,
 		Player2Turn,
 		Player3Turn,
@@ -103,6 +103,23 @@ public class BattleController : MonoBehaviour {
 		} else {
 			Debug.Log ("no such enemy");
 			return null;
+		}
+	}
+	
+	public string GetCurrentTurn() {
+		switch(currentState) {
+		case BattleStates.Player1Turn:
+			return "Player 1";
+		case BattleStates.Player2Turn:
+			return "Player 2";
+		case BattleStates.Player3Turn:
+			return "Player 3";
+		case BattleStates.Player4Turn:
+			return "Player 4";
+		case BattleStates.Player5Turn:
+			return "Player 5";
+		default:
+			return "Not Player's Turn";
 		}
 	}
 	

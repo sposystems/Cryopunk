@@ -372,8 +372,32 @@ public class BattleGUI : MonoBehaviour {
 		case "Player 5":
 			player = controller.GetPlayer(5);
 			break;
+		default:
+			switch(controller.GetCurrentTurn()) {
+			case "Player 1":
+				player = controller.GetPlayer(1);
+				break;
+			case "Player 2":
+				player = controller.GetPlayer(2);
+				break;
+			case "Player 3":
+				player = controller.GetPlayer(3);
+				break;
+			case "Player 4":
+				player = controller.GetPlayer(4);
+				break;
+			case "Player 5":
+				player = controller.GetPlayer(5);
+				break;
+			default:
+				Debug.Log ("error binding to targeter");
+				break;
+			}
+			break;
 		}
-
+		
+		Debug.Log (button.name);
+		Debug.Log(player);
 		switch(button.name) {
 		case "Ability 1 Button":
 			player.ability1.GetComponent<Targeter>().EnableTargets(button);

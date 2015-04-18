@@ -504,7 +504,7 @@ public class BattleController : MonoBehaviour {
 			player3.SetActive(false);
 			player4.SetActive(false);
 			player5.SetActive(false);
-			Application.LoadLevel (8); 
+			Application.LoadLevel ("Credits"); 
 		} else{
 			playerContainer.SetActive(true);
 			camera.SetActive(true); //need our player and camera back

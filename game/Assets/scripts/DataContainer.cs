@@ -13,6 +13,8 @@ public class DataContainer : MonoBehaviour {
 
 	public bool controllerIconsOn;
 
+	public bool[] treasure = new bool[10];
+
 	public Ability itemAbility1;
 	public Ability itemAbility2;
 	public Ability itemAbility3;

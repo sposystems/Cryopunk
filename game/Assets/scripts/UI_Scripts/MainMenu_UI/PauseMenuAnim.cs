@@ -24,9 +24,11 @@ public class PauseMenuAnim : MonoBehaviour {
 	private GameObject[] popUps1;
 	private GameObject[] popUps2;
 	private GameObject[] popUps3;
+	private GameObject[] popUps5;
 	private PopUpTextTriggering[] pu1;
 	private PopUpTextEnterExit[] pu2;
 	private PopUpTextInteractable[] pu3;
+	private PopUpTextTreasure[] pu5;
 
 	private Text locationArea;
 
@@ -151,9 +153,11 @@ public class PauseMenuAnim : MonoBehaviour {
 		popUps1 = GameObject.FindGameObjectsWithTag ("Trigger1");
 		popUps2 = GameObject.FindGameObjectsWithTag ("Trigger2");
 		popUps3 = GameObject.FindGameObjectsWithTag ("Trigger3");
+		popUps5 = GameObject.FindGameObjectsWithTag ("Trigger5");
 		pu1 = new PopUpTextTriggering[popUps1.Length];
 		pu2 = new PopUpTextEnterExit[popUps2.Length];
 		pu3 = new PopUpTextInteractable[popUps3.Length];
+		pu5 = new PopUpTextTreasure[popUps5.Length];
 		for (int i = 0; i < popUps1.Length; i++) {
 			pu1[i] = popUps1[i].GetComponent<PopUpTextTriggering>();
 			Debug.Log (pu1[i].name);
@@ -165,6 +169,10 @@ public class PauseMenuAnim : MonoBehaviour {
 		for (int i = 0; i < popUps3.Length; i++) {
 			pu3[i] = popUps3[i].GetComponent<PopUpTextInteractable>();
 			Debug.Log (pu3[i].name);
+		}
+		for (int i = 0; i < popUps5.Length; i++) {
+			pu5[i] = popUps5[i].GetComponent<PopUpTextTreasure>();
+			Debug.Log (pu5[i].name);
 		}
 
 
@@ -407,7 +415,7 @@ public class PauseMenuAnim : MonoBehaviour {
 		spStatChars.text = player1Character.currentSP + "/" + player1Character.maxSp;
 		hpBarChars.fillAmount = (float) player1Character.currentHP / (float) player1Character.maxHp;
 		spBarChars.fillAmount = (float) player1Character.currentSP / (float) player1Character.maxSp;
-		charBookDialog.text = "\"What kind of jokers are you all anyways?\"";
+		charBookDialog.text = "\"Now this is how to hold a sword!\""; //What kind of jokers are you all anyways?
 		charClass.text = "Warrior";
 		charClassImage.sprite = warrior;
 
@@ -624,6 +632,11 @@ public class PauseMenuAnim : MonoBehaviour {
 				return false;
 			}
 		}
+		foreach (PopUpTextTreasure pop5 in pu5) {
+			if(pop5.showText == true){
+				return false;
+			}
+		}
 
 		//return true in all cases where everything succeeds
 		return true;
@@ -647,6 +660,14 @@ public class PauseMenuAnim : MonoBehaviour {
 			dc.controllerIconsOn = true;
 			toggleCountBypass = 1;
 		}
+	}
+
+	public void ItemsScreenUpdate(){
+		hpPotions.text = "x" + dc.healthPotionNum; //CHANGE TO ACTUAL NUMBER FROM DB
+		spPotions.text = "x" + dc.specialPotionNum;
+		lifePotions.text = "x" + dc.lifePotionNum;
+		molotovCocktails.text = "x" + dc.molotovCocktailNum;
+		mrFuns.text = "x" + dc.mrFunNum;
 	}
 
 

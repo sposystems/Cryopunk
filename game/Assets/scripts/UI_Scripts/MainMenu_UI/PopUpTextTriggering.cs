@@ -7,6 +7,7 @@ public class PopUpTextTriggering : MonoBehaviour {
 	private GameObject playerCharacter;
 	private GameObject menuHandler;
 	private PauseMenuAnim pma;
+	private DataContainer dc;
 
 	public string readableText;
 	public string talker;
@@ -30,6 +31,7 @@ public class PopUpTextTriggering : MonoBehaviour {
 
 	void Start(){
 		playerCharacter = GameObject.Find ("Swordman 1");
+		dc = GameObject.FindGameObjectWithTag ("DataContainer").GetComponent<DataContainer> ();
 
 		bottomBorder = GameObject.Find ("Bottom Border").GetComponent<Image>();
 		chatPanel = GameObject.Find ("Chat Panel").GetComponent<Image>();
@@ -78,12 +80,11 @@ public class PopUpTextTriggering : MonoBehaviour {
 	//The collider ensures Swordman 1 is the one to collide with the other colliders
 	void OnTriggerEnter(Collider collider)
 	{
-		//Debug.Log ("OnTriggerEnter()");
-		//Debug.Log ("textNotShown = " + textNotShown);
-		//Debug.Log ("showText = " + showText);
-		//Debug.Log ("collider = " + collider.name);
-		if ((textNotShown == true) && (collider.name == "Swordman 1"))
-		{
+		//first if statement checks for having Solan's condition
+		if (specialCase == 1 && dc.haveSolan) {
+			//do nothing
+		//else if text has yet to be shown and the collider IS the player, then show
+		}else if ((textNotShown == true) && (collider.name == "Swordman 1")){
 			Debug.Log ("textNotShown is true, exeucting onTriggerEnter()");
 			Time.timeScale = 0;
 			showText = true;
@@ -103,11 +104,13 @@ public class PopUpTextTriggering : MonoBehaviour {
 				chatCharTransparencyCG.alpha = 1;
 			}
 			chatText.text = readableText;
+
+			if(specialCase == 1){
+				dc.haveSolan = true;
+				pma.getSolan();
+			}
 		}
 
-		if (specialCase == 1) {
-			//insert special commands here
-		}
 	}
 
 }

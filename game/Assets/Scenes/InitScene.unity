@@ -702,7 +702,7 @@ MonoBehaviour:
   targetType: 0
   statusEffect: 2
   statusLength: 1
-  statusAmount: 25
+  statusAmount: 35
   animationNumber: 3
 --- !u!1 &107441692
 GameObject:
@@ -2142,6 +2142,42 @@ Prefab:
     - target: {fileID: 447414, guid: 9c758ffff0acd5843ac564d60352963f, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11447088, guid: 9c758ffff0acd5843ac564d60352963f, type: 2}
+      propertyPath: healthPotionNum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11447088, guid: 9c758ffff0acd5843ac564d60352963f, type: 2}
+      propertyPath: specialPotionNum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11447088, guid: 9c758ffff0acd5843ac564d60352963f, type: 2}
+      propertyPath: lifePotionNum
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11447088, guid: 9c758ffff0acd5843ac564d60352963f, type: 2}
+      propertyPath: molotovCocktailNum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433064, guid: 9c758ffff0acd5843ac564d60352963f, type: 2}
+      propertyPath: statusAmount
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433034, guid: 9c758ffff0acd5843ac564d60352963f, type: 2}
+      propertyPath: statusAmount
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432982, guid: 9c758ffff0acd5843ac564d60352963f, type: 2}
+      propertyPath: statusAmount
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432994, guid: 9c758ffff0acd5843ac564d60352963f, type: 2}
+      propertyPath: statusAmount
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433022, guid: 9c758ffff0acd5843ac564d60352963f, type: 2}
+      propertyPath: statusAmount
+      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9c758ffff0acd5843ac564d60352963f, type: 2}
@@ -4378,7 +4414,7 @@ MonoBehaviour:
   targetType: 0
   statusEffect: 2
   statusLength: 1
-  statusAmount: 25
+  statusAmount: 35
   animationNumber: 2
 --- !u!114 &865424990
 MonoBehaviour:
@@ -5235,7 +5271,7 @@ MonoBehaviour:
   targetType: 0
   statusEffect: 2
   statusLength: 1
-  statusAmount: 25
+  statusAmount: 35
   animationNumber: 2
 --- !u!114 &1039649846
 MonoBehaviour:
@@ -5868,12 +5904,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   haveSolan: 0
-  healthPotionNum: 3
-  specialPotionNum: 2
-  lifePotionNum: 1
-  molotovCocktailNum: 2
+  healthPotionNum: 1
+  specialPotionNum: 1
+  lifePotionNum: 0
+  molotovCocktailNum: 1
   mrFunNum: 0
   controllerIconsOn: 0
+  treasure: 00000000000000000000
   itemAbility1: {fileID: 0}
   itemAbility2: {fileID: 0}
   itemAbility3: {fileID: 0}
@@ -7333,7 +7370,7 @@ MonoBehaviour:
   targetType: 0
   statusEffect: 2
   statusLength: 1
-  statusAmount: 25
+  statusAmount: 35
   animationNumber: 2
 --- !u!114 &1427036920
 MonoBehaviour:
@@ -8427,7 +8464,7 @@ MonoBehaviour:
   targetType: 0
   statusEffect: 2
   statusLength: 1
-  statusAmount: 25
+  statusAmount: 35
   animationNumber: 2
 --- !u!114 &1649845100
 MonoBehaviour:

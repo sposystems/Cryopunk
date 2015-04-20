@@ -230,6 +230,10 @@ public class Character : MonoBehaviour {
 			} else {
 				drainDuration--;
 				TakeDamage(drainAmount);
+				if(drainDuration <= 0){
+					hpDraining = false;
+					drainAmount = 0;
+				}
 			}
 		}
 		

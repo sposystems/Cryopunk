@@ -10777,7 +10777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eType: 2
-  eQuantity: 1
+  eQuantity: 2
   eLocation: 1
   eAreaNumber: 2
   launcherInstance: 4
@@ -20401,7 +20401,7 @@ Transform:
   m_Children:
   - {fileID: 163248623}
   m_Father: {fileID: 0}
-  m_RootOrder: 87
+  m_RootOrder: 86
 --- !u!1 &1263083633
 GameObject:
   m_ObjectHideFlags: 0
@@ -25756,7 +25756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06dcaa6f1c6544847b214cbc038b1454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  readableText: Reward of $100000 for anyone who captures this robot dead or alive.
+  readableText: Reward of $100000 for capturing this robot dead or alive.
   readableText2: 
   readableText3: 
   readableText4: 
@@ -28521,7 +28521,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 86
+  m_RootOrder: 88
 --- !u!1 &1853371407
 GameObject:
   m_ObjectHideFlags: 0
@@ -31016,7 +31016,7 @@ Transform:
   m_Children:
   - {fileID: 1648611649}
   m_Father: {fileID: 0}
-  m_RootOrder: 88
+  m_RootOrder: 87
 --- !u!199 &2008027430
 ParticleSystemRenderer:
   m_ObjectHideFlags: 0

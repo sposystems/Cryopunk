@@ -18,7 +18,7 @@ public class Targeter : MonoBehaviour {
 
 	private Button alliesButton;
 	private Button enemiesButton;
-	private Button cancelButton;
+	private CanvasGroup cancelPanel;
 
 	public void EnableTargets(Button button) {
 	
@@ -33,6 +33,8 @@ public class Targeter : MonoBehaviour {
 			players = GameObject.FindGameObjectsWithTag("Player");
 			enemiesUI = GameObject.FindGameObjectsWithTag("EnemyUI");
 			playersUI = GameObject.FindGameObjectsWithTag("PlayerUI");
+
+			cancelPanel.alpha = 1;
 
 			//Reset the enemies and allies button at the start of each step
 			//enemiesButton.enabled = false;
@@ -116,7 +118,8 @@ public class Targeter : MonoBehaviour {
 			ability.Use(null, abilityButton);
 		}
 	}
-	
+
+
 	//called on every frame
 	private void Update() {
 		if (waitingForTarget) {
@@ -137,15 +140,38 @@ public class Targeter : MonoBehaviour {
 
 
 					ability.Use(targetChar, abilityButton);
+					cancelPanel.alpha = 0;
+					controller.backOnTurn = false; //reset back to false for ensuring not having hit back yet
 					//Get the UI icon off of the last selected element
 					EventSystem.current.SetSelectedGameObject(GameObject.Find ("Allies Button"));
 				}
+			}
 
-
+			if(Input.GetButtonDown("Cancel")){
+				CancelAction();
 			}
 		}
 	}
-	
+
+
+	public void CancelAction(){
+		waitingForTarget = false;
+		abilityButton.image.fillCenter = true;
+		cancelPanel.alpha = 0;
+
+		//Now disable the UI buttons
+		foreach (GameObject targetObjUI in targetGroupUI) {
+			Button targetCharName = targetObjUI.GetComponentInChildren<Button>();
+			targetCharName.interactable = false;
+			alliesButton.interactable = false;
+			enemiesButton.interactable = false;
+		}
+
+		controller.backOnTurn = true;
+		controller.currentState = controller.currentState - 1;
+		controller.EndTurn ();
+	}
+
 	//set up references
 	public void Init() {
 		controller = GameObject.FindGameObjectWithTag("GameController").GetComponent<BattleController>();
@@ -155,7 +181,8 @@ public class Targeter : MonoBehaviour {
 
 		alliesButton = GameObject.Find ("Allies Button").GetComponent<Button>();
 		enemiesButton = GameObject.Find ("Enemies Button").GetComponent<Button>();
-		cancelButton = GameObject.Find ("Cancel Button").GetComponent<Button>();
+		cancelPanel = GameObject.Find ("Cancel Panel").GetComponent<CanvasGroup>();
+		cancelPanel.alpha = 0;
 
 		alliesButton.interactable = true;
 		EventSystem.current.SetSelectedGameObject(GameObject.Find ("Allies Button"));

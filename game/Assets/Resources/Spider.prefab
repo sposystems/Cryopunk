@@ -2126,7 +2126,9 @@ MonoBehaviour:
   abilityName: Poison Spit
   spCost: 30
   damage: 20
+  spDamage: 0
   offensive: 1
+  isItem: 0
   targetType: 0
   statusEffect: 2
   statusLength: 3
@@ -2146,7 +2148,9 @@ MonoBehaviour:
   abilityName: Bite
   spCost: 20
   damage: 20
+  spDamage: 0
   offensive: 1
+  isItem: 0
   targetType: 0
   statusEffect: 0
   statusLength: 0
@@ -2166,7 +2170,9 @@ MonoBehaviour:
   abilityName: Attack
   spCost: 0
   damage: 10
+  spDamage: 0
   offensive: 1
+  isItem: 0
   targetType: 0
   statusEffect: 0
   statusLength: 0
@@ -2184,11 +2190,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Spider
-  maxHp: 100
+  maxHp: 75
   maxSp: 100
   ability1: {fileID: 11469464}
   ability2: {fileID: 11469462}
   ability3: {fileID: 11469460}
+  itemAbility1: {fileID: 0}
+  itemAbility2: {fileID: 0}
+  itemAbility3: {fileID: 0}
+  itemAbility4: {fileID: 0}
+  itemAbility5: {fileID: 0}
   isPlayer: 0
   currentSP: 0
   currentHP: 0

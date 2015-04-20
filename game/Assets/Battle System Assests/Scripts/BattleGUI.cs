@@ -484,6 +484,13 @@ public class BattleGUI : MonoBehaviour {
 		enemy5Character = controller.GetEnemy(5);
 		
 		enemyTurnText.text = "";
+
+		if (dc.controllerIconsOn) {
+			CanvasGroup backspaceKey = GameObject.Find ("Backspace Key").GetComponent<CanvasGroup>();
+			CanvasGroup bButton = GameObject.Find ("B Button").GetComponent<CanvasGroup>();
+			backspaceKey.alpha = 0;
+			bButton.alpha = 1;
+		}
 	}
 	
 	private string GetStatus(Character character) {

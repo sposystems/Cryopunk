@@ -21,6 +21,8 @@ public class DataContainer : MonoBehaviour {
 	public Ability itemAbility4;
 	public Ability itemAbility5;
 
+	public bool getSecret = false;
+
 	public void IncreaseHealthPotions(int incAmount){
 		healthPotionNum = healthPotionNum + incAmount;
 	}

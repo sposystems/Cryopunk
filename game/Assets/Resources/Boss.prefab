@@ -1805,11 +1805,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Boss
-  maxHp: 325
+  maxHp: 350
   maxSp: 200
   ability1: {fileID: 11436288}
   ability2: {fileID: 11436290}
   ability3: {fileID: 11436292}
+  itemAbility1: {fileID: 0}
+  itemAbility2: {fileID: 0}
+  itemAbility3: {fileID: 0}
+  itemAbility4: {fileID: 0}
+  itemAbility5: {fileID: 0}
   isPlayer: 0
   currentSP: 0
   currentHP: 0
@@ -1832,7 +1837,9 @@ MonoBehaviour:
   abilityName: Attack
   spCost: 0
   damage: 25
+  spDamage: 0
   offensive: 1
+  isItem: 0
   targetType: 0
   statusEffect: 0
   statusLength: 0
@@ -1852,7 +1859,9 @@ MonoBehaviour:
   abilityName: Power Attack
   spCost: 20
   damage: 40
+  spDamage: 0
   offensive: 1
+  isItem: 0
   targetType: 0
   statusEffect: 0
   statusLength: 0
@@ -1872,7 +1881,9 @@ MonoBehaviour:
   abilityName: Power Up
   spCost: 25
   damage: 10
+  spDamage: 0
   offensive: 0
+  isItem: 0
   targetType: 4
   statusEffect: 4
   statusLength: 3

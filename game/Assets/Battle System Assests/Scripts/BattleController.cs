@@ -43,7 +43,8 @@ public class BattleController : MonoBehaviour {
 		WinBattle,
 		LoseBattle
 	};
-	private BattleStates currentState;
+	public BattleStates currentState;
+	public bool backOnTurn;
 	private int randAbility;
 	private int randTarget;
 	public GameObject camera;
@@ -609,7 +610,10 @@ public class BattleController : MonoBehaviour {
 	private void PlayerTurn(Character player, Button ability1, Button ability2, Button ability3) {
 
 		if (player != null && player.Alive()) {
-			player.UpdateStatusEffects();
+			if(!backOnTurn){
+				player.UpdateStatusEffects();
+				gui.UpdateGui();
+			}
 
 			//MAKE THIS CODE THE ATTACK 1 BUTTON FOR SPECIFIC CHARACTER'S TURN
 			//But maybe this should be in Battle GUI?
@@ -664,6 +668,7 @@ public class BattleController : MonoBehaviour {
 
 		if (enemy != null && enemy.Alive()) {
 			enemy.UpdateStatusEffects();
+			gui.UpdateGui();
 
 			//check if alive again incase status effect killed enemy
 			if (enemy.Alive() && enemy.IsStunned() == false) {

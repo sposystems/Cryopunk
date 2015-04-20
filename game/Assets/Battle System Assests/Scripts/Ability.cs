@@ -101,7 +101,7 @@ public class Ability : MonoBehaviour {
 		if (abilityUser.isPlayer) {
 			seconds = 1;
 		} else {
-			seconds = 3;
+			seconds = 2;
 		}
 		
 		ApplyAbilityToTarget(target.gameObject);
@@ -115,7 +115,7 @@ public class Ability : MonoBehaviour {
 		if (abilityUser.isPlayer) {
 			seconds = 1;
 		} else {
-			seconds = 3;
+			seconds = 2;
 		}
 		
 		//get target group
@@ -137,7 +137,7 @@ public class Ability : MonoBehaviour {
 		if (abilityUser.isPlayer) {
 			seconds = 1;
 		} else {
-			seconds = 3;
+			seconds = 2;
 		}
 		
 		GameObject[] targetGroup = GetTargetGroup();

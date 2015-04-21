@@ -145,8 +145,17 @@ public class Character : MonoBehaviour {
 		drainDuration = duration;
 		drainAmount = amount;
 	}
+	
 	public bool IsDraining() {
 		return hpDraining;
+	}
+	
+	public bool DamagedByDrain() {
+		if (hpDraining && drainDuration > 0) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	public void Buff(int duration, int amount) {

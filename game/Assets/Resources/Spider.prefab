@@ -2147,7 +2147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Bite
   spCost: 20
-  damage: 20
+  damage: 25
   spDamage: 0
   offensive: 1
   isItem: 0

@@ -611,7 +611,11 @@ public class BattleController : MonoBehaviour {
 
 		if (player != null && player.Alive()) {
 			if(!backOnTurn){
+				if(player.DamagedByDrain()) {
+					gui.SetEnemyTurnText(player.characterName + " is damaged by poison!");
+				}
 				player.UpdateStatusEffects();
+				
 				gui.UpdateGui();
 			}
 
@@ -750,7 +754,7 @@ public class BattleController : MonoBehaviour {
 	public void DisplayHoverFreeze(){
 		if (IsPlayerTurn()) {
 			enemyTurnText.text = "";
-			hoverAbilityText.text = "Freeze - Stun an enemy for one turn - 35 SP";
+			hoverAbilityText.text = "Freeze - Stun an enemy for one turn - 40 SP";
 		}
 	}
 
@@ -842,6 +846,20 @@ public class BattleController : MonoBehaviour {
 		if (IsPlayerTurn()) {
 			enemyTurnText.text = "";
 			hoverAbilityText.text = "Cancel current action";
+		}
+	}
+	
+	public void DisplayEnemyButtonText() {
+		if (IsPlayerTurn()) {
+			enemyTurnText.text = "";
+			hoverAbilityText.text = "Select a target for your ability";
+		}
+	}
+	
+	public void DisplayPlayerButtonText() {
+		if (IsPlayerTurn()) {
+			enemyTurnText.text = "";
+			hoverAbilityText.text = "Select an ability to use";
 		}
 	}
 	

@@ -813,7 +813,7 @@ public class BattleController : MonoBehaviour {
 	public void DisplayHoverSpecialPotion(){
 		if (IsPlayerTurn()) {
 			enemyTurnText.text = "";
-			hoverAbilityText.text = "Health Potion - Restore a small amount of SP to one ally - x" + dc.specialPotionNum;
+			hoverAbilityText.text = "Special Potion - Restore a small amount of SP to one ally - x" + dc.specialPotionNum;
 		}
 	}
 

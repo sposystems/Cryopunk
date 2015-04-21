@@ -112,7 +112,7 @@ public class BattleGUI : MonoBehaviour {
 	public Text lifePotionQuantity;
 	public Text molotovCocktailQuantity;
 	public Text mrFunQuantity;
-
+	
 	public void UpdateGui() {
 		player1Name.text = player1Character.characterName;
 		player1HP.text = player1Character.GetHP() + "/" + player1Character.maxHp;

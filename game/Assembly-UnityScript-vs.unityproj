@@ -73,7 +73,7 @@
      <None Include="Assets\Battle System Assests\Characters\Heroes\Thief\Thief_Animation.txt" />
      <None Include="Assets\Battle System Assests\Characters\Heroes\Archer\Archer Animation.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/Pete/Documents/GitHub/Cryopunk/game/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/Michael/Desktop/Cryopunk/game/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.3/UnityEngine.UI.dll</HintPath>

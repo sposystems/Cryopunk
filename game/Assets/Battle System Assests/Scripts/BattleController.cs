@@ -859,7 +859,7 @@ public class BattleController : MonoBehaviour {
 	public void DisplayPlayerButtonText() {
 		if (IsPlayerTurn()) {
 			enemyTurnText.text = "";
-			hoverAbilityText.text = "Select an ability to use or an ally to target";
+			hoverAbilityText.text = "Select an ally to target";
 		}
 	}
 	
